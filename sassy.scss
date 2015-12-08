@@ -1,0 +1,41 @@
+body{
+  background-image: url(https://upload.wikimedia.org/wikipedia/commons/5/57/HOLI_IN_INDIA_-_ENJOYED_BY_ALL.jpg);
+  background-size: cover;
+}
+
+header{
+  width: 100%;
+  height: 150px;
+  background: white;
+  border-bottom: 2px solid black;
+}
+
+.headerImg{
+  height: 29%;
+  margin-left: 2%;
+  margin-top: 1%;
+  position: absolute;
+}
+
+
+.h1header{
+  color: #9C27B0;
+font-family: 'Poiret One', cursive;
+display: inline-block;
+margin-left: 15%;
+font-size: 5em;
+margin-top: 2%;
+}
+
+.login{
+  width: 22%;
+  height: 34px;
+  border-radius: 3%;
+  color: #9C27B0;
+  font-family: 'Poiret One';
+  margin-left: 59%;
+  margin-top: 1%;
+  font-size: 3em;
+  display: inline;
+
+}
