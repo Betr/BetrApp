@@ -127,4 +127,21 @@ public class BetrController {
         Post post = posts.findOne(id);
         posts.delete(post);
     }
+
+    @RequestMapping(path = "/community",method = RequestMethod.POST)
+    public void addCommunity(HttpSession session, String name, int numberOfPeople, int goal, int id) throws Exception {
+        String username = (String) session.getAttribute("username");
+
+        if (username == null) {
+            throw new Exception("You Are Not Logged In");
+        }
+        Community community = findOne(id);
+
+        Community community = new Community();
+        community.name = name;
+        community.numberOfPeople = numberOfPeople;
+        community.goal = goal;
+        communities.save(community);
+    }
+
 }
