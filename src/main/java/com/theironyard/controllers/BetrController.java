@@ -12,7 +12,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.annotation.PostConstruct;
 import javax.servlet.http.HttpSession;
+import java.security.InvalidKeyException;
+import java.security.NoSuchAlgorithmException;
+import java.security.spec.InvalidKeySpecException;
 import java.time.LocalDateTime;
 
 /**
@@ -29,6 +33,20 @@ public class BetrController {
 
     @Autowired
     CommunityRepository communities;
+
+    @PostConstruct
+    public void init() throws InvalidKeySpecException, NoSuchAlgorithmException {
+        if (users.count() == 0) {
+            User kate = new User();
+            kate.firstName = "Kate";
+            kate.lastName = "Wilson";
+            kate.username = "wilsonkate";
+            kate.password = PasswordHash.createHash("1234");
+            kate.email = "wilsonkate.kw@gmail.com";
+            kate.isAdmin = true;
+            users.save(kate);
+        }
+    }
 
     @RequestMapping
     public User getUser(HttpSession session) {
