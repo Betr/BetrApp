@@ -129,15 +129,38 @@ public class BetrController {
     }
 
     @RequestMapping(path = "/community",method = RequestMethod.POST)
-    public void addCommunity(HttpSession session, String name, int numberOfPeople, int goal, int id) throws Exception {
+    public void addCommunity(HttpSession session, String name, int numberOfPeople, int goal) throws Exception {
         String username = (String) session.getAttribute("username");
-
         if (username == null) {
-            throw new Exception("You Are Not Logged In");
+            throw new Exception("You are not logged in.");
         }
-        Community community = findOne(id);
 
         Community community = new Community();
+        community.name = name;
+        community.numberOfPeople = numberOfPeople;
+        community.goal = goal;
+        communities.save(community);
+    }
+    
+    @RequestMapping(path = "/community", method = RequestMethod.DELETE)
+    public void deleteCommunity(HttpSession session, Integer id) throws Exception {
+        String username = (String) session.getAttribute("username");
+        if (username == null) {
+            throw new Exception("You are not logged in.");
+        }
+
+        Community community = communities.findOne(id);
+        communities.delete(community);
+    }
+
+    @RequestMapping(path = "/community", method = RequestMethod.PUT)
+    public void updateCommunity(HttpSession session, String name, int numberOfPeople, int goal, Integer id) throws Exception {
+        String username = (String) session.getAttribute("username");
+        if (username == null) {
+            throw new Exception("You are not logged in.");
+        }
+
+        Community community = communities.findOne(id);
         community.name = name;
         community.numberOfPeople = numberOfPeople;
         community.goal = goal;
