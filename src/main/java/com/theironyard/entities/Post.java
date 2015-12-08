@@ -13,10 +13,13 @@ public class Post {
     public int id;
 
     @Column(nullable = false)
+    public String communityName;
+
+    @Column(nullable = false)
     public String postName;
 
     @Column(nullable = false)
-    public String post;
+    public String postBody;
 
     //multiple posts per community
     @ManyToOne
