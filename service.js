@@ -1,4 +1,3 @@
-// one service for communities and one for posts
 
 
 (function () {
@@ -30,7 +29,7 @@
             deleteCommunity: deleteCommunity,
             getSingleCommunity: getSingleCommunity
           };
-        });
+        })
 
         .factory('PostService', function ($http) {
           var url = '/posts';
@@ -57,13 +56,14 @@
                 deletePost: deletePost,
                 getPost: getPost
               };
-            });
+            })
 
-    // .factory('UserService', function ($http) {
-    //   var url = '';
-    //   return {
-    //
-    // });
+    .factory('UserService', function ($http) {
+      var url = '';
+      return {
+
+    };
+  });
 
 
-})();
+  })();
