@@ -46,7 +46,7 @@
             AdminService.deleteItem(theItem);
           };
 
-    })
+    });
 
 
 })();
