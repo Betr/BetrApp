@@ -1,6 +1,7 @@
 package com.theironyard.entities;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 
 /**
  * Created by jessicahuffstutler on 12/7/15.
@@ -20,6 +21,9 @@ public class Post {
 
     @Column(nullable = false)
     public String postBody;
+
+    @Column(nullable = false)
+    public LocalDateTime postTime;
 
     //multiple posts per community
     @ManyToOne
