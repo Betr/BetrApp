@@ -13,13 +13,13 @@ public class Community {
     public int id;
 
     @Column(nullable = false)
-    String name;
+    public String name;
 
     @Column(nullable = false)
-    int numberOfPeople;
+    public int numberOfPeople;
 
     @Column(nullable = false)
-    int goal;
+    public int goal;
 
     //multiple communities per user
     @ManyToOne

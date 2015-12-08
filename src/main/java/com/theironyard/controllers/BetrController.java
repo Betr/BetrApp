@@ -1,5 +1,6 @@
 package com.theironyard.controllers;
 
+import com.theironyard.entities.Community;
 import com.theironyard.entities.User;
 import com.theironyard.services.CommunityRepository;
 import com.theironyard.services.PostRepository;
@@ -7,6 +8,7 @@ import com.theironyard.services.UserRepository;
 import com.theironyard.utils.PasswordHash;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpSession;
@@ -84,9 +86,20 @@ public class BetrController {
         return "redirect:/";
     }
 
-    @RequestMapping("/community")
-    public void addVillage(HttpSession session, String name, int numberOfPeople, int goal) {
+    @RequestMapping(path = "/community",method = RequestMethod.POST)
+    public void addCommunity(HttpSession session, String name, int numberOfPeople, int goal, int id) throws Exception {
+        String username = (String) session.getAttribute("username");
 
-        Commuinty commuinty =
+        if (username == null) {
+            throw new Exception("You Are Not Logged In");
+        }
+        Community community = findOne(id);
+
+        Community community = new Community();
+        community.name = name;
+        community.numberOfPeople = numberOfPeople;
+        community.goal = goal;
+        communities.save(community);
     }
+
 }
