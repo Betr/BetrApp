@@ -47,11 +47,12 @@ public class BetrController {
         session.setAttribute("username", username);
 
         return "redirect:/";
+    }
 
-    }@RequestMapping("/logout")
+    @RequestMapping("/logout")
     public String logout(HttpSession session) {
 
-        session.getAttribute("User");
+        session.getAttribute("username");
         session.invalidate();
         return "redirect:/";
     }
