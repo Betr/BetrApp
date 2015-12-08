@@ -1,6 +1,7 @@
 package com.theironyard.controllers;
 
 import com.theironyard.entities.Community;
+import com.theironyard.entities.Post;
 import com.theironyard.entities.User;
 import com.theironyard.services.CommunityRepository;
 import com.theironyard.services.PostRepository;
@@ -84,6 +85,47 @@ public class BetrController {
         session.setAttribute("username", username);
 
         return "redirect:/";
+    }
+
+    @RequestMapping(path = "/posts", method = RequestMethod.POST)
+    public void addPost(HttpSession session, String communityName, String postName, String postBody, int id) throws Exception {
+        String username = (String) session.getAttribute("username");
+
+        if (username == null) {
+            throw new Exception("You are not logged in.");
+        }
+
+        Post post = new Post();
+        post.communityName = communityName; //this should be a dropdown menu for the admin to select a community to avoid spelling errors
+        post.postName = postName;
+        post.postBody = postBody;
+        posts.save(post);
+    }
+
+    @RequestMapping(path = "/posts", method = RequestMethod.PUT)
+    public void editPost(HttpSession session, String communityName, String postName, String postBody, Integer id) throws Exception {
+        String username = (String) session.getAttribute("username");
+
+        if (username == null) {
+            throw new Exception("You are not logged in.");
+        }
+
+        Post post = posts.findOne(id);
+        post.communityName = communityName; //this should be a dropdown menu for the admin to select a community to avoid spelling errors
+        post.postName = postName;
+        post.postBody = postBody;
+        posts.save(post);
+    }
+
+    @RequestMapping(path = "/posts", method = RequestMethod.DELETE)
+    public void deletePost(HttpSession session, Integer id) throws Exception {
+        String username = (String) session.getAttribute("username");
+        if (username == null) {
+            throw new Exception("You are not logged in.");
+        }
+
+        Post post = posts.findOne(id);
+        posts.delete(post);
     }
 
     @RequestMapping(path = "/community",method = RequestMethod.POST)
