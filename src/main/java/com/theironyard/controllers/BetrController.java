@@ -78,4 +78,10 @@ public class BetrController {
 
         return "redirect:/";
     }
+
+    @RequestMapping("/community")
+    public void addVillage(HttpSession session, String name, int numberOfPeople, int goal) {
+
+        Commuinty commuinty =
+    }
 }
