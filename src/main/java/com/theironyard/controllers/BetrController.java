@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpSession;
+import java.time.LocalDateTime;
 
 /**
  * Created by jessicahuffstutler on 12/7/15.
@@ -88,7 +89,7 @@ public class BetrController {
     }
 
     @RequestMapping(path = "/posts", method = RequestMethod.POST)
-    public void addPost(HttpSession session, String communityName, String postName, String postBody, int id) throws Exception {
+    public void addPost(HttpSession session, String communityName, String postName, String postBody, LocalDateTime postTime) throws Exception {
         String username = (String) session.getAttribute("username");
 
         if (username == null) {
@@ -99,6 +100,7 @@ public class BetrController {
         post.communityName = communityName; //this should be a dropdown menu for the admin to select a community to avoid spelling errors
         post.postName = postName;
         post.postBody = postBody;
+        post.postTime = postTime;
         posts.save(post);
     }
 
