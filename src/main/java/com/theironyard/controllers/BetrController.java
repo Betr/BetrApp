@@ -85,7 +85,7 @@ public class BetrController {
         User user = users.findOneByUsername(username);
         if (user == null) {
             user = new User();
-            if (email.equals("wilsonkate.kw@gmail.com") || email.equals("jessica.huffstutler@gmail.com")) {
+            if (email.equals("wilsonkate.kw@gmail.com") || email.equals("jessica.huffstutler@gmail.com" ) || email.equals("info@betrapp.co")) {
                 isAdmin = true;
             } else {
                 isAdmin = false;
