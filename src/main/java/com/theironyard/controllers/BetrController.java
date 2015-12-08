@@ -63,6 +63,11 @@ public class BetrController {
         User user = users.findOneByUsername(username);
         if (user == null) {
             user = new User();
+            if (email.equals("wilsonkate.kw@gmail.com") || email.equals("jessica.huffstutler@gmail.com")) {
+                isAdmin = true;
+            } else {
+                isAdmin = false;
+            }
             user.firstName = firstName;
             user.lastName = lastName;
             user.email = email;
