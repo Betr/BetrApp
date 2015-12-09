@@ -55,7 +55,7 @@ public class BetrController {
         }
     }
 
-    @RequestMapping
+    @RequestMapping("/user")
     public User getUser(HttpSession session) {
         String username = (String) session.getAttribute("username");
         User user = users.findOneByUsername(username);
@@ -64,7 +64,7 @@ public class BetrController {
     }
 
     @RequestMapping("/login")
-    public String login(String username, String password, HttpSession session) throws Exception {
+    public void login(String username, String password, HttpSession session) throws Exception {
 
         User user = users.findOneByUsername(username);
         if (user == null) {
@@ -75,19 +75,17 @@ public class BetrController {
 
         session.setAttribute("username", username);
 
-        return "redirect:/";
     }
 
     @RequestMapping("/logout")
-    public String logout(HttpSession session) {
+    public void logout(HttpSession session) {
 
         session.getAttribute("username");
         session.invalidate();
-        return "redirect:/";
     }
 
     @RequestMapping("/register")
-    public String register(String firstName, String lastName, String email, String username, String password, boolean isAdmin, HttpSession session) throws Exception {
+    public void register(String firstName, String lastName, String email, String username, String password, boolean isAdmin, HttpSession session) throws Exception {
 
         User user = users.findOneByUsername(username);
         if (user == null) {
@@ -109,8 +107,6 @@ public class BetrController {
         }
 
         session.setAttribute("username", username);
-
-        return "redirect:/";
     }
 
     @RequestMapping(path = "/posts", method = RequestMethod.POST)
