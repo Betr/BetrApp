@@ -12,7 +12,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.annotation.PostConstruct;
 import javax.servlet.http.HttpSession;
+import java.security.NoSuchAlgorithmException;
+import java.security.spec.InvalidKeySpecException;
 import java.time.LocalDateTime;
 
 /**
@@ -30,7 +33,24 @@ public class BetrController {
     @Autowired
     CommunityRepository communities;
 
-    @RequestMapping
+    //might be necessary for saving csv file and working with write and save file below
+    static User user;
+
+    @PostConstruct
+    public void init() throws InvalidKeySpecException, NoSuchAlgorithmException {
+        if (users.count() == 0) {
+            User kate = new User();
+            kate.firstName = "Kate";
+            kate.lastName = "Wilson";
+            kate.username = "wilsonkate";
+            kate.password = PasswordHash.createHash("1234");
+            kate.email = "wilsonkate.kw@gmail.com";
+            kate.isAdmin = true;
+            users.save(kate);
+        }
+    }
+
+    @RequestMapping("/user")
     public User getUser(HttpSession session) {
         String username = (String) session.getAttribute("username");
         User user = users.findOneByUsername(username);
@@ -39,7 +59,7 @@ public class BetrController {
     }
 
     @RequestMapping("/login")
-    public String login(String username, String password, HttpSession session) throws Exception {
+    public void login(String username, String password, HttpSession session) throws Exception {
 
         User user = users.findOneByUsername(username);
         if (user == null) {
@@ -50,24 +70,22 @@ public class BetrController {
 
         session.setAttribute("username", username);
 
-        return "redirect:/";
     }
 
     @RequestMapping("/logout")
-    public String logout(HttpSession session) {
+    public void logout(HttpSession session) {
 
         session.getAttribute("username");
         session.invalidate();
-        return "redirect:/";
     }
 
     @RequestMapping("/register")
-    public String register(String firstName, String lastName, String email, String username, String password, boolean isAdmin, HttpSession session) throws Exception {
+    public void register(String firstName, String lastName, String email, String username, String password, boolean isAdmin, HttpSession session) throws Exception {
 
         User user = users.findOneByUsername(username);
         if (user == null) {
             user = new User();
-            if (email.equals("wilsonkate.kw@gmail.com") || email.equals("jessica.huffstutler@gmail.com")) {
+            if (email.equals("wilsonkate.kw@gmail.com") || email.equals("jessica.huffstutler@gmail.com" ) || email.equals("info@betrapp.co")) {
                 isAdmin = true;
             } else {
                 isAdmin = false;
@@ -84,8 +102,6 @@ public class BetrController {
         }
 
         session.setAttribute("username", username);
-
-        return "redirect:/";
     }
 
     @RequestMapping(path = "/posts", method = RequestMethod.POST)
@@ -131,7 +147,7 @@ public class BetrController {
     }
 
     @RequestMapping(path = "/community",method = RequestMethod.POST)
-    public void addCommunity(HttpSession session, String name, int numberOfPeople, int goal) throws Exception {
+    public void addCommunity(HttpSession session, String name, int population, int goal, String description) throws Exception {
         String username = (String) session.getAttribute("username");
         if (username == null) {
             throw new Exception("You are not logged in.");
@@ -139,8 +155,9 @@ public class BetrController {
 
         Community community = new Community();
         community.name = name;
-        community.numberOfPeople = numberOfPeople;
+        community.population = population;
         community.goal = goal;
+        community.description = description;
         communities.save(community);
     }
     
@@ -156,7 +173,7 @@ public class BetrController {
     }
 
     @RequestMapping(path = "/community", method = RequestMethod.PUT)
-    public void updateCommunity(HttpSession session, String name, int numberOfPeople, int goal, Integer id) throws Exception {
+    public void updateCommunity(HttpSession session, String name, int population, int goal, Integer id, String description) throws Exception {
         String username = (String) session.getAttribute("username");
         if (username == null) {
             throw new Exception("You are not logged in.");
@@ -164,9 +181,13 @@ public class BetrController {
 
         Community community = communities.findOne(id);
         community.name = name;
-        community.numberOfPeople = numberOfPeople;
+        community.population = population;
         community.goal = goal;
+        community.description = description;
         communities.save(community);
     }
+
+
+
 
 }

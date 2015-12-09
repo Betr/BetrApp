@@ -27,7 +27,6 @@
             getCommunity: getCommunity,
             editCommunity: editCommunity,
             deleteCommunity: deleteCommunity,
-            getSingleCommunity: getSingleCommunity
           };
         })
 

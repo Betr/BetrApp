@@ -4,8 +4,9 @@ import javax.persistence.*;
 
 /**
  * Created by jessicahuffstutler on 12/7/15.
- */@Entity
-   @Table(name = "users")
+ */
+@Entity
+@Table(name = "users")
 public class User {
     @Id
     @GeneratedValue
@@ -28,4 +29,32 @@ public class User {
 
     @Column(nullable = false)
     public boolean isAdmin;
+
+    public int getId() {
+        return id;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public boolean isAdmin() {
+        return isAdmin;
+    }
 }
