@@ -1,3 +1,4 @@
+
 .mainCont {
   background-image: url(https://upload.wikimedia.org/wikipedia/commons/5/57/HOLI_IN_INDIA_-_ENJOYED_BY_ALL.jpg);
   background-size: cover;
@@ -5,11 +6,11 @@
 
 header {
   width: 100%;
-  height: 150px;
-  background: white;
-  border-bottom: 2px solid black; }
+  height: 120px;
+  background: white; }
 
 .headerImg {
+  height: 85px;
   height: 114px;
   margin-left: 2%;
   margin-top: 1%;
@@ -19,9 +20,12 @@ header {
   color: #9C27B0;
   font-family: 'Poiret One', cursive;
   display: inline-block;
-  margin-left: 15%;
+  margin-left: 18%;
   font-size: 5em;
-  margin-top: 2%; }
+  text-align: right; }
+
+h2 {
+  padding-left: 630px; }
 
 .login {
   width: 22%;
@@ -29,9 +33,8 @@ header {
   border-radius: 3%;
   color: #9C27B0;
   font-family: 'Poiret One';
-  margin-left: 59%;
   margin-top: 1%;
-  font-size: 3em;
+  font-size: 2em;
   display: inline; }
 
 .pinkDiv {
