@@ -1,6 +1,7 @@
-body{
+.mainCont{
   background-image: url(https://upload.wikimedia.org/wikipedia/commons/5/57/HOLI_IN_INDIA_-_ENJOYED_BY_ALL.jpg);
   background-size: cover;
+  width: 100%;
 }
 
 header{
@@ -11,7 +12,7 @@ header{
 }
 
 .headerImg{
-  height: 29%;
+  height: 114px;
   margin-left: 2%;
   margin-top: 1%;
   position: absolute;
@@ -37,5 +38,135 @@ margin-top: 2%;
   margin-top: 1%;
   font-size: 3em;
   display: inline;
+}
+
+.pinkDiv{
+  background-color: #9C27B0;
+  height: 250px;
+  width:68%;
+  opacity: 0.2;
+  display: inline-block;
+}
+
+.blueDiv{
+    background-color: #2196F3;
+    height: 500px;
+    width: 32%;
+    margin-left: -4px;
+    display: inline-block;
+    opacity: 0.2;
+    vertical-align: top;
+}
+
+.blueDiv3{
+  height: 210px;
+  width: 72%;
+  margin-left: -4px;
+  background: #9C27B0;
+  display: inline-block;
+  opacity: 0.2;
+  vertical-align: top;
+  }
+
+.blueDiv2{
+  background-color: #8BC34A;
+  height:210px;
+  width: 28%;
+  display: inline-block;
+  opacity: 0.2;
+}
+
+
+.div:hover{
+  opacity: 0.8;
+  padding-top: 6%;
+  text-shadow: 2px 2px 2px black;
+  transition: .5s;
+}
+
+.info{
+  color: white;
+  text-align: center;
+  font-family: 'Poiret One';
+  font-size: 3em;
+  text-shadow: 3px 3px 3px black;
+}
+
+.fb{
+  margin-left: 45%;
+  margin-top: 2%;
+  margin-bottom: 1%;
+}
+
+.icon2{
+  margin-top: 2%;
+  margin-bottom: 1%;
+}
+
+.icon:hover{
+  transform: scale(1.3,1.3);
+  transition: 0.5s;
+}
+
+footer{
+  background-color: white;
+  width: 100%;
+}
+
+.secPage{
+  background-color: white;
+}
+.impact{
+  width: 30%;
+  height: 350px;
+  background: #9C27B0;
+  margin: auto;
+  margin-left: 13.5%;
+  border-radius: 60%;
+  display: inline-block;
+  margin-top: 10%;
+  margin-bottom: 2%;
+}
+
+.par{
+  width: 39%;
+  margin-left: 7%;
+  margin-top: 6%;
+  display: inline-block;
+  margin-bottom: 4%;
+}
+
+.lastSec{
+  background-image: url(pic/background.jpg);
+  background-size: cover;
+  width: 100%;
+  height: 830px;
+}
+
+.change{
+    width: 80%;
+    height: 250px;
+    background-color: #2196F3;
+    margin: auto;
+    display: inline-block;
+    margin-top: 14%;
+    margin-bottom: 2%;
+    opacity: 0.5;
+    margin-left: 10%;
+}
+
+.world{
+  text-align: center;
+  color: white;
+  padding-top: 5%;
+  font-size: 4em;
+  font-family: 'Poiret One';
+}
+
+.change:hover{
+  font-size: 1.5em;
+  opacity: 0.8;
+  transition: 0.5s;
+
 
 }
