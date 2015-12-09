@@ -194,6 +194,44 @@ public class BetrController {
         communities.save(community);
     }
 
+    static void writeFile(String fileName, String fileContent) {
+        File f = new File(fileName);
+        try {
+            FileWriter fw = new FileWriter(f);
+            fw.write(fileContent);
+            fw.close();
+        } catch (Exception e) {
+
+        }
+    }
+
+    static void saveUser() {
+        File f = new File("save.json");
+        JsonSerializer serializer = new JsonSerializer();
+        String contentToSave = serializer.serialize(user);
+
+        try {
+            FileWriter fw = new FileWriter(f);
+            fw.write(contentToSave);
+            fw.close();
+        } catch (Exception e) {
+            System.out.println("Save not successful.");
+        }
+    }
+
+    @RequestMapping(path = "/userInformation", method = RequestMethod.GET)
+    public void getUserInformation(HttpSession session, String firstName, String lastName, String email) throws Exception {
+        String username = (String) session.getAttribute("username");
+        if (username == null) {
+            throw new Exception("You are not logged in.");
+        }
+
+        LocalDateTime fileTime = LocalDateTime.now();
+        String newFileName = String.format("%s_userInformation.csv", fileTime);
+
+        String contents = String.format("%s %s %s", firstName, lastName, email);
+        writeFile(newFileName, contents);
+    }
 
 
 }
