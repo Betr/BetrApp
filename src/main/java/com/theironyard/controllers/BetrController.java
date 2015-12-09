@@ -1,6 +1,5 @@
 package com.theironyard.controllers;
 
-import com.fasterxml.jackson.databind.JsonSerializer;
 import com.theironyard.entities.Community;
 import com.theironyard.entities.Post;
 import com.theironyard.entities.User;
@@ -8,7 +7,6 @@ import com.theironyard.services.CommunityRepository;
 import com.theironyard.services.PostRepository;
 import com.theironyard.services.UserRepository;
 import com.theironyard.utils.PasswordHash;
-import org.apache.tomcat.jni.Local;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -16,9 +14,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.PostConstruct;
 import javax.servlet.http.HttpSession;
-import java.io.File;
-import java.io.FileWriter;
-import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
 import java.security.spec.InvalidKeySpecException;
 import java.time.LocalDateTime;
@@ -152,7 +147,7 @@ public class BetrController {
     }
 
     @RequestMapping(path = "/community",method = RequestMethod.POST)
-    public void addCommunity(HttpSession session, String name, int numberOfPeople, int goal) throws Exception {
+    public void addCommunity(HttpSession session, String name, int numberOfPeople, int goal, String description) throws Exception {
         String username = (String) session.getAttribute("username");
         if (username == null) {
             throw new Exception("You are not logged in.");
@@ -160,8 +155,9 @@ public class BetrController {
 
         Community community = new Community();
         community.name = name;
-        community.numberOfPeople = numberOfPeople;
+        community.population = numberOfPeople;
         community.goal = goal;
+        community.description = description;
         communities.save(community);
     }
     
@@ -177,7 +173,7 @@ public class BetrController {
     }
 
     @RequestMapping(path = "/community", method = RequestMethod.PUT)
-    public void updateCommunity(HttpSession session, String name, int numberOfPeople, int goal, Integer id) throws Exception {
+    public void updateCommunity(HttpSession session, String name, int numberOfPeople, int goal, Integer id, String description) throws Exception {
         String username = (String) session.getAttribute("username");
         if (username == null) {
             throw new Exception("You are not logged in.");
@@ -185,8 +181,9 @@ public class BetrController {
 
         Community community = communities.findOne(id);
         community.name = name;
-        community.numberOfPeople = numberOfPeople;
+        community.population = numberOfPeople;
         community.goal = goal;
+        community.description = description;
         communities.save(community);
     }
 
