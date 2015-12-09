@@ -34,11 +34,11 @@
           controller: 'AdminController as AdminCtrl'
         })
         .when('/editcommunities', {
-          templateUrl: 'adminViews/editcommunities.html',
+          templateUrl: 'adminViews/editCommunities.html',
           controller: 'AdminController as AdminCtrl'
         })
         .when('/editpress', {
-          templateUrl: 'adminViews/editpress.html',
+          templateUrl: 'adminViews/editPress.html',
           controller: 'AdminController as AdminCtrl'
         })
         .when('/newpost', {
