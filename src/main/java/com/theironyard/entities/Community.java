@@ -16,10 +16,13 @@ public class Community {
     public String name;
 
     @Column(nullable = false)
-    public int numberOfPeople;
+    public int population;
 
     @Column(nullable = false)
     public int goal;
+
+    @Column(nullable = false)
+    public String description;
 
     //multiple communities per user
     @ManyToOne
