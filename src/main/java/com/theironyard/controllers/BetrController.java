@@ -1,5 +1,6 @@
 package com.theironyard.controllers;
 
+import com.fasterxml.jackson.databind.JsonSerializer;
 import com.theironyard.entities.Community;
 import com.theironyard.entities.Post;
 import com.theironyard.entities.User;
@@ -7,6 +8,7 @@ import com.theironyard.services.CommunityRepository;
 import com.theironyard.services.PostRepository;
 import com.theironyard.services.UserRepository;
 import com.theironyard.utils.PasswordHash;
+import org.apache.tomcat.jni.Local;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -14,6 +16,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.PostConstruct;
 import javax.servlet.http.HttpSession;
+import java.io.File;
+import java.io.FileWriter;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
 import java.security.spec.InvalidKeySpecException;
@@ -33,6 +37,9 @@ public class BetrController {
 
     @Autowired
     CommunityRepository communities;
+
+    //might be necessary for saving csv file and working with write and save file below
+    static User user;
 
     @PostConstruct
     public void init() throws InvalidKeySpecException, NoSuchAlgorithmException {
@@ -186,5 +193,7 @@ public class BetrController {
         community.goal = goal;
         communities.save(community);
     }
+
+
 
 }
