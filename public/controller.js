@@ -35,6 +35,7 @@
 
 
          $scope.addCommunity = function (item){
+           console.log("controller item", item)
              CommunityService.newCommunity(item);
              $location.path('/communities');
            };
