@@ -39,19 +39,6 @@ public class BetrController {
     //might be necessary for saving csv file and working with write and save file below
     static User user;
 
-    @PostConstruct
-    public void init() throws InvalidKeySpecException, NoSuchAlgorithmException {
-        if (users.count() == 0) {
-            User kate = new User();
-            kate.firstName = "Kate";
-            kate.lastName = "Wilson";
-            kate.username = "wilsonkate";
-            kate.password = PasswordHash.createHash("1234");
-            kate.email = "wilsonkate.kw@gmail.com";
-            kate.isAdmin = true;
-            users.save(kate);
-        }
-    }
 
     @RequestMapping("/user")
     public User getUser(HttpSession session) {
@@ -108,7 +95,7 @@ public class BetrController {
         session.setAttribute("username", username);
     }
 
-    @RequestMapping("/addPost")
+    @RequestMapping(path = "/posts", method = RequestMethod.POST)
     public void addPost(HttpSession session, String communityName, String postName, String postBody, LocalDateTime postTime, MultipartFile postImage) throws Exception {
         String username = (String) session.getAttribute("username");
 
@@ -127,10 +114,11 @@ public class BetrController {
         post.postName = postName;
         post.postBody = postBody;
         post.postTime = postTime;
+        post.filename = photoFile.getName();
         posts.save(post);
     }
 
-    @RequestMapping("/editPost")
+    @RequestMapping(path = "/posts", method = RequestMethod.PUT)
     public void editPost(HttpSession session, String communityName, String postName, String postBody, Integer id, MultipartFile postImage) throws Exception {
         String username = (String) session.getAttribute("username");
 
@@ -152,15 +140,14 @@ public class BetrController {
             if (!postImage.getContentType().startsWith("image")) {
                 throw new Exception("Only images are allowed!");
             }
-            File photoFile = File.createTempFile("communityImage", postImage.getOriginalFilename(), new File("public"));
+            File photoFile = File.createTempFile("postImage", postImage.getOriginalFilename(), new File("public"));
             FileOutputStream fos = new FileOutputStream(photoFile);
             fos.write(postImage.getBytes()); //to save to a file in the public folder
-            post.postImage = postImage;
         }
         posts.save(post);
     }
 
-    @RequestMapping("/deletePost")
+    @RequestMapping(path = "/posts", method = RequestMethod.DELETE)
     public void deletePost(HttpSession session, Integer id) throws Exception {
         String username = (String) session.getAttribute("username");
         if (username == null) {
@@ -171,7 +158,7 @@ public class BetrController {
         posts.delete(post);
     }
 
-    @RequestMapping("/addCommunity")
+    @RequestMapping(path = "/community", method = RequestMethod.POST)
     public void addCommunity(HttpSession session, String name, int population, int goal, String description, MultipartFile communityImage) throws Exception {
         String username = (String) session.getAttribute("username");
         if (username == null) {
@@ -190,11 +177,12 @@ public class BetrController {
         community.population = population;
         community.goal = goal;
         community.description = description;
+        community.filename = photoFile.getName();
 
         communities.save(community);
     }
     
-    @RequestMapping("/deleteCommunity")
+    @RequestMapping(path = "/community", method = RequestMethod.DELETE)
     public void deleteCommunity(HttpSession session, Integer id) throws Exception {
         String username = (String) session.getAttribute("username");
         if (username == null) {
@@ -205,7 +193,7 @@ public class BetrController {
         communities.delete(community);
     }
 
-    @RequestMapping("/editCommunity")
+    @RequestMapping(path = "/community", method = RequestMethod.PUT)
     public void editCommunity(HttpSession session, String name, int population, int goal, Integer id, String description, MultipartFile communityImage) throws Exception {
         String username = (String) session.getAttribute("username");
         if (username == null) {
@@ -232,7 +220,6 @@ public class BetrController {
             File photoFile = File.createTempFile("communityImage", communityImage.getOriginalFilename(), new File("public"));
             FileOutputStream fos = new FileOutputStream(photoFile);
             fos.write(communityImage.getBytes());
-            community.communityImage = communityImage;
         }
         communities.save(community);
     }

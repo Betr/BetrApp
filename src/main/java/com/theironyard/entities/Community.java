@@ -26,8 +26,11 @@ public class Community {
     @Column(nullable = false)
     public String description;
 
+    @Column(nullable = false)
+    public String filename;
+
     //multiple communities per user
     @ManyToOne
     public User user;
-    public MultipartFile communityImage;
+    //public MultipartFile communityImage;
 }

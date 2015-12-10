@@ -27,8 +27,11 @@ public class Post {
     @Column(nullable = false)
     public LocalDateTime postTime;
 
+    @Column(nullable = false)
+    public String filename;
+
     //multiple posts per community
     @ManyToOne
     public Community community;
-    public MultipartFile postImage;
+    //public MultipartFile postImage;
 }
