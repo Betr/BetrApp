@@ -97,7 +97,7 @@ public class BetrController {
         session.setAttribute("username", username);
     }
 
-    @RequestMapping(path = "/posts/{id}", method = RequestMethod.POST)
+    @RequestMapping(path = "/posts", method = RequestMethod.POST)
     public void addPost(HttpSession session, @RequestBody Post post) throws Exception {
         String username = (String) session.getAttribute("username");
 
@@ -120,7 +120,7 @@ public class BetrController {
         posts.save(post);
     }
 
-    @RequestMapping(path = "/posts/{id}", method = RequestMethod.PUT)
+    @RequestMapping(path = "/posts", method = RequestMethod.PUT)
     public void editPost(HttpSession session, @RequestBody Post post) throws Exception {
         String username = (String) session.getAttribute("username");
 
@@ -149,7 +149,7 @@ public class BetrController {
         posts.save(post);
     }
 
-    @RequestMapping(path = "/posts/{id}", method = RequestMethod.DELETE)
+    @RequestMapping(path = "/posts", method = RequestMethod.DELETE)
     public void deletePost(HttpSession session, Integer id) throws Exception {
         String username = (String) session.getAttribute("username");
 //        if (username == null) {
@@ -184,7 +184,7 @@ public class BetrController {
         communities.save(community);
     }
     
-    @RequestMapping(path = "/community/{id}", method = RequestMethod.DELETE)
+    @RequestMapping(path = "/community", method = RequestMethod.DELETE)
     public void deleteCommunity(HttpSession session, Integer id) throws Exception {
         String username = (String) session.getAttribute("username");
 //        if (username == null) {
@@ -195,7 +195,7 @@ public class BetrController {
         communities.delete(community);
     }
 
-    @RequestMapping(path = "/community/{id}", method = RequestMethod.PUT)
+    @RequestMapping(path = "/community", method = RequestMethod.PUT)
     public void editCommunity(HttpSession session, @RequestBody Community community) throws Exception {
         String username = (String) session.getAttribute("username");
 //        if (username == null) {
