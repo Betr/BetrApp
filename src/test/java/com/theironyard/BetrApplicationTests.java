@@ -10,9 +10,9 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-@RunWith(SpringJUnit4ClassRunner.class)
-@SpringApplicationConfiguration(classes = BetrApplication.class)
-@WebAppConfiguration
+//@RunWith(SpringJUnit4ClassRunner.class)
+//@SpringApplicationConfiguration(classes = BetrApplication.class)
+//@WebAppConfiguration
 public class BetrApplicationTests {
 
 //	public Connection startConnection() throws SQLException {
