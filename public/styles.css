@@ -69,6 +69,7 @@ h2 {
 
 .div:hover {
   opacity: 0.8;
+  padding-top: 6%;
   padding-top: 3%;
   text-shadow: 2px 2px 2px black;
   transition: .5s; }
@@ -77,8 +78,7 @@ h2 {
   color: white;
   text-align: center;
   font-family: 'Poiret One';
-  font-size: 3em;
-  text-shadow: 3px 3px 3px black; }
+  font-size: 3em; }
 
 .fb {
   margin-left: 87%;
