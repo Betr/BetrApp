@@ -7,6 +7,7 @@ import com.theironyard.services.CommunityRepository;
 import com.theironyard.services.PostRepository;
 import com.theironyard.services.UserRepository;
 import com.theironyard.utils.PasswordHash;
+import org.apache.tomcat.jni.Local;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.annotation.PostConstruct;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -39,12 +41,6 @@ public class BetrController {
 
     @Autowired
     CommunityRepository communities;
-
-
-    ArrayList<User> usersList = new ArrayList();
-
-    static User user;
-
 
     @RequestMapping("/user")
     public User getUser(HttpSession session) {
@@ -164,7 +160,7 @@ public class BetrController {
         posts.delete(post);
     }
 
-    @RequestMapping(path = "/community/{id}", method = RequestMethod.POST)
+    @RequestMapping(path = "/community", method = RequestMethod.POST)
     public void addCommunity(HttpSession session, @RequestBody Community community) throws Exception {
 //        String username = (String) session.getAttribute("username");
 //        if (username == null) {
@@ -230,13 +226,15 @@ public class BetrController {
         communities.save(community);
     }
 
-    @RequestMapping("/userInformation")
-    public void generateCsvFile(String fileName, ArrayList<User> usersList) throws Exception {
-        if(usersList == null) {
+    @RequestMapping(value = "/userInformation", method = RequestMethod.GET)
+    public void generateCsvFile(HttpServletResponse response) throws Exception {
+        ArrayList<User> usersList = (ArrayList<User>) users.findAll();
+
+        if(users == null) {
             throw new Exception("There are no users.");
         } else {
             try{
-                FileWriter writer = new FileWriter(fileName);
+                StringBuilder writer = new StringBuilder();
 
                 writer.append("FirstName");
                 writer.append(',');
@@ -254,8 +252,10 @@ public class BetrController {
                     writer.append('\n');
                 }
 
-                writer.flush();
-                writer.close();
+                response.getOutputStream().write(writer.toString().getBytes());
+                response.setContentType("text/csv");
+                response.setHeader("Content-Disposition", String.format("Attachment: filename = %s_usersList.csv", LocalDateTime.now()));
+
             } catch(IOException e){
                 e.printStackTrace();
             }
