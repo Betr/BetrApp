@@ -27,7 +27,7 @@ public class Community {
     public String description;
 
     @Column(nullable = false)
-    public String filename;
+    public String image;
 
     //multiple communities per user
     @ManyToOne

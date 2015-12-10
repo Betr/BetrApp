@@ -28,7 +28,7 @@ public class Post {
     public LocalDateTime postTime;
 
     @Column(nullable = false)
-    public String filename;
+    public String image;
 
     //multiple posts per community
     @ManyToOne
