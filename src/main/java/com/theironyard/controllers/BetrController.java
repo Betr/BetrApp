@@ -164,7 +164,7 @@ public class BetrController {
         posts.delete(post);
     }
 
-    @RequestMapping(path = "/community/{id}", method = RequestMethod.POST)
+    @RequestMapping(path = "/community", method = RequestMethod.POST)
     public void addCommunity(HttpSession session, @RequestBody Community community) throws Exception {
 //        String username = (String) session.getAttribute("username");
 //        if (username == null) {
