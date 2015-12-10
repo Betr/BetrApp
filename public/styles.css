@@ -69,9 +69,7 @@ h2 {
 
 .div:hover {
   opacity: 0.8;
-  padding-top: 6%;
   padding-top: 3%;
-  text-shadow: 2px 2px 2px black;
   transition: .5s; }
 
 .info {
