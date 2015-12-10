@@ -1,5 +1,7 @@
 package com.theironyard.entities;
 
+import org.springframework.web.multipart.MultipartFile;
+
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
@@ -28,4 +30,5 @@ public class Post {
     //multiple posts per community
     @ManyToOne
     public Community community;
+    public MultipartFile postImage;
 }
