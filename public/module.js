@@ -5,7 +5,8 @@
   angular
     .module('betrApp', [
       'ngRoute',
-      'underscore'
+      'underscore',
+      'ui.bootstrap'
 
     ])
     .config(function ($routeProvider) {
@@ -16,6 +17,10 @@
         })
         .when('/communities', {
           templateUrl: 'views/communityDonate.html',
+          controller: 'MainController as MainCtrl'
+        })
+        .when('/payment', {
+          templateUrl: 'views/popup.html',
           controller: 'MainController as MainCtrl'
         })
         .when('/home', {
