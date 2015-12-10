@@ -7,6 +7,7 @@
     .factory('CommunityService', function ($http) {
       var url = '/community';
       var addCommunity = function (newCommunity) {
+          console.log(newCommunity);
             $http.post(url, newCommunity).then(function (res) {
               console.log(newCommunity);
             });
