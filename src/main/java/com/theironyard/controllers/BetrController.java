@@ -105,9 +105,9 @@ public class BetrController {
     public void addPost(HttpSession session, @RequestBody Post post) throws Exception {
         String username = (String) session.getAttribute("username");
 
-        if (username == null) {
-            throw new Exception("You are not logged in.");
-        }
+//        if (username == null) {
+//            throw new Exception("You are not logged in.");
+//        }
 //         if (!postImage.getContentType().startsWith("image")){
 //             throw new Exception("Only images are allowed!");
 //         }
@@ -128,9 +128,9 @@ public class BetrController {
     public void editPost(HttpSession session, @RequestBody Post post) throws Exception {
         String username = (String) session.getAttribute("username");
 
-        if (username == null) {
-            throw new Exception("You are not logged in.");
-        }
+//        if (username == null) {
+//            throw new Exception("You are not logged in.");
+//        }
 
 //        Post post = posts.findOne(id);
 //        if (post.communityName!=null){
@@ -156,9 +156,9 @@ public class BetrController {
     @RequestMapping(path = "/posts", method = RequestMethod.DELETE)
     public void deletePost(HttpSession session, Integer id) throws Exception {
         String username = (String) session.getAttribute("username");
-        if (username == null) {
-            throw new Exception("You are not logged in.");
-        }
+//        if (username == null) {
+//            throw new Exception("You are not logged in.");
+//        }
 
         Post post = posts.findOne(id);
         posts.delete(post);
@@ -166,10 +166,10 @@ public class BetrController {
 
     @RequestMapping(path = "/community", method = RequestMethod.POST)
     public void addCommunity(HttpSession session, @RequestBody Community community) throws Exception {
-        String username = (String) session.getAttribute("username");
-        if (username == null) {
-            throw new Exception("You are not logged in.");
-        }
+//        String username = (String) session.getAttribute("username");
+//        if (username == null) {
+//            throw new Exception("You are not logged in.");
+//        }
 
 //        if (!image.getContentType().startsWith("image")){
 //            throw new Exception("Only images are allowed!");
@@ -191,9 +191,9 @@ public class BetrController {
     @RequestMapping(path = "/community", method = RequestMethod.DELETE)
     public void deleteCommunity(HttpSession session, Integer id) throws Exception {
         String username = (String) session.getAttribute("username");
-        if (username == null) {
-            throw new Exception("You are not logged in.");
-        }
+//        if (username == null) {
+//            throw new Exception("You are not logged in.");
+//        }
 
         Community community = communities.findOne(id);
         communities.delete(community);
@@ -202,9 +202,9 @@ public class BetrController {
     @RequestMapping(path = "/community", method = RequestMethod.PUT)
     public void editCommunity(HttpSession session, @RequestBody Community community) throws Exception {
         String username = (String) session.getAttribute("username");
-        if (username == null) {
-            throw new Exception("You are not logged in.");
-        }
+//        if (username == null) {
+//            throw new Exception("You are not logged in.");
+//        }
 //
 //        Community community = communities.findOne(id);  //When updating the previous input will remain.
 //        if (community.name!=null){
