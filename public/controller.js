@@ -1,52 +1,54 @@
 
-(function () {
+ (function () {
 
-    angular
-    .module('betrApp')
+     angular
+     .module('betrApp')
 
-    .controller('MainController', function ($scope) {
-      var vm = this;
-      $scope.getCommunity = function (theItem){
-        UserService.newItem(theItem);
-      };
-      $scope.getPost = function (theItem){
-        UserService.newItem(theItem);
-      };
-      $scope.getPress = function (theItem){
-        UserService.newItem(theItem);
-      };
-    })
-    .controller('AdminController', function ($scope) {
-      $scope.addPost = function (theItem){
-          AdminService.newItem(theItem);
-          $location.path('/shop');
-        };
-        $scope.getPost = function (theItem){
-          AdminService.newItem(theItem);
-        };
-        $scope.editPost = function (theItem){
-          AdminService.newItem(theItem);
-        };
-        $scope.deletePost = function (theItem){
-          AdminService.deleteItem(theItem);
-        };
+     .controller('MainController', function ($scope, CommunityService, PostService, UserService, $location ) {
+       var vm = this;
+       $scope.getCommunity = function (item){
+         CommunityService.newCommunity(item);
+       };
+       $scope.getPost = function (item){
+         PostService.newPost(item);
+       };
+       $scope.getPress = function (item){
+         UserService.newPress(item);
+       };
+     })
+     .controller('AdminController', function ($scope, CommunityService, PostService, UserService, $location ) {
+       var vm = this;
 
-
-        $scope.addCommunity = function (theItem){
-            AdminService.newItem(theItem);
-            $location.path('/shop');
-          };
-          $scope.getCommunity = function (theItem){
-            AdminService.newItem(theItem);
-          };
-          $scope.editCommunity = function (theItem){
-            AdminService.newItem(theItem);
-          };
-          $scope.deleteCommunity = function (theItem){
-            AdminService.deleteItem(theItem);
-          };
-
-    });
+       $scope.addPost = function (item){
+           PostService.newPost(item);
+           $location.path('/admin');
+         };
+         $scope.getPost = function (item){
+           PostService.newPost(item);
+         };
+         $scope.editPost = function (item){
+           PostService.newPost(item);
+         };
+         $scope.deletePost = function (item){
+           PostService.deletePost(item);
+         };
 
 
-})();
+         $scope.addCommunity = function (item){
+             CommunityService.newCommunity(item);
+             $location.path('/communities');
+           };
+           $scope.getCommunity = function (item){
+             CommunityService.newCommunity(item);
+           };
+           $scope.editCommunity = function (item){
+             CommunityService.newCommunity(item);
+           };
+           $scope.deleteCommunity = function (item){
+             CommunityService.deleteCommunity(item);
+           };
+
+     });
+
+
+ })();
