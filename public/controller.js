@@ -4,48 +4,46 @@
     angular
     .module('betrApp')
 
-    .controller('MainController', function ($scope, CommunityService, PostService, UserService, $location ) {
+    .controller('MainController', function ($scope) {
       var vm = this;
-      $scope.getCommunity = function (item){
-        CommunityService.newCommunity(item);
+      $scope.getCommunity = function (theItem){
+        UserService.newItem(theItem);
       };
-      $scope.getPost = function (item){
-        PostService.newPost(item);
+      $scope.getPost = function (theItem){
+        UserService.newItem(theItem);
       };
-      $scope.getPress = function (item){
-        UserService.newPress(item);
+      $scope.getPress = function (theItem){
+        UserService.newItem(theItem);
       };
     })
-    .controller('AdminController', function ($scope, CommunityService, PostService, UserService, $location ) {
-      var vm = this;
-
-      $scope.addPost = function (item){
-          PostService.newPost(item);
-          $location.path('/admin');
+    .controller('AdminController', function ($scope) {
+      $scope.addPost = function (theItem){
+          AdminService.newItem(theItem);
+          $location.path('/shop');
         };
-        $scope.getPost = function (item){
-          PostService.newPost(item);
+        $scope.getPost = function (theItem){
+          AdminService.newItem(theItem);
         };
-        $scope.editPost = function (item){
-          PostService.newPost(item);
+        $scope.editPost = function (theItem){
+          AdminService.newItem(theItem);
         };
-        $scope.deletePost = function (item){
-          PostService.deletePost(item);
+        $scope.deletePost = function (theItem){
+          AdminService.deleteItem(theItem);
         };
 
 
-        $scope.addCommunity = function (item){
-            CommunityService.newCommunity(item);
-            $location.path('/communities');
+        $scope.addCommunity = function (theItem){
+            AdminService.newItem(theItem);
+            $location.path('/shop');
           };
-          $scope.getCommunity = function (item){
-            CommunityService.newCommunity(item);
+          $scope.getCommunity = function (theItem){
+            AdminService.newItem(theItem);
           };
-          $scope.editCommunity = function (item){
-            CommunityService.newCommunity(item);
+          $scope.editCommunity = function (theItem){
+            AdminService.newItem(theItem);
           };
-          $scope.deleteCommunity = function (item){
-            CommunityService.deleteCommunity(item);
+          $scope.deleteCommunity = function (theItem){
+            AdminService.deleteItem(theItem);
           };
 
     });
