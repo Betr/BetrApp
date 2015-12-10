@@ -8,6 +8,7 @@ import com.theironyard.services.PostRepository;
 import com.theironyard.services.UserRepository;
 import com.theironyard.utils.PasswordHash;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -101,54 +102,54 @@ public class BetrController {
     }
 
     @RequestMapping(path = "/posts", method = RequestMethod.POST)
-    public void addPost(HttpSession session, String communityName, String postName, String postBody, LocalDateTime postTime, MultipartFile postImage) throws Exception {
+    public void addPost(HttpSession session, @RequestBody Post post) throws Exception {
         String username = (String) session.getAttribute("username");
 
         if (username == null) {
             throw new Exception("You are not logged in.");
         }
-         if (!postImage.getContentType().startsWith("image")){
-             throw new Exception("Only images are allowed!");
-         }
-         File photoFile = File.createTempFile("postImage", postImage.getOriginalFilename(), new File("public"));
-         FileOutputStream fos = new FileOutputStream(photoFile);
-         fos.write(postImage.getBytes()); //to save to a file in the public folder
-
-        Post post = new Post();
-        post.communityName = communityName; //this should be a dropdown menu for the admin to select a community to avoid spelling errors
-        post.postName = postName;
-        post.postBody = postBody;
-        post.postTime = postTime;
-        post.filename = photoFile.getName();
+//         if (!postImage.getContentType().startsWith("image")){
+//             throw new Exception("Only images are allowed!");
+//         }
+//         File photoFile = File.createTempFile("postImage", postImage.getOriginalFilename(), new File("public"));
+//         FileOutputStream fos = new FileOutputStream(photoFile);
+//         fos.write(postImage.getBytes()); //to save to a file in the public folder
+//
+//        Post post = new Post();
+//        post.communityName = communityName; //this should be a dropdown menu for the admin to select a community to avoid spelling errors
+//        post.postName = postName;
+//        post.postBody = postBody;
+//        post.postTime = postTime;
+//        post.filename = photoFile.getName();
         posts.save(post);
     }
 
     @RequestMapping(path = "/posts", method = RequestMethod.PUT)
-    public void editPost(HttpSession session, String communityName, String postName, String postBody, Integer id, MultipartFile postImage) throws Exception {
+    public void editPost(HttpSession session, @RequestBody Post post) throws Exception {
         String username = (String) session.getAttribute("username");
 
         if (username == null) {
             throw new Exception("You are not logged in.");
         }
 
-        Post post = posts.findOne(id);
-        if (post.communityName!=null){
-                post.communityName = communityName; //this should be a dropdown menu for the admin to select a community to avoid spelling errors
-        }
-        if (post.postName!=null){
-               post.postName = postName;
-        }
-        if (post.postBody!=null){
-                post.postBody = postBody;
-        }
-        if (!postImage.isEmpty()) {
-            if (!postImage.getContentType().startsWith("image")) {
-                throw new Exception("Only images are allowed!");
-            }
-            File photoFile = File.createTempFile("postImage", postImage.getOriginalFilename(), new File("public"));
-            FileOutputStream fos = new FileOutputStream(photoFile);
-            fos.write(postImage.getBytes()); //to save to a file in the public folder
-        }
+//        Post post = posts.findOne(id);
+//        if (post.communityName!=null){
+//                post.communityName = communityName; //this should be a dropdown menu for the admin to select a community to avoid spelling errors
+//        }
+//        if (post.postName!=null){
+//               post.postName = postName;
+//        }
+//        if (post.postBody!=null){
+//                post.postBody = postBody;
+//        }
+//        if (!postImage.isEmpty()) {
+//            if (!postImage.getContentType().startsWith("image")) {
+//                throw new Exception("Only images are allowed!");
+//            }
+//            File photoFile = File.createTempFile("postImage", postImage.getOriginalFilename(), new File("public"));
+//            FileOutputStream fos = new FileOutputStream(photoFile);
+//            fos.write(postImage.getBytes()); //to save to a file in the public folder
+//        }
         posts.save(post);
     }
 
@@ -164,25 +165,25 @@ public class BetrController {
     }
 
     @RequestMapping(path = "/community", method = RequestMethod.POST)
-    public void addCommunity(HttpSession session, String name, int population, int goal, String description, MultipartFile communityImage) throws Exception {
+    public void addCommunity(HttpSession session, @RequestBody Community community) throws Exception {
         String username = (String) session.getAttribute("username");
         if (username == null) {
             throw new Exception("You are not logged in.");
         }
 
-        if (!communityImage.getContentType().startsWith("image")){
-            throw new Exception("Only images are allowed!");
-        }
-        File photoFile = File.createTempFile("communityImage", communityImage.getOriginalFilename(), new File("public"));
-        FileOutputStream fos = new FileOutputStream(photoFile);
-        fos.write(communityImage.getBytes()); //to save to a file in the public folder
-
-        Community community = new Community();
-        community.name = name;
-        community.population = population;
-        community.goal = goal;
-        community.description = description;
-        community.filename = photoFile.getName();
+//        if (!image.getContentType().startsWith("image")){
+//            throw new Exception("Only images are allowed!");
+//        }
+//        File photoFile = File.createTempFile("communityImage", communityImage.getOriginalFilename(), new File("public"));
+//        FileOutputStream fos = new FileOutputStream(photoFile);
+//        fos.write(communityImage.getBytes()); //to save to a file in the public folder
+//
+//        Community community = new Community();
+//        community.name = name;
+//        community.population = population;
+//        community.goal = goal;
+//        community.description = description;
+//        community.filename = photoFile.getName();
 
         communities.save(community);
     }
@@ -199,33 +200,33 @@ public class BetrController {
     }
 
     @RequestMapping(path = "/community", method = RequestMethod.PUT)
-    public void editCommunity(HttpSession session, String name, int population, int goal, Integer id, String description, MultipartFile communityImage) throws Exception {
+    public void editCommunity(HttpSession session, @RequestBody Community community) throws Exception {
         String username = (String) session.getAttribute("username");
         if (username == null) {
             throw new Exception("You are not logged in.");
         }
-
-        Community community = communities.findOne(id);  //When updating the previous input will remain.
-        if (community.name!=null){
-            community.name = name;
-        }
-        if (community.population!=0){
-            community.population = population;
-        }
-        if (community.goal!=0) {
-            community.goal = goal;
-        }
-        if (community.description!=null){
-            community.description = description;
-        }
-        if (!communityImage.isEmpty()){
-            if (!communityImage.getContentType().startsWith("image")){
-                throw new Exception("Only images are allowed!");
-            }
-            File photoFile = File.createTempFile("communityImage", communityImage.getOriginalFilename(), new File("public"));
-            FileOutputStream fos = new FileOutputStream(photoFile);
-            fos.write(communityImage.getBytes());
-        }
+//
+//        Community community = communities.findOne(id);  //When updating the previous input will remain.
+//        if (community.name!=null){
+//            community.name = name;
+//        }
+//        if (community.population!=0){
+//            community.population = population;
+//        }
+//        if (community.goal!=0) {
+//            community.goal = goal;
+//        }
+//        if (community.description!=null){
+//            community.description = description;
+//        }
+//        if (!communityImage.isEmpty()){
+//            if (!communityImage.getContentType().startsWith("image")){
+//                throw new Exception("Only images are allowed!");
+//            }
+//            File photoFile = File.createTempFile("communityImage", communityImage.getOriginalFilename(), new File("public"));
+//            FileOutputStream fos = new FileOutputStream(photoFile);
+//            fos.write(communityImage.getBytes());
+//        }
         communities.save(community);
     }
 
