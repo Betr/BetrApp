@@ -1,3 +1,4 @@
+
 package com.theironyard;
 import org.junit.Test;
 
@@ -13,12 +14,12 @@ import java.sql.SQLException;
 //@RunWith(SpringJUnit4ClassRunner.class)
 //@SpringApplicationConfiguration(classes = BetrApplication.class)
 //@WebAppConfiguration
-public class BetrApplicationTests {
+//public class BetrApplicationTests {
 
 //	public Connection startConnection() throws SQLException {
 //		Connection con = DriverManager.getConnection("jdbc:h2:./test");
 //		betr.createTables(con);
 //		return con;
 //	}
-
-}
+//
+//}
