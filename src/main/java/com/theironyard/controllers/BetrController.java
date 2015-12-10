@@ -17,9 +17,12 @@ import javax.annotation.PostConstruct;
 import javax.servlet.http.HttpSession;
 import java.io.File;
 import java.io.FileOutputStream;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.security.NoSuchAlgorithmException;
 import java.security.spec.InvalidKeySpecException;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 
 /**
  * Created by jessicahuffstutler on 12/7/15.
@@ -36,7 +39,9 @@ public class BetrController {
     @Autowired
     CommunityRepository communities;
 
-    //might be necessary for saving csv file and working with write and save file below
+
+    ArrayList<User> usersList = new ArrayList();
+
     static User user;
 
 
@@ -222,5 +227,38 @@ public class BetrController {
             fos.write(communityImage.getBytes());
         }
         communities.save(community);
+    }
+
+    @RequestMapping("/userInformation")
+    public void generateCsvFile(String fileName, ArrayList<User> usersList) throws Exception {
+        if(usersList == null) {
+            throw new Exception("There are no users.");
+        } else {
+            try{
+                FileWriter writer = new FileWriter(fileName);
+
+                writer.append("FirstName");
+                writer.append(',');
+                writer.append("LastName");
+                writer.append(',');
+                writer.append("Email");
+                writer.append('\n');
+
+                for (User user : usersList) {
+                    writer.append(user.firstName);
+                    writer.append(',');
+                    writer.append(user.lastName);
+                    writer.append(',');
+                    writer.append(user.email);
+                    writer.append('\n');
+                }
+
+                writer.flush();
+                writer.close();
+            } catch(IOException e){
+                e.printStackTrace();
+            }
+        }
+
     }
 }
