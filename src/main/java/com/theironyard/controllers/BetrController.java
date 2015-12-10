@@ -11,9 +11,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.annotation.PostConstruct;
 import javax.servlet.http.HttpSession;
+import java.io.File;
+import java.io.FileOutputStream;
 import java.security.NoSuchAlgorithmException;
 import java.security.spec.InvalidKeySpecException;
 import java.time.LocalDateTime;
@@ -101,16 +104,23 @@ public class BetrController {
             throw new Exception("An account with that username already exists.");
         }
 
+        users.save(user);
         session.setAttribute("username", username);
     }
 
-    @RequestMapping(path = "/posts", method = RequestMethod.POST)
-    public void addPost(HttpSession session, String communityName, String postName, String postBody, LocalDateTime postTime) throws Exception {
+    @RequestMapping("/addPost")
+    public void addPost(HttpSession session, String communityName, String postName, String postBody, LocalDateTime postTime, MultipartFile postImage) throws Exception {
         String username = (String) session.getAttribute("username");
 
         if (username == null) {
             throw new Exception("You are not logged in.");
         }
+         if (!postImage.getContentType().startsWith("image")){
+             throw new Exception("Only images are allowed!");
+         }
+         File photoFile = File.createTempFile("postImage", postImage.getOriginalFilename(), new File("public"));
+         FileOutputStream fos = new FileOutputStream(photoFile);
+         fos.write(postImage.getBytes()); //to save to a file in the public folder
 
         Post post = new Post();
         post.communityName = communityName; //this should be a dropdown menu for the admin to select a community to avoid spelling errors
@@ -120,8 +130,8 @@ public class BetrController {
         posts.save(post);
     }
 
-    @RequestMapping(path = "/posts", method = RequestMethod.PUT)
-    public void editPost(HttpSession session, String communityName, String postName, String postBody, Integer id) throws Exception {
+    @RequestMapping("/editPost")
+    public void editPost(HttpSession session, String communityName, String postName, String postBody, Integer id, MultipartFile postImage) throws Exception {
         String username = (String) session.getAttribute("username");
 
         if (username == null) {
@@ -129,13 +139,28 @@ public class BetrController {
         }
 
         Post post = posts.findOne(id);
-        post.communityName = communityName; //this should be a dropdown menu for the admin to select a community to avoid spelling errors
-        post.postName = postName;
-        post.postBody = postBody;
+        if (post.communityName!=null){
+                post.communityName = communityName; //this should be a dropdown menu for the admin to select a community to avoid spelling errors
+        }
+        if (post.postName!=null){
+               post.postName = postName;
+        }
+        if (post.postBody!=null){
+                post.postBody = postBody;
+        }
+        if (!postImage.isEmpty()) {
+            if (!postImage.getContentType().startsWith("image")) {
+                throw new Exception("Only images are allowed!");
+            }
+            File photoFile = File.createTempFile("communityImage", postImage.getOriginalFilename(), new File("public"));
+            FileOutputStream fos = new FileOutputStream(photoFile);
+            fos.write(postImage.getBytes()); //to save to a file in the public folder
+            post.postImage = postImage;
+        }
         posts.save(post);
     }
 
-    @RequestMapping(path = "/posts", method = RequestMethod.DELETE)
+    @RequestMapping("/deletePost")
     public void deletePost(HttpSession session, Integer id) throws Exception {
         String username = (String) session.getAttribute("username");
         if (username == null) {
@@ -146,22 +171,30 @@ public class BetrController {
         posts.delete(post);
     }
 
-    @RequestMapping(path = "/community",method = RequestMethod.POST)
-    public void addCommunity(HttpSession session, String name, int population, int goal, String description) throws Exception {
+    @RequestMapping("/addCommunity")
+    public void addCommunity(HttpSession session, String name, int population, int goal, String description, MultipartFile communityImage) throws Exception {
         String username = (String) session.getAttribute("username");
         if (username == null) {
             throw new Exception("You are not logged in.");
         }
+
+        if (!communityImage.getContentType().startsWith("image")){
+            throw new Exception("Only images are allowed!");
+        }
+        File photoFile = File.createTempFile("communityImage", communityImage.getOriginalFilename(), new File("public"));
+        FileOutputStream fos = new FileOutputStream(photoFile);
+        fos.write(communityImage.getBytes()); //to save to a file in the public folder
 
         Community community = new Community();
         community.name = name;
         community.population = population;
         community.goal = goal;
         community.description = description;
+
         communities.save(community);
     }
     
-    @RequestMapping(path = "/community", method = RequestMethod.DELETE)
+    @RequestMapping("/deleteCommunity")
     public void deleteCommunity(HttpSession session, Integer id) throws Exception {
         String username = (String) session.getAttribute("username");
         if (username == null) {
@@ -172,22 +205,35 @@ public class BetrController {
         communities.delete(community);
     }
 
-    @RequestMapping(path = "/community", method = RequestMethod.PUT)
-    public void updateCommunity(HttpSession session, String name, int population, int goal, Integer id, String description) throws Exception {
+    @RequestMapping("/editCommunity")
+    public void editCommunity(HttpSession session, String name, int population, int goal, Integer id, String description, MultipartFile communityImage) throws Exception {
         String username = (String) session.getAttribute("username");
         if (username == null) {
             throw new Exception("You are not logged in.");
         }
 
-        Community community = communities.findOne(id);
-        community.name = name;
-        community.population = population;
-        community.goal = goal;
-        community.description = description;
+        Community community = communities.findOne(id);  //When updating the previous input will remain.
+        if (community.name!=null){
+            community.name = name;
+        }
+        if (community.population!=0){
+            community.population = population;
+        }
+        if (community.goal!=0) {
+            community.goal = goal;
+        }
+        if (community.description!=null){
+            community.description = description;
+        }
+        if (!communityImage.isEmpty()){
+            if (!communityImage.getContentType().startsWith("image")){
+                throw new Exception("Only images are allowed!");
+            }
+            File photoFile = File.createTempFile("communityImage", communityImage.getOriginalFilename(), new File("public"));
+            FileOutputStream fos = new FileOutputStream(photoFile);
+            fos.write(communityImage.getBytes());
+            community.communityImage = communityImage;
+        }
         communities.save(community);
     }
-
-
-
-
 }

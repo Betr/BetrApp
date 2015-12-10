@@ -1,5 +1,7 @@
 package com.theironyard.entities;
 
+import org.springframework.web.multipart.MultipartFile;
+
 import javax.persistence.*;
 
 /**
@@ -27,4 +29,5 @@ public class Community {
     //multiple communities per user
     @ManyToOne
     public User user;
+    public MultipartFile communityImage;
 }
