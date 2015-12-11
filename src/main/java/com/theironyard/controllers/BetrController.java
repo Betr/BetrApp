@@ -56,16 +56,16 @@ public class BetrController {
     }
 
     @RequestMapping(path = "/login", method = RequestMethod.POST)
-    public void login(String email, String password, HttpSession session) throws Exception {
+    public void login(HttpSession session, @RequestBody User user) throws Exception {
 
-        User user = users.findOneByEmail(email);
-        if (user == null) {
+        User currentUser = users.findOneByEmail(user.email);
+        if (currentUser == null) {
             throw new Exception("User not found.");
-        } else if (!PasswordHash.validatePassword(password, user.password)) {
+        } else if (!PasswordHash.validatePassword(user.password, user.password)) {
             throw new Exception("Wrong password");
         }
 
-        session.setAttribute("email", email);
+        session.setAttribute("email", user.email);
     }
 
     @RequestMapping("/logout")
