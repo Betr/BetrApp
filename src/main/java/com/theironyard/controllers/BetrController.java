@@ -86,6 +86,7 @@ public class BetrController {
             } else {
                 user.isAdmin = false;
             }
+            user.password = PasswordHash.createHash(user.password);
             users.save(user);
 
 //            user.firstName = firstName;
