@@ -54,6 +54,10 @@
           templateUrl: 'views/login.html',
           controller: 'MainController as MainCtrl'
         })
+        .when('/register', {
+          templateUrl: 'views/register.html',
+          controller: 'MainController as MainCtrl'
+        })
         .otherwise("/404")
     });
 
