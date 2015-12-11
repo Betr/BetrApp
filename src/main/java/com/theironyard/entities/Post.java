@@ -34,4 +34,33 @@ public class Post {
     @ManyToOne
     public Community community;
     //public MultipartFile postImage;
+
+
+    public int getId() {
+        return id;
+    }
+
+    public String getCommunityName() {
+        return communityName;
+    }
+
+    public String getPostName() {
+        return postName;
+    }
+
+    public String getPostBody() {
+        return postBody;
+    }
+
+    public LocalDateTime getPostTime() {
+        return postTime;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public Community getCommunity() {
+        return community;
+    }
 }
