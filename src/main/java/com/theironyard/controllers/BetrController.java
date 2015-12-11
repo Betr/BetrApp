@@ -104,21 +104,21 @@ public class BetrController {
     }
 
     @RequestMapping(path = "/posts", method = RequestMethod.GET)
-    public List<Post> getPosts(HttpSession session, @RequestBody Post post) throws Exception {
+    public List<Post> getPosts(HttpSession session) throws Exception {
         String username = (String) session.getAttribute("username");
 
         return (List<Post>) posts.findAll();
     }
 
     @RequestMapping(path = "/communities", method = RequestMethod.GET)
-    public List<Community> getCommunities(HttpSession session, @RequestBody Community community) throws Exception {
+    public List<Community> getCommunities(HttpSession session) throws Exception {
         String username = (String) session.getAttribute("username");
 
         return (List<Community>) communities.findAll();
     }
 
     @RequestMapping(path = "/press", method = RequestMethod.GET)
-    public List<Press> getPress(HttpSession session, @RequestBody Press press) throws Exception {
+    public List<Press> getPress(HttpSession session) throws Exception {
         String username = (String) session.getAttribute("username");
 
         return (List<Press>) pressPosts.findAll();
