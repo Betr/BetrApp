@@ -25,9 +25,6 @@ public class Post {
     public String postBody;
 
     @Column(nullable = false)
-    public LocalDateTime postTime;
-
-    @Column(nullable = false)
     public String image;
 
     //multiple posts per community
@@ -50,10 +47,6 @@ public class Post {
 
     public String getPostBody() {
         return postBody;
-    }
-
-    public LocalDateTime getPostTime() {
-        return postTime;
     }
 
     public String getImage() {
