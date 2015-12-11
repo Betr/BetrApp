@@ -10,8 +10,12 @@
 
 
 
-<div class="aCommunity">
-       <input type="text" class="loginInput" name="emailLogin" ng-model="email" placeholder="Email" value=""><br>
-       <input type="password" class="loginInput" name="passwordLogin" ng-model="password" placeholder="Password" value=""><br>
+<div class="aNewUser">
+       <input type="text" class="loginInput" name="firstName" ng-model="addUser.firstName" placeholder="First Name" value=""><br>
+       <input type="text" class="loginInput" name="lastName" ng-model="addUser.lastName" placeholder="Last Name" value=""><br>
+       <input type="email" class="loginInput" name="emailLogin" ng-model="addUser.email" placeholder="Email" value=""><br>
+       <input type="password" class="loginInput" name="passwordLogin" ng-model="addUserpassword" placeholder="Password" value=""><br>
+       <input type="hidden" class="loginInput" name="admin" ng-model="addUser.isAdmin" placeholder="Admin" value=""><br>
+
  <button type="button" name="button" ng-click="addUser(addUser)">Register!</button>
  </div>
