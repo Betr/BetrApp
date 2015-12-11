@@ -20,9 +20,6 @@ public class User {
     public String lastName;
 
     @Column(nullable = false)
-    public String username;
-
-    @Column(nullable = false)
     public String password;
 
     @Column
@@ -41,10 +38,6 @@ public class User {
 
     public String getLastName() {
         return lastName;
-    }
-
-    public String getUsername() {
-        return username;
     }
 
     public String getPassword() {
