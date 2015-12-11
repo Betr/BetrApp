@@ -76,12 +76,12 @@ public class BetrController {
     }
 
     @RequestMapping(path = "/register", method = RequestMethod.POST)
-    public void register(HttpSession session, @RequestBody User user, String email, boolean isAdmin) throws Exception {
+    public void register(HttpSession session, @RequestBody User user) throws Exception {
 
-        User currentUser = users.findOneByEmail(email);
+        User currentUser = users.findOneByEmail(user.email);
         if (currentUser == null) {
 //            user = new User();
-            if (email.toLowerCase().equals("wilsonkate.kw@gmail.com") || email.equals("jessica.huffstutler@gmail.com" ) || email.equals("info@betrapp.co")) {
+            if (user.email.toLowerCase().equals("wilsonkate.kw@gmail.com") || user.email.equals("jessica.huffstutler@gmail.com" ) || user.email.equals("info@betrapp.co")) {
                 user.isAdmin = true;
             } else {
                 user.isAdmin = false;
@@ -99,7 +99,7 @@ public class BetrController {
         }
 
         users.save(user);
-        session.setAttribute("email", email);
+        session.setAttribute("email", user.email);
     }
 
     @RequestMapping(path = "/posts", method = RequestMethod.GET)
