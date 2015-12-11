@@ -16,6 +16,9 @@ public class Post {
     public int id;
 
     @Column(nullable = false)
+    public String image;
+
+    @Column(nullable = false)
     public String communityName;
 
     @Column(nullable = false)
@@ -23,9 +26,6 @@ public class Post {
 
     @Column(nullable = false)
     public String postBody;
-
-    @Column(nullable = false)
-    public String image;
 
     //multiple posts per community
     @ManyToOne
@@ -35,6 +35,10 @@ public class Post {
 
     public int getId() {
         return id;
+    }
+
+    public String getImage() {
+        return image;
     }
 
     public String getCommunityName() {
@@ -47,10 +51,6 @@ public class Post {
 
     public String getPostBody() {
         return postBody;
-    }
-
-    public String getImage() {
-        return image;
     }
 
     public Community getCommunity() {
