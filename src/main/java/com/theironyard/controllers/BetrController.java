@@ -76,7 +76,7 @@ public class BetrController {
         session.invalidate();
     }
 
-    @RequestMapping("/register")
+    @RequestMapping(path = "/register", method = RequestMethod.POST)
     public void register(String firstName, String lastName, String email, String password, boolean isAdmin, HttpSession session) throws Exception {
 
         User user = users.findOneByEmail(email);
