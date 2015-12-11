@@ -2,6 +2,7 @@ package com.theironyard.controllers;
 
 import com.theironyard.entities.Community;
 import com.theironyard.entities.Post;
+import com.theironyard.entities.Press;
 import com.theironyard.entities.User;
 import com.theironyard.services.CommunityRepository;
 import com.theironyard.services.PostRepository;
@@ -95,6 +96,27 @@ public class BetrController {
 
         users.save(user);
         session.setAttribute("username", username);
+    }
+
+    @RequestMapping(path = "/posts", method = RequestMethod.GET)
+    public Post getPosts(HttpSession session, @RequestBody Post post) throws Exception {
+        String username = (String) session.getAttribute("username");
+
+        return post;
+    }
+
+    @RequestMapping(path = "/communities", method = RequestMethod.GET)
+    public Community getCommunities(HttpSession session, @RequestBody Community community) throws Exception {
+        String username = (String) session.getAttribute("username");
+
+        return community;
+    }
+
+    @RequestMapping(path = "/press", method = RequestMethod.GET)
+    public Press getPress(HttpSession session, @RequestBody Press press) throws Exception {
+        String username = (String) session.getAttribute("username");
+
+        return press;
     }
 
     @RequestMapping(path = "/posts", method = RequestMethod.POST)
