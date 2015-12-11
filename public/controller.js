@@ -56,14 +56,14 @@
            vm.deleteCommunity = function (item){
              CommunityService.deleteCommunity(item);
            };
-           vm.addUser = function (item){
-               UserService.addUser(item);
-               $location.path('/home');
-             };
-             vm.logUser = function (item){
-                 LoginService.logUser(item);
-                 $location.path('/home');
-               };
+          //  vm.addUser = function (item){
+          //      UserService.addUser(item);
+          //      $location.path('/home');
+          //    };
+          //    vm.logUser = function (item){
+          //        LoginService.logUser(item);
+          //        $location.path('/home');
+          //      };
 
      });
 
