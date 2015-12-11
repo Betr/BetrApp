@@ -59,17 +59,30 @@
             })
 
     .factory('UserService', function ($http) {
-      var url = '/user';
+      var url = '/register';
       var addUser = function (addUser) {
             $http.post(url, addUser).then(function (res) {
               console.log(addUser);
             });
           };
+
       return {
         addUser: addUser,
 
     };
-  });
+  })
+  .factory('LoginService', function ($http) {
+    var url = '/login';
+    var logUser = function (logUser) {
+          $http.post(url, logUser).then(function (res) {
+            console.log(logUser);
+          });
+        };
 
+    return {
+      logUser: logUser,
+
+  };
+});
 
   })();

@@ -4,7 +4,7 @@
      angular
      .module('betrApp')
 
-     .controller('MainController', function ($scope, CommunityService, PostService, UserService, $location ) {
+     .controller('MainController', function ($scope, CommunityService, PostService, UserService, $location, LoginService ) {
        var vm = this;
        $scope.getCommunity = function (item){
          CommunityService.newCommunity(item);
@@ -19,8 +19,12 @@
            UserService.addUser(item);
            $location.path('/home');
          };
+         $scope.logUser = function (item){
+             LoginService.logUser(item);
+             $location.path('/home');
+           };
      })
-     .controller('AdminController', function ($scope, CommunityService, PostService, UserService, $location ) {
+     .controller('AdminController', function ($scope, CommunityService, PostService, UserService, $location, LoginService ) {
        var vm = this;
 
        $scope.addPost = function (item){
