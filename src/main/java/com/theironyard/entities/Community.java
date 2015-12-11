@@ -33,4 +33,33 @@ public class Community {
     @ManyToOne
     public User user;
     //public MultipartFile communityImage;
+
+
+    public int getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getPopulation() {
+        return population;
+    }
+
+    public int getGoal() {
+        return goal;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public User getUser() {
+        return user;
+    }
 }
