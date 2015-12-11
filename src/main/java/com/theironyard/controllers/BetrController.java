@@ -6,6 +6,7 @@ import com.theironyard.entities.Press;
 import com.theironyard.entities.User;
 import com.theironyard.services.CommunityRepository;
 import com.theironyard.services.PostRepository;
+import com.theironyard.services.PressRepository;
 import com.theironyard.services.UserRepository;
 import com.theironyard.utils.PasswordHash;
 import org.apache.tomcat.jni.Local;
@@ -27,6 +28,7 @@ import java.security.NoSuchAlgorithmException;
 import java.security.spec.InvalidKeySpecException;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by jessicahuffstutler on 12/7/15.
@@ -42,6 +44,9 @@ public class BetrController {
 
     @Autowired
     CommunityRepository communities;
+
+    @Autowired
+    PressRepository pressPosts;
 
     @RequestMapping("/user")
     public User getUser(HttpSession session) {
@@ -99,24 +104,24 @@ public class BetrController {
     }
 
     @RequestMapping(path = "/posts", method = RequestMethod.GET)
-    public Post getPosts(HttpSession session, @RequestBody Post post) throws Exception {
+    public List<Post> getPosts(HttpSession session, @RequestBody Post post) throws Exception {
         String username = (String) session.getAttribute("username");
 
-        return post;
+        return (List<Post>) posts.findAll();
     }
 
     @RequestMapping(path = "/communities", method = RequestMethod.GET)
-    public Community getCommunities(HttpSession session, @RequestBody Community community) throws Exception {
+    public List<Community> getCommunities(HttpSession session, @RequestBody Community community) throws Exception {
         String username = (String) session.getAttribute("username");
 
-        return community;
+        return (List<Community>) communities.findAll();
     }
 
     @RequestMapping(path = "/press", method = RequestMethod.GET)
-    public Press getPress(HttpSession session, @RequestBody Press press) throws Exception {
+    public List<Press> getPress(HttpSession session, @RequestBody Press press) throws Exception {
         String username = (String) session.getAttribute("username");
 
-        return press;
+        return (List<Press>) pressPosts.findAll();
     }
 
     @RequestMapping(path = "/posts", method = RequestMethod.POST)
