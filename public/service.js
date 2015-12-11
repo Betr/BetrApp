@@ -59,10 +59,11 @@
             })
 
     .factory('UserService', function ($http) {
-      var url = '/register';
+      var url = '/register/';
       var addUser = function (addUser) {
-            $http.post(url, addUser).then(function (res) {
+            return $http.post(url, addUser).then(function (res) {
               console.log(addUser);
+              console.log(res);
             });
           };
 
