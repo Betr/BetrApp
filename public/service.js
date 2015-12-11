@@ -59,8 +59,14 @@
             })
 
     .factory('UserService', function ($http) {
-      var url = '';
+      var url = '/user';
+      var addUser = function (addUser) {
+            $http.post(url, addUser).then(function (res) {
+              console.log(addUser);
+            });
+          };
       return {
+        addUser: addUser,
 
     };
   });

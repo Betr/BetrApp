@@ -15,14 +15,19 @@
        $scope.getPress = function (item){
          UserService.newPress(item);
        };
+       $scope.addUser = function (item){
+           UserService.addUser(item);
+           $location.path('/home');
+         };
      })
      .controller('AdminController', function ($scope, CommunityService, PostService, UserService, $location ) {
        var vm = this;
 
        $scope.addPost = function (item){
            PostService.newPost(item);
-          //  $location.path('/admin');
+           $location.path('/admin');
          };
+
          $scope.getPost = function (item){
            PostService.newPost(item);
          };
