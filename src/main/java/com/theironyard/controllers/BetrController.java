@@ -48,15 +48,14 @@ public class BetrController {
     @Autowired
     PressRepository pressPosts;
 
-    @RequestMapping("/user")
+    @RequestMapping(path = "/user", method = RequestMethod.GET)
     public User getUser(HttpSession session) {
         String email = (String) session.getAttribute("email");
         User user = users.findOneByEmail(email);
-
         return user;
     }
 
-    @RequestMapping("/login")
+    @RequestMapping(path = "/login", method = RequestMethod.POST)
     public void login(String email, String password, HttpSession session) throws Exception {
 
         User user = users.findOneByEmail(email);
@@ -94,7 +93,7 @@ public class BetrController {
             user.isAdmin = isAdmin;
             users.save(user);
         } else {
-            throw new Exception("An account with that username already exists.");
+            throw new Exception("An account with that email already exists.");
         }
 
         users.save(user);
