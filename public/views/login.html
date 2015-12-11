@@ -1,4 +1,3 @@
-<!-- create updates for all users and specific communities -->
 <a href="#/communities"><button class="btn" type="" name="">Communitites</button></a>
 <a href="#/editcommunities"><button class="btn" type="" name="">Edit Communities</button></a>
 <a href="#/home"><button class="btn" type="" name="">Logged in Home</button></a>
@@ -9,10 +8,9 @@
 <a href="#/payment"><button class="btn" type="" name="">Payment Popup</button></a>
 
 
- <div class="aPost">
-       <input type="text" name="image" ng-model="post.image" placeholder="Image Link" value=""><br>
-       <input type="text" name="communityName" ng-model="post.communityName" placeholder="Community Name" value=""><br>
-       <input type="text" name="postTitle" ng-model="post.postName" placeholder="Title" value=""><br>
-       <input type="text" name="update" ng-model="post.postBody" placeholder="Update Description" value=""><br><br>
- <button type="button" name="button" ng-click="addPost(newPost)">Add Update!</button>
+
+<div class="aCommunity">
+       <input type="text" class="loginInput" name="emailLogin" ng-model="email" placeholder="Email" value=""><br>
+       <input type="text" class="loginInput" name="passwordLogin" ng-model="password" placeholder="Password" value=""><br>
+ <button type="button" name="button" ng-click="addCommunity(newCommunity)">Login!</button>
  </div>
