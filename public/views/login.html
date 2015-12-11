@@ -1,5 +1,3 @@
-<!-- list of users, number of donations, emails to export -->
-
 <a href="#/communities"><button class="btn" type="" name="">Communitites</button></a>
 <a href="#/editcommunities"><button class="btn" type="" name="">Edit Communities</button></a>
 <a href="#/home"><button class="btn" type="" name="">Logged in Home</button></a>
@@ -9,6 +7,10 @@
 <a href="#/editpress"><button class="btn" type="" name="">Edit Press</button></a>
 <a href="#/payment"><button class="btn" type="" name="">Payment Popup</button></a>
 
-<br><br>
 
-<a href="/userinformation"><button class="btn" type="" name="">Get Users</button></a>
+
+<div class="aCommunity">
+       <input type="text" class="loginInput" name="emailLogin" ng-model="email" placeholder="Email" value=""><br>
+       <input type="text" class="loginInput" name="passwordLogin" ng-model="password" placeholder="Password" value=""><br>
+ <button type="button" name="button" ng-click="addCommunity(newCommunity)">Login!</button>
+ </div>
