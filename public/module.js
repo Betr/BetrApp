@@ -50,6 +50,10 @@
           templateUrl: 'adminViews/postAndUpdate.html',
           controller: 'AdminController as AdminCtrl'
         })
+        .when('/login', {
+          templateUrl: 'views/login.html',
+          controller: 'MainController as MainCtrl'
+        })
         .otherwise("/404")
     });
 
