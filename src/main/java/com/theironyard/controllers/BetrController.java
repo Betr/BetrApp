@@ -61,7 +61,7 @@ public class BetrController {
         User currentUser = users.findOneByEmail(user.email);
         if (currentUser == null) {
             throw new Exception("User not found.");
-        } else if (!PasswordHash.validatePassword(user.password, user.password)) {
+        } else if (!PasswordHash.validatePassword("password", user.password)) {
             throw new Exception("Wrong password");
         }
 
