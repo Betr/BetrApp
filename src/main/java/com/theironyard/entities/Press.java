@@ -27,4 +27,28 @@ public class Press {
 
     @Column(nullable = false)
     public String description;
+
+    public int getId() {
+        return id;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public String getByline() {
+        return byline;
+    }
+
+    public String getLink() {
+        return link;
+    }
+
+    public String getImageLink() {
+        return imageLink;
+    }
+
+    public String getDescription() {
+        return description;
+    }
 }
