@@ -76,22 +76,24 @@ public class BetrController {
     }
 
     @RequestMapping(path = "/register", method = RequestMethod.POST)
-    public void register(String firstName, String lastName, String email, String password, boolean isAdmin, HttpSession session) throws Exception {
+    public void register(HttpSession session, @RequestBody User user, String email, boolean isAdmin) throws Exception {
 
-        User user = users.findOneByEmail(email);
-        if (user == null) {
-            user = new User();
-            if (email.equals("wilsonkate.kw@gmail.com") || email.equals("jessica.huffstutler@gmail.com" ) || email.equals("info@betrapp.co")) {
-                isAdmin = true;
+        User currentUser = users.findOneByEmail(email);
+        if (currentUser == null) {
+//            user = new User();
+            if (email.toLowerCase().equals("wilsonkate.kw@gmail.com") || email.equals("jessica.huffstutler@gmail.com" ) || email.equals("info@betrapp.co")) {
+                user.isAdmin = true;
             } else {
-                isAdmin = false;
+                user.isAdmin = false;
             }
-            user.firstName = firstName;
-            user.lastName = lastName;
-            user.email = email;
-            user.password = PasswordHash.createHash(password);
-            user.isAdmin = isAdmin;
             users.save(user);
+
+//            user.firstName = firstName;
+//            user.lastName = lastName;
+//            user.email = email;
+//            user.password = PasswordHash.createHash(password);
+//            user.isAdmin = isAdmin;
+//            users.save(user);
         } else {
             throw new Exception("An account with that email already exists.");
         }
