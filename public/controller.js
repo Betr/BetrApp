@@ -6,57 +6,64 @@
 
      .controller('MainController', function ($scope, CommunityService, PostService, UserService, $location, LoginService ) {
        var vm = this;
-       $scope.getCommunity = function (item){
+       vm.getCommunity = function (item){
          CommunityService.newCommunity(item);
        };
-       $scope.getPost = function (item){
+       vm.getPost = function (item){
          PostService.newPost(item);
        };
-       $scope.getPress = function (item){
+       vm.getPress = function (item){
          UserService.newPress(item);
        };
-       $scope.addUser = function (item){
+       vm.addUser = function (item){
            UserService.addUser(item);
            $location.path('/home');
          };
-         $scope.logUser = function (item){
+         vm.logUser = function (item){
              LoginService.logUser(item);
              $location.path('/home');
            };
      })
-     .controller('AdminController', function ($scope, CommunityService, PostService, UserService, $location, LoginService ) {
+     .controller('AdminController', function (vm, CommunityService, PostService, UserService, $location, LoginService ) {
        var vm = this;
 
-       $scope.addPost = function (item){
+       vm.addPost = function (item){
            PostService.newPost(item);
            $location.path('/admin');
          };
 
-         $scope.getPost = function (item){
+         vm.getPost = function (item){
            PostService.newPost(item);
          };
-         $scope.editPost = function (item){
+         vm.editPost = function (item){
            PostService.newPost(item);
          };
-         $scope.deletePost = function (item){
+         vm.deletePost = function (item){
            PostService.deletePost(item);
          };
 
-
-         $scope.addCommunity = function (item){
+         vm.addCommunity = function (item){
            console.log("controller item", item)
              CommunityService.newCommunity(item);
              $location.path('/communities');
            };
-           $scope.getCommunity = function (item){
+           vm.getCommunity = function (item){
              CommunityService.newCommunity(item);
            };
-           $scope.editCommunity = function (item){
+           vm.editCommunity = function (item){
              CommunityService.newCommunity(item);
            };
-           $scope.deleteCommunity = function (item){
+           vm.deleteCommunity = function (item){
              CommunityService.deleteCommunity(item);
            };
+           vm.addUser = function (item){
+               UserService.addUser(item);
+               $location.path('/home');
+             };
+             vm.logUser = function (item){
+                 LoginService.logUser(item);
+                 $location.path('/home');
+               };
 
      });
 
