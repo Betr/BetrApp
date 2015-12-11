@@ -8,11 +8,20 @@
 <a href="#/payment"><button class="btn" type="" name="">Payment Popup</button></a>
 <a href="#/login"><button class="btn" type="" name="">Login</button></a>
 
-<!--
 <div class="aPress">
-      <input type="text" name="image" ng-model="newCommunity.image" placeholder="Image Link" value=""><br>
-      <input type="text" name="communityName" ng-model="newCommunity.name" placeholder="Community Name" value=""><br>
-      <input type="text" name="population" ng-model="newcommunity.population" placeholder="Population of Women" value=""><br>
-      <input type="text" name="description" ng-model="newCommunity.description" placeholder="Description" value=""><br><br>
-<button type="button" name="button" ng-click="addCommunity(newCommuntiy)">Add a Community!</button>
-</div> -->
+      <input type="text" name="image" ng-model="newPress.image" placeholder="Image Link" value=""><br>
+      <input type="text" name="communityName" ng-model="newPress.title" placeholder="Title of Article" value=""><br>
+      <input type="text" name="population" ng-model="newPress.byline" placeholder="Byline" value=""><br>
+      <input type="text" name="population" ng-model="newPress.link" placeholder="Link" value=""><br>
+      <input type="text" name="description" ng-model="newPress.description" placeholder="Description" value=""><br><br>
+<button type="button" name="button" ng-click="addPress(newPress)">Post New Press!</button>
+</div>
+
+<article class="newPosts" ng-repeat="item in items" >
+<img ng-src="{{newPost.image}}">
+<h4>{{newCommunity.name}}</h4>
+<h4>{{newPost.name}}</h4>
+<h2>{{newCommunity.population}}</h2>
+<p>{{newPost.description}}</p>
+</article>
+<br><br>

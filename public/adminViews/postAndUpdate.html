@@ -17,3 +17,12 @@
        <input type="text" name="update" ng-model="newPost.postBody" placeholder="Update Description" value=""><br><br>
  <button type="button" name="button" ng-click="addPost(newPost)">Add Update!</button>
  </div>
+
+ <article class="newPosts" ng-repeat="item in items" >
+ <img ng-src="{{newPost.image}}">
+ <h4>{{newCommunity.name}}</h4>
+ <h4>{{newPost.name}}</h4>
+ <h2>{{newCommunity.population}}</h2>
+ <p>{{newPost.description}}</p>
+ </article>
+ <br><br>

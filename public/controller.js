@@ -8,6 +8,7 @@
        var vm = this;
        vm.getCommunity = function (item){
          CommunityService.newCommunity(item);
+         vm.item = items;
        };
        vm.getPost = function (item){
          PostService.newPost(item);
