@@ -56,16 +56,16 @@ public class BetrController {
     }
 
     @RequestMapping(path = "/login", method = RequestMethod.POST)
-    public void login(HttpSession session, @RequestBody User user) throws Exception {
+    public void login(HttpSession session, String email, String password) throws Exception {
 
-        User currentUser = users.findOneByEmail(user.email);
+        User currentUser = users.findOneByEmail(email);
         if (currentUser == null) {
             throw new Exception("User not found.");
-        } else if (!PasswordHash.validatePassword("password", user.password)) {
+        } else if (!PasswordHash.validatePassword(password, currentUser.password)) {
             throw new Exception("Wrong password");
         }
 
-        session.setAttribute("email", user.email);
+        session.setAttribute("email", email);
     }
 
     @RequestMapping("/logout")
@@ -81,7 +81,7 @@ public class BetrController {
         User currentUser = users.findOneByEmail(user.email);
         if (currentUser == null) {
 //            user = new User();
-            if (user.email.toLowerCase().equals("wilsonkate.kw@gmail.com") || user.email.equals("jessica.huffstutler@gmail.com" ) || user.email.equals("info@betrapp.co")) {
+            if (user.email.toLowerCase().equals("wilsonkate.kw@gmail.com") || user.email.equals("jessica.huffstutler@gmail.com") || user.email.equals("info@betrapp.co")) {
                 user.isAdmin = true;
             } else {
                 user.isAdmin = false;
