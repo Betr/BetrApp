@@ -50,37 +50,36 @@ public class BetrController {
 
     @RequestMapping("/user")
     public User getUser(HttpSession session) {
-        String username = (String) session.getAttribute("username");
-        User user = users.findOneByUsername(username);
+        String email = (String) session.getAttribute("email");
+        User user = users.findOneByEmail(email);
 
         return user;
     }
 
     @RequestMapping("/login")
-    public void login(String username, String password, HttpSession session) throws Exception {
+    public void login(String email, String password, HttpSession session) throws Exception {
 
-        User user = users.findOneByUsername(username);
+        User user = users.findOneByEmail(email);
         if (user == null) {
             throw new Exception("User not found.");
         } else if (!PasswordHash.validatePassword(password, user.password)) {
             throw new Exception("Wrong password");
         }
 
-        session.setAttribute("username", username);
-
+        session.setAttribute("email", email);
     }
 
     @RequestMapping("/logout")
     public void logout(HttpSession session) {
 
-        session.getAttribute("username");
+        session.getAttribute("email");
         session.invalidate();
     }
 
     @RequestMapping("/register")
-    public void register(String firstName, String lastName, String email, String username, String password, boolean isAdmin, HttpSession session) throws Exception {
+    public void register(String firstName, String lastName, String email, String password, boolean isAdmin, HttpSession session) throws Exception {
 
-        User user = users.findOneByUsername(username);
+        User user = users.findOneByEmail(email);
         if (user == null) {
             user = new User();
             if (email.equals("wilsonkate.kw@gmail.com") || email.equals("jessica.huffstutler@gmail.com" ) || email.equals("info@betrapp.co")) {
@@ -91,7 +90,6 @@ public class BetrController {
             user.firstName = firstName;
             user.lastName = lastName;
             user.email = email;
-            user.username = username;
             user.password = PasswordHash.createHash(password);
             user.isAdmin = isAdmin;
             users.save(user);
@@ -100,33 +98,33 @@ public class BetrController {
         }
 
         users.save(user);
-        session.setAttribute("username", username);
+        session.setAttribute("email", email);
     }
 
     @RequestMapping(path = "/posts", method = RequestMethod.GET)
     public List<Post> getPosts(HttpSession session) throws Exception {
-        String username = (String) session.getAttribute("username");
+        String email = (String) session.getAttribute("email");
 
         return (List<Post>) posts.findAll();
     }
 
     @RequestMapping(path = "/communities", method = RequestMethod.GET)
     public List<Community> getCommunities(HttpSession session) throws Exception {
-        String username = (String) session.getAttribute("username");
+        String email = (String) session.getAttribute("email");
 
         return (List<Community>) communities.findAll();
     }
 
     @RequestMapping(path = "/press", method = RequestMethod.GET)
     public List<Press> getPress(HttpSession session) throws Exception {
-        String username = (String) session.getAttribute("username");
+        String email = (String) session.getAttribute("email");
 
         return (List<Press>) pressPosts.findAll();
     }
 
     @RequestMapping(path = "/posts", method = RequestMethod.POST)
     public void addPost(HttpSession session, @RequestBody Post post) throws Exception {
-        String username = (String) session.getAttribute("username");
+//        String email = (String) session.getAttribute("email");
 
 //        if (username == null) {
 //            throw new Exception("You are not logged in.");
@@ -149,7 +147,7 @@ public class BetrController {
 
     @RequestMapping(path = "/posts", method = RequestMethod.PUT)
     public void editPost(HttpSession session, @RequestBody Post post) throws Exception {
-        String username = (String) session.getAttribute("username");
+        String email = (String) session.getAttribute("email");
 
 //        if (username == null) {
 //            throw new Exception("You are not logged in.");
@@ -178,8 +176,8 @@ public class BetrController {
 
     @RequestMapping(path = "/posts", method = RequestMethod.DELETE)
     public void deletePost(HttpSession session, Integer id) throws Exception {
-        String username = (String) session.getAttribute("username");
-//        if (username == null) {
+        String email = (String) session.getAttribute("email");
+//        if (email == null) {
 //            throw new Exception("You are not logged in.");
 //        }
 
@@ -189,8 +187,8 @@ public class BetrController {
 
     @RequestMapping(path = "/community", method = RequestMethod.POST)
        public void addCommunity(HttpSession session, @RequestBody Community community) throws Exception {
-//        String username = (String) session.getAttribute("username");
-//        if (username == null) {
+//        String email = (String) session.getAttribute("email");
+//        if (email == null) {
 //            throw new Exception("You are not logged in.");
 //        }
 
@@ -213,8 +211,8 @@ public class BetrController {
     
     @RequestMapping(path = "/community", method = RequestMethod.DELETE)
     public void deleteCommunity(HttpSession session, Integer id) throws Exception {
-        String username = (String) session.getAttribute("username");
-//        if (username == null) {
+        String email = (String) session.getAttribute("email");
+//        if (email == null) {
 //            throw new Exception("You are not logged in.");
 //        }
 
@@ -224,8 +222,8 @@ public class BetrController {
 
     @RequestMapping(path = "/community", method = RequestMethod.PUT)
     public void editCommunity(HttpSession session, @RequestBody Community community) throws Exception {
-        String username = (String) session.getAttribute("username");
-//        if (username == null) {
+        String email = (String) session.getAttribute("email");
+//        if (email == null) {
 //            throw new Exception("You are not logged in.");
 //        }
 //
