@@ -188,7 +188,7 @@ public class BetrController {
     }
 
     @RequestMapping(path = "/community", method = RequestMethod.POST)
-    public void addCommunity(HttpSession session, @RequestBody Community community) throws Exception {
+       public void addCommunity(HttpSession session, @RequestBody Community community) throws Exception {
 //        String username = (String) session.getAttribute("username");
 //        if (username == null) {
 //            throw new Exception("You are not logged in.");
