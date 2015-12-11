@@ -21,7 +21,7 @@
 
        $scope.addPost = function (item){
            PostService.newPost(item);
-           $location.path('/admin');
+          //  $location.path('/admin');
          };
          $scope.getPost = function (item){
            PostService.newPost(item);
