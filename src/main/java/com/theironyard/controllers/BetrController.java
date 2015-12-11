@@ -94,7 +94,7 @@ public class BetrController {
             user.isAdmin = isAdmin;
             users.save(user);
         } else {
-            throw new Exception("An account with that username already exists.");
+            throw new Exception("An account with that email already exists.");
         }
 
         users.save(user);
