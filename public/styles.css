@@ -150,3 +150,12 @@ footer {
 
 a {
   text-decoration: none; }
+
+.theCommunities {
+  width: 80%;
+  margin: 0 auto;
+  text-align: left;
+  display: block; }
+  .theCommunities img {
+    display: inline-block;
+    max-height: 120px; }
