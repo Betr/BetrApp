@@ -6,6 +6,7 @@
     .module('betrApp')
     .factory('CommunityService', function ($http) {
       var url = '/community';
+      var getUrl = '/communities';
       var addCommunity = function (newCommunity) {
           console.log(newCommunity);
             $http.post(url, newCommunity).then(function (res) {
@@ -14,7 +15,8 @@
           };
 
           var getCommunity = function () {
-            return $http.get(url);
+            console.log('in community service');
+            return $http.get(getUrl);
           };
           var editCommunity = function () {
             return $http.put(url + id, data);

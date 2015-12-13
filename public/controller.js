@@ -6,8 +6,9 @@
 
      .controller('MainController', function ($scope, CommunityService, PostService, UserService, $location, LoginService ) {
        var vm = this;
-       vm.getCommunity = function (item){
-         CommunityService.newCommunity(item);
+       vm.getCommunity = function (){
+         CommunityService.newCommunity().then(function(){vm.item = items;});
+
        };
        vm.getPost = function (item){
          PostService.newPost(item);
@@ -24,7 +25,7 @@
              $location.path('/home');
            };
      })
-     .controller('AdminController', function (vm, CommunityService, PostService, UserService, $location, LoginService ) {
+     .controller('AdminController', function ($scope, CommunityService, PostService, UserService, $location, LoginService ) {
        var vm = this;
 
        vm.addPost = function (item){
@@ -45,11 +46,13 @@
          vm.addCommunity = function (item){
            console.log("controller item", item)
              CommunityService.newCommunity(item);
-             $location.path('/communities');
+            // $location.path('/communities');
            };
-           vm.getCommunity = function (item){
-             CommunityService.newCommunity(item);
+           vm.getCommunity = function (){
+             console.log("in admin controller");
+             CommunityService.getCommunity().then(function(res){vm.items = res.data;});
            };
+           vm.getCommunity();
            vm.editCommunity = function (item){
              CommunityService.newCommunity(item);
            };
