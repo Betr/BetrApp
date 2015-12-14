@@ -18,11 +18,11 @@
 </div>
 
 
-<article class="newPress" ng-repeat="pressItem in AdminCtrl.items" >
-<img ng-src="{{item.imageLink}}">
-<h4>{{item.name}}</h4>
-<h4>{{item.name}}</h4>
-<h2>{{item.population}}</h2>
-<p>{{item.description}}</p>
+<article class="newPress" ng-repeat="pressItem in AdminCtrl.pressItems" >
+<img ng-src="{{pressItem.imageLink}}">
+<h4>{{pressItem.title}}</h4>
+<h4>{{pressItem.byline}}</h4>
+<h2>{{pressItem.link}}</h2>
+<p>{{pressItem.description}}</p>
 </article>
 <br><br>

@@ -151,11 +151,12 @@ footer {
 a {
   text-decoration: none; }
 
-.theCommunities {
+.theCommunities, .newPress, .newPosts {
   width: 80%;
   margin: 0 auto;
   text-align: left;
   display: block; }
-  .theCommunities img {
-    display: inline-block;
-    max-height: 120px; }
+
+.theCommunityPage, .theCommunities, .newPress, .newPosts img {
+  display: inline-block;
+  max-height: 120px; }
