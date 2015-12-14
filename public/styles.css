@@ -35,6 +35,9 @@ h2 {
   font-size: 2em;
   display: inline; }
 
+a:hover {
+  text-decoration: none; }
+
 .pinkDiv {
   background-color: #9C27B0;
   height: 170px;
@@ -185,6 +188,11 @@ body {
   padding: 12px 16px 12px 16px;
   font-size: 24px;
   font-family: 'Poiret One', cursive; }
+
+.logBtn:hover {
+  border: solid 2px #8BC34A;
+  color: #8BC34A;
+  background-color: white; }
 
 .loginH1 {
   color: #9C27B0;
