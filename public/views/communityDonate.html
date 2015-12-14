@@ -11,10 +11,11 @@
 <a href="#/login"><button class="btn" type="" name="">Login</button></a>
 
 
-<article class="theCommunities" ng-repeat="item in AdminCtrl.items" >
-<img ng-src={{item.image}}>
+<article class="theCommunityPage" ng-repeat="item in AdminCtrl.items" >
+<img ng-src="{{item.image}}">
 <h4>{{item.name}}</h4>
-<h5>{{item.population}}</h5>
+<h4>{{item.name}}</h4>
+<h2>{{item.population}}</h2>
 <p>{{item.description}}</p>
 </article>
 <br><br>

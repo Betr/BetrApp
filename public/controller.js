@@ -4,7 +4,7 @@
      angular
      .module('betrApp')
 
-     .controller('MainController', function ($scope, CommunityService, PostService, UserService, $location, LoginService ) {
+     .controller('MainController', function ($scope, PressService, CommunityService, PostService, UserService, $location, LoginService ) {
        var vm = this;
        vm.getCommunity = function (){
          CommunityService.newCommunity().then(function(){vm.item = items;});
@@ -25,22 +25,22 @@
              $location.path('/home');
            };
      })
-     .controller('AdminController', function ($scope, CommunityService, PostService, UserService, $location, LoginService ) {
+     .controller('AdminController', function ($scope, PressService, CommunityService, PostService, UserService, $location, LoginService ) {
        var vm = this;
 
-       vm.addPost = function (item){
-           PostService.newPost(item);
+       vm.addPost = function (postItem){
+           PostService.newPost(postItem);
            $location.path('/admin');
          };
 
-         vm.getPost = function (item){
-           PostService.newPost(item);
+         vm.getPost = function (postItem){
+           PostService.newPost(postItem);
          };
-         vm.editPost = function (item){
-           PostService.newPost(item);
+         vm.editPost = function (postItem){
+           PostService.newPost(postItem);
          };
-         vm.deletePost = function (item){
-           PostService.deletePost(item);
+         vm.deletePost = function (postItem){
+           PostService.deletePost(postItem);
          };
 
          vm.addCommunity = function (item){
@@ -67,6 +67,21 @@
           //        LoginService.logUser(item);
           //        $location.path('/home');
           //      };
+
+          vm.addPress = function (pressItem){
+              PressService.newPress(pressItem);
+              $location.path('/admin');
+            };
+
+            vm.getPress = function (pressItem){
+              PressService.newPress(pressItem);
+            };
+            vm.editPress = function (pressItem){
+              PressService.newPress(pressItem);
+            };
+            vm.deletePress = function (pressItem){
+              PressService.deletePress(pressItem);
+            };
 
      });
 
