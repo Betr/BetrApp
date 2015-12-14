@@ -10,14 +10,20 @@
 <a href="#/payment"><button class="btn" type="" name="">Payment Popup</button></a>
 <a href="#/login"><button class="btn" type="" name="">Login</button></a>
 
+<div class="communityDisplay">
 
-<article class="theCommunityPage" ng-repeat="item in AdminCtrl.items" >
-<img ng-src="{{item.image}}">
-<h4>{{item.name}}</h4>
-<h4>{{item.name}}</h4>
-<h2>{{item.population}}</h2>
-<p>{{item.description}}</p>
-<button class="btn logBtn" ng-click='open("lg")'>Donate - Open Modal Dialog</button>
+ <article class="theCommunities" ng-repeat="item in AdminCtrl.items" >
+     <div class="comDiv">
+         <img ng-src={{item.image}}>
+             <div class="comText">
+                <h1 class="comName" >{{item.name}}</h1>
+                <h3 class="population">Population of {{item.population}}</h3>
+                <h5 class='popPar'>{{item.description}}</h5>
+                <button style="margin:0; padding:5px;" class="btn logBtn " ng-click='open("lg")'>Donate</button>
 
-</article>
-<br><br>
+            </div>
+
+     </div>
+ </article>
+ <br><br>
+</div>
