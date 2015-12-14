@@ -62,7 +62,17 @@ public class BetrController {
     }
 
     @RequestMapping(path = "/checkout", method = RequestMethod.GET)
-    public Object checkout(String nonce) {
+    public Object getCheckout(String nonce) {
+
+        TransactionRequest request = new TransactionRequest()
+                .amount(new BigDecimal("100.00"))
+                .paymentMethodNonce(nonce);
+
+        Result<Transaction> result = gateway.transaction().sale(request);
+        return "/checkout";
+    }
+    @RequestMapping(path = "/checkout", method = RequestMethod.POST)
+    public Object addCheckout(String nonce) {
 
         TransactionRequest request = new TransactionRequest()
                 .amount(new BigDecimal("100.00"))
