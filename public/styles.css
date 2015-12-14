@@ -151,11 +151,36 @@ footer {
 a {
   text-decoration: none; }
 
-.theCommunities {
+.theCommunities, .newPress {
   width: 80%;
   margin: 0 auto;
   text-align: left;
   display: block; }
-  .theCommunities img {
+  .theCommunities img, .newPress img {
     display: inline-block;
     max-height: 120px; }
+
+body {
+  background-color: #2196F3; }
+
+.aLogin {
+  margin-left: 35%;
+  margin-top: 15%;
+  background-color: #9C27B0;
+  width: 30%;
+  height: 220px;
+  border-radius: 10%; }
+
+.loginInput {
+  margin-left: 10%;
+  width: 80%;
+  height: 34px;
+  margin-top: 9%;
+  background-color: #f5f5f5;
+  border-radius: 5%; }
+
+.logButton {
+  margin-top: 8%;
+  width: 50%;
+  margin-left: 25%;
+  border-radius: 4%; }
