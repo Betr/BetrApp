@@ -1,5 +1,7 @@
 package com.theironyard.controllers;
 
+import com.braintreegateway.BraintreeGateway;
+import com.braintreegateway.Environment;
 import com.theironyard.entities.Community;
 import com.theironyard.entities.Post;
 import com.theironyard.entities.Press;
@@ -11,7 +13,6 @@ import com.theironyard.services.UserRepository;
 import com.theironyard.utils.PasswordHash;
 import org.apache.tomcat.jni.Local;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.env.Environment;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -50,12 +51,12 @@ public class BetrController {
     PressRepository pressPosts;
 
 
-//    BraintreeGateway gateway = new BraintreeGateway(
-//            Environment.SANDBOX,
-//            "3wgr8r65y4drztqq",
-//            "36p4rcv9vr3fc2wf",
-//            "5a07cb5dc3f76c8274400b2e24e68ec4"
-//    );
+    private static BraintreeGateway gateway = new BraintreeGateway(
+            Environment.SANDBOX,
+            "3wgr8r65y4drztqq",
+            "36p4rcv9vr3fc2wf",
+            "5a07cb5dc3f76c8274400b2e24e68ec4"
+    );
 
     @RequestMapping(path = "/user", method = RequestMethod.GET)
     public User getUser(HttpSession session) {
