@@ -1,4 +1,4 @@
-<!-- form to create, edit, and delete communities -->
+ class='form-control'<!-- form to create, edit, and delete communities -->
 <a href="#/communities"><button class="btn" type="" name="">Communitites</button></a>
 <a href="#/editcommunities"><button class="btn" type="" name="">Edit Communities</button></a>
 <a href="#/home"><button class="btn" type="" name="">Logged in Home</button></a>
@@ -9,14 +9,22 @@
 <a href="#/payment"><button class="btn" type="" name="">Payment Popup</button></a>
 <a href="#/login"><button class="btn" type="" name="">Login</button></a>
 
-<div class="aCommunity">
-       <input type="text" name="image" ng-model="newCommunity.image" placeholder="Image Link" value=""><br>
-       <input type="text" name="communityName" ng-model="newCommunity.name" placeholder="Community Name" value=""><br>
-       <input type="number" name="population" ng-model="newCommunity.population" placeholder="Population of Women" value=""><br>
-       <input type="text" name="description" ng-model="newCommunity.description" placeholder="Description" value=""><br><br>
- <button type="button" name="button" ng-click="AdminCtrl.addCommunity(newCommunity)">Add a Community!</button>
- </div>
 
+<div class='logDiv'>
+
+  <h1  class="loginH1">betr</h1>
+  <h5 class="loginH2">Better Health. Better Life</h5>
+</div>
+
+<div class="aLogin">
+       <input type="text" name="image" ng-model="newCommunity.image" placeholder="Image Link" value="" class="form-control loginInput"><br>
+       <input type="text" name="communityName" ng-model="newCommunity.name" placeholder="Community Name" value="" class="form-control"><br>
+       <input type="number" name="population" ng-model="newCommunity.population" placeholder="Population of Women" value="" class="form-control"><br>
+       <input type="text" name="description" ng-model="newCommunity.description" placeholder="Description" value="" class="form-control"><br><br>
+ <button class="btn logBtn" type="button" name="button" ng-click="AdminCtrl.addCommunity(newCommunity)">Add a Community!</button>
+
+ </div>
+<br><br><br>
 
  <article class="theCommunities" ng-repeat="item in AdminCtrl.items" >
  <img ng-src={{item.image}}>
