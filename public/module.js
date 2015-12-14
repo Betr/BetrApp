@@ -17,7 +17,7 @@
         })
         .when('/communities', {
           templateUrl: 'views/communityDonate.html',
-          controller: 'MainController as MainCtrl'
+          controller: 'AdminController as AdminCtrl'
         })
         .when('/payment', {
           templateUrl: 'views/popup.html',
