@@ -59,6 +59,32 @@
                 getPost: getPost
               };
             })
+            .factory('PressService', function ($http) {
+              var url = '/press';
+              var addPress = function (newPress) {
+                    $http.post(url, newPress).then(function (res) {
+                      console.log(newPress);
+                    });
+                  };
+
+                  var getPress = function () {
+                    return $http.get(url);
+                  };
+                  var editPress = function () {
+                    return $http.put(url + id, data);
+                  };
+                  var deletePress = function (item) {
+                     $http.delete(url + "/" + item._id);
+                  };
+
+                  return {
+                    newPress: addPress,
+                    getPress: getPress,
+                    editPress: editPress,
+                    deletePress: deletePress,
+                    getPress: getPress
+                  };
+                })
 
     .factory('UserService', function ($http) {
       var url = '/register/';
