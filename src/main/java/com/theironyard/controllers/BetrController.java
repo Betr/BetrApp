@@ -1,6 +1,7 @@
 package com.theironyard.controllers;
 
 import com.braintreegateway.BraintreeGateway;
+import com.braintreegateway.ClientTokenRequest;
 import com.braintreegateway.Environment;
 import com.theironyard.entities.Community;
 import com.theironyard.entities.Post;
@@ -50,13 +51,18 @@ public class BetrController {
     @Autowired
     PressRepository pressPosts;
 
-
     private static BraintreeGateway gateway = new BraintreeGateway(
             Environment.SANDBOX,
             "3wgr8r65y4drztqq",
             "36p4rcv9vr3fc2wf",
             "5a07cb5dc3f76c8274400b2e24e68ec4"
     );
+
+    ClientTokenRequest clientTokenRequest = new ClientTokenRequest()
+            .customerId("");
+    String clientToken = gateway.clientToken().generate(clientTokenRequest);
+
+    
 
     @RequestMapping(path = "/user", method = RequestMethod.GET)
     public User getUser(HttpSession session) {
