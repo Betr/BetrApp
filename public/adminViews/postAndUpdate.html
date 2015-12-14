@@ -11,11 +11,11 @@
 
 
  <div class="aPost">
-       <input type="text" name="image" ng-model="newPost.image" placeholder="Image Link" value=""><br>
-       <input type="text" name="communityName" ng-model="newPost.communityName" placeholder="Community Name" value=""><br>
-       <input type="text" name="postTitle" ng-model="newPost.postName" placeholder="Title" value=""><br>
-       <input type="text" name="update" ng-model="newPost.postBody" placeholder="Update Description" value=""><br><br>
- <button type="button" name="button" ng-click="AdminCtrl.addPost(newPost)">Add Update</button>
+       <input class="form-control" type="text" name="image" ng-model="newPost.image" placeholder="Image Link" value=""><br>
+       <input class="form-control" type="text" name="communityName" ng-model="newPost.communityName" placeholder="Community Name" value=""><br>
+       <input class="form-control" type="text" name="postTitle" ng-model="newPost.postName" placeholder="Title" value=""><br>
+       <input class="form-control" type="text" name="update" ng-model="newPost.postBody" placeholder="Update Description" value=""><br><br>
+ <button class="btn logBtn" type="button" name="button" ng-click="AdminCtrl.addPost(newPost)">Add Update</button>
  </div>
 
  <article class="newPosts" ng-repeat="postItem in AdminCtrl.items" >
