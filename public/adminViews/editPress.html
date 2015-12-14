@@ -9,7 +9,7 @@
 <a href="#/login"><button class="btn" type="" name="">Login</button></a>
 
 <div class="aPress">
-      <input type="text" name="image" ng-model="newPress.image" placeholder="Image Link" value=""><br>
+      <input type="text" name="image" ng-model="newPress.imageLink" placeholder="Image Link" value=""><br>
       <input type="text" name="communityName" ng-model="newPress.title" placeholder="Title of Article" value=""><br>
       <input type="text" name="population" ng-model="newPress.byline" placeholder="Byline" value=""><br>
       <input type="text" name="population" ng-model="newPress.link" placeholder="Link" value=""><br>
@@ -19,7 +19,7 @@
 
 
 <article class="newPress" ng-repeat="pressItem in AdminCtrl.items" >
-<img ng-src="{{item.image}}">
+<img ng-src="{{item.imageLink}}">
 <h4>{{item.name}}</h4>
 <h4>{{item.name}}</h4>
 <h2>{{item.population}}</h2>
