@@ -11,6 +11,7 @@ import com.theironyard.services.UserRepository;
 import com.theironyard.utils.PasswordHash;
 import org.apache.tomcat.jni.Local;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.env.Environment;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -47,6 +48,14 @@ public class BetrController {
 
     @Autowired
     PressRepository pressPosts;
+
+
+//    BraintreeGateway gateway = new BraintreeGateway(
+//            Environment.SANDBOX,
+//            "3wgr8r65y4drztqq",
+//            "36p4rcv9vr3fc2wf",
+//            "5a07cb5dc3f76c8274400b2e24e68ec4"
+//    );
 
     @RequestMapping(path = "/user", method = RequestMethod.GET)
     public User getUser(HttpSession session) {
@@ -123,6 +132,19 @@ public class BetrController {
 
         return (List<Press>) pressPosts.findAll();
     }
+
+    @RequestMapping(path = "/press", method = RequestMethod.POST)
+    public void addPress(HttpSession session, @RequestBody Press press) throws Exception {
+        String email = (String) session.getAttribute("email");
+        pressPosts.save(press);
+    }
+
+    @RequestMapping(path = "/press", method = RequestMethod.PUT)
+    public void editPress(HttpSession session, @RequestBody Press press) throws Exception {
+        String email = (String) session.getAttribute("email");
+        pressPosts.save(press);
+    }
+
 
     @RequestMapping(path = "/posts", method = RequestMethod.POST)
     public void addPost(HttpSession session, @RequestBody Post post) throws Exception {
@@ -287,6 +309,5 @@ public class BetrController {
                 e.printStackTrace();
             }
         }
-
     }
 }
