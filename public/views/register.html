@@ -9,14 +9,18 @@
 <a href="#/login"><button class="btn" type="" name="">Login</button></a>
 <a href="/logout"><button class="btn" type="" name="">Logout</button></a>
 
+<div class='logDiv'>
+  <img src="pics/betrLogo.png" alt="" class='logLogo' />
+  <h1  class="loginH1">betr</h1>
+  <h5 class="loginH2">Better Health. Better Life</h5>
+</div>
 
+<div class="aNewUser aLogin">
+       <input type="text" class="form-control loginInput" name="firstName" ng-model="newUser.firstName" placeholder="First Name" value=""><br>
+       <input type="text" class="form-control" name="lastName" ng-model="newUser.lastName" placeholder="Last Name" value=""><br>
+       <input type="email" class="form-control" name="emailLogin" ng-model="newUser.email" placeholder="Email" value=""><br>
+       <input type="password" class="form-control" name="passwordLogin" ng-model="newUser.password" placeholder="Password" value=""><br>
+       <input type="hidden" class="form-control" name="admin" ng-model="newUser.isAdmin" placeholder="Admin" value=""><br>
 
-<div class="aNewUser">
-       <input type="text" class="loginInput" name="firstName" ng-model="newUser.firstName" placeholder="First Name" value=""><br>
-       <input type="text" class="loginInput" name="lastName" ng-model="newUser.lastName" placeholder="Last Name" value=""><br>
-       <input type="email" class="loginInput" name="emailLogin" ng-model="newUser.email" placeholder="Email" value=""><br>
-       <input type="password" class="loginInput" name="passwordLogin" ng-model="newUser.password" placeholder="Password" value=""><br>
-       <input type="hidden" class="loginInput" name="admin" ng-model="newUser.isAdmin" placeholder="Admin" value=""><br>
-
- <button type="button" name="button" ng-click="MainCtrl.addUser(newUser)">Register!</button>
+ <button type="button" name="button" ng-click="MainCtrl.addUser(newUser) " class='btn logBtn'>Register</button>
  </div>
