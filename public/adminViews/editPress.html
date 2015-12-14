@@ -14,15 +14,15 @@
       <input type="text" name="population" ng-model="newPress.byline" placeholder="Byline" value=""><br>
       <input type="text" name="population" ng-model="newPress.link" placeholder="Link" value=""><br>
       <input type="text" name="description" ng-model="newPress.description" placeholder="Description" value=""><br><br>
-<button type="button" name="button" ng-click="AdminCtrl.addPress(newPress)">Post New Press!</button>
+<button type="button" name="button" ng-click="AdminCtrl.addPress(newPress)">Post New Press</button>
 </div>
 
 
-<article class="newPress" ng-repeat="pressItem in AdminCtrl.items" >
-<img ng-src="{{item.imageLink}}">
-<h4>{{item.name}}</h4>
-<h4>{{item.name}}</h4>
-<h2>{{item.population}}</h2>
-<p>{{item.description}}</p>
+<article class="newPress" ng-repeat="pressItem in AdminCtrl.pressItems" >
+<img ng-src="{{pressItem.imageLink}}">
+<h4>{{pressItem.title}}</h4>
+<h4>{{pressItem.byline}}</h4>
+<h2>{{pressItem.link}}</h2>
+<p>{{pressItem.description}}</p>
 </article>
 <br><br>
