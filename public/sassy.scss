@@ -182,15 +182,24 @@ a {
 
 
 //////ktes style additions
-.theCommunities, .newPress{
+article{
+  display: block;
+  margin: 0 auto;
+  padding-left: 48%;
+  img{
+    max-height: 200px;
+  }
+}
+.theCommunities, .newPress, .newPosts{
   width: 80%;
   margin: 0 auto;
   text-align: left;
   display: block;
-  img{
-    display: inline-block;
-    max-height: 120px;
-  }
+
+}
+.theCommunityPage, .theCommunities, .newPress, .newPosts img{
+  display: inline-block;
+  max-height: 120px;
 }
 
 // login
@@ -219,7 +228,6 @@ body{
 }
 
 .logBtn{
-  // width: 24%;
   margin-left: 38%;
   background-color: #8BC34A;
   color: white;

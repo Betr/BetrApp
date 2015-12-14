@@ -15,13 +15,13 @@
        <input type="text" name="communityName" ng-model="newPost.communityName" placeholder="Community Name" value=""><br>
        <input type="text" name="postTitle" ng-model="newPost.postName" placeholder="Title" value=""><br>
        <input type="text" name="update" ng-model="newPost.postBody" placeholder="Update Description" value=""><br><br>
- <button type="button" name="button" ng-click="AdminCtrl.addPost(newPost)">Add Update!</button>
+ <button type="button" name="button" ng-click="AdminCtrl.addPost(newPost)">Add Update</button>
  </div>
 
  <article class="newPosts" ng-repeat="postItem in AdminCtrl.items" >
  <img ng-src={{postItem.image}}>
- <h4>{{postItem.communityName}}</h4>
- <h4>{{postItem.postName}}</h4>
+ <h3>{{postItem.communityName}}</h3>
+ <h2>{{postItem.postName}}</h2>
  <p>{{postItem.postBody}}</p>
  </article>
  <br><br>

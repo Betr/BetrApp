@@ -6,16 +6,16 @@
 
      .controller('MainController', function ($scope, PressService, CommunityService, PostService, UserService, $location, LoginService ) {
        var vm = this;
-       vm.getCommunity = function (){
-         CommunityService.newCommunity().then(function(){vm.item = items;});
-
-       };
-       vm.getPost = function (item){
-         PostService.newPost(item);
-       };
-       vm.getPress = function (item){
-         UserService.newPress(item);
-       };
+      //  vm.getCommunity = function (){
+      //    CommunityService.newCommunity().then(function(){vm.item = items;});
+       //
+      //  };
+      //  vm.getPost = function (item){
+      //    PostService.newPost(item);
+      //  };
+      //  vm.getPress = function (item){
+      //    UserService.newPress(item);
+      //  };
        vm.addUser = function (item){
            UserService.addUser(item);
            $location.path('/home');
@@ -70,14 +70,15 @@
 
           vm.addPress = function (pressItem){
               PressService.newPress(pressItem);
-              $location.path('/admin');
+              // $location.path('/admin');
             };
 
             vm.getPress = function (pressItem){
-              PressService.newPress(pressItem);
+              PressService.getPress(pressItem);
             };
+            vm.getPress();
             vm.editPress = function (pressItem){
-              PressService.newPress(pressItem);
+              PressService.editPress(pressItem);
             };
             vm.deletePress = function (pressItem){
               PressService.deletePress(pressItem);

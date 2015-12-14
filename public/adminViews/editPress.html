@@ -8,6 +8,7 @@
 <a href="#/payment"><button class="btn" type="" name="">Payment Popup</button></a>
 <a href="#/login"><button class="btn" type="" name="">Login</button></a>
 
+
 <div class='logDiv'>
   <img src="pics/betrLogo.png" alt="" class='logLogo' />
   <h1  class="loginH1">betr</h1>
@@ -21,14 +22,15 @@
       <input type="text" name="population" ng-model="newPress.link" placeholder="Link" value="" class='form-control'><br>
       <input type="text" name="description" ng-model="newPress.description" placeholder="Description" value="" class='form-control'><br><br>
 <button type="button" name="button" ng-click="AdminCtrl.addPress(newPress)">Post New Press!</button>
+
 </div>
 
 
-<article class="newPress" ng-repeat="pressItem in AdminCtrl.items" >
-<img ng-src="{{item.imageLink}}">
-<h4>{{item.name}}</h4>
-<h4>{{item.name}}</h4>
-<h2>{{item.population}}</h2>
-<p>{{item.description}}</p>
+<article class="newPress" ng-repeat="pressItem in AdminCtrl.pressItems" >
+<img ng-src="{{pressItem.imageLink}}">
+<h4>{{pressItem.title}}</h4>
+<h4>{{pressItem.byline}}</h4>
+<h2>{{pressItem.link}}</h2>
+<p>{{pressItem.description}}</p>
 </article>
 <br><br>

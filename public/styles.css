@@ -154,14 +154,22 @@ footer {
 a {
   text-decoration: none; }
 
-.theCommunities, .newPress {
+article {
+  display: block;
+  margin: 0 auto;
+  padding-left: 48%; }
+  article img {
+    max-height: 200px; }
+
+.theCommunities, .newPress, .newPosts {
   width: 80%;
   margin: 0 auto;
   text-align: left;
   display: block; }
-  .theCommunities img, .newPress img {
-    display: inline-block;
-    max-height: 120px; }
+
+.theCommunityPage, .theCommunities, .newPress, .newPosts img {
+  display: inline-block;
+  max-height: 120px; }
 
 body {
   background-color: white; }
