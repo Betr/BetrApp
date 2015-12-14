@@ -1,8 +1,6 @@
 package com.theironyard.controllers;
 
-import com.braintreegateway.BraintreeGateway;
-import com.braintreegateway.ClientTokenRequest;
-import com.braintreegateway.Environment;
+import com.braintreegateway.*;
 import com.theironyard.entities.Community;
 import com.theironyard.entities.Post;
 import com.theironyard.entities.Press;
@@ -27,6 +25,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.security.NoSuchAlgorithmException;
 import java.security.spec.InvalidKeySpecException;
 import java.time.LocalDateTime;
@@ -57,10 +56,21 @@ public class BetrController {
             "36p4rcv9vr3fc2wf",
             "5a07cb5dc3f76c8274400b2e24e68ec4"
     );
+    @RequestMapping(path = "/client_token", method = RequestMethod.GET)
+    public Object token() {
+        return gateway.clientToken().generate();
+    }
 
-    ClientTokenRequest clientTokenRequest = new ClientTokenRequest()
-            .customerId("");
-    String clientToken = gateway.clientToken().generate(clientTokenRequest);
+    @RequestMapping(path = "/checkout", method = RequestMethod.GET)
+    public Object checkout(String nonce) {
+
+        TransactionRequest request = new TransactionRequest()
+                .amount(new BigDecimal("100.00"))
+                .paymentMethodNonce(nonce);
+
+        Result<Transaction> result = gateway.transaction().sale(request);
+        return "/checkout";
+    }
 
     @RequestMapping(path = "/user", method = RequestMethod.GET)
     public User getUser(HttpSession session) {
@@ -149,7 +159,6 @@ public class BetrController {
         String email = (String) session.getAttribute("email");
         pressPosts.save(press);
     }
-
 
     @RequestMapping(path = "/posts", method = RequestMethod.POST)
     public void addPost(HttpSession session, @RequestBody Post post) throws Exception {
