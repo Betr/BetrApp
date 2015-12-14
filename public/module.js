@@ -17,7 +17,7 @@
         })
         .when('/communities', {
           templateUrl: 'views/communityDonate.html',
-          controller: 'MainController as MainCtrl'
+          controller: 'AdminController as AdminCtrl'
         })
         .when('/payment', {
           templateUrl: 'views/popup.html',
@@ -25,11 +25,11 @@
         })
         .when('/home', {
           templateUrl: 'views/loggedinHome.html',
-          controller: 'MainController as MainCtrl'
+          controller: 'AdminController as AdminCtrl'
         })
         .when('/press', {
           templateUrl: 'views/press.html',
-          controller: 'MainController as MainCtrl'
+          controller: 'AdminController as AdminCtrl'
         })
         .when('/404', {
           template: "<h1> SORRY NO BUENO </h1>"

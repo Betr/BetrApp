@@ -18,7 +18,7 @@
  <button type="button" name="button" ng-click="AdminCtrl.addPost(newPost)">Add Update!</button>
  </div>
 
- <article class="newPosts" ng-repeat="postItem in items" >
+ <article class="newPosts" ng-repeat="postItem in AdminCtrl.items" >
  <img ng-src={{postItem.image}}>
  <h4>{{postItem.communityName}}</h4>
  <h4>{{postItem.postName}}</h4>
