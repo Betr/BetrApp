@@ -9,3 +9,12 @@
 <a href="#/editpress"><button class="btn" type="" name="">Edit Press</button></a>
 <a href="#/payment"><button class="btn" type="" name="">Payment Popup</button></a>
 <a href="#/login"><button class="btn" type="" name="">Login</button></a>
+
+
+<article class="newPosts" ng-repeat="postItem in AdminCtrl.items" >
+<img ng-src={{postItem.image}}>
+<h4>{{postItem.communityName}}</h4>
+<h4>{{postItem.postName}}</h4>
+<p>{{postItem.postBody}}</p>
+</article>
+<br><br>
