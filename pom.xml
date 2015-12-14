@@ -3,6 +3,12 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
+    <!--<dependency>-->
+        <!--<groupId>com.braintreepayments.gateway</groupId>-->
+        <!--<artifactId>braintree-java</artifactId>-->
+        <!--<version>2.53.0</version>-->
+    <!--</dependency>-->
+
 	<groupId>com.theironyard</groupId>
 	<artifactId>Betr</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
@@ -71,6 +77,5 @@
 			</plugin>
 		</plugins>
 	</build>
-	
 
 </project>
