@@ -151,23 +151,15 @@ footer {
 a {
   text-decoration: none; }
 
-<<<<<<< HEAD
 .theCommunities, .newPress, .newPosts {
-=======
-.theCommunities, .newPress {
->>>>>>> 6ec63180ff07f447df1720fa5ec062ac84e0fae3
   width: 80%;
   margin: 0 auto;
   text-align: left;
   display: block; }
-<<<<<<< HEAD
 
 .theCommunityPage, .theCommunities, .newPress, .newPosts img {
   display: inline-block;
   max-height: 120px; }
-  .theCommunities img, .newPress img {
-    display: inline-block;
-    max-height: 120px; }
 
 body {
   background-color: white; }
