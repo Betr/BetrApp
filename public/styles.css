@@ -156,20 +156,22 @@ a {
 
 article {
   display: block;
-  margin: 0 auto;
-  padding-left: 48%; }
+  margin: 0 auto; }
   article img {
-    max-height: 200px; }
+    max-height: 200px;
+    margin: 4%;
+    border-radius: 5%; }
 
 .theCommunities, .newPress, .newPosts {
-  width: 80%;
+  width: 90%;
   margin: 0 auto;
   text-align: left;
   display: block; }
 
 .theCommunityPage, .theCommunities, .newPress, .newPosts img {
   display: inline-block;
-  max-height: 120px; }
+  max-height: 120px;
+  margin-top: 11%; }
 
 body {
   background-color: white; }
@@ -215,3 +217,26 @@ body {
 
 .form-control {
   font-family: 'Raleway', cursive; }
+
+.comDiv {
+  background-color: #8BC34A;
+  color: white;
+  margin-top: 10%;
+  border-radius: 2%;
+  margin-left: 10%; }
+
+.comDiv:hover {
+  background-color: white;
+  color: #8BC34A; }
+
+ul {
+  float: right;
+  margin-right: 28%;
+  margin-top: 5%;
+  list-style: none; }
+
+.comName {
+  margin-top: 10%; }
+
+.population {
+  display: inline; }

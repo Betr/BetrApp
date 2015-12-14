@@ -26,10 +26,17 @@
  </div>
 <br><br><br>
 
+
  <article class="theCommunities" ng-repeat="item in AdminCtrl.items" >
+ <div class="comDiv">
  <img ng-src={{item.image}}>
- <h4>{{item.name}}</h4>
- <h5>{{item.population}}</h5>
- <p>{{item.description}}</p>
+ <ul>
+
+ <li><h4 class="comName" >{{item.name}}</h4></li>
+ <li><h5 class="population">{{item.population}}</h5></li>
+ <li><p class='popPar'>{{item.description}}</p></li>
+
+ </ul>
+ </div>
  </article>
  <br><br>
