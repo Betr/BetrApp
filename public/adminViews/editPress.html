@@ -8,13 +8,21 @@
 <a href="#/payment"><button class="btn" type="" name="">Payment Popup</button></a>
 <a href="#/login"><button class="btn" type="" name="">Login</button></a>
 
-<div class="aPress">
-      <input type="text" name="image" ng-model="newPress.imageLink" placeholder="Image Link" value=""><br>
-      <input type="text" name="communityName" ng-model="newPress.title" placeholder="Title of Article" value=""><br>
-      <input type="text" name="population" ng-model="newPress.byline" placeholder="Byline" value=""><br>
-      <input type="text" name="population" ng-model="newPress.link" placeholder="Link" value=""><br>
-      <input type="text" name="description" ng-model="newPress.description" placeholder="Description" value=""><br><br>
-<button type="button" name="button" ng-click="AdminCtrl.addPress(newPress)">Post New Press</button>
+
+<div class='logDiv'>
+  <img src="pics/betrLogo.png" alt="" class='logLogo' />
+  <h1  class="loginH1">betr</h1>
+  <h5 class="loginH2">Better Health. Better Life</h5>
+</div>
+
+<div class="aLogin">
+      <input type="text" name="image" ng-model="newPress.imageLink" placeholder="Image Link" value="" class='form-control loginInput'><br>
+      <input type="text" name="communityName" ng-model="newPress.title" placeholder="Title of Article" value="" class='form-control'><br>
+      <input type="text" name="population" ng-model="newPress.byline" placeholder="Byline" value="" class='form-control'><br>
+      <input type="text" name="population" ng-model="newPress.link" placeholder="Link" value="" class='form-control'><br>
+      <input type="text" name="description" ng-model="newPress.description" placeholder="Description" value="" class='form-control'><br><br>
+<button type="button" name="button" ng-click="AdminCtrl.addPress(newPress)">Post New Press!</button>
+
 </div>
 
 
