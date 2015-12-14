@@ -62,8 +62,6 @@ public class BetrController {
             .customerId("");
     String clientToken = gateway.clientToken().generate(clientTokenRequest);
 
-    
-
     @RequestMapping(path = "/user", method = RequestMethod.GET)
     public User getUser(HttpSession session) {
         String email = (String) session.getAttribute("email");
