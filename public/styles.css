@@ -151,11 +151,51 @@ footer {
 a {
   text-decoration: none; }
 
-.theCommunities {
+.theCommunities, .newPress {
   width: 80%;
   margin: 0 auto;
   text-align: left;
   display: block; }
-  .theCommunities img {
+  .theCommunities img, .newPress img {
     display: inline-block;
     max-height: 120px; }
+
+body {
+  background-color: white; }
+
+.logLogo {
+  width: 20%;
+  margin-left: 40.5%;
+  margin-top: 5%; }
+
+.aLogin {
+  margin-left: 35%;
+  margin-top: 15%;
+  width: 30%;
+  height: 220px;
+  border-radius: 10%; }
+
+.loginInput {
+  margin-top: -37%; }
+
+.logBtn {
+  margin-left: 38%;
+  background-color: #8BC34A;
+  color: white;
+  padding: 12px 16px 12px 16px;
+  font-size: 24px;
+  font-family: 'Poiret One', cursive; }
+
+.loginH1 {
+  color: #9C27B0;
+  font-family: 'Poiret One', cursive;
+  margin-left: 48%;
+  font-size: 46px; }
+
+.loginH2 {
+  color: #9C27B0;
+  font-family: 'Raleway', cursive;
+  margin-left: 44%; }
+
+.form-control {
+  font-family: 'Raleway', cursive; }
