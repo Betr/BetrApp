@@ -74,7 +74,7 @@ public class BetrController {
                 .paymentMethodNonce(nonce);
 
         Result<Transaction> result = gateway.transaction().sale(request);
-        return "/checkout";
+        return (result);
     }
     @RequestMapping(path = "/checkout", method = RequestMethod.POST)
     public Object addCheckout(String nonce) {
