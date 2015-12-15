@@ -4,8 +4,33 @@
      angular
      .module('betrApp')
 
-     .controller('MainController', function ($scope, PressService, CommunityService, PostService, UserService, $location, LoginService ) {
+     .controller('MainController', function ($scope, $log, $uibModal,PressService, CommunityService, PostService, UserService, $location, LoginService ) {
        var vm = this;
+
+       $scope.open2 = function (size) {
+
+         var modalInstance2 = $uibModal.open({
+           animation: $scope.animationsEnabled,
+           templateUrl: 'views/myModalLogin.html',
+           controller: 'ModalInstanceCtrl',
+           size: size,
+           resolve: {
+             items: function () {
+               return $scope.items;
+             }
+           }
+         });
+
+         modalInstance2.result.then(function (selectedItem) {
+           $scope.selected = selectedItem;
+         }, function () {
+           $log.info('Modal dismissed at: ' + new Date());
+         });
+       };
+
+       $scope.toggleAnimation = function () {
+         $scope.animationsEnabled = !$scope.animationsEnabled;
+       };
       //  vm.getCommunity = function (){
       //    CommunityService.newCommunity().then(function(){vm.item = items;});
        //
@@ -97,7 +122,7 @@
 
                 var modalInstance = $uibModal.open({
                   animation: $scope.animationsEnabled,
-                  templateUrl: '#/myModalContent.html',
+                  templateUrl: 'views/myModalContent.html',
                   controller: 'ModalInstanceCtrl',
                   size: size,
                   resolve: {
@@ -112,55 +137,32 @@
                 }, function () {
                   $log.info('Modal dismissed at: ' + new Date());
                 });
-              //};
+              };
 
               $scope.toggleAnimation = function () {
                 $scope.animationsEnabled = !$scope.animationsEnabled;
               };
-            //})
-            $scope.animationsEnabled = true;
+            // })
 
-            $scope.open2 = function (size) {
 
-              var modalInstance2 = $uibModal.open({
-                animation: $scope.animationsEnabled,
-                templateUrl: '#/myModalLogin.html',
-                controller: 'ModalInstanceCtrl',
-                size: size,
-                resolve: {
-                  items: function () {
-                    return $scope.items;
-                  }
-                }
-              });
 
-              modalInstance2.result.then(function (selectedItem) {
-                $scope.selected = selectedItem;
-              }, function () {
-                $log.info('Modal dismissed at: ' + new Date());
-              });
-            };
 
-            $scope.toggleAnimation = function () {
-              $scope.animationsEnabled = !$scope.animationsEnabled;
-            };
-          }; //added this one
           })
 
-        .controller('ModalInstanceCtrl', function ($scope, $uibModalInstance, items) {
+        .controller('ModalInstanceCtrl', function ($scope) {
 
-              $scope.items = items;
-              $scope.selected = {
-                item: $scope.items
-              };
+              // $scope.items = items;
+              // $scope.selected = {
+              //   item: $scope.items
+              // };
 
-              $scope.ok = function () {
-                $uibModalInstance.close($scope.selected.item);
-              };
-
-              $scope.cancel = function () {
-                $uibModalInstance.dismiss('cancel');
-              };
+              // $scope.ok = function () {
+              //   $uibModalInstance.close($scope.selected.item);
+              // };
+              //
+              // $scope.cancel = function () {
+              //   $uibModalInstance.dismiss('cancel');
+              // };
         });
 
  })();

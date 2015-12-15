@@ -17,5 +17,8 @@
   <h5 class="loginH2">Better Health. Better Life</h5>
 </div>
 
-
-</div>
+<div class="aLogin">
+       <input type="text" class="form-control loginInput" name="emailLogin" ng-model="logUser.email" placeholder="Email" value=""><br>
+       <input type="password" class="form-control " name="passwordLogin" ng-model="logUser.password" placeholder="Password" value=""><br>
+ <button class="btn logBtn" type="button" name="button" ng-click="MainCtrl.logUser(logUser)">Login</button>
+ </div>
