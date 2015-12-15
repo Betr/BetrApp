@@ -8,7 +8,7 @@
 <a href="#/payment"><button class="btn" type="" name="">Payment Popup</button></a>
 <a href="#/login"><button class="btn" type="" name="">Login</button></a>
 <a href="#/register"><button class="btn" type="" name="">Register</button></a>
-<a href="/logout"><button class="btn" type="" name="">Logout</button></a>
+<button ng-click="MainCtrl.logOut()" class="btn" type="" name="">Logout</button>
 
 
 <div class='logDiv'>
@@ -19,21 +19,3 @@
 
 
 </div>
-
-<div class="aLogin">
-       <input type="text" class="form-control loginInput" name="emailLogin" ng-model="logUser.email" placeholder="Email" value=""><br>
-       <input type="password" class="form-control " name="passwordLogin" ng-model="logUser.password" placeholder="Password" value=""><br>
- <button class="btn logBtn" type="button" name="button" ng-click="MainCtrl.logUser(logUser)">Login</button>
- </div>
-
- <div ng-controller="ModalDemoCtrl">
-     <script type="text/ng-template" id="myModalLogin.html">
-           <div class="aLogin">
-                  <input type="text" class="form-control loginInput" name="emailLogin" ng-model="logUser.email" placeholder="Email" value=""><br>
-                  <input type="password" class="form-control " name="passwordLogin" ng-model="logUser.password" placeholder="Password" value=""><br>
-            <button class="btn logBtn" type="button" name="button" ng-click="MainCtrl.logUser(logUser)">Login</button>
-            </div>
-     </script>
-
-    
- </div>

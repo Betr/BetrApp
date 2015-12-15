@@ -24,7 +24,14 @@
              LoginService.logUser(item);
              $location.path('/home');
            };
+           vm.logOut = function(item){
+             LoginService.logOut().then(function(){
+               $location.path('/login');
+             });
+
+             };
      })
+
      .controller('AdminController', function ($log, $uibModal, $scope, PressService, CommunityService, PostService, UserService, $location, LoginService ) {
        var vm = this;
 
@@ -32,6 +39,7 @@
            PostService.newPost(postItem);
            $location.path('/admin');
          };
+
 
          vm.getPost = function (postItem){
            PostService.newPost(postItem);
@@ -104,19 +112,47 @@
                 }, function () {
                   $log.info('Modal dismissed at: ' + new Date());
                 });
-              };
+              //};
 
               $scope.toggleAnimation = function () {
                 $scope.animationsEnabled = !$scope.animationsEnabled;
               };
-            })
+            //})
+            $scope.animationsEnabled = true;
+
+            $scope.open2 = function (size) {
+
+              var modalInstance2 = $uibModal.open({
+                animation: $scope.animationsEnabled,
+                templateUrl: '#/myModalLogin.html',
+                controller: 'ModalInstanceCtrl',
+                size: size,
+                resolve: {
+                  items: function () {
+                    return $scope.items;
+                  }
+                }
+              });
+
+              modalInstance2.result.then(function (selectedItem) {
+                $scope.selected = selectedItem;
+              }, function () {
+                $log.info('Modal dismissed at: ' + new Date());
+              });
+            };
+
+            $scope.toggleAnimation = function () {
+              $scope.animationsEnabled = !$scope.animationsEnabled;
+            };
+          }; //added this one
+          })
 
         .controller('ModalInstanceCtrl', function ($scope, $uibModalInstance, items) {
 
               $scope.items = items;
-              // $scope.selected = {
-              //   item: $scope.items[0]
-              // };
+              $scope.selected = {
+                item: $scope.items
+              };
 
               $scope.ok = function () {
                 $uibModalInstance.close($scope.selected.item);
@@ -127,5 +163,4 @@
               };
         });
 
-// ModalInstanceCtrl
  })();
