@@ -10,24 +10,16 @@ import com.theironyard.services.PostRepository;
 import com.theironyard.services.PressRepository;
 import com.theironyard.services.UserRepository;
 import com.theironyard.utils.PasswordHash;
-import org.apache.tomcat.jni.Local;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.multipart.MultipartFile;
 
-import javax.annotation.PostConstruct;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.math.BigDecimal;
-import java.security.NoSuchAlgorithmException;
-import java.security.spec.InvalidKeySpecException;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -58,6 +50,11 @@ public class BetrController {
     );
     @RequestMapping(path = "/client_token", method = RequestMethod.GET)
     public Object token() {
+        return gateway.clientToken().generate();
+    }
+
+    @RequestMapping(path = "/client_token", method = RequestMethod.POST)
+    public Object addToken() {
         return gateway.clientToken().generate();
     }
 
@@ -103,10 +100,11 @@ public class BetrController {
     }
 
     @RequestMapping("/logout")
-    public void logout(HttpSession session) {
+    public String logout(HttpSession session) {
 
         session.getAttribute("email");
         session.invalidate();
+        return "redirect/";
     }
 
     @RequestMapping(path = "/register", method = RequestMethod.POST)
