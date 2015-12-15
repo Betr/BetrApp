@@ -56,7 +56,7 @@ public class BetrController {
             "36p4rcv9vr3fc2wf",
             "5a07cb5dc3f76c8274400b2e24e68ec4"
     );
-    @RequestMapping(path = "/client_token", method = RequestMethod.GET)
+    @RequestMapping(path = "/client_token", method = RequestMethod.GET)//http://localhost:8080/client_token
     public Object token() {
         return gateway.clientToken().generate();
     }
@@ -65,12 +65,29 @@ public class BetrController {
     public Object addToken() {
         return gateway.clientToken().generate();
     }
+    @RequestMapping(path = "/customer", method = RequestMethod.POST)
+    public Object addCustomer(String customer){
+        CustomerRequest request = new CustomerRequest()
+                .firstName("")
+                .lastName("")
+                .company("")
+                .email("")
+                .phone("")
+                .website("");
+        Result<Customer> result = gateway.customer().create(request);
+
+        //return result.isSuccess();
+// true
+        return result.getTarget().getId();
+    }
+
 
     @RequestMapping(path = "/checkout", method = RequestMethod.GET)
     public Object getCheckout(String nonce) {
 
-        TransactionRequest request = new TransactionRequest()
-                .amount(new BigDecimal("100.00"))
+        TransactionRequest request = new TransactionRequest() //http://localhost:8080/checkout?nonce=fake-valid-nonce
+                .customerId("")
+                .amount(new BigDecimal("10"))
                 .paymentMethodNonce(nonce);
 
         Result<Transaction> result = gateway.transaction().sale(request);
@@ -80,18 +97,31 @@ public class BetrController {
     public Object addCheckout(String nonce) {
 
         TransactionRequest request = new TransactionRequest()
-                .amount(new BigDecimal("100.00"))
+                .amount(new BigDecimal(""))
                 .paymentMethodNonce(nonce);
 
         Result<Transaction> result = gateway.transaction().sale(request);
         return (nonce);
     }
 
+
     @RequestMapping(path = "/user", method = RequestMethod.GET)
     public User getUser(HttpSession session) {
         String email = (String) session.getAttribute("email");
         User user = users.findOneByEmail(email);
         return user;
+    }
+    @RequestMapping(path = "/user", method = RequestMethod.POST)
+    public void addUser(@RequestBody User user) {
+        users.save(user);
+    }
+    @RequestMapping(path = "/user", method = RequestMethod.PUT)
+    public void editUser(@RequestBody User user) {
+        users.save(user);
+    }
+    @RequestMapping(path = "/user", method = RequestMethod.DELETE)
+    public void deleteUser (int id) {
+        users.delete(id);
     }
 
     @RequestMapping(path = "/login", method = RequestMethod.POST)
@@ -141,19 +171,9 @@ public class BetrController {
         session.setAttribute("email", user.email);
     }
 
-    @RequestMapping(path = "/posts", method = RequestMethod.GET)
-    public List<Post> getPosts(HttpSession session) throws Exception {
-        String email = (String) session.getAttribute("email");
 
-        return (List<Post>) posts.findAll();
-    }
-
-    @RequestMapping(path = "/communities", method = RequestMethod.GET)
-    public List<Community> getCommunities(HttpSession session) throws Exception {
-        String email = (String) session.getAttribute("email");
-
-        return (List<Community>) communities.findAll();
-    }
+//    @RequestMapping(path = "/press", method = RequestMethod.DELETE)
+//    public List<Press> deletePress()
 
     @RequestMapping(path = "/press", method = RequestMethod.GET)
     public List<Press> getPress(HttpSession session) throws Exception {
@@ -172,6 +192,13 @@ public class BetrController {
     public void editPress(HttpSession session, @RequestBody Press press) throws Exception {
         String email = (String) session.getAttribute("email");
         pressPosts.save(press);
+    }
+
+    @RequestMapping(path = "/posts", method = RequestMethod.GET)
+    public List<Post> getPosts(HttpSession session) throws Exception {
+        String email = (String) session.getAttribute("email");
+
+        return (List<Post>) posts.findAll();
     }
 
     @RequestMapping(path = "/posts", method = RequestMethod.POST)
@@ -301,6 +328,13 @@ public class BetrController {
 //            fos.write(communityImage.getBytes());
 //        }
         communities.save(community);
+    }
+
+    @RequestMapping(path = "/communities", method = RequestMethod.GET)
+    public List<Community> getCommunities(HttpSession session) throws Exception {
+        String email = (String) session.getAttribute("email");
+
+        return (List<Community>) communities.findAll();
     }
 
     @RequestMapping(value = "/userInformation", method = RequestMethod.GET)
