@@ -21,7 +21,7 @@
         })
         .when('/payment', {
           templateUrl: 'views/popup.html',
-          controller: 'MainController as MainCtrl'
+          controller: 'ModalInstanceCtrl'
         })
         .when('/home', {
           templateUrl: 'views/loggedinHome.html',
