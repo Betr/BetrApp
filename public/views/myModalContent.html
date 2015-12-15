@@ -1,17 +1,3 @@
-<!-- payment from braintree window -->
-<p>this is the payment popup</p>
-<a href="#/communities"><button class="btn" type="" name="">Communitites</button></a>
-<a href="#/editcommunities"><button class="btn" type="" name="">Edit Communities</button></a>
-<a href="#/home"><button class="btn" type="" name="">Logged in Home</button></a>
-<a href="#/admin"><button class="btn" type="" name="">Admin</button></a>
-<a href="#/newpost"><button class="btn" type="" name="">Posts</button></a>
-<a href="#/press"><button class="btn" type="" name="">Press</button></a>
-<a href="#/editpress"><button class="btn" type="" name="">Edit Press</button></a>
-<a href="#/payment"><button class="btn" type="" name="">Payment Popup</button></a>
-<a href="#/login"><button class="btn" type="" name="">Login</button></a>
-
-
-
 
 <div ng-controller="ModalDemoCtrl">
     <script type="text/ng-template" id="myModalContent.html">
@@ -35,7 +21,6 @@
     <div ng-show="selected">Selection from a modal: {{ selected }}</div>
 
     </div>
-    </script>
     <form id="checkout" method="post" action="/checkout">
     <div id="payment-form"></div>
     <input class="btn logBtn" type="submit" value="Pay $10">
@@ -43,3 +28,4 @@
     <form>
   <div id="dropin-container"></div>
 </form>
+</script>
