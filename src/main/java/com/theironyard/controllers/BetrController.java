@@ -10,16 +10,24 @@ import com.theironyard.services.PostRepository;
 import com.theironyard.services.PressRepository;
 import com.theironyard.services.UserRepository;
 import com.theironyard.utils.PasswordHash;
+import org.apache.tomcat.jni.Local;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
+import javax.annotation.PostConstruct;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.math.BigDecimal;
+import java.security.NoSuchAlgorithmException;
+import java.security.spec.InvalidKeySpecException;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -100,11 +108,9 @@ public class BetrController {
     }
 
     @RequestMapping("/logout")
-    public String logout(HttpSession session) {
-
-        session.getAttribute("email");
+    public void logout(HttpSession session) {
         session.invalidate();
-        return "redirect/";
+        System.out.println("Successfully logged out");
     }
 
     @RequestMapping(path = "/register", method = RequestMethod.POST)
