@@ -92,8 +92,9 @@ a:hover{
 .info{
   color: white;
   text-align: center;
-  font-family: 'Poiret One';
+  font-family: 'Raleway', sans-serif;
   font-size: 3em;
+  padding: 7px;
 }
 
 .fb{
@@ -190,7 +191,7 @@ article{
     margin: 4%;
   }
 }
-.theCommunities, .newPress, .newPosts{
+.theCommunities, .thePress, .newPosts{
   width: 90%;
   margin: 0 auto;
   text-align: left;
@@ -218,7 +219,7 @@ body{
   margin-top: 15%;
   display: block;
   width: 30%;
-  height: 220px;
+  // height: 220px;
   border-radius: 10%;
 }
 
@@ -262,9 +263,13 @@ body{
   background-color: #8BC34A;
   color:white;
   margin-left: 10%;
+  padding-bottom: 15px;
+  margin-top: 15px;
+  display: block;
+  width: 80%;
 }
 
-.comDiv:hover{
+.comDiv:hover, {
   // border: 2px solid #8BC34A;
   background-color: white;
   color: #8BC34A;
@@ -274,21 +279,37 @@ body{
 }
 
 // edit commmunity
-.comText{
-  float:right;
-  margin-right: 28%;
-  margin-top: 5%;
-  list-style: none;
-}
-
-.comName{
-  margin-top: 10%;
+.comText, .pressText{
+  display: inline-block;
+  vertical-align: middle;
 }
 
 .population {
   display: inline;
 }
-.communityDisplay{
+.communityDisplay, .pressDisplay{
   display: block;
   padding-top: 100px;
+}
+.editBtn{
+  // margin-left: 38%;
+  background-color: #8BC34A;
+  color: white;
+  padding: 3px 5px 3px 5px;
+  font-size:16px;
+  font-family: 'Poiret One', sans-serif;
+  display: inline-block;
+  margin:0 auto;
+}
+
+.editBtn:hover{
+  border: solid 2px #8BC34A;
+  color: #8BC34A;
+  background-color: white;
+}
+.adminTitle{
+  color:#8BC34A;
+  font-family: 'Raleway', sans-serif;
+  font-size:45px;
+  text-align: left;
 }

@@ -10,7 +10,7 @@
 <a href="#/login"><button class="btn" type="" name="">Login</button></a>
 
 
- <div class="aLogin">
+ <div style="margin-top:3%;" class="aLogin">
        <input class="form-control" type="text" name="image" ng-model="newPost.image" placeholder="Image Link" value=""><br>
        <input class="form-control" type="text" name="communityName" ng-model="newPost.communityName" placeholder="Community Name" value=""><br>
        <input class="form-control" type="text" name="postTitle" ng-model="newPost.postName" placeholder="Title" value=""><br>
@@ -24,6 +24,8 @@
  <h3>{{postItem.communityName}}</h3>
  <h2>{{postItem.postName}}</h2>
  <p>{{postItem.postBody}}</p>
+ <button style="padding-left:35px;" class="btn editBtn" type="button" name="button" ng-click="AdminCtrl.editPost(postItem)">Edit Community</button>
+ <button class="btn editBtn"  type="button" name="button" ng-click="AdminCtrl.deletePost(postItem)">Delete Community</button>
  </article>
- <br><br>
+
 </div>
