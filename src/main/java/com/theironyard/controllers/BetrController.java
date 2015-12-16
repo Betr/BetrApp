@@ -52,9 +52,9 @@ public class BetrController {
 
     private static BraintreeGateway gateway = new BraintreeGateway(
             Environment.SANDBOX,
-            "3wgr8r65y4drztqq",
-            "36p4rcv9vr3fc2wf",
-            "5a07cb5dc3f76c8274400b2e24e68ec4"
+            "r4pm2vfwphd4pnfh",
+            "fkd575nb39thx694",
+            "f76bfbc6d5ea0bbfc9caed00077353b3"
     );
     @RequestMapping(path = "/client_token", method = RequestMethod.GET)//http://localhost:8080/client_token
     public Object token() {
@@ -81,7 +81,6 @@ public class BetrController {
         return result.getTarget().getId();
     }
 
-
     @RequestMapping(path = "/checkout", method = RequestMethod.GET)
     public Object getCheckout(String nonce) {
 
@@ -104,7 +103,6 @@ public class BetrController {
         return (nonce);
     }
 
-
     @RequestMapping(path = "/user", method = RequestMethod.GET)
     public User getUser(HttpSession session) {
         String email = (String) session.getAttribute("email");
@@ -113,6 +111,7 @@ public class BetrController {
     }
     @RequestMapping(path = "/user", method = RequestMethod.POST)
     public void addUser(@RequestBody User user) {
+
         users.save(user);
     }
     @RequestMapping(path = "/user", method = RequestMethod.PUT)
