@@ -1,11 +1,11 @@
 .mainCont {
-  background-image: url(https://upload.wikimedia.org/wikipedia/commons/5/57/HOLI_IN_INDIA_-_ENJOYED_BY_ALL.jpg);
+  background-image: url("http://s2.postimg.org/57741r2uh/background.jpg");
   background-size: cover;
   width: 100%; }
 
 header {
   width: 100%;
-  height: 100px;
+  height: 115px;
   background: white; }
 
 .headerImg {
@@ -40,14 +40,14 @@ a:hover {
 
 .pinkDiv {
   background-color: #9C27B0;
-  height: 170px;
+  height: 200px;
   width: 68%;
   opacity: 0.2;
   display: inline-block; }
 
 .blueDiv {
   background-color: #2196F3;
-  height: 170px;
+  height: 200px;
   width: 32%;
   margin-left: -4px;
   display: inline-block;
@@ -55,7 +55,7 @@ a:hover {
   vertical-align: top; }
 
 .blueDiv3 {
-  height: 190px;
+  height: 200px;
   width: 72%;
   margin-left: -4px;
   background: #8BC34A;
@@ -65,7 +65,7 @@ a:hover {
 
 .blueDiv2 {
   background-color: #CDDC39;
-  height: 190px;
+  height: 200px;
   width: 28%;
   display: inline-block;
   opacity: 0.4; }
@@ -262,11 +262,20 @@ body {
   color: #8BC34A;
   font-family: 'Raleway', sans-serif;
   font-size: 45px;
-  text-align: left; }
+  text-align: left;
+  display: block;
+  margin-left: 1%; }
+
+.adTitle {
+  color: #8BC34A;
+  font-family: 'Raleway', sans-serif;
+  font-size: 25px;
+  text-align: left;
+  margin-left: 1%;
+  display: inline-block; }
 
 footer {
   margin: 0 auto;
-  margin-top: 2%;
   font-family: 'Raleway', sans-serif;
   color: #8BC34A;
   display: block;
@@ -276,3 +285,18 @@ footer {
 .footerImg {
   max-height: 20px;
   padding-bottom: 5px; }
+
+.adminBtn {
+  display: inline-block;
+  margin-left: 2%;
+  background-color: #8BC34A;
+  color: white;
+  padding: 12px 16px 12px 16px;
+  font-size: 24px;
+  font-family: 'Poiret One', sans-serif;
+  text-align: left; }
+
+.adminBtn:hover {
+  border: solid 2px #8BC34A;
+  color: #8BC34A;
+  background-color: white; }
