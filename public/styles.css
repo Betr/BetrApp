@@ -28,7 +28,6 @@ h2 {
 .login {
   width: 22%;
   height: 34px;
-  border-radius: 3%;
   color: #9C27B0;
   font-family: 'Poiret One';
   margin-top: 1%;
@@ -110,7 +109,6 @@ footer {
   background: #9C27B0;
   margin: auto;
   margin-left: 13.5%;
-  border-radius: 60%;
   display: inline-block;
   margin-top: 10%;
   margin-bottom: 2%; }
@@ -160,8 +158,7 @@ article {
   margin: 0 auto; }
   article img {
     max-height: 200px;
-    margin: 4%;
-    border-radius: 5%; }
+    margin: 4%; }
 
 .theCommunities, .thePress, .newPosts {
   width: 90%;
@@ -185,8 +182,7 @@ body {
 .aLogin {
   margin-left: 35%;
   margin-top: 15%;
-  width: 30%;
-  border-radius: 10%; }
+  width: 30%; }
 
 .loginInput {
   margin-top: -37%; }
@@ -222,7 +218,6 @@ body {
   background-color: #8BC34A;
   color: white;
   margin-top: 10%;
-  border-radius: 2%;
   margin-left: 10%;
   padding-bottom: 15px;
   margin-top: 15px;
@@ -250,8 +245,7 @@ ul {
   display: inline; }
 
 .communityDisplay, .pressDisplay {
-  display: block;
-  padding-top: 100px; }
+  display: block; }
 
 .editBtn {
   background-color: #8BC34A;
@@ -290,6 +284,15 @@ footer {
   display: block;
   text-align: center;
   font-size: 13px; }
+
+.insideFooter {
+  margin: 0 auto;
+  font-family: 'Raleway', sans-serif;
+  color: #8BC34A;
+  display: block;
+  text-align: center;
+  font-size: 13px;
+  padding-top: 125px; }
 
 .footerImg {
   max-height: 20px;
