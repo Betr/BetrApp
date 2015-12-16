@@ -84,7 +84,7 @@
          };
 
          vm.addCommunity = function (item){
-           console.log("controller item", item)
+           console.log("controller item", item);
              CommunityService.newCommunity(item);
             // $location.path('/communities');
            };
@@ -97,6 +97,7 @@
              CommunityService.newCommunity(item);
            };
            vm.deleteCommunity = function (item){
+             console.log("DELETE",item);
              CommunityService.deleteCommunity(item);
            };
           //  vm.addUser = function (item){

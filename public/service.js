@@ -22,7 +22,10 @@
             return $http.put(url + id, data);
           };
           var deleteCommunity = function (item) {
-             $http.delete(url + "/" + item._id);
+            console.log("DELETE SERVICE", item);
+             return $http.delete(url + "/" + item.id).then(function(data) {
+               console.log('service delete', data);
+             });
           };
 
           return {
