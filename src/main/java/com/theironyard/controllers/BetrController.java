@@ -100,6 +100,17 @@ public class BetrController {
         Result<Transaction> result = gateway.transaction().sale(request);
         return (nonce);
     }
+    @RequestMapping(path = "/checkout", method = RequestMethod.PUT)
+    public Object putCheckout(@RequestBody Nonce nonce) {
+
+        TransactionRequest request = new TransactionRequest() //http://localhost:8080/checkout?nonce=fake-valid-nonce
+                .customerId("")
+                .amount(new BigDecimal(""))
+                .paymentMethodNonce("");
+
+        Result<Transaction> result = gateway.transaction().sale(request);
+        return (result);
+    }
 
     @RequestMapping(path = "/user", method = RequestMethod.GET)
     public User getUser(HttpSession session) {
@@ -116,8 +127,8 @@ public class BetrController {
     public void editUser(@RequestBody User user) {
         users.save(user);
     }
-    @RequestMapping(path = "/user", method = RequestMethod.DELETE)
-    public void deleteUser (int id) {
+    @RequestMapping(path = "/user{id}", method = RequestMethod.DELETE)
+    public void deleteUser (HttpSession session, @PathVariable("id") int id) {
         users.delete(id);
     }
 
