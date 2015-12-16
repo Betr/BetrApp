@@ -13,10 +13,7 @@ import com.theironyard.services.UserRepository;
 import com.theironyard.utils.PasswordHash;
 import org.apache.tomcat.jni.Local;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.annotation.PostConstruct;
@@ -253,8 +250,8 @@ public class BetrController {
         posts.save(post);
     }
 
-    @RequestMapping(path = "/posts", method = RequestMethod.DELETE)
-    public void deletePost(HttpSession session, Integer id) throws Exception {
+    @RequestMapping(path = "/posts/{id}", method = RequestMethod.DELETE)
+    public void deletePost(HttpSession session, @PathVariable("id") int id) throws Exception {
         String email = (String) session.getAttribute("email");
 //        if (email == null) {
 //            throw new Exception("You are not logged in.");
@@ -288,8 +285,8 @@ public class BetrController {
         communities.save(community);
     }
     
-    @RequestMapping(path = "/community", method = RequestMethod.DELETE)
-    public void deleteCommunity(HttpSession session, Integer id) throws Exception {
+    @RequestMapping(path = "/community/{id}", method = RequestMethod.DELETE)
+    public void deleteCommunity(HttpSession session, @PathVariable("id") int id) throws Exception {
         String email = (String) session.getAttribute("email");
 //        if (email == null) {
 //            throw new Exception("You are not logged in.");
