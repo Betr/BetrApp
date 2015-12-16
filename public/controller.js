@@ -42,10 +42,7 @@
       //    UserService.newPress(item);
       //  };
 //PROCESSING payment
-        vm.postPayment = function (item){
-            PaymentService.postPayment(item);
-            $location.path('/home');
-          };
+
 
 
        vm.addUser = function (item){
@@ -157,8 +154,13 @@
 
           })
 
-        .controller('ModalInstanceCtrl', function ($scope) {
+        .controller('ModalInstanceCtrl', function ($scope,PaymentService, $location) {
 
+          $scope.postPayment = function (item) {
+              console.log("MODAL CLICKAGE",item);
+              PaymentService.addPayment(item);
+              $location.path('/home');
+            };
               // $scope.items = items;
               // $scope.selected = {
               //   item: $scope.items

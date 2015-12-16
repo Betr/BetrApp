@@ -5,14 +5,14 @@
         </div>
 
 
-        <form id="checkout" action="/checkout" method="post">
-          <input class="checkoutForm form-control" ng-model="postPayment.cardnumber" data-braintree-name="number" placeholder="Card Number" value="">
-          <input class="checkoutForm form-control" ng-model="postPayment.exp" data-braintree-name="expiration_date" placeholder="Exp" value="">
-          <input class="checkoutForm form-control" ng-model="postPayment.cvv" data-braintree-name="cvv" placeholder="CVV" value="">
-          <input class="checkoutForm form-control" ng-model="postPayment.postalcode" data-braintree-name="postal_code" placeholder="Postal Code" value="">
-          <input class="checkoutForm form-control" ng-model="postPayment.name" data-braintree-name="cardholder_name" placeholder="Name on Card" value="">
-            <select style="width:80%; text-align:center;" class="form-control" name="nonceSelect" ng-model="paymentType">
-                <option class="checkoutForm form-control" value="">Select Payment Type</option> <!-- not selected / blank option -->
+        <div id="checkout">
+          <input class="checkoutForm form-control" ng-model="newPayment.cardnumber" data-braintree-name="number" placeholder="Card Number" value="">
+          <input class="checkoutForm form-control" ng-model="newPayment.exp" data-braintree-name="expiration_date" placeholder="Exp" value="">
+          <input class="checkoutForm form-control" ng-model="newPayment.cvv" data-braintree-name="cvv" placeholder="CVV" value="">
+          <input class="checkoutForm form-control" ng-model="newPayment.postalcode" data-braintree-name="postal_code" placeholder="Postal Code" value="">
+          <input class="checkoutForm form-control" ng-model="newPayment.name" data-braintree-name="cardholder_name" placeholder="Name on Card" value="">
+            <select style="width:80%; text-align:center;" class="form-control" name="nonceSelect" ng-model="newPayment.paymentType">
+                <option class="checkoutForm form-control" value="">Select Payment Type</option>
                  <option class="checkoutForm form-control" value="visa">VISA</option>
                  <option class="checkoutForm form-control" value="mastercard">MC</option>
                  <option class="checkoutForm form-control" value="amex">AMEX</option>
@@ -20,7 +20,7 @@
              </select>
           <br>
           <input class="checkoutForm form-control" data-braintree-name="amount" placeholder="Amount" value="">
-          <input class="btn logBtn payBtn" ng-click="MainCtrl.postPayment" type="submit" id="submit" value="Pay">
-          </form>
+          <button class="btn logBtn payBtn" ng-click="postPayment(newPayment)" type="button" name="button">Pay</button>
+        </div>
           <br>
           <footer><img class="footerImg" src="pics/betrLogo.png"></footer>
