@@ -1,6 +1,7 @@
 package com.theironyard.controllers;
 
 import com.braintreegateway.*;
+import com.braintreegateway.test.Nonce;
 import com.theironyard.entities.Community;
 import com.theironyard.entities.Post;
 import com.theironyard.entities.Press;
@@ -66,7 +67,7 @@ public class BetrController {
         return gateway.clientToken().generate();
     }
     @RequestMapping(path = "/customer", method = RequestMethod.POST)
-    public Object addCustomer(String customer){
+    public Object addCustomer(@RequestBody Customer customer){
         CustomerRequest request = new CustomerRequest()
                 .firstName("")
                 .lastName("")
@@ -82,22 +83,22 @@ public class BetrController {
     }
 
     @RequestMapping(path = "/checkout", method = RequestMethod.GET)
-    public Object getCheckout(String nonce) {
+    public Object getCheckout(@RequestBody Nonce nonce) {
 
         TransactionRequest request = new TransactionRequest() //http://localhost:8080/checkout?nonce=fake-valid-nonce
                 .customerId("")
-                .amount(new BigDecimal("10"))
-                .paymentMethodNonce(nonce);
+                .amount(new BigDecimal(""))
+                .paymentMethodNonce("");
 
         Result<Transaction> result = gateway.transaction().sale(request);
         return (result);
     }
     @RequestMapping(path = "/checkout", method = RequestMethod.POST)
-    public Object addCheckout(String nonce) {
+    public Object addCheckout(@RequestBody Nonce nonce) {
 
         TransactionRequest request = new TransactionRequest()
                 .amount(new BigDecimal(""))
-                .paymentMethodNonce(nonce);
+                .paymentMethodNonce("");
 
         Result<Transaction> result = gateway.transaction().sale(request);
         return (nonce);
