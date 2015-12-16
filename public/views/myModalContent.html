@@ -1,17 +1,26 @@
 
 <div ng-controller="ModalInstanceCtrl">
         <div class="modal-header">
-            <h3 class="modal-title">Im a modal!</h3>
-        </div>
-        <div class="modal-body">
-
-            Selected: <b>{{ selected.item }}</b>
+            <h3 class="adminTitle">Invest in the Future</h3>
         </div>
 
-    <form id="checkout" method="post" action="/checkout">
-    <div id="payment-form"></div>
-    <input class="btn logBtn" type="submit" value="Pay $10">
-    </form>
-    <form>
-  <div id="dropin-container"></div>
-</form>
+
+        <form id="checkout" action="" method="post">
+          <input class="checkoutForm form-control" data-braintree-name="number" placeholder="Card Number" value="">
+          <input class="checkoutForm form-control" data-braintree-name="expiration_date" placeholder="Exp" value="">
+          <input class="checkoutForm form-control" data-braintree-name="cvv" placeholder="CVV" value="">
+          <input class="checkoutForm form-control" data-braintree-name="postal_code" placeholder="Postal Code" value="">
+          <input class="checkoutForm form-control" data-braintree-name="cardholder_name" placeholder="Name on Card" value="">
+            <select style="width:80%; text-align:center;" class="form-control" name="nonceSelect" ng-model="paymentType">
+                <option class="checkoutForm form-control" value="">Select Payment Type</option> <!-- not selected / blank option -->
+                 <option class="checkoutForm form-control" value="visa">VISA</option>
+                 <option class="checkoutForm form-control" value="mastercard">MC</option>
+                 <option class="checkoutForm form-control" value="amex">AMEX</option>
+                 <option class="checkoutForm form-control" value="paypal">PAYPAL</option>
+             </select>
+          <br>
+          <input type="number" class="checkoutForm form-control" data-braintree-name="amount" placeholder="Amount" value="">
+          <input class="btn logBtn payBtn" type="submit" id="submit" value="Pay">
+          </form>
+          <br>
+          <footer><img class="footerImg" src="pics/betrLogo.png"></footer>
