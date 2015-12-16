@@ -86,37 +86,51 @@
                   };
                 })
 
-    .factory('UserService', function ($http) {
-      var url = '/register/';
-      var addUser = function (addUser) {
-            return $http.post(url, addUser).then(function (res) {
-              console.log(addUser);
-              console.log(res);
-            });
-          };
+            .factory('UserService', function ($http) {
+              var url = '/register/';
+              var addUser = function (addUser) {
+                    return $http.post(url, addUser).then(function (res) {
+                      console.log(addUser);
+                      console.log(res);
+                    });
+                  };
 
-      return {
-        addUser: addUser,
+              return {
+                addUser: addUser,
 
-    };
-  })
-  .factory('LoginService', function ($http) {
-    var url = '/login';
-    var logOutUrl = '/logout';
-    var logUser = function (logUser) {
-          $http.post(url, logUser).then(function (res) {
-            console.log(logUser);
-          });
-        };
-    var logOut = function(){
-      return $http.post(logOutUrl);
-    };
-    return {
-      logUser: logUser,
-      logOut: logOut
+            };
+          })
+              .factory('LoginService', function ($http) {
+                var url = '/login';
+                var logOutUrl = '/logout';
+                var logUser = function (logUser) {
+                      $http.post(url, logUser).then(function (res) {
+                        console.log(logUser);
+                      });
+                    };
+                var logOut = function(){
+                  return $http.post(logOutUrl);
+                };
+                return {
+                  logUser: logUser,
+                  logOut: logOut
 
-  };
-});
+              };
+            })
+            .factory('PaymentService', function ($http) {
+              var url = '/checkout';
+              var postPayment = function (addUser) {
+                    return $http.post(url, addUser).then(function (res) {
+                      console.log(addUser);
+                      console.log(res);
+                      console.log('posted to checkout route with payment service')
+                    });
+                  };
 
+              return {
+                postPayment: postPayment,
+
+            };
+        });
 
   })();
