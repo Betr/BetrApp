@@ -21,8 +21,11 @@
           var editCommunity = function () {
             return $http.put(url + id, data);
           };
-          var deleteCommunity = function () {
-             $http.delete(url + "/" + item._id);
+          var deleteCommunity = function (item) {
+            console.log("DELETE SERVICE", item);
+             return $http.delete(url + "/" + item.id).then(function(data) {
+               console.log('service delete', data);
+             });
           };
 
           return {

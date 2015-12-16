@@ -90,6 +90,7 @@
              CommunityService.newCommunity(item);
            };
            vm.deleteCommunity = function (item){
+             console.log("DELETE",item);
              CommunityService.deleteCommunity(item);
            };
           //  vm.addUser = function (item){
