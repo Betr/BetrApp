@@ -4,8 +4,33 @@
      angular
      .module('betrApp')
 
-     .controller('MainController', function ($scope, PressService, CommunityService, PostService, UserService, $location, LoginService ) {
+     .controller('MainController', function ($scope, $log, $uibModal,PressService, CommunityService, PostService, UserService, $location, LoginService ) {
        var vm = this;
+
+       $scope.open2 = function (size) {
+
+         var modalInstance2 = $uibModal.open({
+           animation: $scope.animationsEnabled,
+           templateUrl: 'views/myModalLogin.html',
+           controller: 'ModalInstanceCtrl',
+           size: size,
+           resolve: {
+             items: function () {
+               return $scope.items;
+             }
+           }
+         });
+
+         modalInstance2.result.then(function (selectedItem) {
+           $scope.selected = selectedItem;
+         }, function () {
+           $log.info('Modal dismissed at: ' + new Date());
+         });
+       };
+
+       $scope.toggleAnimation = function () {
+         $scope.animationsEnabled = !$scope.animationsEnabled;
+       };
       //  vm.getCommunity = function (){
       //    CommunityService.newCommunity().then(function(){vm.item = items;});
        //
@@ -24,7 +49,14 @@
              LoginService.logUser(item);
              $location.path('/home');
            };
+           vm.logOut = function(item){
+             LoginService.logOut().then(function(){
+               $location.path('/login');
+             });
+
+             };
      })
+
      .controller('AdminController', function ($log, $uibModal, $scope, PressService, CommunityService, PostService, UserService, $location, LoginService ) {
        var vm = this;
 
@@ -32,6 +64,7 @@
            PostService.newPost(postItem);
            $location.path('/admin');
          };
+
 
          vm.getPost = function (postItem){
            PostService.newPost(postItem);
@@ -89,7 +122,7 @@
 
                 var modalInstance = $uibModal.open({
                   animation: $scope.animationsEnabled,
-                  templateUrl: '#/myModalContent.html',
+                  templateUrl: 'views/myModalContent.html',
                   controller: 'ModalInstanceCtrl',
                   size: size,
                   resolve: {
@@ -109,23 +142,27 @@
               $scope.toggleAnimation = function () {
                 $scope.animationsEnabled = !$scope.animationsEnabled;
               };
-            })
+            // })
 
-        .controller('ModalInstanceCtrl', function ($scope, $uibModalInstance, items) {
 
-              $scope.items = items;
+
+
+          })
+
+        .controller('ModalInstanceCtrl', function ($scope) {
+
+              // $scope.items = items;
               // $scope.selected = {
-              //   item: $scope.items[0]
+              //   item: $scope.items
               // };
 
-              $scope.ok = function () {
-                $uibModalInstance.close($scope.selected.item);
-              };
-
-              $scope.cancel = function () {
-                $uibModalInstance.dismiss('cancel');
-              };
+              // $scope.ok = function () {
+              //   $uibModalInstance.close($scope.selected.item);
+              // };
+              //
+              // $scope.cancel = function () {
+              //   $uibModalInstance.dismiss('cancel');
+              // };
         });
 
-// ModalInstanceCtrl
  })();

@@ -1,5 +1,4 @@
 <!-- form to create, edit, and delete communities -->
-<a href="#/communities"><button class="btn" type="" name="">Communitites</button></a>
 <a href="#/editcommunities"><button class="btn" type="" name="">Edit Communities</button></a>
 <a href="#/home"><button class="btn" type="" name="">Logged in Home</button></a>
 <a href="#/admin"><button class="btn" type="" name="">Admin</button></a>
@@ -8,6 +7,8 @@
 <a href="#/editpress"><button class="btn" type="" name="">Edit Press</button></a>
 <a href="#/payment"><button class="btn" type="" name="">Payment Popup</button></a>
 <a href="#/login"><button class="btn" type="" name="">Login</button></a>
+
+<p class="adminTitle">Edit Communities</p><a href="#/communities"><button class="btn adminBtn" type="" name="">View Communitites</button></a>
 
 
 <div class='logDiv'>
@@ -21,7 +22,7 @@
        <input type="text" name="communityName" ng-model="newCommunity.name" placeholder="Community Name" value="" class="form-control"><br>
        <input type="number" name="population" ng-model="newCommunity.population" placeholder="Population of Women" value="" class="form-control"><br>
        <input type="text" name="description" ng-model="newCommunity.description" placeholder="Description" value="" class="form-control"><br><br>
- <button class="btn logBtn" style="display:block;" type="button" name="button" ng-click="AdminCtrl.addCommunity(newCommunity)">Add a Community!</button>
+ <button class="btn logBtn" style="display:block;" type="button" name="button" ng-click="AdminCtrl.addCommunity(newCommunity)">Add a Community</button>
 
  </div>
 
@@ -34,8 +35,11 @@
                 <h1 class="comName" >{{item.name}}</h1>
                 <h3 class="population">Population of {{item.population}}</h3>
                 <h5 class='popPar'>{{item.description}}</h5>
+            <button class="btn editBtn" type="button" name="button" ng-click="AdminCtrl.editCommunity(newCommunity)">Edit Community</button>
+            <button class="btn editBtn"  type="button" name="button" ng-click="AdminCtrl.deleteCommunity(newCommunity)">Delete Community</button>
             </div>
      </div>
  </article>
- <br><br>
 </div>
+
+ <br><br>

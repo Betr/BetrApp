@@ -61,6 +61,11 @@ public class BetrController {
         return gateway.clientToken().generate();
     }
 
+    @RequestMapping(path = "/client_token", method = RequestMethod.POST)
+    public Object addToken() {
+        return gateway.clientToken().generate();
+    }
+
     @RequestMapping(path = "/checkout", method = RequestMethod.GET)
     public Object getCheckout(String nonce) {
 
@@ -69,7 +74,7 @@ public class BetrController {
                 .paymentMethodNonce(nonce);
 
         Result<Transaction> result = gateway.transaction().sale(request);
-        return "/checkout";
+        return (result);
     }
     @RequestMapping(path = "/checkout", method = RequestMethod.POST)
     public Object addCheckout(String nonce) {
@@ -104,9 +109,8 @@ public class BetrController {
 
     @RequestMapping("/logout")
     public void logout(HttpSession session) {
-
-        session.getAttribute("email");
         session.invalidate();
+        System.out.println("Successfully logged out");
     }
 
     @RequestMapping(path = "/register", method = RequestMethod.POST)

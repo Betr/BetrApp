@@ -1,41 +1,13 @@
-<!-- payment from braintree window -->
-<p>this is the payment popup</p>
-<a href="#/communities"><button class="btn" type="" name="">Communitites</button></a>
-<a href="#/editcommunities"><button class="btn" type="" name="">Edit Communities</button></a>
-<a href="#/home"><button class="btn" type="" name="">Logged in Home</button></a>
-<a href="#/admin"><button class="btn" type="" name="">Admin</button></a>
-<a href="#/newpost"><button class="btn" type="" name="">Posts</button></a>
-<a href="#/press"><button class="btn" type="" name="">Press</button></a>
-<a href="#/editpress"><button class="btn" type="" name="">Edit Press</button></a>
-<a href="#/payment"><button class="btn" type="" name="">Payment Popup</button></a>
-<a href="#/login"><button class="btn" type="" name="">Login</button></a>
 
-
-
-
-<div ng-controller="ModalDemoCtrl">
-    <script type="text/ng-template" id="myModalContent.html">
+<div ng-controller="ModalInstanceCtrl">
         <div class="modal-header">
             <h3 class="modal-title">Im a modal!</h3>
         </div>
         <div class="modal-body">
-            <ul>
-                <li ng-repeat="item in items">
-                    <a href="#" ng-click="$event.preventDefault(); selected.item = item">{{ item }}</a>
-                </li>
-            </ul>
+
             Selected: <b>{{ selected.item }}</b>
         </div>
-        <div class="modal-footer">
-            <button class="btn btn-primary" type="button" ng-click="ok()">OK</button>
-            <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
-        </div>
 
-    <button type="button" class="btn btn-default" ng-click="toggleAnimation()">Toggle Animation ({{ animationsEnabled }})</button>
-    <div ng-show="selected">Selection from a modal: {{ selected }}</div>
-
-    </div>
-    </script>
     <form id="checkout" method="post" action="/checkout">
     <div id="payment-form"></div>
     <input class="btn logBtn" type="submit" value="Pay $10">

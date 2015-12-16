@@ -1,5 +1,7 @@
 <!-- shows updates here -->
 <p>this will be your news feed</p>
+<button ng-click="MainCtrl.logOut()" class="btn adminBtn" type="" name="">Logout</button>
+
 <a href="#/communities"><button class="btn" type="" name="">Communitites</button></a>
 <a href="#/editcommunities"><button class="btn" type="" name="">Edit Communities</button></a>
 <a href="#/home"><button class="btn" type="" name="">Logged in Home</button></a>
@@ -11,6 +13,7 @@
 <a href="#/login"><button class="btn" type="" name="">Login</button></a>
 
 
+
 <div class="postDiv">
  <article class="newPosts" ng-repeat="postItem in AdminCtrl.items" >
  <img ng-src={{postItem.image}}>
@@ -20,3 +23,10 @@
  </article>
  <br><br>
 </div>
+
+
+
+<footer>
+<img class="footerImg" src="pics/betrLogo.png">
+<p>Created by Students of The Iron Yard</p>
+</footer>

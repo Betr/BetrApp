@@ -102,14 +102,18 @@
   })
   .factory('LoginService', function ($http) {
     var url = '/login';
+    var logOutUrl = '/logout';
     var logUser = function (logUser) {
           $http.post(url, logUser).then(function (res) {
             console.log(logUser);
           });
         };
-
+    var logOut = function(){
+      return $http.post(logOutUrl);
+    };
     return {
       logUser: logUser,
+      logOut: logOut
 
   };
 });

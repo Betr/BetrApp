@@ -8,6 +8,7 @@
 <a href="#/payment"><button class="btn" type="" name="">Payment Popup</button></a>
 <a href="#/login"><button class="btn" type="" name="">Login</button></a>
 
+<p class="adminTitle">Edit Press</p><a href="#/press"><button class="btn adminBtn" type="" name="">View Press</button></a>
 
 <div class="aLogin">
       <input type="text" name="image" ng-model="newPress.imageLink" placeholder="Image Link" value="" class='form-control loginInput'><br>
@@ -19,13 +20,20 @@
 
 </div>
 
-<div class="pressDiv">
-<article class="newPress" ng-repeat="pressItem in AdminCtrl.pressItems" >
-<img ng-src="{{pressItem.imageLink}}">
-<h4>{{pressItem.title}}</h4>
-<h4>{{pressItem.byline}}</h4>
-<h2>{{pressItem.link}}</h2>
-<p>{{pressItem.description}}</p>
-</article>
-<br><br>
+<div class="pressDisplay">
+
+ <article class="thePress" ng-repeat="pressItem in AdminCtrl.items" >
+     <div class="pressDiv">
+       <img ng-src="{{pressItem.imageLink}}">
+             <div class="pressText">
+               <h4>{{pressItem.title}}</h4>
+               <h4>{{pressItem.byline}}</h4>
+               <h2>{{pressItem.link}}</h2>
+               <p>{{pressItem.description}}</p>
+               <button class="btn editBtn" type="button" name="button" ng-click="AdminCtrl.editPress(pressItem)">Edit Press</button>
+               <button class="btn editBtn"  type="button" name="button" ng-click="AdminCtrl.deletePress(pressItem)">Delete Press</button>
+            </div>
+
+     </div>
+ </article>
 </div>
