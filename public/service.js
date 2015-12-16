@@ -21,7 +21,7 @@
           var editCommunity = function () {
             return $http.put(url + id, data);
           };
-          var deleteCommunity = function (item) {
+          var deleteCommunity = function () {
              $http.delete(url + "/" + item._id);
           };
 
