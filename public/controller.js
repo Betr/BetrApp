@@ -66,7 +66,7 @@
 
        vm.addPost = function (postItem){
            PostService.newPost(postItem);
-           $location.path('/admin');
+          //  $location.path('/admin');
          };
 
 
@@ -76,8 +76,9 @@
          vm.editPost = function (postItem){
            PostService.newPost(postItem);
          };
-         vm.deletePost = function (postItem){
-           PostService.deletePost(postItem);
+         vm.deletePost = function (item){
+            console.log("DELETE",item);
+           PostService.deletePost(item);
          };
 
          vm.addCommunity = function (item){
@@ -92,9 +93,15 @@
               console.log(vm.numCommunities);});
            };
            vm.getCommunity();
+
+
            vm.editCommunity = function (item){
-             CommunityService.newCommunity(item);
+             console.log("edit working", item);
+            // CommunityService.newCommunity(item);
            };
+
+
+
            vm.deleteCommunity = function (item){
              console.log("DELETE",item);
              CommunityService.deleteCommunity(item);
@@ -108,19 +115,28 @@
           //        $location.path('/home');
           //      };
 
-          vm.addPress = function (pressItem){
-              PressService.newPress(pressItem);
+          vm.addPress = function (item){
+              PressService.newPress(item);
               // $location.path('/admin');
             };
-            vm.getPress = function (pressItem){
-              PressService.getPress(pressItem);
+
+            if($location.path() === "/editpress") {
+              PressService.getPress().success(function(data) {
+                vm.items = data;
+              });
+            }
+            if($location.path() === "/press") {
+              PressService.getPress().success(function(data) {
+                vm.items = data;
+              });
+            }
+
+            vm.editPress = function (item){
+              PressService.editPress(item);
             };
-            vm.getPress();
-            vm.editPress = function (pressItem){
-              PressService.editPress(pressItem);
-            };
-            vm.deletePress = function (pressItem){
-              PressService.deletePress(pressItem);
+            vm.deletePress = function (item){
+              console.log("DELETE",item);
+              PressService.deletePress(item);
             };
 
             $scope.animationsEnabled = true;

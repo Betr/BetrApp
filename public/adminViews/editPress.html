@@ -22,16 +22,16 @@
 
 <div class="pressDisplay">
 
- <article class="thePress" ng-repeat="pressItem in AdminCtrl.items" >
+ <article class="thePress" ng-repeat="item in AdminCtrl.items" >
      <div class="pressDiv">
-       <img ng-src="{{pressItem.imageLink}}">
+       <img ng-src="{{item.imageLink}}">
              <div class="pressText">
-               <h4>{{pressItem.title}}</h4>
-               <h4>{{pressItem.byline}}</h4>
-               <h2>{{pressItem.link}}</h2>
-               <p>{{pressItem.description}}</p>
+               <h4>{{item.title}}</h4>
+               <h4>{{item.byline}}</h4>
+               <h2>{{item.link}}</h2>
+               <p>{{item.description}}</p>
                <button class="btn editBtn" type="button" name="button" ng-click="AdminCtrl.editPress(pressItem)">Edit Press</button>
-               <button class="btn editBtn"  type="button" name="button" ng-click="AdminCtrl.deletePress(pressItem)">Delete Press</button>
+               <button class="btn editBtn" type="button" name="button" ng-click="AdminCtrl.deletePress(item)">Delete Press</button>
             </div>
 
      </div>
