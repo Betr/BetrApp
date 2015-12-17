@@ -84,8 +84,8 @@ public class BetrController {
 
         TransactionRequest request = new TransactionRequest() //http://localhost:8080/checkout?nonce=fake-valid-nonce
                 .customerId("")
-                .amount(new BigDecimal("100.00"))
-                .paymentMethodNonce("");
+                .amount(new BigDecimal("108.00"))
+                .paymentMethodNonce("fake-valid-visa-nonce");
 
         Result<Transaction> result = gateway.transaction().sale(request);
         return (com.braintreegateway.test.Nonce.Transactable);
@@ -95,7 +95,7 @@ public class BetrController {
 
         TransactionRequest request = new TransactionRequest()
                 .customerId("")
-                .amount(new BigDecimal("100.00"))
+                .amount(new BigDecimal("108.00"))
                 .paymentMethodNonce("fake-valid-visa-nonce");
 
         Result<Transaction> result = gateway.transaction().sale(request);
@@ -106,8 +106,8 @@ public class BetrController {
 
         TransactionRequest request = new TransactionRequest() //http://localhost:8080/checkout?nonce=fake-valid-nonce
                 .customerId("")
-                .amount(new BigDecimal("100.00"))
-                .paymentMethodNonce("");
+                .amount(new BigDecimal("108.00"))
+                .paymentMethodNonce("fake-valid-visa-nonce");
 
         Result<Transaction> result = gateway.transaction().sale(request);
         return (com.braintreegateway.test.Nonce.Transactable);
