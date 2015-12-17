@@ -87,7 +87,9 @@
            };
            vm.getCommunity = function (){
              console.log("in admin controller");
-             CommunityService.getCommunity().then(function(res){vm.items = res.data;});
+             CommunityService.getCommunity().then(function(res){vm.items = res.data;
+             vm.numCommunities = vm.items.length;
+              console.log(vm.numCommunities);});
            };
            vm.getCommunity();
            vm.editCommunity = function (item){
