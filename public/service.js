@@ -18,8 +18,8 @@
             console.log('in community service');
             return $http.get(getUrl);
           };
-          var editCommunity = function () {
-            return $http.put(url + id, data);
+          var editCommunity = function (item) {
+            return $http.put(url + '/' + item.id, item);
           };
           var deleteCommunity = function (item) {
             console.log("DELETE SERVICE", item);
@@ -51,8 +51,14 @@
                 return $http.put(url + id, data);
               };
               var deletePost = function (item) {
-                 $http.delete(url + "/" + item._id);
-              };
+              //    $http.delete(url + "/" + item._id);
+              // };
+              console.log("DELETE SERVICE", item);
+               return $http.delete(url + "/" + item.id).then(function(data) {
+                 console.log('service delete', data);
+               });
+            };
+
 
               return {
                 newPost: addPost,
@@ -73,12 +79,17 @@
                   var getPress = function () {
                     return $http.get(url);
                   };
-                  var editPress = function () {
+                  var editPress = function (item) {
                     return $http.put(url + id, data);
                   };
                   var deletePress = function (item) {
-                     $http.delete(url + "/" + item._id);
+                    console.log("DELETE SERVICE", item);
+                     return $http.delete(url + "/" + item.id).then(function(data) {
+                       console.log('service delete', data);
+                     });
                   };
+                  //    $http.delete(url + "/" + item._id);
+                  // };
 
                   return {
                     newPress: addPress,
@@ -126,7 +137,7 @@
                     return $http.post(url, addPayment).then(function (res) {
                       console.log(addPayment);
                       console.log(res);
-                      console.log('posted to checkout route with payment service')
+                      console.log('posted to checkout route with payment service');
                     });
                   };
 
