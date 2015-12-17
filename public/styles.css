@@ -16,7 +16,7 @@ header {
 
 .h1header {
   color: #9C27B0;
-  font-family: 'Poiret One', cursive;
+  font-family: 'Poiret One', sans-serif;
   display: inline-block;
   margin-left: 15.2%;
   font-size: 5em;
@@ -193,7 +193,7 @@ body {
   color: white;
   padding: 12px 16px 12px 16px;
   font-size: 24px;
-  font-family: 'Poiret One', cursive; }
+  font-family: 'Poiret One', sans-serif; }
 
 .logBtn:hover {
   border: solid 2px #8BC34A;
@@ -202,17 +202,17 @@ body {
 
 .loginH1 {
   color: #9C27B0;
-  font-family: 'Poiret One', cursive;
+  font-family: 'Poiret One', sans-serif;
   margin-left: 48%;
   font-size: 46px; }
 
 .loginH2 {
   color: #9C27B0;
-  font-family: 'Raleway', cursive;
+  font-family: 'Raleway', sans-serif;
   margin-left: 44%; }
 
 .form-control {
-  font-family: 'Raleway', cursive; }
+  font-family: 'Raleway', sans-serif; }
 
 .comDiv {
   background-color: #8BC34A;
@@ -327,3 +327,8 @@ footer {
 .payBtn {
   padding: 0 20px 0 20px;
   margin-left: -18%; }
+
+.select {
+  width: 80%;
+  text-align: center;
+  margin-left: 5px; }
