@@ -49,10 +49,10 @@
            UserService.addUser(item);
            $location.path('/home');
          };
-         vm.logUser = function (item){
-             LoginService.logUser(item);
-             $location.path('/home');
-           };
+        //  vm.logUser = function (item){
+        //      LoginService.logUser(item);
+        //      $location.path('/home');
+        //    };
            vm.logOut = function(item){
              LoginService.logOut().then(function(){
                $location.path('/login');
@@ -154,13 +154,17 @@
 
           })
 
-        .controller('ModalInstanceCtrl', function ($scope,PaymentService, $location) {
+        .controller('ModalInstanceCtrl', function ($scope,PaymentService, $location, LoginService) {
 
           $scope.postPayment = function (item) {
               console.log("MODAL CLICKAGE",item);
               PaymentService.addPayment(item);
               $location.path('/home');
             };
+            $scope.logUser = function (item){
+                LoginService.logUser(item);
+                $location.path('/home');
+              };
               // $scope.items = items;
               // $scope.selected = {
               //   item: $scope.items
