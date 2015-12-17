@@ -11,22 +11,22 @@
 <a href="#/login"><button class="btn" type="" name="">Login</button></a>
 
   <h2 class='login'><a href ng-click='open2("lg")'='#/login'>Login</a>&nbsp;| <a href="#/register">Register</a></h1>
-<div class="pressDisplay">
+    <div class="pressDisplay">
 
- <article class="thePress" ng-repeat="pressItem in AdminCtrl.items" >
-     <div class="pressDiv">
-       <img ng-src="{{pressItem.imageLink}}">
-             <div class="pressText">
-               <h4>{{pressItem.title}}</h4>
-               <h4>{{pressItem.byline}}</h4>
-               <h2>{{pressItem.link}}</h2>
-               <p>{{pressItem.description}}</p>
-
+     <article class="thePress" ng-repeat="item in AdminCtrl.items" >
+         <div class="pressDiv">
+           <img ng-src="{{item.imageLink}}">
+                 <div class="pressText">
+                   <h4>{{item.title}}</h4>
+                   <h4>{{item.byline}}</h4>
+                   <h2>{{item.link}}</h2>
+                   <p>{{item.description}}</p>
             </div>
 
-     </div>
- </article>
-</div>
+         </div>
+     </article>
+    </div>
+
 
 
 <footer>
