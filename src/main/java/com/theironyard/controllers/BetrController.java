@@ -80,7 +80,7 @@ public class BetrController {
     }
 
     @RequestMapping(path = "/checkout", method = RequestMethod.GET)
-    public Object getCheckout(@RequestBody Nonce nonce) {
+    public Object getCheckout(@RequestBody Transaction transaction) {
 
         TransactionRequest request = new TransactionRequest() //http://localhost:8080/checkout?nonce=fake-valid-nonce
                 .customerId("")
@@ -91,7 +91,7 @@ public class BetrController {
         return (com.braintreegateway.test.Nonce.Transactable);
     }
     @RequestMapping(path = "/checkout", method = RequestMethod.POST)
-    public Object addCheckout(@RequestBody Nonce nonce) {
+    public Object addCheckout(@RequestBody Transaction transaction) {
 
         TransactionRequest request = new TransactionRequest()
                 .customerId("")
@@ -102,7 +102,7 @@ public class BetrController {
         return (com.braintreegateway.test.Nonce.Transactable);
     }
     @RequestMapping(path = "/checkout", method = RequestMethod.PUT)
-    public Object putCheckout(@RequestBody Nonce nonce) {
+    public Object putCheckout(@RequestBody Transaction transaction) {
 
         TransactionRequest request = new TransactionRequest() //http://localhost:8080/checkout?nonce=fake-valid-nonce
                 .customerId("")
