@@ -121,7 +121,7 @@
               };
             })
             .factory('PaymentService', function ($http) {
-              var url = '/checkout';
+              var url = '/transaction';
               var postPayment = function (addPayment) {
                     $http.post(url, addPayment).then(function (res) {
                       console.log(addPayment);
