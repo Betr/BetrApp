@@ -19,7 +19,7 @@
                  <option class="checkoutForm form-control" value="paypal">PAYPAL</option>
              </select>
           <br>
-          <input class="checkoutForm form-control" data-braintree-name="amount" placeholder="Amount" value="">
+          <input class="checkoutForm form-control" ng-model="newPayment.amount" data-braintree-name="amount" placeholder="Amount" value="">
           <button class="btn logBtn payBtn" ng-click="postPayment(newPayment)" type="button" name="button">Pay</button>
         </div>
           <br>

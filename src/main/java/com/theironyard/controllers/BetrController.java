@@ -1,7 +1,7 @@
 package com.theironyard.controllers;
 
 import com.braintreegateway.*;
-import com.braintreegateway.test.Nonce;
+import com.theironyard.TransactionParams;
 import com.theironyard.entities.Community;
 import com.theironyard.entities.Post;
 import com.theironyard.entities.Press;
@@ -11,21 +11,13 @@ import com.theironyard.services.PostRepository;
 import com.theironyard.services.PressRepository;
 import com.theironyard.services.UserRepository;
 import com.theironyard.utils.PasswordHash;
-import org.apache.tomcat.jni.Local;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.multipart.MultipartFile;
 
-import javax.annotation.PostConstruct;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.math.BigDecimal;
-import java.security.NoSuchAlgorithmException;
-import java.security.spec.InvalidKeySpecException;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -54,63 +46,19 @@ public class BetrController {
             "fkd575nb39thx694",
             "f76bfbc6d5ea0bbfc9caed00077353b3"
     );
-    @RequestMapping(path = "/client_token", method = RequestMethod.GET)//http://localhost:8080/client_token
-    public Object token() {
-        return gateway.clientToken().generate();
-    }
 
-    @RequestMapping(path = "/client_token", method = RequestMethod.POST)
-    public Object addToken() {
-        return gateway.clientToken().generate();
-    }
-    @RequestMapping(path = "/customer", method = RequestMethod.POST)
-    public Object addCustomer(@RequestBody Customer customer){
-        CustomerRequest request = new CustomerRequest()
-                .firstName("")
-                .lastName("")
-                .company("")
-                .email("")
-                .phone("")
-                .website("");
-        Result<Customer> result = gateway.customer().create(request);
-
-        //return result.isSuccess();
-// true
-        return result.getTarget().getId();
-    }
-
-    @RequestMapping(path = "/checkout", method = RequestMethod.GET)
-    public Object getCheckout(@RequestBody Nonce nonce) {
-
-        TransactionRequest request = new TransactionRequest() //http://localhost:8080/checkout?nonce=fake-valid-nonce
-                .customerId("")
-                .amount(new BigDecimal(""))
-                .paymentMethodNonce("");
-
-        Result<Transaction> result = gateway.transaction().sale(request);
-        return (result);
-    }
-    @RequestMapping(path = "/checkout", method = RequestMethod.POST)
-    public Object addCheckout(@RequestBody Nonce nonce) {
-
+    @RequestMapping(path = "/transaction", method = RequestMethod.POST)
+    public boolean addTransaction(@RequestBody TransactionParams params){
         TransactionRequest request = new TransactionRequest()
-                .customerId("")
-                .amount(new BigDecimal(""))
-                .paymentMethodNonce("");
+                .amount(new BigDecimal(params.amount))
+                .paymentMethodNonce("fake-valid-nonce")
+                .options()
+                .submitForSettlement(true)
+                .done();
 
         Result<Transaction> result = gateway.transaction().sale(request);
-        return (result);
-    }
-    @RequestMapping(path = "/checkout", method = RequestMethod.PUT)
-    public Object putCheckout(@RequestBody Nonce nonce) {
 
-        TransactionRequest request = new TransactionRequest() //http://localhost:8080/checkout?nonce=fake-valid-nonce
-                .customerId("")
-                .amount(new BigDecimal(""))
-                .paymentMethodNonce("");
-
-        Result<Transaction> result = gateway.transaction().sale(request);
-        return (result);
+        return result.isSuccess();
     }
 
     @RequestMapping(path = "/user", method = RequestMethod.GET)
