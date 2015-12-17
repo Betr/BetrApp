@@ -86,7 +86,7 @@ public class BetrController {
 //
 //        return (com.braintreegateway.test.Nonce.Transactable);
 //    }
-    @RequestMapping(path = "/checkout", method = RequestMethod.PUT)
+    @RequestMapping(path = "/checkout", method = RequestMethod.POST)
     public Object handle(@RequestBody PaymentMethod paymentMethod) {
 
         return (com.braintreegateway.test.Nonce.Transactable);
