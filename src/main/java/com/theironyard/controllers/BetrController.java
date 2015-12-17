@@ -94,7 +94,7 @@ public class BetrController {
 //    }
 //
 //    @RequestMapping(path = "/checkout", method = RequestMethod.POST)
-//    public Object addCheckout(@RequestBody Nonce nonce) {
+//    public Object checkout(@RequestBody Nonce nonce) {
 //            .customerId("")
 //            .paymentMethodNonce("");
 //
@@ -112,6 +112,7 @@ public class BetrController {
 //        Result<Transaction> result = gateway.transaction().sale(request);
 //        return (com.braintreegateway.test.Nonce.Transactable);
 //    }
+
     @RequestMapping(path = "/payment", method = RequestMethod.GET)
     public PaymentMethod getPayment(@RequestBody PaymentMethod paymentMethod) {
         PaymentMethodRequest request = new PaymentMethodRequest()
@@ -145,7 +146,7 @@ public class BetrController {
     @RequestMapping(path = "/transaction", method = RequestMethod.GET)
     public Transaction getTransaction(@RequestBody Transaction transaction){
         TransactionRequest request = new TransactionRequest()
-                .amount(new BigDecimal("100.00"))
+                .amount(new BigDecimal("2.00"))
                 .paymentMethodNonce("")
                 .options()
                 .submitForSettlement(true)
@@ -158,7 +159,7 @@ public class BetrController {
     @RequestMapping(path = "/transaction", method = RequestMethod.PUT)
     public Transaction editTransaction(@RequestBody Transaction transaction){
         TransactionRequest request = new TransactionRequest()
-                .amount(new BigDecimal("100.00"))
+                .amount(new BigDecimal("2.00"))
                 .paymentMethodNonce("")
                 .options()
                 .submitForSettlement(true)
@@ -171,7 +172,7 @@ public class BetrController {
     @RequestMapping(path = "/transaction", method = RequestMethod.POST)
     public Transaction addTransaction(@RequestBody Transaction transaction){
         TransactionRequest request = new TransactionRequest()
-                .amount(new BigDecimal("100.00"))
+                .amount(new BigDecimal("2.00"))
                 .paymentMethodNonce("")
                 .options()
                 .submitForSettlement(true)
