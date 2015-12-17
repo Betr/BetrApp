@@ -1,7 +1,7 @@
 package com.theironyard.controllers;
 
 import com.braintreegateway.*;
-import com.braintreegateway.test.Nonce;
+import com.theironyard.TransactionParams;
 import com.theironyard.entities.Community;
 import com.theironyard.entities.Post;
 import com.theironyard.entities.Press;
@@ -11,22 +11,13 @@ import com.theironyard.services.PostRepository;
 import com.theironyard.services.PressRepository;
 import com.theironyard.services.UserRepository;
 import com.theironyard.utils.PasswordHash;
-import org.apache.catalina.connector.Response;
-import org.apache.tomcat.jni.Local;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.multipart.MultipartFile;
 
-import javax.annotation.PostConstruct;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.math.BigDecimal;
-import java.security.NoSuchAlgorithmException;
-import java.security.spec.InvalidKeySpecException;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -55,148 +46,19 @@ public class BetrController {
             "fkd575nb39thx694",
             "f76bfbc6d5ea0bbfc9caed00077353b3"
     );
-    @RequestMapping(path = "/client_token", method = RequestMethod.GET)//http://localhost:8080/client_token
-    public Object token() {
-        return gateway.clientToken().generate();
-    }
-
-    @RequestMapping(path = "/client_token", method = RequestMethod.POST)
-    public Object addToken() {
-        return gateway.clientToken().generate();
-    }
-    @RequestMapping(path = "/customer", method = RequestMethod.POST)
-    public CustomerRequest addCustomer(@RequestBody CustomerRequest customerRequest){
-        CustomerRequest request = new CustomerRequest()
-                .firstName("")
-                .lastName("")
-                .company("")
-                .email("")
-                .phone("")
-                .website("");
-        Result<Customer> result = gateway.customer().create(request);
-
-        result.isSuccess();
-// true
-        result.getTarget().getId();
-
-        return customerRequest;
-    }
-//    @RequestMapping(path = "/checkout", method = RequestMethod.POST)
-//    public Object handle(@RequestBody PaymentMethod paymentMethod) {
-//
-//        return (com.braintreegateway.test.Nonce.Transactable);
-//    }
-    @RequestMapping(path = "/checkout", method = RequestMethod.POST)
-    public Object handle(@RequestBody PaymentMethod paymentMethod) {
-
-        return (com.braintreegateway.test.Nonce.Transactable);
-    }
-//    @RequestMapping(path = "/checkout", method = RequestMethod.GET)
-//    public Object handle (@RequestBody PaymentMethod paymentMethod) {
-//
-//        return (com.braintreegateway.test.Nonce.Transactable);
-//    }
-
-//    @RequestMapping(path = "/checkout", method = RequestMethod.GET)
-//    public Object getCheckout(@RequestBody Transaction transaction) {
-//
-//        TransactionRequest request = new TransactionRequest() //http://localhost:8080/checkout?nonce=fake-valid-nonce
-//                .customerId("")
-//                .amount(new BigDecimal("108.00"))
-//                .paymentMethodNonce("fake-valid-visa-nonce");
-//
-//        Result<Transaction> result = gateway.transaction().sale(request);
-//        return (com.braintreegateway.test.Nonce.Transactable);
-//    }
-
-//    @RequestMapping(path = "/checkout", method = RequestMethod.PUT)
-//    public Object putCheckout(@RequestBody Transaction transaction) {
-//
-//        TransactionRequest request = new TransactionRequest() //http://localhost:8080/checkout?nonce=fake-valid-nonce
-//                .customerId("")
-//                .amount(new BigDecimal("108.00"))
-//                .paymentMethodNonce("fake-valid-visa-nonce");
-//
-//        Result<Transaction> result = gateway.transaction().sale(request);
-//        return (com.braintreegateway.test.Nonce.Transactable);
-//    }
-
-    @RequestMapping(path = "/payment", method = RequestMethod.GET)
-    public PaymentMethod getPayment(@RequestBody PaymentMethod paymentMethod) {
-        PaymentMethodRequest request = new PaymentMethodRequest()
-                .customerId("")
-                .paymentMethodNonce("");
-
-        Result<? extends PaymentMethod> result = gateway.paymentMethod().create(request);
-        return (paymentMethod);
-    }
-
-    @RequestMapping(path = "/payment", method = RequestMethod.POST)
-    public PaymentMethod addPayment(@RequestBody PaymentMethod paymentMethod) {
-        PaymentMethodRequest request = new PaymentMethodRequest()
-                .customerId("")
-                .paymentMethodNonce("");
-
-        Result<? extends PaymentMethod> result = gateway.paymentMethod().create(request);
-        return (paymentMethod);
-    }
-
-    @RequestMapping(path = "/payment", method = RequestMethod.PUT)
-    public PaymentMethod editPayment(@RequestBody PaymentMethod paymentMethod) {
-        PaymentMethodRequest request = new PaymentMethodRequest()
-                .customerId("")
-                .paymentMethodNonce("");
-
-        Result<? extends PaymentMethod> result = gateway.paymentMethod().create(request);
-        return (paymentMethod);
-    }
-
-    @RequestMapping(path = "/transaction", method = RequestMethod.GET)
-    public Transaction getTransaction(@RequestBody Transaction transaction){
-        TransactionRequest request = new TransactionRequest()
-                .amount(new BigDecimal("2.00"))
-                .paymentMethodNonce("")
-                .options()
-                .submitForSettlement(true)
-                .done();
-
-        Result<Transaction> result = gateway.transaction().submitForSettlement(
-                "the_transaction_id"
-        );
-        //Result<Transaction> result = gateway.transaction().sale(request);
-        return (transaction);
-    }
-
-    @RequestMapping(path = "/transaction", method = RequestMethod.PUT)
-    public Transaction editTransaction(@RequestBody Transaction transaction){
-        TransactionRequest request = new TransactionRequest()
-                .amount(new BigDecimal("2.00"))
-                .paymentMethodNonce("")
-                .options()
-                .submitForSettlement(true)
-                .done();
-
-        Result<Transaction> result = gateway.transaction().submitForSettlement(
-                "the_transaction_id"
-        );
-        //Result<Transaction> result = gateway.transaction().sale(request);
-        return (transaction);
-    }
 
     @RequestMapping(path = "/transaction", method = RequestMethod.POST)
-    public Transaction addTransaction(@RequestBody Transaction transaction){
+    public boolean addTransaction(@RequestBody TransactionParams params){
         TransactionRequest request = new TransactionRequest()
-                .amount(new BigDecimal("2.00"))
-                .paymentMethodNonce("")
+                .amount(new BigDecimal(params.amount))
+                .paymentMethodNonce("fake-valid-nonce")
                 .options()
                 .submitForSettlement(true)
                 .done();
 
-        Result<Transaction> result = gateway.transaction().submitForSettlement(
-                "the_transaction_id"
-        );
-        //Result<Transaction> result = gateway.transaction().sale(request);
-        return (transaction);
+        Result<Transaction> result = gateway.transaction().sale(request);
+
+        return result.isSuccess();
     }
 
     @RequestMapping(path = "/user", method = RequestMethod.GET)
