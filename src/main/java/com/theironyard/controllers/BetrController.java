@@ -94,11 +94,12 @@ public class BetrController {
     public Object addCheckout(@RequestBody Nonce nonce) {
 
         TransactionRequest request = new TransactionRequest()
+                .customerId("")
                 .amount(new BigDecimal(""))
                 .paymentMethodNonce("");
 
         Result<Transaction> result = gateway.transaction().sale(request);
-        return (nonce);
+        return (result);
     }
     @RequestMapping(path = "/checkout", method = RequestMethod.PUT)
     public Object putCheckout(@RequestBody Nonce nonce) {
