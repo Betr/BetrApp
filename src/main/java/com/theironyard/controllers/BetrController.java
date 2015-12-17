@@ -160,7 +160,10 @@ public class BetrController {
                 .submitForSettlement(true)
                 .done();
 
-        Result<Transaction> result = gateway.transaction().sale(request);
+        Result<Transaction> result = gateway.transaction().submitForSettlement(
+                "the_transaction_id"
+        );
+        //Result<Transaction> result = gateway.transaction().sale(request);
         return (transaction);
     }
 
@@ -173,7 +176,10 @@ public class BetrController {
                 .submitForSettlement(true)
                 .done();
 
-        Result<Transaction> result = gateway.transaction().sale(request);
+        Result<Transaction> result = gateway.transaction().submitForSettlement(
+                "the_transaction_id"
+        );
+        //Result<Transaction> result = gateway.transaction().sale(request);
         return (transaction);
     }
 
@@ -186,7 +192,10 @@ public class BetrController {
                 .submitForSettlement(true)
                 .done();
 
-        Result<Transaction> result = gateway.transaction().sale(request);
+        Result<Transaction> result = gateway.transaction().submitForSettlement(
+                "the_transaction_id"
+        );
+        //Result<Transaction> result = gateway.transaction().sale(request);
         return (transaction);
     }
 
