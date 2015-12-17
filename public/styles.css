@@ -292,7 +292,7 @@ footer {
   display: block;
   text-align: center;
   font-size: 13px;
-  padding-top: 125px; }
+  margin-top: 3%; }
 
 .footerImg {
   max-height: 20px;
