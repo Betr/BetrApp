@@ -137,8 +137,15 @@
                     $http.post(url, addPayment).then(function (res) {
                       console.log(addPayment);
                       console.log(res);
+
                       console.log('posted to checkout route with payment service');
+
+
+                        // if (res.data = true).then($location.path('/home'));
+
+
                     });
+
                   };
 
               return {
