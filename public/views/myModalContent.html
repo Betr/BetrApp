@@ -11,7 +11,7 @@
           <input class="checkoutForm form-control" ng-model="newPayment.cvv" data-braintree-name="cvv" placeholder="CVV" value="">
           <input class="checkoutForm form-control" ng-model="newPayment.postalcode" data-braintree-name="postal_code" placeholder="Postal Code" value="">
           <input class="checkoutForm form-control" ng-model="newPayment.name" data-braintree-name="cardholder_name" placeholder="Name on Card" value="">
-            <select style="width:80%; text-align:center;" class="form-control" name="nonceSelect" ng-model="newPayment.paymentType">
+            <select class="form-control select" name="nonceSelect" ng-model="newPayment.paymentType">
                 <option class="checkoutForm form-control" value="">Select Payment Type</option>
                  <option class="checkoutForm form-control" value="visa">VISA</option>
                  <option class="checkoutForm form-control" value="mastercard">MC</option>
