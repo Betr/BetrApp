@@ -11,6 +11,7 @@ import com.theironyard.services.PostRepository;
 import com.theironyard.services.PressRepository;
 import com.theironyard.services.UserRepository;
 import com.theironyard.utils.PasswordHash;
+import org.apache.catalina.connector.Response;
 import org.apache.tomcat.jni.Local;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -80,6 +81,21 @@ public class BetrController {
 
         return customerRequest;
     }
+//    @RequestMapping(path = "/checkout", method = RequestMethod.POST)
+//    public Object handle(@RequestBody PaymentMethod paymentMethod) {
+//
+//        return (com.braintreegateway.test.Nonce.Transactable);
+//    }
+    @RequestMapping(path = "/checkout", method = RequestMethod.PUT)
+    public Object handle(@RequestBody PaymentMethod paymentMethod) {
+
+        return (com.braintreegateway.test.Nonce.Transactable);
+    }
+//    @RequestMapping(path = "/checkout", method = RequestMethod.GET)
+//    public Object handle (@RequestBody PaymentMethod paymentMethod) {
+//
+//        return (com.braintreegateway.test.Nonce.Transactable);
+//    }
 
 //    @RequestMapping(path = "/checkout", method = RequestMethod.GET)
 //    public Object getCheckout(@RequestBody Transaction transaction) {
@@ -92,15 +108,7 @@ public class BetrController {
 //        Result<Transaction> result = gateway.transaction().sale(request);
 //        return (com.braintreegateway.test.Nonce.Transactable);
 //    }
-//
-//    @RequestMapping(path = "/checkout", method = RequestMethod.POST)
-//    public Object checkout(@RequestBody Nonce nonce) {
-//            .customerId("")
-//            .paymentMethodNonce("");
-//
-//        return checkout;
-//    }
-//
+
 //    @RequestMapping(path = "/checkout", method = RequestMethod.PUT)
 //    public Object putCheckout(@RequestBody Transaction transaction) {
 //
