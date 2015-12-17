@@ -84,33 +84,33 @@ public class BetrController {
 
         TransactionRequest request = new TransactionRequest() //http://localhost:8080/checkout?nonce=fake-valid-nonce
                 .customerId("")
-                .amount(new BigDecimal(""))
-                .paymentMethodNonce("");
+                .amount(new BigDecimal("108.00"))
+                .paymentMethodNonce("fake-valid-visa-nonce");
 
         Result<Transaction> result = gateway.transaction().sale(request);
-        return (result);
+        return (com.braintreegateway.test.Nonce.Transactable);
     }
     @RequestMapping(path = "/checkout", method = RequestMethod.POST)
     public Object addCheckout(@RequestBody Nonce nonce) {
 
         TransactionRequest request = new TransactionRequest()
                 .customerId("")
-                .amount(new BigDecimal(""))
-                .paymentMethodNonce("");
+                .amount(new BigDecimal("108.00"))
+                .paymentMethodNonce("fake-valid-visa-nonce");
 
         Result<Transaction> result = gateway.transaction().sale(request);
-        return (result);
+        return (com.braintreegateway.test.Nonce.Transactable);
     }
     @RequestMapping(path = "/checkout", method = RequestMethod.PUT)
     public Object putCheckout(@RequestBody Nonce nonce) {
 
         TransactionRequest request = new TransactionRequest() //http://localhost:8080/checkout?nonce=fake-valid-nonce
                 .customerId("")
-                .amount(new BigDecimal(""))
-                .paymentMethodNonce("");
+                .amount(new BigDecimal("108.00"))
+                .paymentMethodNonce("fake-valid-visa-nonce");
 
         Result<Transaction> result = gateway.transaction().sale(request);
-        return (result);
+        return (com.braintreegateway.test.Nonce.Transactable);
     }
 
     @RequestMapping(path = "/user", method = RequestMethod.GET)
