@@ -26,10 +26,10 @@
      <div class="pressDiv">
        <img ng-src="{{item.imageLink}}">
              <div class="pressText">
-               <h4>{{item.title}}</h4>
-               <h4>{{item.byline}}</h4>
-               <h2>{{item.link}}</h2>
-               <p>{{item.description}}</p>
+               <h1 class="comName">{{item.title}}</h4>
+                 <h3 class="population">{{item.byline}} | </h3>
+                 <h4 class="population"><a href="{{item.link}}">Click here to read more.</a></h3>
+               <h5 class="popPar">{{item.description}}</h5>
                <button class="btn editBtn" type="button" name="button" ng-click="AdminCtrl.editPress(pressItem)">Edit Press</button>
                <button class="btn editBtn" type="button" name="button" ng-click="AdminCtrl.deletePress(item)">Delete Press</button>
             </div>

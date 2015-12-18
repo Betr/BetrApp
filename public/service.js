@@ -108,6 +108,7 @@
                       console.log(addUser);
                       console.log(res);
                     });
+                      $location.path('/home');
                   };
 
               return {

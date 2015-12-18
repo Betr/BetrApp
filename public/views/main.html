@@ -2,7 +2,10 @@
 <header class='header1'>
   <img src="pics/betrLogo.png" alt="flowerthing" / class='headerImg'>
   <h1 class='h1header'>betr</h1>
-  <h2 class='login'><a href ng-click='open2("lg")'='#/login'>Login</a>&nbsp;| <a href="#/register">Register</a></h1>
+
+  <div style="display:inline-block;" ng-controller="MainController as MainCtrl">
+    <h2 class='login'><a href="" ng-click='MainCtrl.open2("lg")'>Login</a>&nbsp;|&nbsp;
+    </div><a class='login' href="#/register">Register</a></h1>
 
 <!--
     <a href="#/communities"><button class="" type="" name="">Communitites</button></a>

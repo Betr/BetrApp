@@ -43,6 +43,7 @@ padding-left: 630px;
 
 a:hover{
   text-decoration: none;
+  color:#2196F3;
 }
 
 .pinkDiv{
@@ -177,6 +178,7 @@ a:hover{
 
 a {
   text-decoration: none;
+  color:#2196F3;
 }
 
 
@@ -395,4 +397,41 @@ footer{
   display: block;
   text-align: left;
   font-size: 24px;
+}
+.navBtn{
+  display: inline-block;
+  margin-left: .5%;
+  background-color: #8BC34A;
+  color: white;
+  padding: 2px 6px 2px 6px;
+  font-size: 16px;
+  font-family: 'Poiret One', sans-serif;
+  text-align: left;
+}
+
+.navBtn:hover{
+  border: solid 2px #8BC34A;
+  color: #8BC34A;
+  background-color: white;
+}
+.bigBetr{
+  font-family:Poiret One;
+  font-size:200px;
+  text-align: right;
+}
+.logOut{
+  height: 475px;
+  width: 100%;
+  margin:0;
+  padding: 15px 0 0 15px;
+  display: block;
+  background-color: #8BC34A;
+  font-size: 84px;
+}
+.logoutBetr{
+  color:white;
+  font-size:84px;
+  display: block;
+  font-family: 'Raleway', sans-serif;
+
 }
