@@ -150,10 +150,12 @@ public class BetrController {
         String email = (String) session.getAttribute("email");
         pressPosts.save(press);
     }
-    @RequestMapping(path = "/press", method = RequestMethod.DELETE)
-    public void deletePress(HttpSession session, @RequestBody Press press) throws Exception {
+    @RequestMapping(path = "/press/{id}", method = RequestMethod.DELETE)
+    public void deletePress(HttpSession session, @PathVariable("id") int id) throws Exception {
         String email = (String) session.getAttribute("email");
-        pressPosts.save(press);
+
+        Press press = pressPosts.findOne(id);
+        pressPosts.delete(press);
     }
 
     @RequestMapping(path = "/posts", method = RequestMethod.GET)
