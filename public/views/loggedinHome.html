@@ -1,9 +1,9 @@
 <!-- shows updates here -->
 <p>this will be your news feed</p>
-<div style="display:inline-block;" ng-controller="ModalInstanceCtrl">
+<!-- <div style="display:inline-block;" ng-controller="ModalInstanceCtrl">
   <h2 class='login'><a href ng-click='open2("lg")'='#/login'>Login &nbsp;|</a>
-  </div> <a class='login' href="#/register">Register </a></h1>
-<button ng-click="MainCtrl.logOut()" class="btn adminBtn" type="" name="">Logout</button>
+  </div> <a class='login' href="#/register">Register </a></h1> -->
+<button class="login" style="background:none; border:none;" ng-click="MainCtrl.logOut()" class="btn adminBtn" type="" name="">Logout</button>
 
 
 <a href="#/communities"><button class="btn" type="" name="">Communitites</button></a>
@@ -18,14 +18,18 @@
 
 
 
-<div class="postDiv">
- <article class="newPosts" ng-repeat="postItem in AdminCtrl.items" >
- <img ng-src={{postItem.image}}>
- <h3>{{postItem.communityName}}</h3>
- <h2>{{postItem.postName}}</h2>
- <p>{{postItem.postBody}}</p>
- </article>
- <br><br>
+<div class="postDisplay">
+       <article class="newPosts" ng-repeat="post in AdminCtrl.posts" >
+          <div class="postDiv">
+            <img ng-src={{post.image}}>
+                <div class="postText">
+                 <h1 class="comName">{{post.communityName}}</h1>
+                 <p class="pName">{{post.postName}}</p>
+                 <h5 class="popPar">{{post.postBody}}</h5>
+               </div>
+             </div>
+       </article>
+
 </div>
 
 

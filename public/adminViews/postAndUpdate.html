@@ -19,14 +19,18 @@
  <button class="btn logBtn" type="button" name="button" ng-click="AdminCtrl.addPost(newPost)">Add Update</button>
  </div>
 
-<div class="postDiv">
- <article class="newPosts" ng-repeat="postItem in AdminCtrl.items" >
- <img ng-src={{postItem.image}}>
- <h3>{{postItem.communityName}}</h3>
- <h2>{{postItem.postName}}</h2>
- <p>{{postItem.postBody}}</p>
- <button style="margin-left:35px;" class="btn editBtn" type="button" name="button" ng-click="AdminCtrl.editPost(postItem)">Edit Community</button>
- <button class="btn editBtn"  type="button" name="button" ng-click="AdminCtrl.deletePost(item)">Delete Community</button>
- </article>
+<div class="postDisplay">
+       <article class="newPosts" ng-repeat="post in AdminCtrl.posts" >
+          <div class="postDiv">
+            <img ng-src={{post.image}}>
+                <div class="postText">
+                 <h1 class="comName">{{post.communityName}}</h1>
+                 <p class="pName">{{post.postName}}</p>
+                 <h5 class="popPar">{{post.postBody}}</h5>
+                 <button style="margin-left:35px;" class="btn editBtn" type="button" name="button" ng-click="AdminCtrl.editPost(postItem)">Edit Community</button>
+                 <button class="btn editBtn"  type="button" name="button" ng-click="AdminCtrl.deletePost(item)">Delete Community</button>
+               </div>
+             </div>
+       </article>
 
 </div>

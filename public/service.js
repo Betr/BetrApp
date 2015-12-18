@@ -45,6 +45,7 @@
               };
 
               var getPost = function () {
+                console.log("posty");
                 return $http.get(url);
               };
               var editPost = function () {
@@ -101,7 +102,7 @@
                 })
 
             .factory('UserService', function ($http) {
-              var url = '/register/';
+              var url = '/register';
               var addUser = function (addUser) {
                     return $http.post(url, addUser).then(function (res) {
                       console.log(addUser);
@@ -137,15 +138,11 @@
                     $http.post(url, addPayment).then(function (res) {
                       console.log(addPayment);
                       console.log(res);
-
                       console.log('posted to checkout route with payment service');
-
-
-                        // if (res.data = true).then($location.path('/home'));
-
-
+                        // if (res.data === true){
+                        //   $location.path('/home');
+                        // }
                     });
-
                   };
 
               return {
