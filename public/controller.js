@@ -7,8 +7,8 @@
      .controller('MainController', function ($scope, $log, $uibModal,PressService, CommunityService, PostService, UserService, $location, LoginService ) {
        var vm = this;
 
-       $scope.open2 = function (size) {
-
+       vm.open2 = function (size) {
+         console.log("SOMETHING");
          var modalInstance2 = $uibModal.open({
            animation: $scope.animationsEnabled,
            templateUrl: 'views/myModalLogin.html',

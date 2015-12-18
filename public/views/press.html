@@ -10,7 +10,9 @@
 <a href="#/payment"><button class="btn" type="" name="">Payment Popup</button></a>
 <a href="#/login"><button class="btn" type="" name="">Login</button></a>
 
-  <h2 class='login'><a href ng-click='open2("lg")'='#/login'>Login</a>&nbsp;| <a href="#/register">Register</a></h1>
+<div style="display:inline-block;" ng-controller="MainController as MainCtrl">
+  <h2 class='login'><a href="" ng-click='MainCtrl.open2("lg")'>Login</a>&nbsp;|&nbsp;
+  </div><a class='login' href="#/register">Register</a></h1>
     <div class="pressDisplay">
 
      <article class="thePress" ng-repeat="item in AdminCtrl.items" >

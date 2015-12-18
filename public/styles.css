@@ -166,7 +166,7 @@ article {
   text-align: left;
   display: block; }
 
-.theCommunityPage, .theCommunities, .newPress, .newPosts img {
+.theCommunityPage, .theCommunities img, .newPress, .newPosts img {
   display: inline-block;
   max-height: 120px;
   margin-top: 11%; }
