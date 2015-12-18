@@ -48,7 +48,7 @@ public class BetrController {
     );
 
     @RequestMapping(path = "/transaction", method = RequestMethod.POST)
-    public boolean addTransaction(@RequestBody TransactionParams params){
+    public Object addTransaction(@RequestBody TransactionParams params){
         TransactionRequest request = new TransactionRequest()
                 .amount(new BigDecimal(params.amount))
                 .paymentMethodNonce("fake-valid-nonce")
@@ -58,7 +58,7 @@ public class BetrController {
 
         Result<Transaction> result = gateway.transaction().sale(request);
 
-        return result.isSuccess();
+        return params;
     }
 
     @RequestMapping(path = "/user", method = RequestMethod.GET)
