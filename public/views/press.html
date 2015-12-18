@@ -1,14 +1,15 @@
 <!-- articles to establish a history -->
-<p>this is the press page</p>
-<a href="#/communities"><button class="btn" type="" name="">Communitites</button></a>
-<a href="#/editcommunities"><button class="btn" type="" name="">Edit Communities</button></a>
-<a href="#/home"><button class="btn" type="" name="">Logged in Home</button></a>
-<a href="#/admin"><button class="btn" type="" name="">Admin</button></a>
-<a href="#/newpost"><button class="btn" type="" name="">Posts</button></a>
-<a href="#/press"><button class="btn" type="" name="">Press</button></a>
-<a href="#/editpress"><button class="btn" type="" name="">Edit Press</button></a>
-<a href="#/payment"><button class="btn" type="" name="">Payment Popup</button></a>
-<a href="#/login"><button class="btn" type="" name="">Login</button></a>
+<p class="adminTitle" style="display:inline-block;">Betr in the News...</p>
+
+<a href="#/communities"><button class="btn navBtn" type="" name="">Communitites</button></a>
+<a href="#/editcommunities"><button class="btn navBtn" type="" name="">Edit Communities</button></a>
+<a href="#/home"><button class="btn navBtn" type="" name="">Home</button></a>
+<a href="#/admin"><button class="btn navBtn" type="" name="">Admin</button></a>
+<a href="#/newpost"><button class="btn navBtn" type="" name="">Posts</button></a>
+<a href="#/press"><button class="btn navBtn" type="" name="">Press</button></a>
+<a href="#/editpress"><button class="btn navBtn" type="" name="">Edit Press</button></a>
+<!-- <a href="#/payment"><button class="btn navBtn" type="" name="">Payment Popup</button></a> -->
+<!-- <a href="#/login"><button class="btn navBtn" type="" name="">Login</button></a> -->
 
 <div style="display:inline-block;" ng-controller="MainController as MainCtrl">
   <h2 class='login'><a href="" ng-click='MainCtrl.open2("lg")'>Login</a>&nbsp;|&nbsp;
@@ -21,10 +22,10 @@
        <div class="pressDiv">
          <img ng-src="{{item.imageLink}}">
                <div class="pressText">
-                 <h4>{{item.title}}</h4>
-                 <h4>{{item.byline}}</h4>
-                 <h2>{{item.link}}</h2>
-                 <p>{{item.description}}</p>
+                 <h1 class="comName">{{item.title}}</h4>
+                 <h3 class="population">{{item.byline}} | </h3>
+                 <h4 class="population"><a href="{{item.link}}">Click here to read more.</a></h3>
+                 <h5 class="popPar">{{item.description}}</h5>
               </div>
 
        </div>
