@@ -189,13 +189,13 @@ public class BetrController {
     }
 
     @RequestMapping(path = "/posts", method = RequestMethod.PUT)
-    public void editPost(HttpSession session, @RequestBody Post post) throws Exception {
+    public void editPost(HttpSession session, @PathVariable("id") int id) throws Exception {
         String email = (String) session.getAttribute("email");
 
 //        if (username == null) {
 //            throw new Exception("You are not logged in.");
 //        }
-
+//
 //        Post post = posts.findOne(id);
 //        if (post.communityName!=null){
 //                post.communityName = communityName; //this should be a dropdown menu for the admin to select a community to avoid spelling errors
@@ -214,6 +214,7 @@ public class BetrController {
 //            FileOutputStream fos = new FileOutputStream(photoFile);
 //            fos.write(postImage.getBytes()); //to save to a file in the public folder
 //        }
+        Post post = posts.findOne(id);
         posts.save(post);
     }
 
