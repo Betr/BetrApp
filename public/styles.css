@@ -226,6 +226,9 @@ body {
   display: block;
   width: 80%; }
 
+.postDiv {
+  background-color: #2196F3; }
+
 .comDiv:hover, .postDiv:hover, .pressDiv:hover {
   background-color: white;
   color: #8BC34A; }
