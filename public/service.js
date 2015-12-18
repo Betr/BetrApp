@@ -45,6 +45,7 @@
               };
 
               var getPost = function () {
+                console.log("posty");
                 return $http.get(url);
               };
               var editPost = function () {

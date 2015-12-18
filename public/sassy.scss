@@ -196,7 +196,7 @@ article{
   display: block;
 
 }
-.theCommunityPage, .theCommunities img, .newPress, .newPosts img{
+.theCommunityPage, .theCommunities img, .thePress img, .newPosts img{
   display: inline-block;
   max-height: 120px;
   margin-top: 11%;
@@ -258,7 +258,7 @@ body{
   font-family: 'Raleway', sans-serif;
 }
 
-.comDiv{
+.comDiv, .postDiv, .pressDiv{
   background-color: #8BC34A;
   color:white;
   margin-top: 10%;
@@ -269,7 +269,7 @@ body{
   width: 80%;
 }
 
-.comDiv:hover, {
+.comDiv:hover, .postDiv:hover, .pressDiv:hover{
   // border: 2px solid #8BC34A;
   background-color: white;
   color: #8BC34A;
@@ -288,7 +288,7 @@ ul{
 .comName{
   margin-top: 10%;
 }
-.comText, .pressText{
+.comText, .pressText, .postText{
   display: inline-block;
   vertical-align: middle;
 
@@ -299,7 +299,7 @@ ul{
 }
 
 
-.communityDisplay, .pressDisplay{
+.communityDisplay, .pressDisplay, .postDisplay{
   display: block;
   // padding-top: 100px;
 }
@@ -390,4 +390,9 @@ footer{
   width:80%;
   text-align:center;
   margin-left: 5px;
+}
+.pName{
+  display: block;
+  text-align: left;
+  font-size: 24px;
 }

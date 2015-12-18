@@ -64,17 +64,21 @@
      .controller('AdminController', function ($log, $uibModal, $scope, PressService, CommunityService, PostService, UserService, $location, LoginService ) {
        var vm = this;
 
-       vm.addPost = function (postItem){
-           PostService.newPost(postItem);
+       vm.addPost = function (item){
+           PostService.newPost(item);
           //  $location.path('/admin');
          };
 
 
-         vm.getPost = function (postItem){
-           PostService.newPost(postItem);
+         vm.getPost = function (){
+           console.log("posty contrl")
+           PostService.getPost().then(function(res){vm.posts = res.data;
+             console.log("post res", vm.post);
+           })
          };
-         vm.editPost = function (postItem){
-           PostService.newPost(postItem);
+         vm.getPost();
+         vm.editPost = function (item){
+           PostService.editPost(item);
          };
          vm.deletePost = function (item){
             console.log("DELETE",item);
@@ -99,8 +103,6 @@
              console.log("edit working", item);
             // CommunityService.newCommunity(item);
            };
-
-
 
            vm.deleteCommunity = function (item){
              console.log("DELETE",item);
