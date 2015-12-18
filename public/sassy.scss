@@ -270,7 +270,9 @@ body{
   display: block;
   width: 80%;
 }
-
+.postDiv{
+  background-color:#2196F3;
+}
 .comDiv:hover, .postDiv:hover, .pressDiv:hover{
   // border: 2px solid #8BC34A;
   background-color: white;
