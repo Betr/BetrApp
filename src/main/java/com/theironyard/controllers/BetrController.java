@@ -76,7 +76,7 @@ public class BetrController {
     public void editUser(@RequestBody User user) {
         users.save(user);
     }
-    @RequestMapping(path = "/user{id}", method = RequestMethod.DELETE)
+    @RequestMapping(path = "/user/{id}", method = RequestMethod.DELETE)
     public void deleteUser (HttpSession session, @PathVariable("id") int id) {
         users.delete(id);
     }
@@ -101,15 +101,17 @@ public class BetrController {
     }
 
     @RequestMapping(path = "/register", method = RequestMethod.POST)
-    public void register(HttpSession session, @RequestBody User user) throws Exception {
+    public User register(HttpSession session, @RequestBody User user) throws Exception {
 
         User currentUser = users.findOneByEmail(user.email);
         if (currentUser == null) {
 //            user = new User();
             if (user.email.toLowerCase().equals("wilsonkate.kw@gmail.com") || user.email.equals("jessica.huffstutler@gmail.com") || user.email.equals("info@betrapp.co")) {
                 user.isAdmin = true;
+                System.out.println("Is Admin");
             } else {
                 user.isAdmin = false;
+                System.out.println("Is User");
             }
             user.password = PasswordHash.createHash(user.password);
             users.save(user);
@@ -126,6 +128,7 @@ public class BetrController {
 
         users.save(user);
         session.setAttribute("email", user.email);
+        return user;
     }
 
 
