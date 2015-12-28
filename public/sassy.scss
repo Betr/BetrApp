@@ -43,6 +43,7 @@ padding-left: 630px;
 
 a:hover{
   text-decoration: none;
+  color:#2196F3;
 }
 
 .pinkDiv{
@@ -80,7 +81,6 @@ a:hover{
   display: inline-block;
   opacity: 0.4;
 }
-
 
 .div:hover{
   opacity: 0.8;
@@ -178,6 +178,7 @@ a:hover{
 
 a {
   text-decoration: none;
+  color:#2196F3;
 }
 
 
@@ -197,7 +198,7 @@ article{
   display: block;
 
 }
-.theCommunityPage, .theCommunities, .newPress, .newPosts img{
+.theCommunityPage, .theCommunities img, .thePress img, .newPosts img{
   display: inline-block;
   max-height: 120px;
   margin-top: 11%;
@@ -259,7 +260,7 @@ body{
   font-family: 'Raleway', sans-serif;
 }
 
-.comDiv{
+.comDiv, .postDiv, .pressDiv{
   background-color: #8BC34A;
   color:white;
   margin-top: 10%;
@@ -269,8 +270,10 @@ body{
   display: block;
   width: 80%;
 }
-
-.comDiv:hover, {
+.postDiv{
+  background-color:#2196F3;
+}
+.comDiv:hover, .postDiv:hover, .pressDiv:hover{
   // border: 2px solid #8BC34A;
   background-color: white;
   color: #8BC34A;
@@ -289,7 +292,7 @@ ul{
 .comName{
   margin-top: 10%;
 }
-.comText, .pressText{
+.comText, .pressText, .postText{
   display: inline-block;
   vertical-align: middle;
 
@@ -300,7 +303,7 @@ ul{
 }
 
 
-.communityDisplay, .pressDisplay{
+.communityDisplay, .pressDisplay, .postDisplay{
   display: block;
   // padding-top: 100px;
 }
@@ -393,6 +396,7 @@ footer{
   margin-left: 5px;
 }
 
+
 .fp-controlArrow.fp-prev {
     left: 0;
     border: none;
@@ -411,4 +415,46 @@ footer{
     background: url(right.png) no-repeat;
     cursor: pointer;
     background-color: aqua;
+  }
+
+.pName{
+  display: block;
+  text-align: left;
+  font-size: 24px;
+}
+.navBtn{
+  display: inline-block;
+  margin-left: .5%;
+  background-color: #8BC34A;
+  color: white;
+  padding: 2px 6px 2px 6px;
+  font-size: 16px;
+  font-family: 'Poiret One', sans-serif;
+  text-align: left;
+}
+
+.navBtn:hover{
+  border: solid 2px #8BC34A;
+  color: #8BC34A;
+  background-color: white;
+}
+.bigBetr{
+  font-family:Poiret One;
+  font-size:200px;
+  text-align: right;
+}
+.logOut{
+  height: 475px;
+  width: 100%;
+  margin:0;
+  padding: 15px 0 0 15px;
+  display: block;
+  background-color: #8BC34A;
+  font-size: 84px;
+}
+.logoutBetr{
+  color:white;
+  font-size:84px;
+  display: block;
+  font-family: 'Raleway', sans-serif;
 }

@@ -15,6 +15,10 @@
           templateUrl: 'views/main.html',
           controller: 'MainController as MainCtrl'
         })
+        .when('/logout', {
+          templateUrl: 'views/logout.html',
+          controller: 'MainController as MainCtrl'
+        })
         .when('/communities', {
           templateUrl: 'views/communityDonate.html',
           controller: 'AdminController as AdminCtrl'

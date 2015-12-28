@@ -1,18 +1,21 @@
 <!-- list of communitties with donate button and progress bar and filters for closest to funded, least, and no funded -->
-<p>this is the community page</p>
-<a href="#/communities"><button class="btn" type="" name="">Communitites</button></a>
-<a href="#/editcommunities"><button class="btn" type="" name="">Edit Communities</button></a>
-<a href="#/home"><button class="btn" type="" name="">Logged in Home</button></a>
-<a href="#/admin"><button class="btn" type="" name="">Admin</button></a>
-<a href="#/newpost"><button class="btn" type="" name="">Posts</button></a>
-<a href="#/press"><button class="btn" type="" name="">Press</button></a>
-<a href="#/editpress"><button class="btn" type="" name="">Edit Press</button></a>
-<a href="#/payment"><button class="btn" type="" name="">Payment Popup</button></a>
-<a href="#/login"><button class="btn" type="" name="">Login</button></a>
-<button ng-click="MainCtrl.logOut()" class="btn" type="" name="">Logout</button>
+<p class="adminTitle" style="display:inline-block;">Choose a Community</p>
 
-<div style="display:inline-block;"  ng-controller="ModalInstanceCtrl">
-  <h2 class='login'><a href ng-click='ModalInstanceCtrl.open2("lg")'='#/login'>Login</a>&nbsp;|
+
+<a href="#/communities"><button class="btn navBtn" type="" name="">Communitites</button></a>
+<a href="#/editcommunities"><button class="btn navBtn" type="" name="">Edit Communities</button></a>
+<a href="#/home"><button class="btn navBtn" type="" name="">Home</button></a>
+<a href="#/admin"><button class="btn navBtn" type="" name="">Admin</button></a>
+<a href="#/newpost"><button class="btn navBtn" type="" name="">Posts</button></a>
+<a href="#/press"><button class="btn navBtn" type="" name="">Press</button></a>
+<a href="#/editpress"><button class="btn navBtn" type="" name="">Edit Press</button></a>
+<!-- <a href="#/payment"><button class="btn navBtn" type="" name="">Payment Popup</button></a> -->
+<!-- <a href="#/login"><button class="btn navBtn" type="" name="">Login</button></a> -->
+
+<button ng-click="MainCtrl.logOut()" class="btn navBtn" type="" name="">Logout</button>
+
+<div style="display:inline-block;" ng-controller="MainController as MainCtrl">
+  <h2 class='login'><a href="" ng-click='MainCtrl.open2("lg")'>Login</a>&nbsp;|
   </div>
   <a class='login' href="#/register">Register</a></h1>
 
@@ -33,7 +36,7 @@
  </article>
  <br><br>
 </div>
-<br><br><br><br><br><br><br><br>
+<br><br><br><br>
 
 <footer class="insideFooter">
 <img class="footerImg" src="pics/betrLogo.png">

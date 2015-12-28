@@ -48,7 +48,7 @@ public class BetrController {
     );
 
     @RequestMapping(path = "/transaction", method = RequestMethod.POST)
-    public boolean addTransaction(@RequestBody TransactionParams params){
+    public Object addTransaction(@RequestBody TransactionParams params){
         TransactionRequest request = new TransactionRequest()
                 .amount(new BigDecimal(params.amount))
                 .paymentMethodNonce("fake-valid-nonce")
@@ -58,7 +58,7 @@ public class BetrController {
 
         Result<Transaction> result = gateway.transaction().sale(request);
 
-        return result.isSuccess();
+        return params;
     }
 
     @RequestMapping(path = "/user", method = RequestMethod.GET)
@@ -150,6 +150,13 @@ public class BetrController {
         String email = (String) session.getAttribute("email");
         pressPosts.save(press);
     }
+    @RequestMapping(path = "/press/{id}", method = RequestMethod.DELETE)
+    public void deletePress(HttpSession session, @PathVariable("id") int id) throws Exception {
+        String email = (String) session.getAttribute("email");
+
+        Press press = pressPosts.findOne(id);
+        pressPosts.delete(press);
+    }
 
     @RequestMapping(path = "/posts", method = RequestMethod.GET)
     public List<Post> getPosts(HttpSession session) throws Exception {
@@ -182,13 +189,13 @@ public class BetrController {
     }
 
     @RequestMapping(path = "/posts", method = RequestMethod.PUT)
-    public void editPost(HttpSession session, @RequestBody Post post) throws Exception {
+    public void editPost(HttpSession session, @PathVariable("id") int id) throws Exception {
         String email = (String) session.getAttribute("email");
 
 //        if (username == null) {
 //            throw new Exception("You are not logged in.");
 //        }
-
+//
 //        Post post = posts.findOne(id);
 //        if (post.communityName!=null){
 //                post.communityName = communityName; //this should be a dropdown menu for the admin to select a community to avoid spelling errors
@@ -207,6 +214,7 @@ public class BetrController {
 //            FileOutputStream fos = new FileOutputStream(photoFile);
 //            fos.write(postImage.getBytes()); //to save to a file in the public folder
 //        }
+        Post post = posts.findOne(id);
         posts.save(post);
     }
 

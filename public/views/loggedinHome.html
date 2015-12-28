@@ -1,31 +1,34 @@
 <!-- shows updates here -->
-<p>this will be your news feed</p>
-<div style="display:inline-block;" ng-controller="ModalInstanceCtrl">
+<p class="adminTitle" style="display:inline-block;">Check Your Communities</p><!-- <div style="display:inline-block;" ng-controller="ModalInstanceCtrl">
   <h2 class='login'><a href ng-click='open2("lg")'='#/login'>Login &nbsp;|</a>
-  </div> <a class='login' href="#/register">Register </a></h1>
-<button ng-click="MainCtrl.logOut()" class="btn adminBtn" type="" name="">Logout</button>
+  </div> <a class='login' href="#/register">Register </a></h1> -->
+
+<a href="#/communities"><button class="btn navBtn" type="" name="">Communitites</button></a>
+<a href="#/editcommunities"><button class="btn navBtn" type="" name="">Edit Communities</button></a>
+<a href="#/home"><button class="btn navBtn" type="" name="">Home</button></a>
+<a href="#/admin"><button class="btn navBtn" type="" name="">Admin</button></a>
+<a href="#/newpost"><button class="btn navBtn" type="" name="">Create Posts</button></a>
+<a href="#/press"><button class="btn navBtn" type="" name="">Press</button></a>
+<a href="#/editpress"><button class="btn navBtn" type="" name="">Edit Press</button></a>
+<!-- <a href="#/payment"><button class="btn navBtn" type="" name="">Payment Popup</button></a> -->
+<!-- <a href="#/login"><button class="btn navBtn" type="" name="">Login</button></a> -->
+<a href="#/logout" class="login">Logout</a>
+
+<!-- <button ng-click="MainCtrl.logOut()" class="btn navBtn" type="" name="">Logout</button> -->
 
 
-<a href="#/communities"><button class="btn" type="" name="">Communitites</button></a>
-<a href="#/editcommunities"><button class="btn" type="" name="">Edit Communities</button></a>
-<a href="#/home"><button class="btn" type="" name="">Logged in Home</button></a>
-<a href="#/admin"><button class="btn" type="" name="">Admin</button></a>
-<a href="#/newpost"><button class="btn" type="" name="">Posts</button></a>
-<a href="#/press"><button class="btn" type="" name="">Press</button></a>
-<a href="#/editpress"><button class="btn" type="" name="">Edit Press</button></a>
-<a href="#/payment"><button class="btn" type="" name="">Payment Popup</button></a>
-<a href="#/login"><button class="btn" type="" name="">Login</button></a>
+<div class="postDisplay">
+       <article class="newPosts" ng-repeat="post in AdminCtrl.posts" >
+          <div class="postDiv">
+            <img ng-src={{post.image}}>
+                <div class="postText">
+                 <h1 class="comName">{{post.postName}}</h1>
+                 <p class="pName">{{post.communityName}}</p>
+                 <h5 class="popPar">{{post.postBody}}</h5>
+               </div>
+             </div>
+       </article>
 
-
-
-<div class="postDiv">
- <article class="newPosts" ng-repeat="postItem in AdminCtrl.items" >
- <img ng-src={{postItem.image}}>
- <h3>{{postItem.communityName}}</h3>
- <h2>{{postItem.postName}}</h2>
- <p>{{postItem.postBody}}</p>
- </article>
- <br><br>
 </div>
 
 
