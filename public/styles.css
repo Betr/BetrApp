@@ -42,7 +42,7 @@ a:hover {
   background-color: #9C27B0;
   height: 200px;
   width: 68%;
-  opacity: 0.2;
+  opacity: 0.1;
   display: inline-block; }
 
 .blueDiv {
@@ -51,7 +51,7 @@ a:hover {
   width: 32%;
   margin-left: -4px;
   display: inline-block;
-  opacity: 0.2;
+  opacity: 0.1;
   vertical-align: top; }
 
 .blueDiv3 {
@@ -60,7 +60,7 @@ a:hover {
   margin-left: -4px;
   background: #8BC34A;
   display: inline-block;
-  opacity: 0.3;
+  opacity: 0.1;
   vertical-align: top; }
 
 .blueDiv2 {
@@ -68,7 +68,7 @@ a:hover {
   height: 200px;
   width: 28%;
   display: inline-block;
-  opacity: 0.4; }
+  opacity: 0.1; }
 
 .div:hover {
   opacity: 0.8;
