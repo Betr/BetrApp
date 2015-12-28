@@ -42,7 +42,7 @@ a:hover {
   background-color: #9C27B0;
   height: 200px;
   width: 68%;
-  opacity: 0.2;
+  opacity: 0.1;
   display: inline-block; }
 
 .blueDiv {
@@ -51,7 +51,7 @@ a:hover {
   width: 32%;
   margin-left: -4px;
   display: inline-block;
-  opacity: 0.2;
+  opacity: 0.1;
   vertical-align: top; }
 
 .blueDiv3 {
@@ -60,7 +60,7 @@ a:hover {
   margin-left: -4px;
   background: #8BC34A;
   display: inline-block;
-  opacity: 0.3;
+  opacity: 0.1;
   vertical-align: top; }
 
 .blueDiv2 {
@@ -68,7 +68,7 @@ a:hover {
   height: 200px;
   width: 28%;
   display: inline-block;
-  opacity: 0.4; }
+  opacity: 0.1; }
 
 .div:hover {
   opacity: 0.8;
@@ -224,14 +224,21 @@ body {
   padding-bottom: 15px;
   margin-top: 15px;
   display: block;
-  width: 80%; }
+  width: 80%;
+  opacity: .5; }
 
 .postDiv {
-  background-color: #2196F3; }
+  background-color: #2196F3;
+  opacity: .5; }
+
+.pressDiv {
+  background-color: #9C27B0;
+  opacity: .5; }
 
 .comDiv:hover, .postDiv:hover, .pressDiv:hover {
   background-color: white;
-  color: #8BC34A; }
+  color: #8BC34A;
+  opacity: .9; }
 
 ul {
   float: right;
@@ -377,3 +384,46 @@ footer {
   font-size: 84px;
   display: block;
   font-family: 'Raleway', sans-serif; }
+
+.userNav {
+  display: block;
+  padding-left: 1%;
+  font-size: 12px; }
+
+.adminCommunityDiv, .adminUserDiv {
+  width: 90%;
+  margin: 0 auto;
+  text-align: center; }
+
+.adminSquares {
+  width: 90%;
+  margin: 0 auto;
+  margin-left: 10%;
+  vertical-align: top;
+  display: inline-block;
+  padding: 1%; }
+
+.adminPostDiv, .adminPressDiv {
+  width: 40%;
+  display: inline-block;
+  padding: 0;
+  margin: 0 auto;
+  vertical-align: top;
+  text-align: center; }
+
+.adminBtnBlue {
+  display: inline-block;
+  margin-left: 2%;
+  margin-bottom: 1%;
+  background-color: #2196F3;
+  color: white;
+  padding: 12px 16px 12px 16px;
+  font-size: 24px;
+  font-family: 'Poiret One', sans-serif;
+  text-align: left; }
+
+.adminBtnBlue:hover {
+  border: solid 2px #2196F3;
+  color: #8BC34A;
+  background-color: white;
+  color: #2196F3; }
