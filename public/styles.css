@@ -5,13 +5,13 @@
 
 header {
   width: 100%;
-  height: 35px;
+  height: 80px;
   background: white; }
 
 .headerImg {
   height: 90px;
   margin-left: 2%;
-  margin-top: 0.5%;
+  margin-top: -1.2%;
   position: absolute; }
 
 .h1header {
@@ -20,7 +20,8 @@ header {
   display: inline-block;
   margin-left: 15.2%;
   font-size: 5em;
-  text-align: right; }
+  text-align: right;
+  margin-top: -1.2px; }
 
 h2 {
   padding-left: 630px; }
