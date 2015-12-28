@@ -82,7 +82,7 @@ public class BetrController {
     }
 
     @RequestMapping(path = "/login", method = RequestMethod.POST)
-    public void login(HttpSession session, @RequestBody User user) throws Exception {
+    public User login(HttpSession session, @RequestBody User user) throws Exception {
 
         User currentUser = users.findOneByEmail(user.email);
         if (currentUser == null) {
@@ -92,6 +92,7 @@ public class BetrController {
         }
 
         session.setAttribute("email", user.email);
+        return user;
     }
 
     @RequestMapping("/logout")
@@ -124,6 +125,7 @@ public class BetrController {
 //            users.save(user);
         } else {
             throw new Exception("An account with that email already exists.");
+
         }
 
         users.save(user);
