@@ -47,7 +47,7 @@
 
        vm.addUser = function (item){
            UserService.addUser(item);
-           $location.path('/home');
+          //  $location.path('/home');
          };
         //  vm.logUser = function (item){
         //      LoginService.logUser(item);
@@ -183,7 +183,9 @@
             };
             $scope.logUser = function (item){
                 LoginService.logUser(item);
-                $location.path('/home');
+                console.log("im login controller")
+                // $location.path('/home');
+
               };
               // $scope.items = items;
               // $scope.selected = {
