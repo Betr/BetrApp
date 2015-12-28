@@ -151,7 +151,7 @@
                   controller: 'ModalInstanceCtrl',
                   size: size,
                   resolve: {
-                    items: function () {
+                    item: function () {
                       return $scope.items;
                     }
                   }

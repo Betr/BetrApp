@@ -101,14 +101,21 @@
                   };
                 })
 
-            .factory('UserService', function ($http) {
+            .factory('UserService', function ($http, $location) {
               var url = '/register';
               var addUser = function (addUser) {
                     return $http.post(url, addUser).then(function (res) {
                       console.log(addUser);
-                      console.log(res);
+                      console.log(res.data.isAdmin);
+                      if(res.data.isAdmin === true){
+                        console.log("this is a administrator")
+                        $location.path('/admin');
+                      }
+                      if(res.data.isAdmin === false){
+                        console.log("this is a user")
+                        $location.path('/home');
+                      }
                     });
-                      $location.path('/home');
                   };
 
               return {
@@ -122,6 +129,7 @@
                 var logUser = function (logUser) {
                       $http.post(url, logUser).then(function (res) {
                         console.log(logUser);
+                        console.log('im logging in');
                       });
                     };
                 var logOut = function(){
