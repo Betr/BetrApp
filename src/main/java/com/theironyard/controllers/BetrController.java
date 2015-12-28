@@ -81,7 +81,7 @@ public class BetrController {
         users.delete(id);
     }
 
-    @RequestMapping(path = "/login", method = RequestMethod.POST)
+    @RequestMapping(path = "/login", method = RequestMethod.PUT)
     public User login(HttpSession session, @RequestBody User user) throws Exception {
 
         User currentUser = users.findOneByEmail(user.email);
