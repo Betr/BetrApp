@@ -10,12 +10,15 @@
 <a href="#/logout" class="login">Logout</a>
 </div>
 <br>
-<div class="adminNav">
+<div class="adminNav" ng-show="MainCtrl.isUser">
   <a href="#/admin"><button class="btn navBtn" type="" name="">Admin</button></a>
 <a href="#/editpress"><button class="btn navBtn" type="" name="">Edit Press</button></a>
 <a href="#/editcommunities"><button class="btn navBtn" type="" name="">Edit Communities</button></a>
 <a href="#/newpost"><button class="btn navBtn" type="" name="">Create Posts</button></a>
 </div>
+
+
+
 
 <!-- <div class="notLoggedIn" style="text-align:right; padding-right:1%;">
   <h2 class='login'><a href ng-click='open2("lg")'='#/login'>Login</a>&nbsp;|

@@ -46,19 +46,23 @@
 
 
        vm.addUser = function (item){
-           UserService.addUser(item);
-          //  $location.path('/home');
+           UserService.addUser(item).success(function() {
+             UserService.isUser().success(function(user) {
+               if (user.isAdmin) {
+                 vm.isUser = true;
+               }
+             });
+           });
          };
         //  vm.logUser = function (item){
         //      LoginService.logUser(item);
-        //      $location.path('/home');
         //    };
            vm.logOut = function(item){
              LoginService.logOut().then(function(){
                $location.path('/login');
              });
-
              };
+
      })
 
      .controller('AdminController', function ($log, $uibModal, $scope, PressService, CommunityService, PostService, UserService, $location, LoginService ) {
@@ -170,8 +174,6 @@
             // })
 
 
-
-
           })
 
         .controller('ModalInstanceCtrl', function ($scope,PaymentService, $location, LoginService) {
@@ -185,7 +187,6 @@
                 LoginService.logUser(item);
                 console.log("im login controller")
                 // $location.path('/home');
-
               };
               // $scope.items = items;
               // $scope.selected = {
