@@ -9,9 +9,7 @@
       var getUrl = '/communities';
       var addCommunity = function (newCommunity) {
           console.log(newCommunity);
-            $http.post(url, newCommunity).then(function (res) {
-              console.log(newCommunity);
-            });
+          return $http.post(url, newCommunity);
           };
 
           var getCommunity = function () {
@@ -39,9 +37,7 @@
         .factory('PostService', function ($http) {
           var url = '/posts';
           var addPost = function (newPost) {
-                $http.post(url, newPost).then(function (res) {
-                  console.log(newPost);
-                });
+              return  $http.post(url, newPost)
               };
 
               var getPost = function () {
@@ -71,17 +67,16 @@
             })
             .factory('PressService', function ($http) {
               var url = '/press';
+              var urlEdit = '/editpress'
               var addPress = function (newPress) {
-                    $http.post(url, newPress).then(function (res) {
-                      console.log(newPress);
-                    });
+                  return $http.post(url, newPress)
                   };
 
                   var getPress = function () {
                     return $http.get(url);
                   };
                   var editPress = function (item) {
-                    return $http.put(url + id, data);
+                    return $http.put(urlEdit + id, data);
                   };
                   var deletePress = function (item) {
                     console.log("DELETE SERVICE", item);
@@ -97,7 +92,6 @@
                     getPress: getPress,
                     editPress: editPress,
                     deletePress: deletePress,
-                    getPress: getPress
                   };
                 })
 
