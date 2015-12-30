@@ -69,10 +69,9 @@
        var vm = this;
 
        vm.addPost = function (item){
-           PostService.newPost(item);
+           PostService.newPost(item).then(function(){vm.getPost();});
           //  $location.path('/admin');
          };
-
 
          vm.getPost = function (){
            console.log("posty contrl")
@@ -91,9 +90,10 @@
 
          vm.addCommunity = function (item){
            console.log("controller item", item);
-             CommunityService.newCommunity(item);
+             CommunityService.newCommunity(item).then(function(){vm.getCommunity();});
             // $location.path('/communities');
            };
+
            vm.getCommunity = function (){
              console.log("in admin controller");
              CommunityService.getCommunity().then(function(res){vm.items = res.data;
@@ -101,7 +101,6 @@
               console.log(vm.numCommunities);});
            };
            vm.getCommunity();
-
 
            vm.editCommunity = function (item){
              console.log("edit working", item);
@@ -122,8 +121,7 @@
           //      };
 
           vm.addPress = function (item){
-              PressService.newPress(item);
-              // $location.path('/admin');
+              PressService.newPress(item).then(function(){vm.getPress();});
             };
 
             if($location.path() === "/editpress") {
@@ -132,14 +130,17 @@
               });
             }
             if($location.path() === "/press") {
-              PressService.getPress().success(function(data) {
-                vm.items = data;
-              });
-            }
+              PressService.getPress().then(function(){vm.getPress();});
+          }
 
             vm.editPress = function (item){
               PressService.editPress(item);
             };
+            vm.getPress = function (item){
+              PressService.getPress(item);
+            };
+            vm.getPress();
+
             vm.deletePress = function (item){
               console.log("DELETE",item);
               PressService.deletePress(item);
