@@ -16,12 +16,12 @@
             console.log('in community service');
             return $http.get(getUrl);
           };
-          var editCommunity = function (item) {
-            return $http.put(url + '/' + item.id, item);
+          var editCommunity = function (commI) {
+            return $http.put(url + '/' + commI.id, commI);
           };
-          var deleteCommunity = function (item) {
-            console.log("DELETE SERVICE", item);
-             return $http.delete(url + "/" + item.id).then(function(data) {
+          var deleteCommunity = function (commI) {
+            console.log("DELETE SERVICE", commI);
+             return $http.delete(url + "/" + commI.id).then(function(data) {
                console.log('service delete', data);
              });
           };
@@ -148,6 +148,7 @@
                       console.log(addPayment);
                       console.log(res);
                       console.log('posted to checkout route with payment service');
+
                         // if (res.data === true){
                         //   $location.path('/home');
                         // }

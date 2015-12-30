@@ -29,16 +29,22 @@
 
 <div class="communityDisplay">
 
- <article class="theCommunities" ng-repeat="item in AdminCtrl.items" >
+ <article class="theCommunities" ng-repeat="commI in AdminCtrl.commIs" >
      <div class="comDiv">
-         <img ng-src={{item.image}}>
+         <img ng-src={{commI.image}}>
              <div class="comText">
-                <h1 class="comName" >{{item.name}}</h1>
-                <h3 class="population">Population of {{item.population}}</h3>
-                <h5 class='popPar'>{{item.description}}</h5>
+                <h1 class="comName" >{{commI.name}}</h1>
+                <h3 class="population">Population of {{commI.population}}</h3>
+                <h5 class='popPar'>{{commI.description}}</h5>
                 <button style="margin:0; padding:5px;" class="btn logBtn " ng-click='open("lg")'>Donate</button>
-
             </div>
+
+            <div class="progress">
+              <div class="progress-bar" role="progressbar" aria-valuenow="{{total}}" aria-valuemin="0" aria-valuemax="1500" style="width: 60%;">
+                {{total}}
+              </div>
+            </div>
+
 
      </div>
  </article>
