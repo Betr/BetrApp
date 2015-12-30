@@ -39,24 +39,24 @@
 
 <div class="communityDisplay">
 
- <article class="theCommunities" ng-repeat="item in AdminCtrl.items" >
+ <article class="theCommunities" ng-repeat="commI in AdminCtrl.commIs" >
      <div class="comDiv">
 
 
 
-         <img ng-src={{item.image}}>
+         <img ng-src={{commI.image}}>
              <div class="comText">
-                <h1 class="comName" >{{item.name}}</h1>
-                <h3 class="population">Population of {{item.population}}</h3>
-                <h5 class='popPar'>{{item.description}}</h5>
+                <h1 class="comName" >{{commI.name}}</h1>
+                <h3 class="population">Population of {{commI.population}}</h3>
+                <h5 class='popPar'>{{commI.description}}</h5>
 
-            <a href="#" ng-click="AdminCtrl.editCommunity(item)"> <button class="btn editBtn" type="button" name="button" ng-click="AdminCtrl.editCommunity(item)">Edit Community</button></a>
+            <a href="#" ng-click="AdminCtrl.editCommunity(commI)"> <button class="btn editBtn" type="button" name="button" ng-click="AdminCtrl.editCommunity(commI)">Edit Community</button></a>
             <div ng-show="editorEnabled">
             <input ng-model="title">
             <a href="#" ng-click="editorEnabled=!editorEnabled">Done editing?</a>
             </div>
 
-            <button class="btn editBtn"  type="button" name="button" ng-click="AdminCtrl.deleteCommunity(item)">Delete Community</button>
+            <button class="btn editBtn"  type="button" name="button" ng-click="AdminCtrl.deleteCommunity(commI)">Delete Community</button>
             </div>
      </div>
 

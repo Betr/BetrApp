@@ -88,28 +88,29 @@
            PostService.deletePost(item);
          };
 
-         vm.addCommunity = function (item){
-           console.log("controller item", item);
-             CommunityService.newCommunity(item).then(function(){vm.getCommunity();});
+         vm.addCommunity = function (commI){
+           console.log("controller item", commI);
+             CommunityService.newCommunity(commI).then(function(){vm.getCommunity();});
             // $location.path('/communities');
            };
 
            vm.getCommunity = function (){
              console.log("in admin controller");
-             CommunityService.getCommunity().then(function(res){vm.items = res.data;
-             vm.numCommunities = vm.items.length;
+             CommunityService.getCommunity().then(function(res){vm.commIs = res.data;
+             vm.numCommunities = vm.commIs.length;
               console.log(vm.numCommunities);});
            };
+           //if($location.url() === '/communities' || $location.url() === "/editCommunities")
            vm.getCommunity();
 
-           vm.editCommunity = function (item){
-             console.log("edit working", item);
-            // CommunityService.newCommunity(item);
+           vm.editCommunity = function (commI){
+             console.log("edit working", commI);
+            // CommunityService.newCommunity(commI);
            };
 
-           vm.deleteCommunity = function (item){
-             console.log("DELETE",item);
-             CommunityService.deleteCommunity(item);
+           vm.deleteCommunity = function (commI){
+             console.log("DELETE",commI);
+             CommunityService.deleteCommunity(commI);
            };
           //  vm.addUser = function (item){
           //      UserService.addUser(item);
@@ -136,8 +137,10 @@
             vm.editPress = function (item){
               PressService.editPress(item);
             };
-            vm.getPress = function (item){
-              PressService.getPress(item);
+            vm.getPress = function (){
+              PressService.getPress().then(function(res){
+                vm.items = res.data;
+              });
             };
             vm.getPress();
 
@@ -182,8 +185,17 @@
           $scope.postPayment = function (item) {
               console.log("MODAL CLICKAGE",item);
               PaymentService.addPayment(item);
-              $location.path('/home');
+              // $location.path('/home');
+              console.log(item.amount);
+              var amt = Math.round(item.amount);
+              $scope.total += amt;
+              console.log($scope.total);
             };
+
+            $scope.total = 0;
+
+
+
             $scope.logUser = function (item){
                 LoginService.logUser(item);
                 console.log("im login controller")
