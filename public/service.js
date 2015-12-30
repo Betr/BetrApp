@@ -9,9 +9,7 @@
       var getUrl = '/communities';
       var addCommunity = function (newCommunity) {
           console.log(newCommunity);
-            $http.post(url, newCommunity).then(function (res) {
-              console.log(newCommunity);
-            });
+          return $http.post(url, newCommunity);
           };
 
           var getCommunity = function () {
@@ -39,9 +37,7 @@
         .factory('PostService', function ($http) {
           var url = '/posts';
           var addPost = function (newPost) {
-                $http.post(url, newPost).then(function (res) {
-                  console.log(newPost);
-                });
+              return  $http.post(url, newPost)
               };
 
               var getPost = function () {
@@ -71,17 +67,16 @@
             })
             .factory('PressService', function ($http) {
               var url = '/press';
+              var urlEdit = '/editpress'
               var addPress = function (newPress) {
-                    $http.post(url, newPress).then(function (res) {
-                      console.log(newPress);
-                    });
+                  return $http.post(url, newPress)
                   };
 
                   var getPress = function () {
                     return $http.get(url);
                   };
                   var editPress = function (item) {
-                    return $http.put(url + id, data);
+                    return $http.put(urlEdit + id, data);
                   };
                   var deletePress = function (item) {
                     console.log("DELETE SERVICE", item);
@@ -97,22 +92,34 @@
                     getPress: getPress,
                     editPress: editPress,
                     deletePress: deletePress,
-                    getPress: getPress
                   };
                 })
 
-            .factory('UserService', function ($http) {
+            .factory('UserService', function ($http, $location) {
+              var url = '/user';
+              var isUser = function(){
+                return $http.get(url);
+              };
               var url = '/register';
               var addUser = function (addUser) {
                     return $http.post(url, addUser).then(function (res) {
                       console.log(addUser);
-                      console.log(res);
+                      console.log(res.data.isAdmin);
+
+                      // if(res.data.isAdmin === true){
+                      //   console.log("this is a administrator")
+                      //   $location.path('/admin');
+                      // }
+                      // if(res.data.isAdmin === false){
+                      //   console.log("this is a user")
+                      //   $location.path('/home');
+                      // }
                     });
-                      $location.path('/home');
                   };
 
               return {
                 addUser: addUser,
+                isUser: isUser
 
             };
           })
@@ -122,6 +129,7 @@
                 var logUser = function (logUser) {
                       $http.post(url, logUser).then(function (res) {
                         console.log(logUser);
+                        console.log('im logging in');
                       });
                     };
                 var logOut = function(){

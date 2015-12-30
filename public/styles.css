@@ -113,20 +113,46 @@ footer {
 
 .impact {
   width: 30%;
-  height: 350px;
+  height: 150px;
   background: #9C27B0;
   margin: auto;
   margin-left: 13.5%;
   display: inline-block;
   margin-top: 4%;
-  margin-bottom: 2%; }
+  margin-bottom: 2%;
+  font-family: 'Raleway', sans-serif; }
 
 .par {
-  width: 39%;
-  margin-left: 7%;
-  margin-top: 6%;
+  width: 30%;
+  margin-left: 13.5%;
   display: inline-block;
-  margin-bottom: 4%; }
+  margin-bottom: 4%;
+  color: #2196F3;
+  font-family: 'Raleway', sans-serif;
+  font-size: 18px;
+  text-align: center; }
+
+.par2 {
+  width: 30%;
+  margin-left: 13.5%;
+  display: inline-block;
+  margin-bottom: 4%;
+  color: white;
+  font-family: 'Raleway', sans-serif;
+  font-size: 18px;
+  text-align: center; }
+
+.highlight {
+  font-weight: bold;
+  font-size: 26px;
+  padding: 2% 0 2% 0;
+  text-align: center; }
+
+.highlight2 {
+  font-weight: bold;
+  font-size: 36px;
+  padding: 2% 0 2% 0;
+  text-align: center; }
 
 .lastSec {
   background-image: url(pic/background.jpg);
@@ -288,6 +314,15 @@ ul {
   display: block;
   margin-left: 1%; }
 
+.mainTitle {
+  color: #8BC34A;
+  font-family: 'Raleway', sans-serif;
+  font-size: 45px;
+  text-align: center;
+  display: block;
+  margin-left: 1%;
+  margin-top: 1.5%; }
+
 .adTitle {
   color: #8BC34A;
   font-family: 'Raleway', sans-serif;
@@ -359,7 +394,7 @@ footer {
   height: 101px;
   background: url(left.png) no-repeat;
   cursor: pointer;
-  background-color: aqua; }
+  background-color: #2196F3; }
 
 .fp-controlArrow.fp-next {
   right: 0;
@@ -368,7 +403,7 @@ footer {
   height: 101px;
   background: url(right.png) no-repeat;
   cursor: pointer;
-  background-color: aqua; }
+  background-color: #2196F3; }
 
 .pName {
   display: block;
