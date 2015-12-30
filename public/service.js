@@ -69,7 +69,7 @@
               var url = '/press';
               var urlEdit = '/editpress'
               var addPress = function (newPress) {
-                  return $http.post(url, newPress)
+                  return $http.post(url, newPress);
                   };
 
                   var getPress = function () {
