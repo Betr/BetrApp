@@ -172,20 +172,23 @@
                 });
               };
 
+              $scope.close = function($uibmodal){
+                  $uibmodal.close();
+              };
+
+
               $scope.toggleAnimation = function () {
                 $scope.animationsEnabled = !$scope.animationsEnabled;
               };
             // })
-
-
           })
 
-        .controller('ModalInstanceCtrl', function ($scope,PaymentService, $location, LoginService) {
+        .controller('ModalInstanceCtrl', function ($scope, PaymentService, $location, LoginService) {
+
 
           $scope.postPayment = function (item) {
               console.log("MODAL CLICKAGE",item);
               PaymentService.addPayment(item);
-              // $location.path('/home');
               console.log(item.amount);
               var amt = Math.round(item.amount);
               $scope.total += amt;
@@ -193,7 +196,6 @@
             };
 
             $scope.total = 0;
-
 
 
             $scope.logUser = function (item){

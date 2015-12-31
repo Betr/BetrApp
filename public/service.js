@@ -144,15 +144,16 @@
             .factory('PaymentService', function ($http) {
               var url = '/transaction';
               var postPayment = function (addPayment) {
-                    $http.post(url, addPayment).then(function (res) {
+                angular.element(document).find('input').val("");
+                  return $http.post(url, addPayment).then(function (res) {
                       console.log(addPayment);
                       console.log(res);
                       console.log('posted to checkout route with payment service');
-
                         // if (res.data === true){
                         //   $location.path('/home');
                         // }
                     });
+              
                   };
 
               return {
