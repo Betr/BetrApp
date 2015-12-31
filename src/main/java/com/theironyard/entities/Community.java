@@ -29,6 +29,9 @@ public class Community {
     @Column(nullable = false)
     public String image;
 
+    @Column(nullable = false)
+    public int amount;
+
     //multiple communities per user
     @ManyToOne
     public User user;
@@ -61,5 +64,9 @@ public class Community {
 
     public User getUser() {
         return user;
+    }
+
+    public int getAmount() {
+        return amount;
     }
 }
