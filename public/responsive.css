@@ -66,7 +66,7 @@
 .scroll{
   margin: auto;
   width: 95%;
-  height: 300px;
+  height: 290px;
   background-color: #f5f5f5;
   margin-top: -25%;
   overflow: scroll;
@@ -105,16 +105,7 @@
 .fp-controlArrow.fp-prev{
   opacity: 0.4;
 }
+}
 
-@media (min-width: 900px; max-width: 1000px) {
-  .headerImg{
-    margin-top: .8%;
-  }
-  .h1header {
-    margin-left: 19.2%;
-    margin-top: 20.8px;
-  }
-
-  header{
-    height: 104px;
-  }
+@media (min-width: 1000px) {
+}
