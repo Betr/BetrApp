@@ -3,6 +3,7 @@
 
 
 <div class="userNav">
+<a class="login" href="#/admin">Admin | </a>
 <a class="login" href="#/communities">Communities | </a>
 <a class="login" href="#/home">Home | </a>
 <a href="#/press" class="login">Press | </a>
@@ -10,35 +11,41 @@
 <a href="#/logout" class="login">Logout</a>
 </div>
 <br>
-<div class="adminNav">
+<!-- <div class="adminNav">
 <a href="#/admin"><button class="btn navBtn" type="" name="">Admin</button></a>
 <a href="#/editpress"><button class="btn navBtn" type="" name="">Edit Press</button></a>
 <a href="#/editcommunities"><button class="btn navBtn" type="" name="">Edit Communities</button></a>
 <a href="#/newpost"><button class="btn navBtn" type="" name="">Create Posts</button></a>
-</div>
+</div> -->
 
 
 <!-- <a href="#/payment"><button class="btn navBtn" type="" name="">Payment Popup</button></a> -->
 <!-- <a href="#/login"><button class="btn navBtn" type="" name="">Login</button></a> -->
 
 
-<div style="display:inline-block;" ng-controller="MainController as MainCtrl">
+<!-- <div style="display:inline-block;" ng-controller="MainController as MainCtrl">
   <h2 class='login'><a href="" ng-click='MainCtrl.open2("lg")'>Login</a>&nbsp;|
   </div>
-  <a class='login' href="#/register">Register</a></h1>
+  <a class='login' href="#/register">Register</a></h1> -->
 
 <div class="communityDisplay">
 
- <article class="theCommunities" ng-repeat="item in AdminCtrl.items" >
+ <article class="theCommunities" ng-repeat="commI in AdminCtrl.commIs" >
      <div class="comDiv">
-         <img ng-src={{item.image}}>
+         <img ng-src={{commI.image}}>
              <div class="comText">
-                <h1 class="comName" >{{item.name}}</h1>
-                <h3 class="population">Population of {{item.population}}</h3>
-                <h5 class='popPar'>{{item.description}}</h5>
-                <button style="margin:0; padding:5px;" class="btn logBtn " ng-click='open("lg")'>Donate</button>
-
+                <h1 class="comName" >{{commI.name}}</h1>
+                <h3 class="population">Population of {{commI.population}}</h3>
+                <h5 class='popPar'>{{commI.description}}</h5>
+                <button style="margin:0; padding:5px;" class="btn logBtn" id="close" ng-click='open("lg")'>Donate</button>
             </div>
+
+            <div class="progress">
+              <div class="progress-bar" role="progressbar" aria-valuenow="{{total}}" aria-valuemin="0" aria-valuemax="1500" style="width: 60%;">
+                {{total}}
+              </div>
+            </div>
+
 
      </div>
  </article>
