@@ -130,38 +130,45 @@ a:hover{
 
 .secPage{
   background-color: white;
+  display: inline-block;
 }
 .impact{
   margin: auto;
-  margin-left: 13.5%;
+  // margin-left: 13.5%;
   display: inline-block;
   // margin-top: 4%;
   // margin-bottom: 2%;
   font-family: 'Raleway', sans-serif;
   img{
-    max-height: 350px;
+    max-height: 300px;
 
   }
 }
-
-.par{
-  width: 30%;
-  margin-left: 13.5%;
+.theMainInfo{
   display: inline-block;
-  margin-bottom: 4%;
+  width: 49%;
+  text-align: center;
+  margin: 0 auto;
+  padding-left: 5px;
+}
+.par{
+  width: 85%;
+  // margin-left: 13.5%;
+  display: inline-block;
+  // margin-bottom: 4%;
   color:#2196F3;
   font-family: 'Raleway', sans-serif;
   font-size: 18px;
   text-align: center;
 }
 .scroll{
-  
+
 }
 .par2{
-  width: 30%;
-  margin-left: 13.5%;
+  width: 85%;
+  // margin-left: 13.5%;
   display: inline-block;
-  margin-bottom: 4%;
+  // margin-bottom: 4%;
   color:white;
   font-family: 'Raleway', sans-serif;
   font-size: 18px;
@@ -381,11 +388,10 @@ ul{
 .mainTitle{
   color:#8BC34A;
   font-family: 'Raleway', sans-serif;
-  font-size:45px;
+  font-size:7rem;
   text-align: center;
   display: block;
   margin-left: 1%;
-  margin-top: 1.5%;
 }
 .adTitle{
   color:#8BC34A;
