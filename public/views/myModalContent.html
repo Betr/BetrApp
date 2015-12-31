@@ -6,6 +6,7 @@
 
 
         <div id="checkout">
+
           <input class="checkoutForm form-control" ng-model="newPayment.cardnumber" data-braintree-name="number" placeholder="Card Number" value="">
           <input class="checkoutForm form-control" ng-model="newPayment.exp" data-braintree-name="expiration_date" placeholder="Exp" value="">
           <input class="checkoutForm form-control" ng-model="newPayment.cvv" data-braintree-name="cvv" placeholder="CVV" value="">
@@ -23,4 +24,5 @@
           <button class="btn logBtn payBtn" ng-click="postPayment(newPayment)" type="button" name="button">Pay</button>
         </div>
           <br>
+
           <footer><img class="footerImg" src="pics/betrLogo.png"></footer>
