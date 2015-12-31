@@ -1,5 +1,5 @@
 .mainCont{
-  background-image: url("http://s2.postimg.org/57741r2uh/background.jpg");
+  background-image: url(pic/background2.jpg);
   background-size: cover;
   width: 100%;
 }
@@ -51,7 +51,7 @@ a:hover{
   background-color: #9C27B0;
   height: 185px;
   width:68%;
-  opacity: 0.1;
+  opacity: 0.3;
   display: inline-block;
 }
 
@@ -67,7 +67,7 @@ a:hover{
     width: 32%;
     margin-left: -4px;
     display: inline-block;
-    opacity: 0.1;
+    opacity: 0.3;
     vertical-align: top;
 }
 
@@ -77,7 +77,7 @@ a:hover{
   margin-left: -4px;
   background:  #8BC34A;
   display: inline-block;
-  opacity: 0.1;
+  opacity: 0.3;
   vertical-align: top;
   }
 
@@ -86,7 +86,7 @@ a:hover{
   height:185px;
   width: 28%;
   display: inline-block;
-  opacity: 0.1;
+  opacity: 0.3;
 }
 
 .div:hover{
@@ -132,16 +132,16 @@ a:hover{
   background-color: white;
 }
 .impact{
-  width: 30%;
-  height: 150px;
-  background: #9C27B0;
   margin: auto;
   margin-left: 13.5%;
   display: inline-block;
-  margin-top: 4%;
-  margin-bottom: 2%;
+  // margin-top: 4%;
+  // margin-bottom: 2%;
   font-family: 'Raleway', sans-serif;
+  img{
+    max-height: 350px;
 
+  }
 }
 
 .par{
@@ -153,7 +153,9 @@ a:hover{
   font-family: 'Raleway', sans-serif;
   font-size: 18px;
   text-align: center;
-
+}
+.scroll{
+  
 }
 .par2{
   width: 30%;
@@ -179,7 +181,7 @@ a:hover{
   text-align: center;
 }
 .lastSec{
-  background-image: url(pic/background.jpg);
+  background-image: url(pic/background2.jpg);
   background-size: cover;
   width: 100%;
   min-height: 730px;
@@ -559,4 +561,14 @@ footer{
   color: #8BC34A;
   background-color: white;
   color:#2196F3;
+}
+.progress-bar{
+  border-radius: 0%;
+  width: 70%;
+  background-color: #2196F3;
+
+}
+.progress{
+  border-radius: 0%;
+ margin:0 auto;
 }
