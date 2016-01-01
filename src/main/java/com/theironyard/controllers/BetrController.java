@@ -60,6 +60,7 @@ public class BetrController {
 
         return params;
     }
+
     @RequestMapping(path = "/user", method = RequestMethod.GET)
     public User getUser(HttpSession session) {
         String email = (String) session.getAttribute("email");
@@ -253,7 +254,6 @@ public class BetrController {
 //        community.goal = goal;
 //        community.description = description;
 //        community.filename = photoFile.getName();
-        community.goal = 1500;
 
         communities.save(community);
     }
