@@ -235,7 +235,7 @@ public class BetrController {
     }
 
     @RequestMapping(path = "/community", method = RequestMethod.POST)
-       public void addCommunity(HttpSession session, @RequestBody Community community,TransactionParams params) throws Exception {
+       public void addCommunity(HttpSession session, @RequestBody Community community, TransactionParams params) throws Exception {
 //        String email = (String) session.getAttribute("email");
 //        if (email == null) {
 //            throw new Exception("You are not logged in.");
@@ -262,6 +262,7 @@ public class BetrController {
         community.amount = Integer.parseInt(params.amount) + community.amount;
 
         communities.save(community);
+
     }
     
     @RequestMapping(path = "/community/{id}", method = RequestMethod.DELETE)
@@ -318,13 +319,13 @@ public class BetrController {
     }
 
     @RequestMapping(path = "/communities", method = RequestMethod.GET)
-    public List<Community> getCommunities(HttpSession session, @RequestBody Community community,TransactionParams params) throws Exception {
+    public List<Community> getCommunities(HttpSession session) throws Exception {
         String email = (String) session.getAttribute("email");
 
-        community.goal = 1500;
+//        community.goal = 1500;
 //        community.amount = Integer.parseInt(params.amount);
 //        params.amount = String.valueOf(community.amount);
-        community.amount = Integer.parseInt(params.amount) + community.amount;
+//        community.amount = Integer.parseInt(params.amount) + community.amount;
 
 //        if (community.amount >= community.goal)
 //        {
