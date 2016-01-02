@@ -235,7 +235,7 @@ public class BetrController {
     }
 
     @RequestMapping(path = "/community", method = RequestMethod.POST)
-       public void addCommunity(HttpSession session, @RequestBody Community community, TransactionParams params) throws Exception {
+       public void addCommunity(HttpSession session, @RequestBody Community community) throws Exception {
 //        String email = (String) session.getAttribute("email");
 //        if (email == null) {
 //            throw new Exception("You are not logged in.");
@@ -259,7 +259,7 @@ public class BetrController {
 
 //        Integer.parseInt(params.amount) = community.amount;
 //        params.amount = String.valueOf(community.amount);
-        community.amount = Integer.parseInt(params.amount) + community.amount;
+//        community.amount = Integer.parseInt(params.amount) + community.amount;
 
         communities.save(community);
 
