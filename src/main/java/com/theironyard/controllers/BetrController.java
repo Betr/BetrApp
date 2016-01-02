@@ -59,7 +59,7 @@ public class BetrController {
         Result<Transaction> result = gateway.transaction().sale(request);
 //
 //        community.amount = Integer.parseInt(params.amount);
-        community.amount = Integer.parseInt(params.amount) + community.amount;
+//        community.amount = Integer.parseInt(params.amount) + community.amount;
 
         return params;
 
