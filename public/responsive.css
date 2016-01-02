@@ -64,6 +64,9 @@
   .impact img {
     max-height: 60%;
 }
+.mainTitle{
+      font-size: 6rem;
+}
 .scroll{
   margin: auto;
   width: 95%;
