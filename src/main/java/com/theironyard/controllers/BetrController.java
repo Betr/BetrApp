@@ -48,7 +48,7 @@ public class BetrController {
     );
 
     @RequestMapping(path = "/transaction", method = RequestMethod.POST)
-    public Object addTransaction(@RequestBody TransactionParams params, Community community){
+    public Object addTransaction(@RequestBody TransactionParams params){
         TransactionRequest request = new TransactionRequest()
                 .amount(new BigDecimal(params.amount))
                 .paymentMethodNonce("fake-valid-nonce")
@@ -254,8 +254,8 @@ public class BetrController {
 //        community.goal = goal;
 //        community.description = description;
 //        community.filename = photoFile.getName();
-        community.goal = 1500;
-        community.amount = 0;
+//        community.goal = 1500;
+//        community.amount = 0;
 
 //        Integer.parseInt(params.amount) = community.amount;
 //        params.amount = String.valueOf(community.amount);
@@ -304,11 +304,11 @@ public class BetrController {
 //            FileOutputStream fos = new FileOutputStream(photoFile);
 //            fos.write(communityImage.getBytes());
 //        }
-        community.goal = 1500;
+//        community.goal = 1500;
 //        community.amount = Integer.parseInt(params.amount);
 //        params.amount <= String.valueOf(community.amount);
 
-        community.amount = Integer.parseInt(params.amount) + community.amount;
+//        community.amount = Integer.parseInt(params.amount) + community.amount;
 
 //        if (community.amount >= community.goal)
 //        {
@@ -321,16 +321,6 @@ public class BetrController {
     @RequestMapping(path = "/communities", method = RequestMethod.GET)
     public List<Community> getCommunities(HttpSession session) throws Exception {
         String email = (String) session.getAttribute("email");
-
-//        community.goal = 1500;
-//        community.amount = Integer.parseInt(params.amount);
-//        params.amount = String.valueOf(community.amount);
-//        community.amount = Integer.parseInt(params.amount) + community.amount;
-
-//        if (community.amount >= community.goal)
-//        {
-//            community.amount = 1500;
-//        }
 
         return (List<Community>) communities.findAll();
     }
