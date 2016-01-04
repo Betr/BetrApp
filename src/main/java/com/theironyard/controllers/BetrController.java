@@ -57,9 +57,14 @@ public class BetrController {
                 .done();
 
         Result<Transaction> result = gateway.transaction().sale(request);
+//
+//        community.amount = Integer.parseInt(params.amount);
+//        community.amount = Integer.parseInt(params.amount) + community.amount;
 
         return params;
+
     }
+
     @RequestMapping(path = "/user", method = RequestMethod.GET)
     public User getUser(HttpSession session) {
         String email = (String) session.getAttribute("email");
@@ -131,10 +136,6 @@ public class BetrController {
         session.setAttribute("email", user.email);
         return user;
     }
-
-
-//    @RequestMapping(path = "/press", method = RequestMethod.DELETE)
-//    public List<Press> deletePress()
 
     @RequestMapping(path = "/press", method = RequestMethod.GET)
     public List<Press> getPress(HttpSession session) throws Exception {
@@ -253,9 +254,15 @@ public class BetrController {
 //        community.goal = goal;
 //        community.description = description;
 //        community.filename = photoFile.getName();
-        community.goal = 1500;
+//        community.goal = 1500;
+//        community.amount = 0;
+
+//        Integer.parseInt(params.amount) = community.amount;
+//        params.amount = String.valueOf(community.amount);
+//        community.amount = Integer.parseInt(params.amount) + community.amount;
 
         communities.save(community);
+
     }
     
     @RequestMapping(path = "/community/{id}", method = RequestMethod.DELETE)
@@ -297,6 +304,17 @@ public class BetrController {
 //            FileOutputStream fos = new FileOutputStream(photoFile);
 //            fos.write(communityImage.getBytes());
 //        }
+//        community.goal = 1500;
+//        community.amount = Integer.parseInt(params.amount);
+//        params.amount <= String.valueOf(community.amount);
+
+//        community.amount = Integer.parseInt(params.amount) + community.amount;
+
+//        if (community.amount >= community.goal)
+//        {
+//            community.amount = 1500;
+//        }
+
         communities.save(community);
     }
 
