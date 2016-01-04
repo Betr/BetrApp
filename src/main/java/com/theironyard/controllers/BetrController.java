@@ -66,12 +66,12 @@ public class BetrController {
         return params.amount;
 
     }
-//    @RequestMapping(path = "/transaction/{id}", method = RequestMethod.PUT)
-//    public void editTransaction(@RequestBody TransactionParams params, int id){
-//        Community community = communities.findOne(id);
-//        community.amount.add(new BigDecimal(params.amount));
-//
-//    }
+    @RequestMapping(path = "/transaction/{id}", method = RequestMethod.PUT)
+    public void editTransaction(@RequestBody TransactionParams params, int id){
+        Community community = communities.findOne(id);
+        community.amount.add(new BigDecimal(params.amount));
+
+    }
 
     @RequestMapping(path = "/user", method = RequestMethod.GET)
     public User getUser(HttpSession session) {
@@ -145,7 +145,7 @@ public class BetrController {
         return user;
     }
 
-    @RequestMapping(path = "/press", method = RequestMethod.GET)
+    @RequestMapping(path = "/press/{id}", method = RequestMethod.GET)
     public List<Press> getPress(HttpSession session) throws Exception {
         String email = (String) session.getAttribute("email");
 
