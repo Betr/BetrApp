@@ -77,6 +77,7 @@
                   };
 
                   var getSinglePress = function(id) {
+                    console.log('TEST',url + "/" + id);
                     return $http.get(url + "/" + id);
                   };
 
@@ -108,7 +109,6 @@
               };
               var addUser = function (addUser) {
                 var url = '/register';
-                  
                     return $http.post(url, addUser)
                       // if(res.data.isAdmin === true){
                       //   console.log("this is a administrator")
@@ -148,22 +148,9 @@
               var url = '/transaction';
               var postPayment = function (addPayment) {
                 angular.element(document).find('input').val("");
-<<<<<<< HEAD
-                  return $http.post(url, addPayment).then(function (res) {
-                      console.log(addPayment);
-                      console.log(res);
-                      console.log('posted to checkout route with payment service');
-                        // if (res.data === true){
-                        //   $location.path('/home');
-                        // }
-                    });
 
-                  };
-=======
                 return $http.post(url, addPayment);
               };
->>>>>>> a52bd80d131621bcfb8bc33f8717d05d69c2607f
-
               return {
                 addPayment: postPayment,
 
