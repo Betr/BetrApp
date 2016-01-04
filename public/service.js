@@ -75,6 +75,12 @@
                   var getPress = function () {
                     return $http.get(url);
                   };
+
+                  var getSinglePress = function(id) {
+                    console.log('TEST',url + "/" + id);
+                    return $http.get(url + "/" + id);
+                  };
+
                   var editPress = function (item) {
                     return $http.put(urlEdit + id, data);
                   };
@@ -92,6 +98,7 @@
                     getPress: getPress,
                     editPress: editPress,
                     deletePress: deletePress,
+                    getSinglePress: getSinglePress
                   };
                 })
 
@@ -100,13 +107,9 @@
               var isUser = function(){
                 return $http.get(url);
               };
-              var url = '/register';
               var addUser = function (addUser) {
-                    return $http.post(url, addUser).then(function (res) {
-                      console.log(addUser);
-                      console.log(res.data.isAdmin);
-                      localStorage.setItem("isAdmin", "" + res.data.isAdmin + "");
-
+                var url = '/register';
+                    return $http.post(url, addUser)
                       // if(res.data.isAdmin === true){
                       //   console.log("this is a administrator")
                       //   $location.path('/admin');
@@ -115,8 +118,7 @@
                       //   console.log("this is a user")
                       //   $location.path('/home');
                       // }
-                    });
-                  };
+                };
 
               return {
                 addUser: addUser,
@@ -146,9 +148,9 @@
               var url = '/transaction';
               var postPayment = function (addPayment) {
                 angular.element(document).find('input').val("");
+
                 return $http.post(url, addPayment);
               };
-
               return {
                 addPayment: postPayment,
 

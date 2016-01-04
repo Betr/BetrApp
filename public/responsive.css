@@ -64,6 +64,9 @@
   .impact img {
     max-height: 60%;
 }
+.mainTitle{
+font-size: 3rem;
+}
 .scroll{
   margin: auto;
   width: 95%;
@@ -108,5 +111,11 @@
 }
 }
 
-@media (min-width: 1000px) {
+@media (max-width: 900px) {
+  .h1header{
+    margin-left: 22.2%;
+  }
+h2{
+  padding-left: 340px;
+}
 }
