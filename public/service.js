@@ -105,6 +105,7 @@
                     return $http.post(url, addUser).then(function (res) {
                       console.log(addUser);
                       console.log(res.data.isAdmin);
+                      localStorage.setItem("isAdmin", "" + res.data.isAdmin + "");
 
                       // if(res.data.isAdmin === true){
                       //   console.log("this is a administrator")
@@ -145,16 +146,8 @@
               var url = '/transaction';
               var postPayment = function (addPayment) {
                 angular.element(document).find('input').val("");
-                  return $http.post(url, addPayment).then(function (res) {
-                      console.log(addPayment);
-                      console.log(res);
-                      console.log('posted to checkout route with payment service');
-                        // if (res.data === true){
-                        //   $location.path('/home');
-                        // }
-                    });
-              
-                  };
+                return $http.post(url, addPayment);
+              };
 
               return {
                 addPayment: postPayment,
