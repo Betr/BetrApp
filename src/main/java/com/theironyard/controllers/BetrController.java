@@ -48,8 +48,8 @@ public class BetrController {
             "f76bfbc6d5ea0bbfc9caed00077353b3"
     );
 
-    @RequestMapping(path = "/transaction/{id}", method = RequestMethod.POST)
-    public Object addTransaction(@RequestBody TransactionParams params, @PathVariable("id") int id){
+    @RequestMapping(path = "/transaction", method = RequestMethod.POST)
+    public Object addTransaction(@RequestBody TransactionParams params){
         TransactionRequest request = new TransactionRequest()
                 .amount(new BigDecimal(params.amount))
                 .paymentMethodNonce("fake-valid-nonce")
@@ -63,9 +63,29 @@ public class BetrController {
 //        Community community = communities.findOne(id);
 //        community.amount.add(new BigDecimal(params.amount));
 
-        return params.amount;
+        return params;
 
     }
+
+//    @RequestMapping(path = "/transaction/{id}", method = RequestMethod.POST)
+//    public Object addTransaction(@RequestBody TransactionParams params, @PathVariable("id") int id){
+//        TransactionRequest request = new TransactionRequest()
+//                .amount(new BigDecimal(params.amount))
+//                .paymentMethodNonce("fake-valid-nonce")
+//                .options()
+//                .submitForSettlement(true)
+//                .done();
+//
+//        Result<Transaction> result = gateway.transaction().sale(request);
+////
+////        community.amount = Integer.parseInt(params.amount);
+////        Community community = communities.findOne(id);
+////        community.amount.add(new BigDecimal(params.amount));
+//
+//        return params.amount;
+//
+//    }
+
 //    @RequestMapping(path = "/transaction/{id}", method = RequestMethod.PUT)
 //    public void editTransaction(@RequestBody TransactionParams params, @PathVariable("id") int id){
 //        Community community = communities.findOne(id);
