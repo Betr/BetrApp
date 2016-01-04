@@ -3,6 +3,7 @@ package com.theironyard.entities;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.persistence.*;
+import java.math.BigDecimal;
 
 /**
  * Created by jessicahuffstutler on 12/7/15.
@@ -29,8 +30,8 @@ public class Community {
     @Column(nullable = false)
     public String image;
 
-    @Column(nullable = false)
-    public int amount;
+    @Column(nullable = true)
+    public BigDecimal amount;
 
     //multiple communities per user
     @ManyToOne
@@ -66,7 +67,7 @@ public class Community {
         return user;
     }
 
-    public int getAmount() {
+    public BigDecimal getAmount() {
         return amount;
     }
 }
