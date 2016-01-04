@@ -197,6 +197,7 @@
           $scope.postPayment = function (item) {
               console.log("MODAL CLICKAGE",item);
               PaymentService.addPayment(item);
+
               console.log(item.amount);
               var amt = Math.round(item.amount);
               $scope.total += amt;
