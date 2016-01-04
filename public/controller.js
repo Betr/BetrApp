@@ -73,7 +73,7 @@
 
      })
 
-     .controller('AdminController', function ($log, $uibModal, $scope, PressService, CommunityService, PostService, UserService, $location, LoginService, $routeParams ) {
+     .controller('AdminController', function ($rootScope, $log, $uibModal, $scope, PressService, CommunityService, PostService, UserService, $location, LoginService, $routeParams ) {
        var vm = this;
 
        vm.addPost = function (item){
@@ -168,8 +168,8 @@
 
             $scope.animationsEnabled = true;
 
-              $scope.open = function (size) {
-
+              $scope.open = function (size,community) {
+                $rootScope.communityTest = community
                 var modalInstance = $uibModal.open({
                   animation: $scope.animationsEnabled,
                   templateUrl: 'views/myModalContent.html',
@@ -201,21 +201,25 @@
             // })
           })
 
-        .controller('ModalInstanceCtrl', function ($scope, PaymentService, $location, LoginService,CommunityService) {
+        .controller('ModalInstanceCtrl', function ($rootScope,$scope, PaymentService, $location, LoginService,CommunityService) {
 
 
           $scope.postPayment = function (item) {
               console.log("MODAL CLICKAGE",item);
               PaymentService.addPayment(item).then(function(res) {
-                console.log("res.data", res.data);
+                console.log("res.data", item.amount);
+                console.log($rootScope.communityTest);
+                CommunityService.editCommunity($rootScope.communityTest,item.amount).then(function(data) {
+                  console.log('hello from community change', data);
+                })
                 //create community object with res.data.amount;
                 // CommunityService.addAmount;
               });
 
-              console.log(item.amount);
-              var amt = Math.round(item.amount);
-              $scope.total += amt;
-              console.log($scope.total);
+              // console.log(item.amount);
+              // var amt = Math.round(item.amount);
+              // $scope.total += amt;
+              // console.log($scope.total);
           };
 
             $scope.total = 0;
