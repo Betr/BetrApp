@@ -69,33 +69,30 @@
               var url = '/press';
               var urlEdit = '/editpress'
               var addPress = function (newPress) {
-                  return $http.post(url, newPress);
-                  };
+                   return $http.post(url, newPress);
+                   };
 
-                  var getPress = function () {
-                    return $http.get(url);
-                  };
-<<<<<<< HEAD
-                  var editPress = function (item, id, data) {
-=======
+                   var getPress = function () {
+                     return $http.get(url);
+                   };
 
-                  var getSinglePress = function(id) {
-                    console.log('TEST',url + "/" + id);
-                    return $http.get(url + "/" + id);
-                  };
+                   var getSinglePress = function(id) {
+                     console.log('TEST',url + "/" + id);
+                     return $http.get(url + "/" + id);
+                   };
 
-                  var editPress = function (item) {
->>>>>>> 8880fb01aecc149a0e77e567de27588130687339
-                    return $http.put(urlEdit + id, data);
-                  };
-                  var deletePress = function (item) {
-                    console.log("DELETE SERVICE", item);
-                     return $http.delete(url + "/" + item.id).then(function(data) {
-                       console.log('service delete', data);
-                     });
-                  };
-                  //    $http.delete(url + "/" + item._id);
-                  // };
+                   var editPress = function (item) {
+                     return $http.put(urlEdit + id, data);
+                   };
+                   var deletePress = function (item) {
+                     console.log("DELETE SERVICE", item);
+                      return $http.delete(url + "/" + item.id).then(function(data) {
+                        console.log('service delete', data);
+                      });
+                   };
+                   //    $http.delete(url + "/" + item._id);
+                   // };
+                
 
                   return {
                     newPress: addPress,
