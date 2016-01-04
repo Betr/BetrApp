@@ -16,7 +16,10 @@
             console.log('in community service');
             return $http.get(getUrl);
           };
-          var editCommunity = function (commI) {
+          var editCommunity = function (commI,amount) {
+            console.log(commI)
+            window.glob = commI;
+            commI.amount += parseInt(amount);
             return $http.put(url + '/' + commI.id, commI);
           };
           var deleteCommunity = function (commI) {
@@ -92,7 +95,7 @@
                    };
                    //    $http.delete(url + "/" + item._id);
                    // };
-                
+
 
                   return {
                     newPress: addPress,
