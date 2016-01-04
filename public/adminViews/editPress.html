@@ -4,9 +4,10 @@
 
 
 <div class="userNav">
-  <a class="login" href="#/admin">Admin | </a>
+<a href="/#/"><img class="footerImg" src="pics/betrLogo.png"></a>
+<a class="login" href="#/admin">Admin | </a>
 <a class="login" href="#/communities">Communities | </a>
-<a class="login" href="#/home">Home | </a>
+<a class="login" href="#/home">My Home | </a>
 <a href="#/press" class="login">Press | </a>
 <!-- <a href="#/payment"><button class="btn navBtn" type="" name="">Payment Popup</button></a> -->
 <a href="#/logout" class="login">Logout</a>
@@ -47,7 +48,7 @@
                  <h3 class="population">{{item.byline}} | </h3>
                  <h4 class="population"><a href="{{item.link}}">Click here to read more.</a></h3>
                <h5 class="popPar">{{item.description}}</h5>
-               <button class="btn editBtn" type="button" name="button" ng-click="AdminCtrl.editPress(pressItem)">Edit Press</button>
+               <a ng-href="#/editPress/{{item.id}}"><button class="btn editBtn" type="button" name="button">Edit Press</button></a>
                <button class="btn editBtn" type="button" name="button" ng-click="AdminCtrl.deletePress(item)">Delete Press</button>
             </div>
 

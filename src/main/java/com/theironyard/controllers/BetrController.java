@@ -48,8 +48,8 @@ public class BetrController {
             "f76bfbc6d5ea0bbfc9caed00077353b3"
     );
 
-    @RequestMapping(path = "/transaction/{id}", method = RequestMethod.POST)
-    public Object addTransaction(@RequestBody TransactionParams params, int id){
+    @RequestMapping(path = "/transaction", method = RequestMethod.POST)
+    public Object addTransaction(@RequestBody TransactionParams params){
         TransactionRequest request = new TransactionRequest()
                 .amount(new BigDecimal(params.amount))
                 .paymentMethodNonce("fake-valid-nonce")
@@ -60,12 +60,38 @@ public class BetrController {
         Result<Transaction> result = gateway.transaction().sale(request);
 //
 //        community.amount = Integer.parseInt(params.amount);
-        Community community = communities.findOne(id);
-        community.amount.add(new BigDecimal(params.amount));
+//        Community community = communities.findOne(id);
+//        community.amount.add(new BigDecimal(params.amount));
 
-        return params.amount;
+        return params;
 
     }
+
+//    @RequestMapping(path = "/transaction/{id}", method = RequestMethod.POST)
+//    public Object addTransaction(@RequestBody TransactionParams params, @PathVariable("id") int id){
+//        TransactionRequest request = new TransactionRequest()
+//                .amount(new BigDecimal(params.amount))
+//                .paymentMethodNonce("fake-valid-nonce")
+//                .options()
+//                .submitForSettlement(true)
+//                .done();
+//
+//        Result<Transaction> result = gateway.transaction().sale(request);
+////
+////        community.amount = Integer.parseInt(params.amount);
+////        Community community = communities.findOne(id);
+////        community.amount.add(new BigDecimal(params.amount));
+//
+//        return params.amount;
+//
+//    }
+
+//    @RequestMapping(path = "/transaction/{id}", method = RequestMethod.PUT)
+//    public void editTransaction(@RequestBody TransactionParams params, @PathVariable("id") int id){
+//        Community community = communities.findOne(id);
+//        community.amount.add(new BigDecimal(params.amount));
+//
+//    }
     @RequestMapping(path = "/transaction/{id}", method = RequestMethod.PUT)
     public void editTransaction(@RequestBody TransactionParams params, int id){
         Community community = communities.findOne(id);
@@ -146,6 +172,11 @@ public class BetrController {
     }
 
     @RequestMapping(path = "/press/{id}", method = RequestMethod.GET)
+    public Press getPress(HttpSession session, int id) throws Exception {
+        return pressPosts.findOne(id);
+    }
+
+    @RequestMapping(path = "/press", method = RequestMethod.GET)
     public List<Press> getPress(HttpSession session) throws Exception {
         String email = (String) session.getAttribute("email");
 
@@ -159,9 +190,9 @@ public class BetrController {
     }
 
     @RequestMapping(path = "/press/{id}", method = RequestMethod.PUT)
-    public void editPress(HttpSession session, @RequestBody Press press) throws Exception {
+    public void editPress(HttpSession session, @PathVariable("id") int id) throws Exception {
         String email = (String) session.getAttribute("email");
-
+        Press press = pressPosts.findOne(id);
         pressPosts.save(press);
     }
     @RequestMapping(path = "/press/{id}", method = RequestMethod.DELETE)

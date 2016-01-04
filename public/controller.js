@@ -17,15 +17,20 @@
            resolve: {
              items: function () {
                return $scope.items;
+
              }
            }
          });
 
          modalInstance2.result.then(function (selectedItem) {
            $scope.selected = selectedItem;
+           $log.info('modal instance 2', modalInstance2);
+
+
          }, function () {
            $log.info('Modal dismissed at: ' + new Date());
          });
+
        };
 
        $scope.toggleAnimation = function () {
@@ -46,13 +51,16 @@
 
 
        vm.addUser = function (item){
-           UserService.addUser(item).success(function() {
-             UserService.isUser().success(function(user) {
-               if (user.isAdmin) {
-                 vm.isUser = true;
-               }
-             });
-           });
+           UserService.addUser(item)
+          //  .success(function() {
+          //    UserService.isUser().success(function(user) {
+          //      if (user.isAdmin) {
+          //        vm.isUser = true;
+          //      }
+          //    });
+          //  });
+           $location.path('/communities');
+
          };
         //  vm.logUser = function (item){
         //      LoginService.logUser(item);
@@ -65,7 +73,7 @@
 
      })
 
-     .controller('AdminController', function ($log, $uibModal, $scope, PressService, CommunityService, PostService, UserService, $location, LoginService ) {
+     .controller('AdminController', function ($log, $uibModal, $scope, PressService, CommunityService, PostService, UserService, $location, LoginService, $routeParams ) {
        var vm = this;
 
        vm.addPost = function (item){
@@ -132,11 +140,20 @@
             }
             if($location.path() === "/press") {
               PressService.getPress().then(function(){vm.getPress();});
-          }
+            }
 
-            vm.editPress = function (item){
-              PressService.editPress(item);
-            };
+            if($routeParams.itemId) {
+
+              PressService.getSinglePress($routeParams.itemId).then(function(data){
+                console.log("SINGLE", data);
+              });
+
+              vm.editPress = function (item){
+                PressService.editPress(item);
+              };
+            }
+
+
             vm.getPress = function (){
               PressService.getPress().then(function(res){
                 vm.items = res.data;
@@ -167,6 +184,7 @@
 
                 modalInstance.result.then(function (selectedItem) {
                   $scope.selected = selectedItem;
+                  console.log('modal instance', modalInstance);
                 }, function () {
                   $log.info('Modal dismissed at: ' + new Date());
                 });
@@ -183,25 +201,30 @@
             // })
           })
 
-        .controller('ModalInstanceCtrl', function ($scope, PaymentService, $location, LoginService) {
+        .controller('ModalInstanceCtrl', function ($scope, PaymentService, $location, LoginService,CommunityService) {
 
 
           $scope.postPayment = function (item) {
               console.log("MODAL CLICKAGE",item);
-              PaymentService.addPayment(item);
+              PaymentService.addPayment(item).then(function(res) {
+                console.log("res.data", res.data);
+                //create community object with res.data.amount;
+                // CommunityService.addAmount;
+              });
+
               console.log(item.amount);
               var amt = Math.round(item.amount);
               $scope.total += amt;
               console.log($scope.total);
-            };
+          };
 
             $scope.total = 0;
-
 
             $scope.logUser = function (item){
                 LoginService.logUser(item);
                 console.log("im login controller")
-                // $location.path('/home');
+
+                $location.path('/home');
               };
               // $scope.items = items;
               // $scope.selected = {
