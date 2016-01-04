@@ -75,6 +75,9 @@
                   var getPress = function () {
                     return $http.get(url);
                   };
+<<<<<<< HEAD
+                  var editPress = function (item, id, data) {
+=======
 
                   var getSinglePress = function(id) {
                     console.log('TEST',url + "/" + id);
@@ -82,6 +85,7 @@
                   };
 
                   var editPress = function (item) {
+>>>>>>> 8880fb01aecc149a0e77e567de27588130687339
                     return $http.put(urlEdit + id, data);
                   };
                   var deletePress = function (item) {
