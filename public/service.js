@@ -75,6 +75,11 @@
                   var getPress = function () {
                     return $http.get(url);
                   };
+
+                  var getSinglePress = function(id) {
+                    return $http.get(url + "/" + id);
+                  };
+
                   var editPress = function (item) {
                     return $http.put(urlEdit + id, data);
                   };
@@ -92,6 +97,7 @@
                     getPress: getPress,
                     editPress: editPress,
                     deletePress: deletePress,
+                    getSinglePress: getSinglePress
                   };
                 })
 
@@ -102,10 +108,7 @@
               };
               var url = '/register';
               var addUser = function (addUser) {
-                    return $http.post(url, addUser).then(function (res) {
-                      console.log(addUser);
-                      console.log(res.data.isAdmin);
-
+                    return $http.post(url, addUser)
                       // if(res.data.isAdmin === true){
                       //   console.log("this is a administrator")
                       //   $location.path('/admin');
@@ -114,7 +117,6 @@
                       //   console.log("this is a user")
                       //   $location.path('/home');
                       // }
-                    });
                   };
 
               return {
@@ -153,7 +155,7 @@
                         //   $location.path('/home');
                         // }
                     });
-              
+
                   };
 
               return {

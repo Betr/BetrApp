@@ -53,6 +53,8 @@
                }
              });
            });
+           $location.path('/communities');
+
          };
         //  vm.logUser = function (item){
         //      LoginService.logUser(item);
@@ -65,7 +67,7 @@
 
      })
 
-     .controller('AdminController', function ($log, $uibModal, $scope, PressService, CommunityService, PostService, UserService, $location, LoginService ) {
+     .controller('AdminController', function ($log, $uibModal, $scope, PressService, CommunityService, PostService, UserService, $location, LoginService, $routeParams ) {
        var vm = this;
 
        vm.addPost = function (item){
@@ -132,11 +134,20 @@
             }
             if($location.path() === "/press") {
               PressService.getPress().then(function(){vm.getPress();});
-          }
+            }
 
-            vm.editPress = function (item){
-              PressService.editPress(item);
-            };
+            if($routeParams.itemId) {
+
+              PressService.getSinglePress($routeParams.itemId).then(function(data){
+                console.log("SINGLE", data);
+              });
+
+              vm.editPress = function (item){
+                PressService.editPress(item);
+              };
+            }
+
+
             vm.getPress = function (){
               PressService.getPress().then(function(res){
                 vm.items = res.data;
@@ -201,7 +212,7 @@
             $scope.logUser = function (item){
                 LoginService.logUser(item);
                 console.log("im login controller")
-                // $location.path('/home');
+                $location.path('/home');
               };
               // $scope.items = items;
               // $scope.selected = {

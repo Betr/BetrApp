@@ -76,7 +76,7 @@ public class BetrController {
 
         users.save(user);
     }
-    @RequestMapping(path = "/user", method = RequestMethod.PUT)
+    @RequestMapping(path = "/user/{id}", method = RequestMethod.PUT)
     public void editUser(@RequestBody User user) {
         users.save(user);
     }
@@ -150,7 +150,7 @@ public class BetrController {
         pressPosts.save(press);
     }
 
-    @RequestMapping(path = "/press", method = RequestMethod.PUT)
+    @RequestMapping(path = "/press/{id}", method = RequestMethod.PUT)
     public void editPress(HttpSession session, @RequestBody Press press) throws Exception {
         String email = (String) session.getAttribute("email");
         pressPosts.save(press);
@@ -193,7 +193,7 @@ public class BetrController {
         posts.save(post);
     }
 
-    @RequestMapping(path = "/posts", method = RequestMethod.PUT)
+    @RequestMapping(path = "/posts/{id}", method = RequestMethod.PUT)
     public void editPost(HttpSession session, @PathVariable("id") int id) throws Exception {
         String email = (String) session.getAttribute("email");
 
@@ -276,7 +276,7 @@ public class BetrController {
         communities.delete(community);
     }
 
-    @RequestMapping(path = "/community", method = RequestMethod.PUT)
+    @RequestMapping(path = "/community/{id}", method = RequestMethod.PUT)
     public void editCommunity(HttpSession session, @RequestBody Community community) throws Exception {
         String email = (String) session.getAttribute("email");
 //        if (email == null) {
