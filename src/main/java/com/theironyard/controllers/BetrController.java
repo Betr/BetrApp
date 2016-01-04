@@ -63,9 +63,15 @@ public class BetrController {
         Community community = communities.findOne(id);
         community.amount.add(new BigDecimal(params.amount));
 
-        return params;
+        return params.amount;
 
     }
+//    @RequestMapping(path = "/transaction/{id}", method = RequestMethod.PUT)
+//    public void editTransaction(@RequestBody TransactionParams params, int id){
+//        Community community = communities.findOne(id);
+//        community.amount.add(new BigDecimal(params.amount));
+//
+//    }
 
     @RequestMapping(path = "/user", method = RequestMethod.GET)
     public User getUser(HttpSession session) {
@@ -155,6 +161,7 @@ public class BetrController {
     @RequestMapping(path = "/press/{id}", method = RequestMethod.PUT)
     public void editPress(HttpSession session, @RequestBody Press press) throws Exception {
         String email = (String) session.getAttribute("email");
+
         pressPosts.save(press);
     }
     @RequestMapping(path = "/press/{id}", method = RequestMethod.DELETE)
@@ -279,7 +286,7 @@ public class BetrController {
     }
 
     @RequestMapping(path = "/community/{id}", method = RequestMethod.PUT)
-    public void editCommunity(HttpSession session, @RequestBody Community community, TransactionParams params) throws Exception {
+    public void editCommunity(HttpSession session, @RequestBody Community community) throws Exception {
         String email = (String) session.getAttribute("email");
 //        if (email == null) {
 //            throw new Exception("You are not logged in.");
