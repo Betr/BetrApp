@@ -145,6 +145,11 @@ public class BetrController {
         return user;
     }
 
+    @RequestMapping(path = "/press/{id}", method = RequestMethod.GET)
+    public Press getPress(HttpSession session, int id) throws Exception {
+        return pressPosts.findOne(id);
+    }
+
     @RequestMapping(path = "/press", method = RequestMethod.GET)
     public List<Press> getPress(HttpSession session) throws Exception {
         String email = (String) session.getAttribute("email");
