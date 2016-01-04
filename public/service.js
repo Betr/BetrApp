@@ -105,6 +105,7 @@
                     return $http.post(url, addUser).then(function (res) {
                       console.log(addUser);
                       console.log(res.data.isAdmin);
+                      localStorage.setItem("isAdmin", "" + res.data.isAdmin + "");
 
                       // if(res.data.isAdmin === true){
                       //   console.log("this is a administrator")
@@ -153,7 +154,7 @@
                         //   $location.path('/home');
                         // }
                     });
-              
+
                   };
 
               return {

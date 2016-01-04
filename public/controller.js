@@ -17,15 +17,20 @@
            resolve: {
              items: function () {
                return $scope.items;
+
              }
            }
          });
 
          modalInstance2.result.then(function (selectedItem) {
            $scope.selected = selectedItem;
+           $log.info('modal instance 2', modalInstance2);
+
+
          }, function () {
            $log.info('Modal dismissed at: ' + new Date());
          });
+
        };
 
        $scope.toggleAnimation = function () {
@@ -169,6 +174,7 @@
 
                 modalInstance.result.then(function (selectedItem) {
                   $scope.selected = selectedItem;
+                  console.log('modal instance', modalInstance);
                 }, function () {
                   $log.info('Modal dismissed at: ' + new Date());
                 });
@@ -199,10 +205,10 @@
 
             $scope.total = 0;
 
-
             $scope.logUser = function (item){
                 LoginService.logUser(item);
                 console.log("im login controller")
+
                 $location.path('/home');
               };
               // $scope.items = items;
