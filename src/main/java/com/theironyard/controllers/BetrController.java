@@ -60,8 +60,8 @@ public class BetrController {
         Result<Transaction> result = gateway.transaction().sale(request);
 //
 //        community.amount = Integer.parseInt(params.amount);
-        Community community = communities.findOne(id);
-        community.amount.add(new BigDecimal(params.amount));
+//        Community community = communities.findOne(id);
+//        community.amount.add(new BigDecimal(params.amount));
 
         return params.amount;
 
@@ -164,9 +164,9 @@ public class BetrController {
     }
 
     @RequestMapping(path = "/press/{id}", method = RequestMethod.PUT)
-    public void editPress(HttpSession session, @RequestBody Press press) throws Exception {
+    public void editPress(HttpSession session, @PathVariable("id") int id) throws Exception {
         String email = (String) session.getAttribute("email");
-
+        Press press = pressPosts.findOne(id);
         pressPosts.save(press);
     }
     @RequestMapping(path = "/press/{id}", method = RequestMethod.DELETE)

@@ -50,6 +50,10 @@
           templateUrl: 'adminViews/editPress.html',
           controller: 'AdminController as AdminCtrl'
         })
+        .when('/editPress/:itemId', {
+          templateUrl: 'adminViews/editPressItem.html',
+          controller: 'AdminController as AdminCtrl'
+        })
         .when('/newpost', {
           templateUrl: 'adminViews/postAndUpdate.html',
           controller: 'AdminController as AdminCtrl'
@@ -62,7 +66,7 @@
           templateUrl: 'views/register.html',
           controller: 'MainController as MainCtrl'
         })
-        .otherwise("/404")
+        .otherwise("/404");
     });
 
   angular
