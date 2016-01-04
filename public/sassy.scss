@@ -282,7 +282,28 @@ body{
   font-size: 24px;
   font-family: 'Poiret One', sans-serif;
 }
+// .comBtn{
+//   margin-left: 38%;
+//   background-color: #8BC34A;
+//   color: white;
+//
+//   font-size: 24px;
+//   border: solid 2px white;
+//
+// }
+.comBtn{
+  color: #8BC34A;
+  background-color: white;
+  font-family: 'Poiret One', sans-serif;
+  font-size: 18px;
+  padding: 2px 16px 2px 16px;
+}
+.comBtn:hover{
+  background-color: #8BC34A;
+  border: solid 2px white;
+  color:white;
 
+}
 .logBtn:hover{
   border: solid 2px #8BC34A;
   color: #8BC34A;
@@ -329,9 +350,9 @@ body{
 }
 .comDiv:hover, .postDiv:hover, .pressDiv:hover{
   // border: 2px solid #8BC34A;
-  background-color: white;
-  color: #8BC34A;
-  opacity: .9;
+  // background-color: white;
+  color: white;
+  opacity: 1;
 }
 
 // edit commmunity
