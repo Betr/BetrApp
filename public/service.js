@@ -106,8 +106,9 @@
               var isUser = function(){
                 return $http.get(url);
               };
-              var url = '/register';
               var addUser = function (addUser) {
+                var url = '/register';
+                  
                     return $http.post(url, addUser)
                       // if(res.data.isAdmin === true){
                       //   console.log("this is a administrator")
@@ -117,7 +118,7 @@
                       //   console.log("this is a user")
                       //   $location.path('/home');
                       // }
-                  };
+                };
 
               return {
                 addUser: addUser,
@@ -147,6 +148,7 @@
               var url = '/transaction';
               var postPayment = function (addPayment) {
                 angular.element(document).find('input').val("");
+<<<<<<< HEAD
                   return $http.post(url, addPayment).then(function (res) {
                       console.log(addPayment);
                       console.log(res);
@@ -157,6 +159,10 @@
                     });
 
                   };
+=======
+                return $http.post(url, addPayment);
+              };
+>>>>>>> a52bd80d131621bcfb8bc33f8717d05d69c2607f
 
               return {
                 addPayment: postPayment,

@@ -49,7 +49,7 @@ public class BetrController {
     );
 
     @RequestMapping(path = "/transaction/{id}", method = RequestMethod.POST)
-    public Object addTransaction(@RequestBody TransactionParams params, int id){
+    public Object addTransaction(@RequestBody TransactionParams params, @PathVariable("id") int id){
         TransactionRequest request = new TransactionRequest()
                 .amount(new BigDecimal(params.amount))
                 .paymentMethodNonce("fake-valid-nonce")
@@ -67,7 +67,7 @@ public class BetrController {
 
     }
 //    @RequestMapping(path = "/transaction/{id}", method = RequestMethod.PUT)
-//    public void editTransaction(@RequestBody TransactionParams params, int id){
+//    public void editTransaction(@RequestBody TransactionParams params, @PathVariable("id") int id){
 //        Community community = communities.findOne(id);
 //        community.amount.add(new BigDecimal(params.amount));
 //
@@ -143,6 +143,11 @@ public class BetrController {
         users.save(user);
         session.setAttribute("email", user.email);
         return user;
+    }
+
+    @RequestMapping(path = "/press/{id}", method = RequestMethod.GET)
+    public Press getPress(HttpSession session, int id) throws Exception {
+        return pressPosts.findOne(id);
     }
 
     @RequestMapping(path = "/press", method = RequestMethod.GET)

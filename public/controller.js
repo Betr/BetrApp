@@ -17,15 +17,20 @@
            resolve: {
              items: function () {
                return $scope.items;
+
              }
            }
          });
 
          modalInstance2.result.then(function (selectedItem) {
            $scope.selected = selectedItem;
+           $log.info('modal instance 2', modalInstance2);
+
+
          }, function () {
            $log.info('Modal dismissed at: ' + new Date());
          });
+
        };
 
        $scope.toggleAnimation = function () {
@@ -46,13 +51,14 @@
 
 
        vm.addUser = function (item){
-           UserService.addUser(item).success(function() {
-             UserService.isUser().success(function(user) {
-               if (user.isAdmin) {
-                 vm.isUser = true;
-               }
-             });
-           });
+           UserService.addUser(item)
+          //  .success(function() {
+          //    UserService.isUser().success(function(user) {
+          //      if (user.isAdmin) {
+          //        vm.isUser = true;
+          //      }
+          //    });
+          //  });
            $location.path('/communities');
 
          };
@@ -178,6 +184,7 @@
 
                 modalInstance.result.then(function (selectedItem) {
                   $scope.selected = selectedItem;
+                  console.log('modal instance', modalInstance);
                 }, function () {
                   $log.info('Modal dismissed at: ' + new Date());
                 });
@@ -194,24 +201,29 @@
             // })
           })
 
-        .controller('ModalInstanceCtrl', function ($scope, PaymentService, $location, LoginService) {
+        .controller('ModalInstanceCtrl', function ($scope, PaymentService, $location, LoginService,CommunityService) {
 
 
           $scope.postPayment = function (item) {
               console.log("MODAL CLICKAGE",item);
-              PaymentService.addPayment(item);
+              PaymentService.addPayment(item).then(function(res) {
+                console.log("res.data", res.data);
+                //create community object with res.data.amount;
+                // CommunityService.addAmount;
+              });
+
               console.log(item.amount);
               var amt = Math.round(item.amount);
               $scope.total += amt;
               console.log($scope.total);
-            };
+          };
 
             $scope.total = 0;
-
 
             $scope.logUser = function (item){
                 LoginService.logUser(item);
                 console.log("im login controller")
+
                 $location.path('/home');
               };
               // $scope.items = items;
