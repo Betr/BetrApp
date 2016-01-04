@@ -3,9 +3,10 @@
 
 
 <div class="userNav">
+<a href="/#/"><img class="footerImg" src="pics/betrLogo.png"></a>
 <a class="login" href="#/admin">Admin | </a>
 <a class="login" href="#/communities">Communities | </a>
-<a class="login" href="#/home">Home | </a>
+<a class="login" href="#/home">My Home | </a>
 <a href="#/press" class="login">Press | </a>
 <!-- <a href="#/payment"><button class="btn navBtn" type="" name="">Payment Popup</button></a> -->
 <a href="#/logout" class="login">Logout</a>
@@ -37,7 +38,7 @@
                 <h1 class="comName" >{{commI.name}}</h1>
                 <h3 class="population">Population of {{commI.population}}</h3>
                 <h5 class='popPar'>{{commI.description}}</h5>
-                <button style="margin:0; padding:5px;" class="btn logBtn" id="close" ng-click='open("lg")'>Donate</button>
+                <button style="margin:0; padding:5px;" class="btn comBtn" id="close" ng-click='open("lg")'>Donate</button>
             </div>
 
             <div class="progress">

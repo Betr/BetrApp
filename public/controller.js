@@ -53,6 +53,8 @@
                }
              });
            });
+           $location.path('/communities');
+
          };
         //  vm.logUser = function (item){
         //      LoginService.logUser(item);
@@ -201,7 +203,7 @@
             $scope.logUser = function (item){
                 LoginService.logUser(item);
                 console.log("im login controller")
-                // $location.path('/home');
+                $location.path('/home');
               };
               // $scope.items = items;
               // $scope.selected = {
