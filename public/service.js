@@ -75,7 +75,7 @@
                   var getPress = function () {
                     return $http.get(url);
                   };
-                  var editPress = function (item) {
+                  var editPress = function (item, id, data) {
                     return $http.put(urlEdit + id, data);
                   };
                   var deletePress = function (item) {
