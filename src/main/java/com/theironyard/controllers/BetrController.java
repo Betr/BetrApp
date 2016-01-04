@@ -40,6 +40,7 @@ public class BetrController {
     @Autowired
     PressRepository pressPosts;
 
+
     private static BraintreeGateway gateway = new BraintreeGateway(
             Environment.SANDBOX,
             "r4pm2vfwphd4pnfh",
@@ -47,8 +48,8 @@ public class BetrController {
             "f76bfbc6d5ea0bbfc9caed00077353b3"
     );
 
-    @RequestMapping(path = "/transaction", method = RequestMethod.POST)
-    public Object addTransaction(@RequestBody TransactionParams params){
+    @RequestMapping(path = "/transaction/{id}", method = RequestMethod.POST)
+    public Object addTransaction(@RequestBody TransactionParams params, int id){
         TransactionRequest request = new TransactionRequest()
                 .amount(new BigDecimal(params.amount))
                 .paymentMethodNonce("fake-valid-nonce")
@@ -59,11 +60,18 @@ public class BetrController {
         Result<Transaction> result = gateway.transaction().sale(request);
 //
 //        community.amount = Integer.parseInt(params.amount);
-//        community.amount = Integer.parseInt(params.amount) + community.amount;
+        Community community = communities.findOne(id);
+        community.amount.add(new BigDecimal(params.amount));
 
-        return params;
+        return params.amount;
 
     }
+//    @RequestMapping(path = "/transaction/{id}", method = RequestMethod.PUT)
+//    public void editTransaction(@RequestBody TransactionParams params, int id){
+//        Community community = communities.findOne(id);
+//        community.amount.add(new BigDecimal(params.amount));
+//
+//    }
 
     @RequestMapping(path = "/user", method = RequestMethod.GET)
     public User getUser(HttpSession session) {
@@ -153,6 +161,7 @@ public class BetrController {
     @RequestMapping(path = "/press/{id}", method = RequestMethod.PUT)
     public void editPress(HttpSession session, @RequestBody Press press) throws Exception {
         String email = (String) session.getAttribute("email");
+
         pressPosts.save(press);
     }
     @RequestMapping(path = "/press/{id}", method = RequestMethod.DELETE)
@@ -255,7 +264,7 @@ public class BetrController {
 //        community.description = description;
 //        community.filename = photoFile.getName();
 //        community.goal = 1500;
-//        community.amount = 0;
+        community.amount = BigDecimal.valueOf(0);
 
 //        Integer.parseInt(params.amount) = community.amount;
 //        params.amount = String.valueOf(community.amount);
