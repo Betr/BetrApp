@@ -146,16 +146,8 @@
               var url = '/transaction';
               var postPayment = function (addPayment) {
                 angular.element(document).find('input').val("");
-                  return $http.post(url, addPayment).then(function (res) {
-                      console.log(addPayment);
-                      console.log(res);
-                      console.log('posted to checkout route with payment service');
-                        // if (res.data === true){
-                        //   $location.path('/home');
-                        // }
-                    });
-
-                  };
+                return $http.post(url, addPayment);
+              };
 
               return {
                 addPayment: postPayment,
