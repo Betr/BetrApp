@@ -169,9 +169,7 @@ a:hover{
   font-size: 24px;
   text-align: center;
 }
-.scroll{
 
-}
 .par2{
   width: 85%;
   display: inline-block;
@@ -200,11 +198,19 @@ a:hover{
 }
 .lastSec{
   background-image: url(pic/background2.jpg);
-  background-size: cover;
-  width: 100%;
-  min-height: 730px;
+  background-size: contain;
+  // width: 100%;
+  min-height: 1000px;
 }
 
+
+// .lastSec2{
+//   background-image: url(pic/background2.jpg);
+//   background-size: contain;
+//   background-repeat: no-repeat;
+//   width: 100%;
+//   opacity: .85;
+// }
 
 .change{
     width: 80%;
@@ -253,7 +259,6 @@ article{
   margin: 0 auto;
   text-align: left;
   display: block;
-
 }
 .theCommunityPage, .theCommunities img, .thePress img, .newPosts img{
   display: inline-block;
@@ -389,10 +394,19 @@ ul{
   display: inline;
 }
 
-
+.scrollIt{
+  background-image: url(pic/background2.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  // width: 100%;
+  opacity: .85;
+  padding: 0;
+  margin: 0;
+}
 .communityDisplay, .pressDisplay, .postDisplay{
   display: block;
   // padding-top: 100px;
+
 }
 .editBtn{
   background-color: #8BC34A;

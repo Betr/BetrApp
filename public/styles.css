@@ -171,9 +171,8 @@ footer {
 
 .lastSec {
   background-image: url(pic/background2.jpg);
-  background-size: cover;
-  width: 100%;
-  min-height: 730px; }
+  background-size: contain;
+  min-height: 1000px; }
 
 .change {
   width: 80%;
@@ -314,6 +313,14 @@ ul {
 
 .population {
   display: inline; }
+
+.scrollIt {
+  background-image: url(pic/background2.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: .85;
+  padding: 0;
+  margin: 0; }
 
 .communityDisplay, .pressDisplay, .postDisplay {
   display: block; }
