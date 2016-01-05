@@ -53,7 +53,7 @@
 
             var deletePost = function (postI) {
               console.log("DELETE SERVICE", postI);
-               return $http.delete(url + "/" + postI.id).then(function(data) {
+               return $http.delete(url + "/" + postI).then(function(data) {
                  console.log('service delete', data);
                });
             };
