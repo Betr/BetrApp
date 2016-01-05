@@ -29,7 +29,7 @@
   </div>
   <a class='login' href="#/register">Register</a></h1> -->
 
-<div class="communityDisplay">
+<div class="communityDisplay lastSec">
 
  <article class="theCommunities" ng-repeat="commI in AdminCtrl.commIs" >
      <div class="comDiv">
@@ -42,8 +42,9 @@
             </div>
 
             <div class="progress">
-              <div class="progress-bar" role="progressbar" aria-valuenow="{{commI.amount}}" aria-valuemin="0" aria-valuemax="1500" style="width: 60%;">
-                {{commI.amount}}
+              <div class="progress-bar" role="progressbar" aria-valuenow="{{commI.amount}} / 1500" aria-valuemin="0" aria-valuemax="1500" style="width: %;">
+              <p> ${{commI.amount}} Donated! </p>
+
               </div>
             </div>
 
@@ -52,7 +53,7 @@
  </article>
  <br><br>
 </div>
-<br><br><br><br>
+<br>
 
 <footer class="insideFooter">
 <img class="footerImg" src="pics/betrLogo.png">
