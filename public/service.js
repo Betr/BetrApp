@@ -39,8 +39,8 @@
 
         .factory('PostService', function ($http) {
           var url = '/posts';
-          var addPost = function (newPost) {
-              return  $http.post(url, newPost)
+          var addPost = function (postI) {
+              return  $http.post(url, postI)
               };
 
               var getPost = function () {
@@ -50,15 +50,13 @@
               var editPost = function () {
                 return $http.put(url + id, data);
               };
-              var deletePost = function (item) {
-              //    $http.delete(url + "/" + item._id);
-              // };
-              console.log("DELETE SERVICE", item);
-               return $http.delete(url + "/" + item.id).then(function(data) {
+
+            var deletePost = function (postI) {
+              console.log("DELETE SERVICE", postI);
+               return $http.delete(url + "/" + postI.id).then(function(data) {
                  console.log('service delete', data);
                });
             };
-
 
               return {
                 newPost: addPost,
