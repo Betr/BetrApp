@@ -81,6 +81,8 @@
           //  $location.path('/admin');
          };
 
+
+
          vm.getPost = function (){
            console.log("posty contrl")
            PostService.getPost().then(function(res){vm.posts = res.data;

@@ -29,6 +29,7 @@
   </div>
   <a class='login' href="#/register">Register</a></h1> -->
 
+
 <div class="communityDisplay lastSec">
 
  <article class="theCommunities" ng-repeat="commI in AdminCtrl.commIs" >
@@ -42,9 +43,8 @@
             </div>
 
             <div class="progress">
-              <div class="progress-bar" role="progressbar" aria-valuenow="{{commI.amount}} / 1500" aria-valuemin="0" aria-valuemax="1500" style="width: %;">
+              <div class="progress-bar" role="progressbar" aria-valuenow="{{commI.amount}} / 1500" aria-valuemin="0" aria-valuemax="1500" style="width:{{(commI.amount/1500)*100}}%">
               <p> ${{commI.amount}} Donated! </p>
-
               </div>
             </div>
 
