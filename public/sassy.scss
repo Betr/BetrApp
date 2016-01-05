@@ -151,14 +151,22 @@ a:hover{
   margin: 0 auto;
   padding-left: 5px;
 }
+
 .par{
-  width: 85%;
-  // margin-left: 13.5%;
+  width: 80%;
   display: inline-block;
-  // margin-bottom: 4%;
   color:#2196F3;
   font-family: 'Raleway', sans-serif;
   font-size: 18px;
+  text-align: center;
+  padding-top: 3%;
+}
+.par1{
+  width: 80%;
+  display: inline-block;
+  color:#2196F3;
+  font-family: 'Raleway', sans-serif;
+  font-size: 24px;
   text-align: center;
 }
 .scroll{
@@ -166,14 +174,11 @@ a:hover{
 }
 .par2{
   width: 85%;
-  // margin-left: 13.5%;
   display: inline-block;
-  // margin-bottom: 4%;
   color:white;
   font-family: 'Raleway', sans-serif;
   font-size: 18px;
   text-align: center;
-
 }
 .highlight{
   font-weight: bold;
@@ -184,6 +189,12 @@ a:hover{
 .highlight2{
   font-weight: bold;
   font-size: 36px;
+  padding: 2% 0 2% 0;
+  text-align: center;
+}
+.highlight3{
+  font-weight: bold;
+  font-size: 44px;
   padding: 2% 0 2% 0;
   text-align: center;
 }
@@ -336,17 +347,17 @@ body{
   margin-top: 15px;
   display: block;
   width: 80%;
-  opacity: .5;
+  opacity: .85;
 
 }
 .postDiv{
   background-color:#2196F3;
-  opacity: .5;
+  opacity: .85;
 
 }
 .pressDiv{
   background-color: #9C27B0;
-  opacity: .5;
+  opacity: .85;
 }
 .comDiv:hover, .postDiv:hover, .pressDiv:hover{
   // border: 2px solid #8BC34A;
@@ -410,6 +421,14 @@ ul{
   color:#8BC34A;
   font-family: 'Raleway', sans-serif;
   font-size:5rem;
+  text-align: center;
+  display: block;
+  margin-left: 1%;
+}
+.mainTitle2{
+  color:#8BC34A;
+  font-family: 'Raleway', sans-serif;
+  font-size:7rem;
   text-align: center;
   display: block;
   margin-left: 1%;
