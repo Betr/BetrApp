@@ -76,8 +76,8 @@
      .controller('AdminController', function ($rootScope, $log, $uibModal, $scope, PressService, CommunityService, PostService, UserService, $location, LoginService, $routeParams ) {
        var vm = this;
 
-       vm.addPost = function (item){
-           PostService.newPost(item).then(function(){vm.getPost();});
+       vm.addPost = function (postI){
+           PostService.newPost(postI).then(function(){vm.getPost();});
           //  $location.path('/admin');
          };
 
@@ -88,13 +88,14 @@
            })
          };
          vm.getPost();
-         vm.editPost = function (item){
-           PostService.editPost(item);
+         vm.editPost = function (postI){
+           PostService.editPost(postI);
          };
-         vm.deletePost = function (item){
-            console.log("DELETE",item);
-           PostService.deletePost(item);
+         vm.deletePost = function (postI){
+            console.log("DELETE",postI);
+           PostService.deletePost(postI);
          };
+         vm.getPost();
 
          vm.addCommunity = function (commI){
            console.log("controller item", commI);
