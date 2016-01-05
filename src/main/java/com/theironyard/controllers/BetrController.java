@@ -58,56 +58,30 @@ public class BetrController {
                 .done();
 
         Result<Transaction> result = gateway.transaction().sale(request);
-//
-//        community.amount = Integer.parseInt(params.amount);
-//        Community community = communities.findOne(id);
-//        community.amount.add(new BigDecimal(params.amount));
 
         return params;
 
     }
 
-//    @RequestMapping(path = "/transaction/{id}", method = RequestMethod.POST)
-//    public Object addTransaction(@RequestBody TransactionParams params, @PathVariable("id") int id){
-//        TransactionRequest request = new TransactionRequest()
-//                .amount(new BigDecimal(params.amount))
-//                .paymentMethodNonce("fake-valid-nonce")
-//                .options()
-//                .submitForSettlement(true)
-//                .done();
-//
-//        Result<Transaction> result = gateway.transaction().sale(request);
-////
-////        community.amount = Integer.parseInt(params.amount);
-////        Community community = communities.findOne(id);
-////        community.amount.add(new BigDecimal(params.amount));
-//
-//        return params.amount;
-//
-//    }
-
-//    @RequestMapping(path = "/transaction/{id}", method = RequestMethod.PUT)
-//    public void editTransaction(@RequestBody TransactionParams params, @PathVariable("id") int id){
-//        Community community = communities.findOne(id);
-//        community.amount.add(new BigDecimal(params.amount));
-//
-//    }
-
     @RequestMapping(path = "/user", method = RequestMethod.GET)
     public User getUser(HttpSession session) {
         String email = (String) session.getAttribute("email");
+
         User user = users.findOneByEmail(email);
         return user;
     }
+
     @RequestMapping(path = "/user", method = RequestMethod.POST)
     public void addUser(@RequestBody User user) {
 
         users.save(user);
     }
+
     @RequestMapping(path = "/user/{id}", method = RequestMethod.PUT)
     public void editUser(@RequestBody User user) {
         users.save(user);
     }
+
     @RequestMapping(path = "/user/{id}", method = RequestMethod.DELETE)
     public void deleteUser (HttpSession session, @PathVariable("id") int id) {
         users.delete(id);
@@ -138,7 +112,6 @@ public class BetrController {
 
         User currentUser = users.findOneByEmail(user.email);
         if (currentUser == null) {
-//            user = new User();
             if (user.email.toLowerCase().equals("wilsonkate.kw@gmail.com") || user.email.equals("jessica.huffstutler@gmail.com") || user.email.equals("info@betrapp.co")) {
                 user.isAdmin = true;
                 System.out.println("Is Admin");
@@ -148,16 +121,8 @@ public class BetrController {
             }
             user.password = PasswordHash.createHash(user.password);
             users.save(user);
-
-//            user.firstName = firstName;
-//            user.lastName = lastName;
-//            user.email = email;
-//            user.password = PasswordHash.createHash(password);
-//            user.isAdmin = isAdmin;
-//            users.save(user);
         } else {
             throw new Exception("An account with that email already exists.");
-
         }
 
         users.save(user);
@@ -189,6 +154,7 @@ public class BetrController {
         Press press = pressPosts.findOne(id);
         pressPosts.save(press);
     }
+
     @RequestMapping(path = "/press/{id}", method = RequestMethod.DELETE)
     public void deletePress(HttpSession session, @PathVariable("id") int id) throws Exception {
         String email = (String) session.getAttribute("email");
@@ -206,24 +172,8 @@ public class BetrController {
 
     @RequestMapping(path = "/posts", method = RequestMethod.POST)
     public void addPost(HttpSession session, @RequestBody Post post) throws Exception {
-//        String email = (String) session.getAttribute("email");
+        String email = (String) session.getAttribute("email");
 
-//        if (username == null) {
-//            throw new Exception("You are not logged in.");
-//        }
-//         if (!postImage.getContentType().startsWith("image")){
-//             throw new Exception("Only images are allowed!");
-//         }
-//         File photoFile = File.createTempFile("postImage", postImage.getOriginalFilename(), new File("public"));
-//         FileOutputStream fos = new FileOutputStream(photoFile);
-//         fos.write(postImage.getBytes()); //to save to a file in the public folder
-//
-//        Post post = new Post();
-//        post.communityName = communityName; //this should be a dropdown menu for the admin to select a community to avoid spelling errors
-//        post.postName = postName;
-//        post.postBody = postBody;
-//        post.postTime = postTime;
-//        post.filename = photoFile.getName();
         posts.save(post);
     }
 
@@ -231,28 +181,6 @@ public class BetrController {
     public void editPost(HttpSession session, @PathVariable("id") int id) throws Exception {
         String email = (String) session.getAttribute("email");
 
-//        if (username == null) {
-//            throw new Exception("You are not logged in.");
-//        }
-//
-//        Post post = posts.findOne(id);
-//        if (post.communityName!=null){
-//                post.communityName = communityName; //this should be a dropdown menu for the admin to select a community to avoid spelling errors
-//        }
-//        if (post.postName!=null){
-//               post.postName = postName;
-//        }
-//        if (post.postBody!=null){
-//                post.postBody = postBody;
-//        }
-//        if (!postImage.isEmpty()) {
-//            if (!postImage.getContentType().startsWith("image")) {
-//                throw new Exception("Only images are allowed!");
-//            }
-//            File photoFile = File.createTempFile("postImage", postImage.getOriginalFilename(), new File("public"));
-//            FileOutputStream fos = new FileOutputStream(photoFile);
-//            fos.write(postImage.getBytes()); //to save to a file in the public folder
-//        }
         Post post = posts.findOne(id);
         posts.save(post);
     }
@@ -260,9 +188,6 @@ public class BetrController {
     @RequestMapping(path = "/posts/{id}", method = RequestMethod.DELETE)
     public void deletePost(HttpSession session, @PathVariable("id") int id) throws Exception {
         String email = (String) session.getAttribute("email");
-//        if (email == null) {
-//            throw new Exception("You are not logged in.");
-//        }
 
         Post post = posts.findOne(id);
         posts.delete(post);
@@ -270,41 +195,15 @@ public class BetrController {
 
     @RequestMapping(path = "/community", method = RequestMethod.POST)
        public void addCommunity(HttpSession session, @RequestBody Community community) throws Exception {
-//        String email = (String) session.getAttribute("email");
-//        if (email == null) {
-//            throw new Exception("You are not logged in.");
-//        }
+        String email = (String) session.getAttribute("email");
 
-//        if (!image.getContentType().startsWith("image")){
-//            throw new Exception("Only images are allowed!");
-//        }
-//        File photoFile = File.createTempFile("communityImage", communityImage.getOriginalFilename(), new File("public"));
-//        FileOutputStream fos = new FileOutputStream(photoFile);
-//        fos.write(communityImage.getBytes()); //to save to a file in the public folder
-//
-//        Community community = new Community();
-//        community.name = name;
-//        community.population = population;
-//        community.goal = goal;
-//        community.description = description;
-//        community.filename = photoFile.getName();
-//        community.goal = 1500;
         community.amount = BigDecimal.valueOf(0);
-
-//        Integer.parseInt(params.amount) = community.amount;
-//        params.amount = String.valueOf(community.amount);
-//        community.amount = Integer.parseInt(params.amount) + community.amount;
-
         communities.save(community);
-
     }
     
     @RequestMapping(path = "/community/{id}", method = RequestMethod.DELETE)
     public void deleteCommunity(HttpSession session, @PathVariable("id") int id) throws Exception {
         String email = (String) session.getAttribute("email");
-//        if (email == null) {
-//            throw new Exception("You are not logged in.");
-//        }
 
         Community community = communities.findOne(id);
         communities.delete(community);
@@ -313,41 +212,6 @@ public class BetrController {
     @RequestMapping(path = "/community/{id}", method = RequestMethod.PUT)
     public void editCommunity(HttpSession session, @RequestBody Community community) throws Exception {
         String email = (String) session.getAttribute("email");
-//        if (email == null) {
-//            throw new Exception("You are not logged in.");
-//        }
-//
-//        Community community = communities.findOne(id);  //When updating the previous input will remain.
-//        if (community.name!=null){
-//            community.name = name;
-//        }
-//        if (community.population!=0){
-//            community.population = population;
-//        }
-//        if (community.goal!=0) {
-//            community.goal = goal;
-//        }
-//        if (community.description!=null){
-//            community.description = description;
-//        }
-//        if (!communityImage.isEmpty()){
-//            if (!communityImage.getContentType().startsWith("image")){
-//                throw new Exception("Only images are allowed!");
-//            }
-//            File photoFile = File.createTempFile("communityImage", communityImage.getOriginalFilename(), new File("public"));
-//            FileOutputStream fos = new FileOutputStream(photoFile);
-//            fos.write(communityImage.getBytes());
-//        }
-//        community.goal = 1500;
-//        community.amount = Integer.parseInt(params.amount);
-//        params.amount <= String.valueOf(community.amount);
-
-//        community.amount = Integer.parseInt(params.amount) + community.amount;
-
-//        if (community.amount >= community.goal)
-//        {
-//            community.amount = 1500;
-//        }
 
         communities.save(community);
     }
