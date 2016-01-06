@@ -9,7 +9,12 @@
   h2{
     padding-left: 0;
   }
-
+  .info2{
+    font-size: 5rem;
+  }
+  .world{
+    font-size: 6rem;
+  }
   .h1header{
     margin-left: 31.2%;
   }
@@ -40,6 +45,20 @@
     font-size: 1.5em;
     margin-right: 0;
   }
+  .aLogin {
+    margin-left: 18%;
+    margin-top: 31%;
+    width: 66%;
+}
+.loginH1{
+      margin-left: 41%;
+}
+.loginH2{
+  margin-left: 29%;
+}
+.logBtn{
+  margin-left: 27%;
+}
   #pinkDiv{
     margin-top: -16%;
     width: 100%;
@@ -153,4 +172,8 @@ h2{
     font-size: 24px;
     text-align: center;
     margin-top: 2%;
+}
+
+.pinkDiv{
+  
 }
