@@ -46,6 +46,10 @@
           templateUrl: 'adminViews/editCommunities.html',
           controller: 'AdminController as AdminCtrl'
         })
+        .when('/editcommunities/:itemId', {
+          templateUrl: 'adminViews/editOneCommunity.html',
+          controller: 'AdminController as AdminCtrl'
+        })
         .when('/editpress', {
           templateUrl: 'adminViews/editPress.html',
           controller: 'AdminController as AdminCtrl'

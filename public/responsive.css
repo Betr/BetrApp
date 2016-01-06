@@ -6,8 +6,12 @@
   header{
     margin-top: -3%;
   }
+  h2{
+    padding-left: 0;
+  }
+
   .h1header{
-    margin-left: 35.2%;
+    margin-left: 31.2%;
   }
   .blueDiv{
     width: 0%;
@@ -29,9 +33,12 @@
     font-size: 2em;
   }
   .login{
-    float: right;
-    margin-top: -76px;
+    margin-top: -11px;
     margin-right: 4%;
+    float: none;
+    margin-left: -1%;
+    font-size: 1.5em;
+    margin-right: 0;
   }
   #pinkDiv{
     margin-top: -16%;
@@ -51,7 +58,9 @@
     margin-top: 5%;
     margin-top: 48%;
   }
-
+  .mainTitle2{
+    font-size: 5rem;
+  }
          /*second page*/
 
   .impact{
@@ -59,10 +68,15 @@
     height: 300px;
     margin-left: 4.5%;
     border-radius: 38%;
-
   }
   .impact img {
     max-height: 60%;
+}
+.theMainInfo {
+  width: auto;
+}
+.img{
+  width: 33%;
 }
 .mainTitle{
 font-size: 3rem;
@@ -109,13 +123,34 @@ font-size: 3rem;
 .fp-controlArrow.fp-prev{
   opacity: 0.4;
 }
-}
 
-@media (max-width: 900px) {
+ /*press pages*/
+ .comDiv {
+   width: 100%;
+   margin-left: 0;
+ }
+ }
+
+
+@media (min-width: 900px) and (max-width: 1000px) {
   .h1header{
-    margin-left: 22.2%;
+    margin-left: 21.2%;
   }
 h2{
   padding-left: 340px;
 }
+
+/*slide1*/
+
+.mainTitle2{
+  margin-top: -12%;
+}
+.par1 {
+    width: 80%;
+    display: inline-block;
+    color: #2196F3;
+    font-family: 'Raleway', sans-serif;
+    font-size: 24px;
+    text-align: center;
+    margin-top: 2%;
 }
