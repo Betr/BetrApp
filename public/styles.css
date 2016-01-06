@@ -186,8 +186,7 @@ footer {
 .lastSec2 {
   background-size: contain;
   background-repeat: no-repeat;
-  width: 100%;
-  opacity: .85; }
+  width: 100%; }
 
 .change {
   width: 80%;
@@ -333,9 +332,9 @@ ul {
   background-image: url(pic/background2.jpg);
   background-size: contain;
   background-repeat: no-repeat;
-  opacity: .85;
   padding: 0;
-  margin: 0; }
+  margin: 0;
+  opacity: .95; }
 
 .communityDisplay, .pressDisplay, .postDisplay {
   display: block; }

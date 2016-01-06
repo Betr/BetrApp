@@ -215,7 +215,6 @@ a:hover{
   background-size: contain;
   background-repeat: no-repeat;
   width: 100%;
-  opacity: .85;
 }
 
 .change{
@@ -368,7 +367,7 @@ body{
 }
 .pressDiv{
   background-color: #9C27B0;
-  opacity: .85;
+  opacity:.85;
 }
 .comDiv:hover, .postDiv:hover, .pressDiv:hover{
   // border: 2px solid #8BC34A;
@@ -378,7 +377,6 @@ body{
 }
 
 // edit commmunity
-
 
 ul{
   float:right;
@@ -405,14 +403,12 @@ ul{
   background-size: contain;
   background-repeat: no-repeat;
   // width: 100%;
-  opacity: .85;
   padding: 0;
   margin: 0;
+  opacity: .95;
 }
 .communityDisplay, .pressDisplay, .postDisplay{
   display: block;
-  // padding-top: 100px;
-
 }
 .editBtn{
   background-color: #8BC34A;
