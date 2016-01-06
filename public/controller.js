@@ -120,7 +120,7 @@
            };
            vm.changeCommunity = function (commI){
              console.log("change working", commI);
-            CommunityService.newCommunity(commI);
+              CommunityService.changeCommunity(commI,$routeParams.itemId);
            };
            vm.deleteCommunity = function (commI){
              console.log("DELETE",commI);
