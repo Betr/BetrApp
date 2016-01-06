@@ -54,12 +54,13 @@
                 <h3 class="population">Population of {{commI.population}}</h3>
                 <h5 class='popPar'>{{commI.description}}</h5>
 
-            <a href="#" ng-click="AdminCtrl.editCommunity(commI)"> <button class="btn editBtn" type="button" name="button" ng-click="AdminCtrl.editCommunity(commI)">Edit Community</button></a>
-            <div ng-show="editorEnabled">
+            <!-- <a href="#" ng-click="AdminCtrl.editCommunity(commI)"> <button class="btn editBtn" type="button" name="button" ng-click="AdminCtrl.editCommunity(commI)">Edit Community</button></a> -->
+            <!-- <div ng-show="editorEnabled">
             <input ng-model="title">
             <a href="#" ng-click="editorEnabled=!editorEnabled">Done editing?</a>
-            </div>
+            </div> -->
 
+            <a ng-href="#/editcommunities/{{commI.id}}"><button class="btn editBtn"  type="button" name="button">Edit Community</button></a>
             <button class="btn editBtn"  type="button" name="button" ng-click="AdminCtrl.deleteCommunity(commI)">Delete Community</button>
             </div>
      </div>
