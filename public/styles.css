@@ -19,7 +19,7 @@ header {
   font-family: 'Poiret One', sans-serif;
   display: inline-block;
   margin-left: 15.2%;
-  font-size: 5em;
+  font-size: 5rem;
   text-align: right;
   margin-top: -1.2px; }
 
@@ -32,7 +32,7 @@ h2 {
   color: #9C27B0;
   font-family: 'Poiret One';
   margin-top: 1%;
-  font-size: 2em;
+  font-size: 2.5rem;
   display: inline; }
 
 a:hover {
@@ -85,7 +85,14 @@ a:hover {
   color: white;
   text-align: center;
   font-family: 'Raleway', sans-serif;
-  font-size: 3em;
+  font-size: 4rem;
+  padding: 7px; }
+
+.info2 {
+  color: white;
+  text-align: center;
+  font-family: 'Raleway', sans-serif;
+  font-size: 6rem;
   padding: 7px; }
 
 .fb {
@@ -131,7 +138,7 @@ footer {
   display: inline-block;
   color: #2196F3;
   font-family: 'Raleway', sans-serif;
-  font-size: 18px;
+  font-size: 1rem;
   text-align: center;
   padding-top: 3%; }
 
@@ -140,7 +147,7 @@ footer {
   display: inline-block;
   color: #2196F3;
   font-family: 'Raleway', sans-serif;
-  font-size: 24px;
+  font-size: 2rem;
   text-align: center; }
 
 .par2 {
@@ -148,32 +155,38 @@ footer {
   display: inline-block;
   color: white;
   font-family: 'Raleway', sans-serif;
-  font-size: 18px;
+  font-size: 2rem;
   text-align: center; }
 
 .highlight {
   font-weight: bold;
-  font-size: 26px;
+  font-size: 2.5rem;
   padding: 2% 0 2% 0;
   text-align: center; }
 
 .highlight2 {
   font-weight: bold;
-  font-size: 36px;
+  font-size: 3rem;
   padding: 2% 0 2% 0;
   text-align: center; }
 
 .highlight3 {
   font-weight: bold;
-  font-size: 44px;
+  font-size: 4rem;
   padding: 2% 0 2% 0;
   text-align: center; }
 
 .lastSec {
   background-image: url(pic/background2.jpg);
-  background-size: cover;
+  background-size: contain;
+  background-repeat: no-repeat;
   width: 100%;
-  min-height: 730px; }
+  min-height: 1000px; }
+
+.lastSec2 {
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 100%; }
 
 .change {
   width: 80%;
@@ -190,7 +203,7 @@ footer {
   text-align: center;
   color: white;
   padding-top: 5%;
-  font-size: 4em;
+  font-size: 7rem;
   font-family: 'Poiret One'; }
 
 .change:hover {
@@ -242,14 +255,14 @@ body {
   background-color: #8BC34A;
   color: white;
   padding: 12px 16px 12px 16px;
-  font-size: 24px;
+  font-size: 2rem;
   font-family: 'Poiret One', sans-serif; }
 
 .comBtn {
   color: #8BC34A;
   background-color: white;
   font-family: 'Poiret One', sans-serif;
-  font-size: 18px;
+  font-size: 1.5rem;
   padding: 2px 16px 2px 16px; }
 
 .comBtn:hover {
@@ -266,7 +279,7 @@ body {
   color: #9C27B0;
   font-family: 'Poiret One', sans-serif;
   margin-left: 48%;
-  font-size: 46px; }
+  font-size: 4.5rem; }
 
 .loginH2 {
   color: #9C27B0;
@@ -315,6 +328,14 @@ ul {
 .population {
   display: inline; }
 
+.scrollIt {
+  background-image: url(pic/background2.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  padding: 0;
+  margin: 0;
+  opacity: .95; }
+
 .communityDisplay, .pressDisplay, .postDisplay {
   display: block; }
 
@@ -322,7 +343,7 @@ ul {
   background-color: #8BC34A;
   color: white;
   padding: 3px 5px 3px 5px;
-  font-size: 16px;
+  font-size: 2rem;
   font-family: 'Poiret One', sans-serif;
   display: inline-block;
   margin: 0 auto; }
@@ -335,7 +356,7 @@ ul {
 .adminTitle {
   color: #8BC34A;
   font-family: 'Raleway', sans-serif;
-  font-size: 45px;
+  font-size: 5rem;
   text-align: left;
   display: block;
   margin-left: 1%; }
@@ -359,7 +380,7 @@ ul {
 .adTitle {
   color: #8BC34A;
   font-family: 'Raleway', sans-serif;
-  font-size: 25px;
+  font-size: 2rem;
   text-align: left;
   margin-left: 1%;
   display: inline-block; }
@@ -370,7 +391,7 @@ footer {
   color: #8BC34A;
   display: block;
   text-align: center;
-  font-size: 13px; }
+  font-size: 1.2rem; }
 
 .insideFooter {
   margin: 0 auto;
@@ -378,11 +399,11 @@ footer {
   color: #8BC34A;
   display: block;
   text-align: center;
-  font-size: 13px;
+  font-size: 1.2rem;
   margin-top: 3%; }
 
 .footerImg {
-  max-height: 20px;
+  max-height: 35px;
   padding-bottom: 5px; }
 
 .adminBtn {
@@ -391,7 +412,7 @@ footer {
   background-color: #8BC34A;
   color: white;
   padding: 12px 16px 12px 16px;
-  font-size: 24px;
+  font-size: 3rem;
   font-family: 'Poiret One', sans-serif;
   text-align: left; }
 
@@ -441,7 +462,7 @@ footer {
 .pName {
   display: block;
   text-align: left;
-  font-size: 24px; }
+  font-size: 2rem; }
 
 .navBtn {
   display: inline-block;
@@ -449,7 +470,7 @@ footer {
   background-color: #8BC34A;
   color: white;
   padding: 2px 6px 2px 6px;
-  font-size: 16px;
+  font-size: 1.5rem;
   font-family: 'Poiret One', sans-serif;
   text-align: left; }
 
@@ -460,7 +481,7 @@ footer {
 
 .bigBetr {
   font-family: Poiret One;
-  font-size: 200px;
+  font-size: 10rem;
   text-align: right; }
 
 .logOut {
@@ -470,18 +491,18 @@ footer {
   padding: 15px 0 0 15px;
   display: block;
   background-color: #8BC34A;
-  font-size: 84px; }
+  font-size: 10rem; }
 
 .logoutBetr {
   color: white;
-  font-size: 84px;
+  font-size: 7rem;
   display: block;
   font-family: 'Raleway', sans-serif; }
 
 .userNav {
   display: block;
   padding-left: 1%;
-  font-size: 12px; }
+  font-size: 2rem; }
 
 .adminCommunityDiv, .adminUserDiv {
   width: 90%;
@@ -511,7 +532,7 @@ footer {
   background-color: #2196F3;
   color: white;
   padding: 12px 16px 12px 16px;
-  font-size: 24px;
+  font-size: 3rem;
   font-family: 'Poiret One', sans-serif;
   text-align: left; }
 
@@ -532,3 +553,6 @@ footer {
 
 .popPar {
   width: 700px; }
+
+.communitiesNumDisplay {
+  font-size: 5rem; }
