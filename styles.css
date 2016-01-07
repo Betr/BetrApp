@@ -1,0 +1,558 @@
+.mainCont {
+  background-image: url(pic/background2.jpg);
+  background-size: cover;
+  width: 100%; }
+
+header {
+  width: 100%;
+  height: 80px;
+  background: white; }
+
+.headerImg {
+  height: 90px;
+  margin-left: 2%;
+  margin-top: -1.2%;
+  position: absolute; }
+
+.h1header {
+  color: #9C27B0;
+  font-family: 'Poiret One', sans-serif;
+  display: inline-block;
+  margin-left: 15.2%;
+  font-size: 5rem;
+  text-align: right;
+  margin-top: -1.2px; }
+
+h2 {
+  padding-left: 630px; }
+
+.login {
+  width: 22%;
+  height: 34px;
+  color: #9C27B0;
+  font-family: 'Poiret One';
+  margin-top: 1%;
+  font-size: 2.5rem;
+  display: inline; }
+
+a:hover {
+  text-decoration: none;
+  color: #2196F3; }
+
+.pinkDiv {
+  background-color: #9C27B0;
+  height: 185px;
+  width: 68%;
+  opacity: 0.3;
+  display: inline-block; }
+
+#pinkDiv {
+  margin-top: -5px;
+  margin-left: -3px;
+  width: 68.21%; }
+
+.blueDiv {
+  background-color: #2196F3;
+  height: 185px;
+  width: 32%;
+  margin-left: -4px;
+  display: inline-block;
+  opacity: 0.3;
+  vertical-align: top; }
+
+.blueDiv3 {
+  height: 185px;
+  width: 72%;
+  margin-left: -4px;
+  background: #8BC34A;
+  display: inline-block;
+  opacity: 0.3;
+  vertical-align: top; }
+
+.blueDiv2 {
+  background-color: #CDDC39;
+  height: 185px;
+  width: 28%;
+  display: inline-block;
+  opacity: 0.3; }
+
+.div:hover {
+  opacity: 0.8;
+  padding-top: 3%;
+  transition: .5s; }
+
+.info {
+  color: white;
+  text-align: center;
+  font-family: 'Raleway', sans-serif;
+  font-size: 4rem;
+  padding: 7px; }
+
+.info2 {
+  color: white;
+  text-align: center;
+  font-family: 'Raleway', sans-serif;
+  font-size: 6rem;
+  padding: 7px; }
+
+.fb {
+  margin-left: 87%;
+  margin-top: 0.8%;
+  margin-bottom: 1%;
+  width: 45px; }
+
+.icon2 {
+  margin-top: 0.8%;
+  margin-bottom: 1%;
+  width: 45px; }
+
+.icon:hover {
+  transform: scale(1.3, 1.3);
+  transition: 0.5s; }
+
+footer {
+  background-color: white;
+  width: 100%;
+  height: 30px; }
+
+.secPage {
+  background-color: white;
+  display: inline-block; }
+
+.impact {
+  margin: auto;
+  display: inline-block;
+  font-family: 'Raleway', sans-serif; }
+  .impact img {
+    max-height: 300px; }
+
+.theMainInfo {
+  display: inline-block;
+  width: 49%;
+  text-align: center;
+  margin: 0 auto;
+  padding-left: 5px; }
+
+.par {
+  width: 80%;
+  display: inline-block;
+  color: #2196F3;
+  font-family: 'Raleway', sans-serif;
+  font-size: 2rem;
+  text-align: center;
+  padding-top: 3%; }
+
+.par1 {
+  width: 80%;
+  display: inline-block;
+  color: #2196F3;
+  font-family: 'Raleway', sans-serif;
+  font-size: 2rem;
+  text-align: center; }
+
+.par2 {
+  width: 85%;
+  display: inline-block;
+  color: white;
+  font-family: 'Raleway', sans-serif;
+  font-size: 2rem;
+  text-align: center; }
+
+.highlight {
+  font-weight: bold;
+  font-size: 2.5rem;
+  padding: 2% 0 2% 0;
+  text-align: center; }
+
+.highlight2 {
+  font-weight: bold;
+  font-size: 3rem;
+  padding: 2% 0 2% 0;
+  text-align: center; }
+
+.highlight3 {
+  font-weight: bold;
+  font-size: 4rem;
+  padding: 2% 0 2% 0;
+  text-align: center; }
+
+.lastSec {
+  background-image: url(pic/background2.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 100%;
+  min-height: 1000px; }
+
+.lastSec2 {
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 100%; }
+
+.change {
+  width: 80%;
+  height: 250px;
+  background-color: #2196F3;
+  margin: auto;
+  display: inline-block;
+  margin-top: 17%;
+  margin-bottom: 2%;
+  opacity: 0.5;
+  margin-left: 10%; }
+
+.world {
+  text-align: center;
+  color: white;
+  padding-top: 5%;
+  font-size: 7rem;
+  font-family: 'Poiret One'; }
+
+.change:hover {
+  font-size: 1.1em;
+  opacity: 0.8;
+  transition: 0.5s;
+  text-decoration: none; }
+
+a {
+  text-decoration: none;
+  color: #2196F3; }
+
+article {
+  display: block;
+  margin: 0 auto; }
+  article img {
+    max-height: 200px;
+    margin: 4%; }
+
+.theCommunities, .thePress, .newPosts {
+  width: 90%;
+  margin: 0 auto;
+  text-align: left;
+  display: block; }
+
+.theCommunityPage, .theCommunities img, .thePress img, .newPosts img {
+  display: inline-block;
+  max-height: 120px;
+  margin-top: 11%; }
+
+body {
+  background-color: white; }
+
+.logLogo {
+  width: 20%;
+  margin-left: 40.5%;
+  margin-top: 5%; }
+
+.aLogin {
+  margin-left: 35%;
+  margin-top: 15%;
+  width: 30%; }
+
+.loginInput {
+  margin-top: -37%; }
+
+.logBtn {
+  margin-left: 38%;
+  background-color: #8BC34A;
+  color: white;
+  padding: 12px 16px 12px 16px;
+  font-size: 2rem;
+  font-family: 'Poiret One', sans-serif; }
+
+.comBtn {
+  color: #8BC34A;
+  background-color: white;
+  font-family: 'Poiret One', sans-serif;
+  font-size: 1.5rem;
+  padding: 2px 16px 2px 16px; }
+
+.comBtn:hover {
+  background-color: #8BC34A;
+  border: solid 2px white;
+  color: white; }
+
+.logBtn:hover {
+  border: solid 2px #8BC34A;
+  color: #8BC34A;
+  background-color: white; }
+
+.loginH1 {
+  color: #9C27B0;
+  font-family: 'Poiret One', sans-serif;
+  margin-left: 48%;
+  font-size: 4.5rem; }
+
+.loginH2 {
+  color: #9C27B0;
+  font-family: 'Raleway', sans-serif;
+  margin-left: 44%; }
+
+.form-control {
+  font-family: 'Raleway', sans-serif; }
+
+.comDiv, .postDiv, .pressDiv {
+  background-color: #8BC34A;
+  color: white;
+  margin-top: 10%;
+  margin-left: 10%;
+  padding-bottom: 15px;
+  margin-top: 15px;
+  display: block;
+  width: 80%;
+  opacity: .85; }
+
+.postDiv {
+  background-color: #2196F3;
+  opacity: .85; }
+
+.pressDiv {
+  background-color: #9C27B0;
+  opacity: .85; }
+
+.comDiv:hover, .postDiv:hover, .pressDiv:hover {
+  color: white;
+  opacity: 1; }
+
+ul {
+  float: right;
+  margin-right: 28%;
+  margin-top: 5%;
+  list-style: none; }
+
+.comName {
+  margin-top: 10%; }
+
+.comText, .pressText, .postText {
+  display: inline-block;
+  vertical-align: middle; }
+
+.population {
+  display: inline; }
+
+.scrollIt {
+  background-image: url(pic/background2.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  padding: 0;
+  margin: 0;
+  opacity: .95; }
+
+.communityDisplay, .pressDisplay, .postDisplay {
+  display: block; }
+
+.editBtn {
+  background-color: #8BC34A;
+  color: white;
+  padding: 3px 5px 3px 5px;
+  font-size: 2rem;
+  font-family: 'Poiret One', sans-serif;
+  display: inline-block;
+  margin: 0 auto; }
+
+.editBtn:hover {
+  border: solid 2px #8BC34A;
+  color: #8BC34A;
+  background-color: white; }
+
+.adminTitle {
+  color: #8BC34A;
+  font-family: 'Raleway', sans-serif;
+  font-size: 5rem;
+  text-align: left;
+  display: block;
+  margin-left: 1%; }
+
+.mainTitle {
+  color: #8BC34A;
+  font-family: 'Raleway', sans-serif;
+  font-size: 5rem;
+  text-align: center;
+  display: block;
+  margin-left: 1%; }
+
+.mainTitle2 {
+  color: #8BC34A;
+  font-family: 'Raleway', sans-serif;
+  font-size: 7rem;
+  text-align: center;
+  display: block;
+  margin-left: 1%; }
+
+.adTitle {
+  color: #8BC34A;
+  font-family: 'Raleway', sans-serif;
+  font-size: 2rem;
+  text-align: left;
+  margin-left: 1%;
+  display: inline-block; }
+
+footer {
+  margin: 0 auto;
+  font-family: 'Raleway', sans-serif;
+  color: #8BC34A;
+  display: block;
+  text-align: center;
+  font-size: 1.2rem; }
+
+.insideFooter {
+  margin: 0 auto;
+  font-family: 'Raleway', sans-serif;
+  color: #8BC34A;
+  display: block;
+  text-align: center;
+  font-size: 1.2rem;
+  margin-top: 3%; }
+
+.footerImg {
+  max-height: 35px;
+  padding-bottom: 5px; }
+
+.adminBtn {
+  display: inline-block;
+  margin-left: 2%;
+  background-color: #8BC34A;
+  color: white;
+  padding: 12px 16px 12px 16px;
+  font-size: 3rem;
+  font-family: 'Poiret One', sans-serif;
+  text-align: left; }
+
+.adminBtn:hover {
+  border: solid 2px #8BC34A;
+  color: #8BC34A;
+  background-color: white; }
+
+.checkoutForm {
+  display: block;
+  width: 80%;
+  text-align: center;
+  margin: 5px; }
+
+#checkout {
+  margin: 0 auto;
+  text-align: center;
+  padding-left: 15%; }
+
+.payBtn {
+  padding: 0 20px 0 20px;
+  margin-left: -18%; }
+
+.select {
+  width: 80%;
+  text-align: center;
+  margin-left: 5px; }
+
+.fp-controlArrow.fp-prev {
+  left: 0;
+  border: none;
+  width: 50px;
+  height: 101px;
+  background: url(left.png) no-repeat;
+  cursor: pointer;
+  background-color: #2196F3; }
+
+.fp-controlArrow.fp-next {
+  right: 0;
+  border: none;
+  width: 50px;
+  height: 101px;
+  background: url(right.png) no-repeat;
+  cursor: pointer;
+  background-color: #2196F3; }
+
+.pName {
+  display: block;
+  text-align: left;
+  font-size: 2rem; }
+
+.navBtn {
+  display: inline-block;
+  margin-left: .5%;
+  background-color: #8BC34A;
+  color: white;
+  padding: 2px 6px 2px 6px;
+  font-size: 1.5rem;
+  font-family: 'Poiret One', sans-serif;
+  text-align: left; }
+
+.navBtn:hover {
+  border: solid 2px #8BC34A;
+  color: #8BC34A;
+  background-color: white; }
+
+.bigBetr {
+  font-family: Poiret One;
+  font-size: 10rem;
+  text-align: right; }
+
+.logOut {
+  height: 475px;
+  width: 100%;
+  margin: 0;
+  padding: 15px 0 0 15px;
+  display: block;
+  background-color: #8BC34A;
+  font-size: 10rem; }
+
+.logoutBetr {
+  color: white;
+  font-size: 7rem;
+  display: block;
+  font-family: 'Raleway', sans-serif; }
+
+.userNav {
+  display: block;
+  padding-left: 1%;
+  font-size: 2rem; }
+
+.adminCommunityDiv, .adminUserDiv {
+  width: 90%;
+  margin: 0 auto;
+  text-align: center; }
+
+.adminSquares {
+  width: 90%;
+  margin: 0 auto;
+  margin-left: 10%;
+  vertical-align: top;
+  display: inline-block;
+  padding: 1%; }
+
+.adminPostDiv, .adminPressDiv {
+  width: 40%;
+  display: inline-block;
+  padding: 0;
+  margin: 0 auto;
+  vertical-align: top;
+  text-align: center; }
+
+.adminBtnBlue {
+  display: inline-block;
+  margin-left: 2%;
+  margin-bottom: 1%;
+  background-color: #2196F3;
+  color: white;
+  padding: 12px 16px 12px 16px;
+  font-size: 3rem;
+  font-family: 'Poiret One', sans-serif;
+  text-align: left; }
+
+.adminBtnBlue:hover {
+  border: solid 2px #2196F3;
+  color: #8BC34A;
+  background-color: white;
+  color: #2196F3; }
+
+.progress-bar {
+  border-radius: 0%;
+  width: 70%;
+  background-color: #2196F3; }
+
+.progress {
+  border-radius: 0%;
+  margin: 0 auto; }
+
+.popPar {
+  width: 650px; }
+
+.communitiesNumDisplay {
+  font-size: 5rem; }
