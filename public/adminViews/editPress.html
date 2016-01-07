@@ -1,0 +1,57 @@
+<p class="adminTitle">Edit Press</p><a href="#/press">
+  <!-- <button class="btn adminBtn" type="" name="">View Press</button></a> -->
+
+
+
+<div class="userNav">
+<a href="/#/"><img class="footerImg" src="pics/betrLogo.png"></a>
+<a class="login" href="#/admin">Admin | </a>
+<a class="login" href="#/communities">Communities | </a>
+<a class="login" href="#/home">My Home | </a>
+<a href="#/press" class="login">Press | </a>
+<!-- <a href="#/payment"><button class="btn navBtn" type="" name="">Payment Popup</button></a> -->
+<a href="#/logout" class="login">Logout</a>
+</div>
+<br>
+<!-- <div class="adminNav">
+<a href="#/admin"><button class="btn navBtn" type="" name="">Admin</button></a>
+<a href="#/editpress"><button class="btn navBtn" type="" name="">Edit Press</button></a>
+<a href="#/editcommunities"><button class="btn navBtn" type="" name="">Edit Communities</button></a>
+<a href="#/newpost"><button class="btn navBtn" type="" name="">Create Posts</button></a>
+</div> -->
+
+<!-- <a href="#/payment"><button class="btn navBtn" type="" name="">Payment Popup</button></a> -->
+<!-- <a href="#/login"><button class="btn navBtn" type="" name="">Login</button></a> -->
+<div class='logDiv'>
+
+  <h1  class="loginH1">betr</h1>
+  <h5 class="loginH2">Better Health. Better Life</h5>
+</div>
+
+<div class="aLogin">
+      <input type="text" name="image" ng-model="newPress.imageLink" placeholder="Image Link" value="" class='form-control loginInput'><br>
+      <input type="text" name="communityName" ng-model="newPress.title" placeholder="Title of Article" value="" class='form-control'><br>
+      <input type="text" name="population" ng-model="newPress.byline" placeholder="Byline" value="" class='form-control'><br>
+      <input type="text" name="population" ng-model="newPress.link" placeholder="Link" value="" class='form-control'><br>
+      <input type="text" name="description" ng-model="newPress.description" placeholder="Description" value="" class='form-control'><br><br>
+<button class="btn logBtn" type="button" name="button" ng-click="AdminCtrl.addPress(newPress)">Post New Press</button>
+
+</div>
+
+<div class="pressDisplay">
+
+ <article class="thePress" ng-repeat="item in AdminCtrl.items" >
+     <div class="pressDiv">
+       <img ng-src="{{item.imageLink}}">
+             <div class="pressText">
+               <h1 class="comName">{{item.title}}</h4>
+                 <h3 class="population">{{item.byline}} | </h3>
+                 <h4 class="population"><a href="{{item.link}}">Click here to read more.</a></h3>
+               <h5 class="popPar">{{item.description}}</h5>
+               <!-- <a ng-href="#/editPress/{{item.id}}"><button class="btn editBtn" type="button" name="button">Edit Press</button></a> -->
+               <button class="btn editBtn" type="button" name="button" ng-click="AdminCtrl.deletePress(item)">Delete Press</button>
+            </div>
+
+     </div>
+ </article>
+</div>

@@ -1,0 +1,55 @@
+<!-- list of communitties with donate button and progress bar and filters for closest to funded, least, and no funded -->
+<div id="fullpage">
+
+<p class="adminTitle" style="display:inline-block;">Choose a Community</p>
+
+
+<div class="userNav">
+<a href="/#/"><img class="footerImg" src="pics/betrLogo.png"></a>
+<a class="login" href="#/admin">Admin | </a>
+<a class="login" href="#/communities">Communities | </a>
+<a class="login" href="#/home">My Home | </a>
+<a href="#/press" class="login">Press | </a>
+
+<a href="#/logout" class="login">Logout</a>
+</div>
+<br>
+
+<div class="fp-scrollable scrollIt" style="position: relative; overflow: scroll; width: auto; height: 810px;">
+
+
+
+<div class="communityDisplay lastSec2">
+
+ <article class="theCommunities" ng-repeat="commI in AdminCtrl.commIs" >
+     <div class="comDiv">
+         <img ng-src={{commI.image}}>
+             <div class="comText">
+                <h1 class="comName" >{{commI.name}}</h1>
+                <h3 class="population">Population of {{commI.population}}</h3>
+                <h5 class='popPar'>{{commI.description}}</h5>
+                <button style="margin:0; padding:5px;" class="btn comBtn" id="close" ng-click='open("lg",commI)'>Donate</button>
+            </div>
+
+            <div class="progress">
+              <div class="progress-bar" role="progressbar" aria-valuenow="{{commI.amount}} / 1500" aria-valuemin="0" aria-valuemax="1500" style="width:{{(commI.amount/1500)*100}}%">
+              <p> ${{commI.amount}} Donated! </p>
+              </div>
+            </div>
+
+
+     </div>
+ </article>
+ <br><br>
+</div>
+<br>
+
+</div>
+
+
+
+<footer class="insideFooter">
+<img class="footerImg" src="pics/betrLogo.png">
+<p>Created by Students of The Iron Yard</p>
+</footer>
+</div>

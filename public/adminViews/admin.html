@@ -1,0 +1,42 @@
+<!-- list of users, number of donations, emails to export -->
+
+<p class="adminTitle">Admin View</p>
+
+<div class="userNav">
+<a href="/#/"><img class="footerImg" src="pics/betrLogo.png"></a>
+<a class="login" href="#/admin">Admin | </a>
+<a class="login" href="#/communities">Communities | </a>
+<a class="login" href="#/home">My Home | </a>
+<a href="#/press" class="login">Press | </a>
+
+<a href="#/logout" class="login">Logout</a>
+</div>
+
+<br>
+
+<br>
+
+  <div class="adminUserDiv">
+  <a href="/userInformation"><button class="btn adminBtn" type="" name="">Get Users</button></a>
+  </div>
+  <br><br>
+
+<div class="adminCommunityDiv">
+<a href="#/editcommunities"><button class="btn adminBtnBlue" type="" name="">Add or Edit Communities</button></a><a href="#/communities"><button class="btn adminBtn" type="" name="">View Communitites</button></a><br><br>
+<div style="text-align:center;" class="communitiesNumDisplay adminTitle">
+  We have {{AdminCtrl.numCommunities}} communities open for donation.
+</div>
+</div>
+<br>
+<div class="adminSquares">
+<div class="adminPressDiv">
+<a href="#/editpress"><button class="btn adminBtnBlue" type="" name="">Add Press</button></a>
+<br>
+<a href="#/press"<button class="btn adminBtn" type="" name="">View Press</button></a><br><br>
+</div>
+<div class="adminPostDiv">
+<a href="#/newpost"><button class="btn adminBtnBlue" type="" name="">Add Update</button></a>
+<br>
+<a href="#/home"<button class="btn adminBtn" type="" name="">View Updates</button></a><br>
+</div>
+</div>

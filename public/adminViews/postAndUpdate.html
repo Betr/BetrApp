@@ -1,0 +1,60 @@
+<!-- create updates for all users and specific communities -->
+<p class="adminTitle">Add Updates</p><a href="#/home">
+  <!-- <button class="btn adminBtn" type="" name="">View Updates</button></a> -->
+
+<div class="userNav">
+<a href="/#/"><img class="footerImg" src="pics/betrLogo.png"></a>
+<a class="login" href="#/admin">Admin | </a>
+<a class="login" href="#/communities">Communities | </a>
+<a class="login" href="#/home">My Home | </a>
+<a href="#/press" class="login">Press | </a>
+<!-- <a href="#/payment"><button class="btn navBtn" type="" name="">Payment Popup</button></a> -->
+<!-- <a href="#/login"><button class="btn navBtn" type="" name="">Login</button></a> -->
+<a href="#/logout" class="login">Logout</a>
+</div>
+<br>
+<!-- <button ng-click="MainCtrl.logOut()" class="btn navBtn" type="" name="">Logout</button> -->
+<!-- <div class="adminNav">
+<a href="#/admin"><button class="btn navBtn" type="" name="">Admin</button></a>
+<a href="#/editpress"><button class="btn navBtn" type="" name="">Edit Press</button></a>
+<a href="#/editcommunities"><button class="btn navBtn" type="" name="">Edit Communities</button></a>
+<a href="#/newpost"><button class="btn navBtn" type="" name="">Create Posts</button></a>
+</div> -->
+<!--
+<div class="notLoggedIn" style="text-align:right; padding-right:1%;" ng-controller="MainController as MainCtrl">
+<h2 class='login'><a href ng-click='open2("lg")'='#/login'>Login</a>&nbsp;|
+<a href="#/register">Register</a></h1>
+</div> -->
+
+
+  <!-- <h2 class='login'><a href ng-click='open2("lg")'='#/login'>Login &nbsp;|</a>
+  </div> <a class='login' href="#/register">Register </a></h1>
+  <a href="#/logout" class="login">Logout</a> -->
+  <div class='logDiv'>
+
+    <h1  class="loginH1">betr</h1>
+    <h5 class="loginH2">Better Health. Better Life</h5>
+  </div>
+ <div style="margin-top:3%;" class="aLogin">
+       <input class="form-control" type="text" name="image" ng-model="newPost.image" placeholder="Image Link" value=""><br>
+       <input class="form-control" type="text" name="communityName" ng-model="newPost.communityName" placeholder="Community Name" value=""><br>
+       <input class="form-control" type="text" name="postTitle" ng-model="newPost.postName" placeholder="Title" value=""><br>
+       <input class="form-control" type="text" name="update" ng-model="newPost.postBody" placeholder="Update Description" value=""><br><br>
+ <button class="btn logBtn" type="button" name="button" ng-click="AdminCtrl.addPost(newPost)">Add Update</button>
+ </div>
+
+<div class="postDisplay">
+       <article class="newPosts" ng-repeat="post in AdminCtrl.posts" >
+          <div class="postDiv">
+            <img ng-src={{post.image}}>
+                <div class="postText">
+                 <h1 class="comName">{{post.communityName}}</h1>
+                 <p class="pName">{{post.postName}}</p>
+                 <h5 class="popPar">{{post.postBody}}</h5>
+                 <!-- <button style="margin-left:35px;" class="btn editBtn" type="button" name="button" ng-click="AdminCtrl.editPost(post.id)">Edit Community</button> -->
+                 <button class="btn editBtn"  type="button" name="button" ng-click="AdminCtrl.deletePost(post.id)">Delete Post</button>
+               </div>
+             </div>
+       </article>
+
+</div>
