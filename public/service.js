@@ -22,6 +22,11 @@
             commI.amount += parseInt(amount);
             return $http.put(url + '/' + commI.id, commI);
           };
+          var changeCommunity = function (commI,id) {
+            console.log("this is change service", { comm: commI, id: id});
+              commI.id = id;
+            return $http.put(url + '/' + id, commI);
+          };
           var deleteCommunity = function (commI) {
             console.log("DELETE SERVICE", commI);
              return $http.delete(url + "/" + commI.id).then(function(data) {
@@ -34,6 +39,7 @@
             getCommunity: getCommunity,
             editCommunity: editCommunity,
             deleteCommunity: deleteCommunity,
+            changeCommunity: changeCommunity
           };
         })
 

@@ -116,9 +116,12 @@
 
            vm.editCommunity = function (commI){
              console.log("edit working", commI);
-            // CommunityService.newCommunity(commI);
+            CommunityService.newCommunity(commI);
            };
-
+           vm.changeCommunity = function (commI){
+             console.log("change working", commI);
+              CommunityService.changeCommunity(commI,$routeParams.itemId);
+           };
            vm.deleteCommunity = function (commI){
              console.log("DELETE",commI);
              CommunityService.deleteCommunity(commI);
