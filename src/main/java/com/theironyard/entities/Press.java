@@ -1,7 +1,6 @@
 package com.theironyard.entities;
 
 import javax.persistence.*;
-import java.time.LocalDateTime;
 
 /**
  * Created by jessicahuffstutler on 12/10/15.
@@ -28,13 +27,6 @@ public class Press {
 
     @Column(nullable = false)
     public String description;
-
-    public LocalDateTime time;
-
-    public LocalDateTime getTime() {
-
-        return time;
-    }
 
     public int getId() {
         return id;

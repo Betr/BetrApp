@@ -2,7 +2,6 @@ package com.theironyard.entities;
 
 import javax.persistence.*;
 import java.util.ArrayList;
-import java.util.Set;
 
 /**
  * Created by jessicahuffstutler on 12/7/15.
@@ -28,19 +27,6 @@ public class User {
 
     @Column(nullable = false)
     public boolean isAdmin;
-
-    @OneToMany
-    public Set<Community> community;
-
-    public Set<Community> getCommunity() {
-
-        return community;
-    }
-
-    public void setCommunity(Set<Community> community) {
-
-        this.community = community;
-    }
 
     public int getId() {
         return id;
