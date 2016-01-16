@@ -1,0 +1,25 @@
+<a href="#/communities"><button class="btn" type="" name="">Communitites</button></a>
+<a href="#/editcommunities"><button class="btn" type="" name="">Edit Communities</button></a>
+<a href="#/home"><button class="btn" type="" name="">Logged in Home</button></a>
+<a href="#/admin"><button class="btn" type="" name="">Admin</button></a>
+<a href="#/newpost"><button class="btn" type="" name="">Posts</button></a>
+<a href="#/press"><button class="btn" type="" name="">Press</button></a>
+<a href="#/editpress"><button class="btn" type="" name="">Edit Press</button></a>
+<a href="#/payment"><button class="btn" type="" name="">Payment Popup</button></a>
+<a href="#/login"><button class="btn" type="" name="">Login</button></a>
+<a href="#/register"><button class="btn" type="" name="">Register</button></a>
+<button ng-click="MainCtrl.logOut()" class="btn" type="" name="">Logout</button>
+
+<div style="text-align:right; padding-right:1%;"><h2 class='login'><a href ng-click='open2("lg")'='#/login'>Login</a>&nbsp;| <a href="#/register">Register</a></h1></div>
+
+<div class='logDiv'>
+  <img src="pics/betrLogo.png" alt="" class='logLogo' />
+  <h1  class="loginH1">betr</h1>
+  <h5 class="loginH2">Better Health. Better Life</h5>
+</div>
+
+<div class="aLogin">
+       <input type="text" class="form-control loginInput" name="emailLogin" ng-model="logUser.email" placeholder="Email" value=""><br>
+       <input type="password" class="form-control " name="passwordLogin" ng-model="logUser.password" placeholder="Password" value=""><br>
+ <button class="btn logBtn" type="button" name="button" ng-click="MainCtrl.logUser(logUser)">Login</button>
+ </div>

@@ -1,0 +1,27 @@
+{
+  "name": "BetrApp",
+  "homepage": "https://github.com/katevontaine/BetrApp",
+  "authors": [
+    "Kate Wilson <wilsonkate.kw@gmail.com>"
+  ],
+  "description": "Technology to bridge the gap.",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-route": "~1.4.8",
+    "bootstrap": "~3.3.6",
+    "angular": "~1.4.8",
+    "angular-bootstrap": "0.13.3"
+  },
+  "resolutions": {
+    "angular-bootstrap": "0.13.3"
+  }
+}

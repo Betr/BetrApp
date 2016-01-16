@@ -1,0 +1,28 @@
+
+<div ng-controller="ModalInstanceCtrl">
+        <div class="modal-header">
+            <h3 class="adminTitle">Invest in the Future</h3>
+        </div>
+
+
+        <div id="checkout">
+
+          <input class="checkoutForm form-control" ng-model="newPayment.cardnumber" data-braintree-name="number" placeholder="Card Number" value="">
+          <input class="checkoutForm form-control" ng-model="newPayment.exp" data-braintree-name="expiration_date" placeholder="Exp" value="">
+          <input class="checkoutForm form-control" ng-model="newPayment.cvv" data-braintree-name="cvv" placeholder="CVV" value="">
+          <input class="checkoutForm form-control" ng-model="newPayment.postalcode" data-braintree-name="postal_code" placeholder="Postal Code" value="">
+          <input class="checkoutForm form-control" ng-model="newPayment.name" data-braintree-name="cardholder_name" placeholder="Name on Card" value="">
+            <select class="form-control select" name="nonceSelect" ng-model="newPayment.paymentType">
+                <option class="checkoutForm form-control" value="">Select Payment Type</option>
+                 <option class="checkoutForm form-control" value="visa">VISA</option>
+                 <option class="checkoutForm form-control" value="mastercard">MC</option>
+                 <option class="checkoutForm form-control" value="amex">AMEX</option>
+                 <option class="checkoutForm form-control" value="paypal">PAYPAL</option>
+             </select>
+          <br>
+          <input class="checkoutForm form-control" ng-model="newPayment.amount" data-braintree-name="amount" placeholder="Amount" value="">
+          <button class="btn logBtn payBtn" ng-click="postPayment(newPayment)" type="button" name="button">Pay</button>
+        </div>
+          <br>
+
+          <footer><img class="footerImg" src="pics/betrLogo.png"></footer>

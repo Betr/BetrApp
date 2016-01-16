@@ -1,0 +1,179 @@
+@media (max-width: 400px) {
+  .headerImg{
+    height: 62px;
+    margin-top: 1.8%;
+  }
+  header{
+    margin-top: -3%;
+  }
+  h2{
+    padding-left: 0;
+  }
+  .info2{
+    font-size: 5rem;
+  }
+  .world{
+    font-size: 6rem;
+  }
+  .h1header{
+    margin-left: 31.2%;
+  }
+  .blueDiv{
+    width: 0%;
+  }
+  .pinkDiv{
+    width:100%;
+    height: 150px;
+    opacity: 0.7;
+  }
+  .blueDiv2{
+    width: 0%;
+  }
+  .blueDiv3{
+    width: 100%;
+    height: 240px;
+    opacity: 0.8;
+  }
+  .info{
+    font-size: 2em;
+  }
+  .login{
+    margin-top: -11px;
+    margin-right: 4%;
+    float: none;
+    margin-left: -1%;
+    font-size: 1.5em;
+    margin-right: 0;
+  }
+  .aLogin {
+    margin-left: 18%;
+    margin-top: 31%;
+    width: 66%;
+}
+.loginH1{
+      margin-left: 41%;
+}
+.loginH2{
+  margin-left: 29%;
+}
+.logBtn{
+  margin-left: 27%;
+}
+  #pinkDiv{
+    margin-top: -16%;
+    width: 100%;
+    margin-left: 0%;
+  }
+
+  .mainCont{
+    background-size: inherit;
+  }
+  footer{
+    margin-top: -24%;
+  }
+  .change{
+    margin-left: 0%;
+    width: 100%;
+    margin-top: 5%;
+    margin-top: 48%;
+  }
+  .mainTitle2{
+    font-size: 5rem;
+  }
+         /*second page*/
+
+  .impact{
+    width: 43%;
+    height: 300px;
+    margin-left: 4.5%;
+    border-radius: 38%;
+  }
+  .impact img {
+    max-height: 60%;
+}
+.theMainInfo {
+  width: auto;
+}
+.img{
+  width: 33%;
+}
+.mainTitle{
+font-size: 3rem;
+}
+.scroll{
+  margin: auto;
+  width: 95%;
+  height: 290px;
+  background-color: #f5f5f5;
+  margin-top: -25%;
+  overflow: scroll;
+}
+.scroll2{
+  margin: auto;
+  width: 95%;
+  height: 300px;
+  background-color: #8BC34A;;
+  margin-top: -25%;
+  overflow: scroll;
+}
+.par{
+  width: 99%;
+  margin-left: 0%;
+}
+.par2{
+  width: 99%;
+  margin-left: 0%;
+}
+.mT{
+  font-size: 26px;
+}
+ /*  secon page */
+.adminTitle{
+  font-size: 39px;
+  margin-top: 5%;
+}
+.login{
+  float:none;
+  margin-left: 3%;
+}
+.fp-controlArrow.fp-next {
+    opacity: 0.4;
+}
+.fp-controlArrow.fp-prev{
+  opacity: 0.4;
+}
+
+ /*press pages*/
+ .comDiv {
+   width: 100%;
+   margin-left: 0;
+ }
+ }
+
+
+@media (min-width: 900px) and (max-width: 1000px) {
+  .h1header{
+    margin-left: 21.2%;
+  }
+h2{
+  padding-left: 340px;
+}
+
+/*slide1*/
+
+.mainTitle2{
+  margin-top: -12%;
+}
+.par1 {
+    width: 80%;
+    display: inline-block;
+    color: #2196F3;
+    font-family: 'Raleway', sans-serif;
+    font-size: 24px;
+    text-align: center;
+    margin-top: 2%;
+}
+
+.pinkDiv{
+  
+}
