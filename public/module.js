@@ -23,6 +23,10 @@
           templateUrl: 'views/communityDonate.html',
           controller: 'AdminController as AdminCtrl'
         })
+        .when('/communities/:id', {
+          templateUrl: 'views/communityOne.html',
+          controller: 'AdminController as AdminCtrl'
+        })
         .when('/payment', {
           templateUrl: 'views/popup.html',
           controller: 'ModalInstanceCtrl'

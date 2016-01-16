@@ -166,7 +166,7 @@ a:hover{
   text-align: center;
   padding-top: 3%;
 }
-.par1{ 
+.par1{
   width: 80%;
   display: inline-block;
   color:#2196F3;
@@ -212,8 +212,9 @@ a:hover{
 
 .lastSec2{
   // background-image: url(pic/background2.jpg);
-  background-size: contain;
-  background-repeat: no-repeat;
+  background-color:#8BC34A opacity .9;
+  //background-size: contain;
+  //background-repeat: no-repeat;
   width: 100%;
 }
 
@@ -360,6 +361,18 @@ body{
   opacity: .85;
 
 }
+.comOneDiv{
+  background-color: #8BC34A;
+  color:white;
+  margin-top: 10%;
+  //margin-left: 10%;
+  padding-bottom: 15px;
+  //margin-top: 15px;
+  display: block;
+  width: 100%;
+  height: 100%;
+  opacity: .85;
+}
 .postDiv{
   background-color:#2196F3;
   opacity: .85;
@@ -400,6 +413,16 @@ ul{
 
 .scrollIt{
   background-image: url(pic/background2.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  // width: 100%;
+  padding: 0;
+  margin: 0;
+  opacity: .95;
+}
+.scrollItOne{
+  background-image: url(pic/background2.jpg);
+  opacity: .5;
   background-size: contain;
   background-repeat: no-repeat;
   // width: 100%;
@@ -635,7 +658,7 @@ footer{
  margin:0 auto;
 }
 .popPar{
-  width:700px;
+  width:600px;
 }
 .communitiesNumDisplay{
   font-size: 5rem;
