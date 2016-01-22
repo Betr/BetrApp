@@ -29,8 +29,12 @@ div .regLogin {
   div .regLogin {
     padding-left: 10%;
   }
-
-
+.info {
+  font-size: 3rem;
+}
+.info2{
+  font-size: 4rem;
+}
 
 }
 
@@ -40,10 +44,29 @@ div .regLogin {
   .header1 img{
     display: none;
   }
-
-
-
-
+  .info {
+    font-size: 3rem;
+  }
+  .info2{
+    font-size: 4rem;
+  }
+.pinkDiv{
+  width: 100%;
+  opacity: .7;
+}
+.blueDiv{
+  width: 0%;
+}
+.blueDiv3{
+  width: 100%;
+  opacity: .7;
+}
+.blueDiv2{
+  width: 0%;
+}
+#pinkDiv{
+  width: 100%;
+}
 }
 
 
@@ -53,9 +76,30 @@ div .regLogin {
   .header1 img{
     display: none;
   }
-
-
-
+  .info {
+    font-size: 2rem;
+  }
+  .info2{
+    font-size: 3rem;
+  }
+  .pinkDiv{
+    width: 100%;
+    opacity: .7;
+  }
+  .blueDiv{
+    width: 0%;
+  }
+  .blueDiv3{
+    width: 100%;
+    opacity: .7;
+  }
+  .blueDiv2{
+    width: 0%;
+  }
+  #pinkDiv{
+    width: 100%;
+  }
+  
 
 
 
