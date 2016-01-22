@@ -1,4 +1,68 @@
-@media (max-width: 400px) {
+@media (max-width:1100px) and (min-width:601px){
+
+h1 .betr{
+  padding-left: 15%;
+  vertical-align: middle;
+}
+
+.header{
+  height:80px;
+}
+div .regLogin {
+  padding-left: 15%;
+}
+
+}
+
+
+/*////////////////////////////*/
+
+@media (max-width:800px) and (min-width:601px){
+  .header1 img{
+    display: none;
+  }
+
+  h1 .betr{
+    padding-left: 8%;
+    vertical-align: middle;
+  }
+  div .regLogin {
+    padding-left: 10%;
+  }
+
+
+
+}
+
+
+/*////////////////////////////*/
+@media (max-width:600px) and (min-width:401px){
+  .header1 img{
+    display: none;
+  }
+
+
+
+
+}
+
+
+/*////////////////////////////*/
+
+@media (max-width:400px) and (min-width:1px){
+  .header1 img{
+    display: none;
+  }
+
+
+
+
+
+
+
+}
+
+/*@media (max-width: 400px) {
   .headerImg{
     height: 62px;
     margin-top: 1.8%;
@@ -80,7 +144,6 @@
   .mainTitle2{
     font-size: 5rem;
   }
-         /*second page*/
 
   .impact{
     width: 43%;
@@ -127,7 +190,6 @@ font-size: 3rem;
 .mT{
   font-size: 26px;
 }
- /*  secon page */
 .adminTitle{
   font-size: 39px;
   margin-top: 5%;
@@ -143,7 +205,6 @@ font-size: 3rem;
   opacity: 0.4;
 }
 
- /*press pages*/
  .comDiv {
    width: 100%;
    margin-left: 0;
@@ -159,7 +220,6 @@ h2{
   padding-left: 340px;
 }
 
-/*slide1*/
 
 .mainTitle2{
   margin-top: -12%;
@@ -175,5 +235,5 @@ h2{
 }
 
 .pinkDiv{
-  
-}
+
+}*/
