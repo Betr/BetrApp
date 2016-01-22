@@ -71,7 +71,9 @@ article{
 article{
   padding-top: 3%;
 }
-
+.logoutBetr{
+  font-size: 5rem;
+}
 
 
 
@@ -184,6 +186,11 @@ span{
 article{
   padding-top: 2%;
 }
+.logoutBetr{
+  font-size: 4rem;
+}
+
+
 
 }
 
@@ -292,7 +299,9 @@ article{
   article{
     padding-top: 3%;
   }
-
+  .logoutBetr{
+    font-size: 2rem;
+  }
 
 }
 

@@ -134,7 +134,7 @@ a:hover {
 footer {
   height: 30px; }
   footer img {
-    display: block; }
+    display: inline-block; }
 
 .secPage {
   background-color: #fff;
