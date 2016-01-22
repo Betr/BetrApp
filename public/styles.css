@@ -14,10 +14,11 @@ div .regLogin {
   position: relative;
   display: inline-block; }
   div .regLogin a {
-    display: inline-block; }
-    div .regLogin a img {
-      display: inline-block;
-      height: 30px; }
+    display: inline-block;
+    padding: 0; }
+  div .regLogin img {
+    display: inline-block;
+    height: 30px; }
 
 .headerImg {
   height: 70px;
@@ -137,7 +138,8 @@ footer {
 
 .secPage {
   background-color: #fff;
-  display: inline-block; }
+  display: inline-block;
+  height: 100%; }
 
 .impact {
   margin: auto;
@@ -158,7 +160,7 @@ footer {
   display: inline-block;
   color: #2196F3;
   font-family: 'Raleway',sans-serif;
-  font-size: 2rem;
+  font-size: 1.4rem;
   text-align: center;
   padding-top: 3%; }
 
@@ -167,7 +169,7 @@ footer {
   display: inline-block;
   color: #2196F3;
   font-family: 'Raleway',sans-serif;
-  font-size: 2rem;
+  font-size: 1.75rem;
   text-align: center; }
 
 .par2 {
@@ -175,60 +177,58 @@ footer {
   display: inline-block;
   color: #fff;
   font-family: 'Raleway',sans-serif;
-  font-size: 2rem;
+  font-size: 1.5rem;
   text-align: center; }
 
 .highlight {
   font-weight: 700;
-  font-size: 2.5rem;
+  font-size: 2rem;
   padding: 2% 0;
   text-align: center; }
 
 .highlight2 {
   font-weight: 700;
-  font-size: 3rem;
+  font-size: 2rem;
   padding: 2% 0;
   text-align: center; }
 
 .highlight3 {
   font-weight: 700;
-  font-size: 4rem;
+  font-size: 3rem;
   padding: 2% 0;
   text-align: center; }
 
 .lastSec {
   background-image: url(pic/background2.jpg);
-  background-size: contain;
-  background-repeat: no-repeat;
-  width: 100%;
-  min-height: 1000px; }
+  background-size: cover;
+  width: 100%; }
 
 .lastSec2 {
   background-color: #8BC34A opacity .9;
   width: 100%; }
 
 .change {
-  width: 80%;
-  height: 250px;
-  background-color: #2196F3;
+  width: 100%;
+  height: 650px;
   margin: auto;
   display: inline-block;
-  margin-top: 17%;
-  margin-bottom: 2%;
   opacity: .5;
-  margin-left: 10%; }
+  margin-top: 12%; }
 
 .world {
+  height: 250px;
+  opacity: .7;
+  background-color: #2196F3;
   text-align: center;
-  color: #fff;
+  color: white;
   padding-top: 5%;
   font-size: 7rem;
   font-family: 'Poiret One'; }
 
 .change:hover {
   font-size: 1.1em;
-  opacity: .8;
   transition: .5s;
+  opacity: .9;
   text-decoration: none; }
 
 a {

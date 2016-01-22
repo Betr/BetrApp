@@ -1,4 +1,4 @@
-@media (max-width:1100px) and (min-width:601px){
+@media (max-width:1100px) and (min-width:801px){
 
 h1 .betr{
   padding-left: 15%;
@@ -11,6 +11,8 @@ h1 .betr{
 div .regLogin {
   padding-left: 15%;
 }
+
+
 
 }
 
@@ -35,6 +37,21 @@ div .regLogin {
 .info2{
   font-size: 4rem;
 }
+.mainTitle2 {
+  font-size: 5rem;
+}
+.mainTitle{
+  font-size: 3rem;
+}
+.impact img{
+  max-height: 250px;
+}
+
+
+
+
+
+
 
 }
 
@@ -67,6 +84,67 @@ div .regLogin {
 #pinkDiv{
   width: 100%;
 }
+.mainTitle2 {
+  font-size: 5rem;
+}
+.mainTitle{
+  font-size: 4rem;
+  font-style: italic;
+}
+.impact img{
+  max-height: 100px;
+}
+.fp-controlArrow.fp-next {
+  width: 30px;
+}
+.fp-controlArrow.fp-prev {
+  width: 30px;
+}
+.theMainInfo {
+  display: inline-block;
+  width: 90%;
+  text-align: center;
+  margin: 0 auto;
+  padding-top: 8%;
+}
+.impact{
+  display: none;
+}
+.par1{
+  display: block;
+  padding-top: 3%;
+  text-align: center;
+  margin: 0 auto;
+  width: 80%;
+  font-size: 2rem;
+}
+.par{
+  display: block;
+  padding-top: 3%;
+  text-align: center;
+  margin: 0 auto;
+  width: 80%;
+  font-size: 2rem;
+}
+.info {
+  font-size: 4rem;
+}
+.info2{
+  font-size: 5rem;
+}
+.highlight{
+  font-size:3rem;
+}
+.highlight2{
+  font-size: 3rem;
+}
+span{
+  font-size: 3rem;
+}
+
+
+
+
 }
 
 
@@ -99,7 +177,7 @@ div .regLogin {
   #pinkDiv{
     width: 100%;
   }
-  
+
 
 
 
