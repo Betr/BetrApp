@@ -11,8 +11,19 @@ h1 .betr{
 div .regLogin {
   padding-left: 15%;
 }
-
-
+.communityDisplay, .postDisplay, .pressDisplay {
+  background-color: white;
+  background-image: none;
+  margin: 0;
+}
+.comDiv, .pressDiv, .postDiv{
+  margin: 0;
+  width: 100%;
+  background-image: none;
+}
+article{
+  padding-top: 3%;
+}
 
 }
 
@@ -46,9 +57,23 @@ div .regLogin {
 .impact img{
   max-height: 250px;
 }
-
-
-
+.communityDisplay, .postDisplay, .pressDisplay {
+  background-color: white;
+  background-image: none;
+  margin: 0;
+  background-image: none;
+}
+.comDiv, .pressDiv, .postDiv{
+  margin: 0;
+  width: 100%;
+  background-image: none;
+}
+article{
+  padding-top: 3%;
+}
+.logoutBetr{
+  font-size: 5rem;
+}
 
 
 
@@ -141,7 +166,29 @@ div .regLogin {
 span{
   font-size: 3rem;
 }
+.adminPostDiv, .adminPressDiv{
+  display: block;
+  width: 100%;
+}
+.communityDisplay, .postDisplay, .pressDisplay {
+  background-color: white;
+  background-image: none;
+  margin: 0;
+  background-image: none;
+}
+.comDiv{
+  margin: 0;
+  width: 100%;
+  background-image: none;
+  opacity: 1;
 
+}
+article{
+  padding-top: 2%;
+}
+.logoutBetr{
+  font-size: 4rem;
+}
 
 
 
@@ -233,8 +280,28 @@ span{
   .fp-controlArrow.fp-prev {
     width: 20px;
   }
-
-
+  .adminPostDiv, .adminPressDiv{
+    display: block;
+    width: 100%;
+  }
+  .communityDisplay, .postDisplay, .pressDisplay {
+    background-color: white;
+    background-image: none;
+    margin: 0;
+    background-image: none;
+  }
+  .comDiv, .pressDiv, .postDiv{
+    margin: 0;
+    width: 100%;
+    background-image: none;
+    opacity: 1;
+  }
+  article{
+    padding-top: 3%;
+  }
+  .logoutBetr{
+    font-size: 2rem;
+  }
 
 }
 
