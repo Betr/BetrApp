@@ -177,8 +177,62 @@ span{
   #pinkDiv{
     width: 100%;
   }
+  .theMainInfo {
+    display: inline-block;
+    width: 90%;
+    text-align: center;
+    margin: 0 auto;
+    padding-top: 8%;
+  }
+  .impact{
+    display: none;
+  }
+  .par1{
+    display: block;
+    padding-top: 3%;
+    text-align: center;
+    margin: 0 auto;
+    width: 80%;
+    font-size: 2rem;
+  }
+  .par{
+    display: block;
+    padding-top: 3%;
+    text-align: center;
+    margin: 0 auto;
+    width: 80%;
+    font-size: 1.75rem;
+  }
+  .info {
+    font-size: 3rem;
+  }
+  .info2{
+    font-size: 5rem;
+  }
+  .highlight{
+    font-size:2rem;
+  }
+  .highlight2{
+    font-size: 3rem;
+  }
+  span{
+    font-size: 2rem;
+  }
 
 
+  .mainTitle2 {
+    font-size: 5rem;
+  }
+  .mainTitle{
+    font-size: 3rem;
+    font-style: italic;
+  }
+  .fp-controlArrow.fp-next {
+    width: 20px;
+  }
+  .fp-controlArrow.fp-prev {
+    width: 20px;
+  }
 
 
 
