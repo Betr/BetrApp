@@ -11,13 +11,12 @@ h1 .betr{
 div .regLogin {
   padding-left: 15%;
 }
-.communityDisplay{
+.communityDisplay, .postDisplay, .pressDisplay {
   background-color: white;
   background-image: none;
   margin: 0;
-  background-image: none;
 }
-.comDiv{
+.comDiv, .pressDiv, .postDiv{
   margin: 0;
   width: 100%;
   background-image: none;
@@ -58,13 +57,13 @@ article{
 .impact img{
   max-height: 250px;
 }
-.communityDisplay{
+.communityDisplay, .postDisplay, .pressDisplay {
   background-color: white;
   background-image: none;
   margin: 0;
   background-image: none;
 }
-.comDiv{
+.comDiv, .pressDiv, .postDiv{
   margin: 0;
   width: 100%;
   background-image: none;
@@ -169,7 +168,7 @@ span{
   display: block;
   width: 100%;
 }
-.communityDisplay{
+.communityDisplay, .postDisplay, .pressDisplay {
   background-color: white;
   background-image: none;
   margin: 0;
@@ -179,6 +178,8 @@ span{
   margin: 0;
   width: 100%;
   background-image: none;
+  opacity: 1;
+
 }
 article{
   padding-top: 2%;
@@ -276,16 +277,17 @@ article{
     display: block;
     width: 100%;
   }
-  .communityDisplay{
+  .communityDisplay, .postDisplay, .pressDisplay {
     background-color: white;
     background-image: none;
     margin: 0;
     background-image: none;
   }
-  .comDiv{
+  .comDiv, .pressDiv, .postDiv{
     margin: 0;
     width: 100%;
     background-image: none;
+    opacity: 1;
   }
   article{
     padding-top: 3%;
