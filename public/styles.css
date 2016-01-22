@@ -543,6 +543,9 @@ footer {
   display: block;
   padding-left: 1%;
   font-size: 2rem; }
+  .userNav a {
+    padding: 0;
+    margin: 0; }
 
 .adminCommunityDiv, .adminUserDiv {
   width: 90%;

@@ -11,8 +11,20 @@ h1 .betr{
 div .regLogin {
   padding-left: 15%;
 }
-
-
+.communityDisplay{
+  background-color: white;
+  background-image: none;
+  margin: 0;
+  background-image: none;
+}
+.comDiv{
+  margin: 0;
+  width: 100%;
+  background-image: none;
+}
+article{
+  padding-top: 3%;
+}
 
 }
 
@@ -46,8 +58,20 @@ div .regLogin {
 .impact img{
   max-height: 250px;
 }
-
-
+.communityDisplay{
+  background-color: white;
+  background-image: none;
+  margin: 0;
+  background-image: none;
+}
+.comDiv{
+  margin: 0;
+  width: 100%;
+  background-image: none;
+}
+article{
+  padding-top: 3%;
+}
 
 
 
@@ -141,9 +165,24 @@ div .regLogin {
 span{
   font-size: 3rem;
 }
-
-
-
+.adminPostDiv, .adminPressDiv{
+  display: block;
+  width: 100%;
+}
+.communityDisplay{
+  background-color: white;
+  background-image: none;
+  margin: 0;
+  background-image: none;
+}
+.comDiv{
+  margin: 0;
+  width: 100%;
+  background-image: none;
+}
+article{
+  padding-top: 2%;
+}
 
 }
 
@@ -233,7 +272,24 @@ span{
   .fp-controlArrow.fp-prev {
     width: 20px;
   }
-
+  .adminPostDiv, .adminPressDiv{
+    display: block;
+    width: 100%;
+  }
+  .communityDisplay{
+    background-color: white;
+    background-image: none;
+    margin: 0;
+    background-image: none;
+  }
+  .comDiv{
+    margin: 0;
+    width: 100%;
+    background-image: none;
+  }
+  article{
+    padding-top: 3%;
+  }
 
 
 }
