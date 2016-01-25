@@ -72,6 +72,7 @@ public class BetrController {
 //            users.save(u);
 //        }
         return params;
+
     }
 
     @RequestMapping(path = "/user", method = RequestMethod.GET)

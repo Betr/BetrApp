@@ -1,4 +1,311 @@
-@media (max-width: 400px) {
+@media (max-width:1100px) and (min-width:801px){
+
+h1 .betr{
+  padding-left: 15%;
+  vertical-align: middle;
+}
+
+.header{
+  height:80px;
+}
+div .regLogin {
+  padding-left: 15%;
+}
+.communityDisplay, .postDisplay, .pressDisplay {
+  background-color: white;
+  background-image: none;
+  margin: 0;
+}
+.comDiv, .pressDiv, .postDiv{
+  margin: 0;
+  width: 100%;
+  background-image: none;
+}
+article{
+  padding-top: 3%;
+}
+
+}
+
+
+/*////////////////////////////*/
+
+@media (max-width:800px) and (min-width:601px){
+  .header1 img{
+    display: none;
+  }
+
+  h1 .betr{
+    padding-left: 8%;
+    vertical-align: middle;
+  }
+  div .regLogin {
+    padding-left: 10%;
+  }
+.info {
+  font-size: 3rem;
+}
+.info2{
+  font-size: 4rem;
+}
+.mainTitle2 {
+  font-size: 5rem;
+}
+.mainTitle{
+  font-size: 3rem;
+}
+.impact img{
+  max-height: 250px;
+}
+.communityDisplay, .postDisplay, .pressDisplay {
+  background-color: white;
+  background-image: none;
+  margin: 0;
+  background-image: none;
+}
+.comDiv, .pressDiv, .postDiv{
+  margin: 0;
+  width: 100%;
+  background-image: none;
+}
+article{
+  padding-top: 3%;
+}
+.logoutBetr{
+  font-size: 5rem;
+}
+
+
+
+
+}
+
+
+/*////////////////////////////*/
+@media (max-width:600px) and (min-width:401px){
+  .header1 img{
+    display: none;
+  }
+  .info {
+    font-size: 3rem;
+  }
+  .info2{
+    font-size: 4rem;
+  }
+.pinkDiv{
+  width: 100%;
+  opacity: .7;
+}
+.blueDiv{
+  width: 0%;
+}
+.blueDiv3{
+  width: 100%;
+  opacity: .7;
+}
+.blueDiv2{
+  width: 0%;
+}
+#pinkDiv{
+  width: 100%;
+}
+.mainTitle2 {
+  font-size: 5rem;
+}
+.mainTitle{
+  font-size: 4rem;
+  font-style: italic;
+}
+.impact img{
+  max-height: 100px;
+}
+.fp-controlArrow.fp-next {
+  width: 30px;
+}
+.fp-controlArrow.fp-prev {
+  width: 30px;
+}
+.theMainInfo {
+  display: inline-block;
+  width: 90%;
+  text-align: center;
+  margin: 0 auto;
+  padding-top: 8%;
+}
+.impact{
+  display: none;
+}
+.par1{
+  display: block;
+  padding-top: 3%;
+  text-align: center;
+  margin: 0 auto;
+  width: 80%;
+  font-size: 2rem;
+}
+.par{
+  display: block;
+  padding-top: 3%;
+  text-align: center;
+  margin: 0 auto;
+  width: 80%;
+  font-size: 2rem;
+}
+.info {
+  font-size: 4rem;
+}
+.info2{
+  font-size: 5rem;
+}
+.highlight{
+  font-size:3rem;
+}
+.highlight2{
+  font-size: 3rem;
+}
+span{
+  font-size: 3rem;
+}
+.adminPostDiv, .adminPressDiv{
+  display: block;
+  width: 100%;
+}
+.communityDisplay, .postDisplay, .pressDisplay {
+  background-color: white;
+  background-image: none;
+  margin: 0;
+  background-image: none;
+}
+.comDiv{
+  margin: 0;
+  width: 100%;
+  background-image: none;
+  opacity: 1;
+
+}
+article{
+  padding-top: 2%;
+}
+.logoutBetr{
+  font-size: 4rem;
+}
+
+
+
+}
+
+
+/*////////////////////////////*/
+
+@media (max-width:400px) and (min-width:1px){
+  .header1 img{
+    display: none;
+  }
+  .info {
+    font-size: 2rem;
+  }
+  .info2{
+    font-size: 3rem;
+  }
+  .pinkDiv{
+    width: 100%;
+    opacity: .7;
+  }
+  .blueDiv{
+    width: 0%;
+  }
+  .blueDiv3{
+    width: 100%;
+    opacity: .7;
+  }
+  .blueDiv2{
+    width: 0%;
+  }
+  #pinkDiv{
+    width: 100%;
+  }
+  .theMainInfo {
+    display: inline-block;
+    width: 90%;
+    text-align: center;
+    margin: 0 auto;
+    padding-top: 8%;
+  }
+  .impact{
+    display: none;
+  }
+  .par1{
+    display: block;
+    padding-top: 3%;
+    text-align: center;
+    margin: 0 auto;
+    width: 80%;
+    font-size: 2rem;
+  }
+  .par{
+    display: block;
+    padding-top: 3%;
+    text-align: center;
+    margin: 0 auto;
+    width: 80%;
+    font-size: 1.75rem;
+  }
+  .info {
+    font-size: 3rem;
+  }
+  .info2{
+    font-size: 5rem;
+  }
+  .highlight{
+    font-size:2rem;
+  }
+  .highlight2{
+    font-size: 3rem;
+  }
+  span{
+    font-size: 2rem;
+  }
+
+
+  .mainTitle2 {
+    font-size: 5rem;
+  }
+  .mainTitle{
+    font-size: 3rem;
+    font-style: italic;
+  }
+  .fp-controlArrow.fp-next {
+    width: 20px;
+  }
+  .fp-controlArrow.fp-prev {
+    width: 20px;
+  }
+  .adminPostDiv, .adminPressDiv{
+    display: block;
+    width: 100%;
+  }
+  .communityDisplay, .postDisplay, .pressDisplay {
+    background-color: white;
+    background-image: none;
+    margin: 0;
+    background-image: none;
+  }
+  .comDiv, .pressDiv, .postDiv{
+    margin: 0;
+    width: 100%;
+    background-image: none;
+    opacity: 1;
+  }
+  article{
+    padding-top: 3%;
+  }
+  .logoutBetr{
+    font-size: 2rem;
+  }
+
+}
+
+/*@media (max-width: 400px) {
   .headerImg{
     height: 62px;
     margin-top: 1.8%;
@@ -80,7 +387,6 @@
   .mainTitle2{
     font-size: 5rem;
   }
-         /*second page*/
 
   .impact{
     width: 43%;
@@ -127,7 +433,6 @@ font-size: 3rem;
 .mT{
   font-size: 26px;
 }
- /*  secon page */
 .adminTitle{
   font-size: 39px;
   margin-top: 5%;
@@ -143,7 +448,6 @@ font-size: 3rem;
   opacity: 0.4;
 }
 
- /*press pages*/
  .comDiv {
    width: 100%;
    margin-left: 0;
@@ -159,7 +463,6 @@ h2{
   padding-left: 340px;
 }
 
-/*slide1*/
 
 .mainTitle2{
   margin-top: -12%;
@@ -175,5 +478,5 @@ h2{
 }
 
 .pinkDiv{
-  
-}
+
+}*/

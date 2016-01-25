@@ -97,10 +97,7 @@
                         console.log('service delete', data);
                       });
                    };
-                   //    $http.delete(url + "/" + item._id);
-                   // };
-
-
+        
                   return {
                     newPress: addPress,
                     getPress: getPress,
@@ -141,6 +138,12 @@
                       $http.post(url, logUser).then(function (res) {
                         console.log(logUser);
                         console.log('im logging in');
+                        // logUser().then(function(res){
+                        //   localStorage.setItem('isAdmin', res.data.isAdmin);
+                        //   var theAdmin = localStorage.getItem(‘isAdmin’);
+                        //   //ng-show= “myVar"
+                        //   console.log(res.data.isAdmin);
+                        // })
                       });
                     };
                 var logOut = function(){
@@ -149,14 +152,12 @@
                 return {
                   logUser: logUser,
                   logOut: logOut
-
               };
             })
             .factory('PaymentService', function ($http) {
               var url = '/transaction';
               var postPayment = function (addPayment) {
                 angular.element(document).find('input').val("");
-
                 return $http.post(url, addPayment);
               };
               return {
