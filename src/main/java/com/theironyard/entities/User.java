@@ -29,18 +29,18 @@ public class User {
     @Column(nullable = false)
     public boolean isAdmin;
 
-    @OneToMany
-    public Set<Community> community;
-
-    public Set<Community> getCommunity() {
-
-        return community;
-    }
-
-    public void setCommunity(Set<Community> community) {
-
-        this.community = community;
-    }
+//    @OneToMany
+//    public Set<Community> community;
+//
+//    public Set<Community> getCommunity() {
+//
+//        return community;
+//    }
+//
+//    public void setCommunity(Set<Community> community) {
+//
+//        this.community = community;
+//    }
 
     public int getId() {
         return id;
