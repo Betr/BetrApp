@@ -16,11 +16,16 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * Created by jessicahuffstutler on 12/7/15.
@@ -48,8 +53,10 @@ public class BetrController {
             "f76bfbc6d5ea0bbfc9caed00077353b3"
     );
 
-    @RequestMapping(path = "/transaction", method = RequestMethod.POST)
-    public Object addTransaction(@RequestBody TransactionParams params){
+    @RequestMapping(path = "/transaction/{communityID}", method = RequestMethod.POST)
+    public Object addTransaction(@RequestBody TransactionParams params
+                                 /**, @PathVariable("communityID") Integer communityID,
+                                 HttpSession session**/) {
         TransactionRequest request = new TransactionRequest()
                 .amount(new BigDecimal(params.amount))
                 .paymentMethodNonce("fake-valid-nonce")
@@ -58,7 +65,12 @@ public class BetrController {
                 .done();
 
         Result<Transaction> result = gateway.transaction().sale(request);
-
+//        User u = users.findOneByEmail((String) session.getAttribute("email"));
+//        if (u!=null) {
+//            Community c = communities.findOne(communityID);
+//            u.community.add(c);
+//            users.save(u);
+//        }
         return params;
 
     }
@@ -138,13 +150,23 @@ public class BetrController {
     @RequestMapping(path = "/press", method = RequestMethod.GET)
     public List<Press> getPress(HttpSession session) throws Exception {
         String email = (String) session.getAttribute("email");
-
+//        List<Press> all = (List<Press>) pressPosts.findAll();
+//        all = all.stream()
+//                .sorted(Comparator.comparing(Press::getTime))
+//                .collect(Collectors.toCollection(ArrayList::new));
+//        return all;
         return (List<Press>) pressPosts.findAll();
     }
 
     @RequestMapping(path = "/press", method = RequestMethod.POST)
     public void addPress(HttpSession session, @RequestBody Press press) throws Exception {
         String email = (String) session.getAttribute("email");
+//        if (press.time!=null) {
+//            pressPosts.save(press);
+//        } else {
+//            press.time = LocalDateTime.now();
+//            pressPosts.save(press);
+//        }
         pressPosts.save(press);
     }
 
@@ -166,14 +188,31 @@ public class BetrController {
     @RequestMapping(path = "/posts", method = RequestMethod.GET)
     public List<Post> getPosts(HttpSession session) throws Exception {
         String email = (String) session.getAttribute("email");
-
+//        List<Post> all = (List<Post>) posts.findAll();
+//        all = all.stream()
+//                .sorted(Comparator.comparing(Post::getTime))
+//                .collect(Collectors.toCollection(ArrayList::new));
         return (List<Post>) posts.findAll();
+//        return all;
     }
 
     @RequestMapping(path = "/posts", method = RequestMethod.POST)
     public void addPost(HttpSession session, @RequestBody Post post) throws Exception {
         String email = (String) session.getAttribute("email");
-
+//        if (post.time!=null) {
+//            File photoFile = File.createTempFile("postImage", post.postImage.getOriginalFilename(), new File("public/pics"));
+//            FileOutputStream fos = new FileOutputStream(photoFile);
+//            fos.write(post.postImage.getBytes());
+//            post.imageCollection.add(photoFile.getName());
+//            posts.save(post);
+//        } else {
+//            post.time = LocalDateTime.now();
+//            File photoFile = File.createTempFile("postImage", post.postImage.getOriginalFilename(), new File("public/pics"));
+//            FileOutputStream fos = new FileOutputStream(photoFile);
+//            fos.write(post.postImage.getBytes());
+//            post.imageCollection.add(photoFile.getName());
+//            posts.save(post);
+//        }
         posts.save(post);
     }
 
@@ -215,6 +254,11 @@ public class BetrController {
 
         communities.save(community);
     }
+
+//    @RequestMapping(path = "/community/{id}", method = RequestMethod.GET)
+//    public Community getOneCommunity(@PathVariable("id") Integer id) {
+//        return communities.findOne(id);
+//    }
 
     @RequestMapping(path = "/communities", method = RequestMethod.GET)
     public List<Community> getCommunities(HttpSession session) throws Exception {
